@@ -1,39 +1,45 @@
-/* FreqCount - Example with serial output
-   http://www.pjrc.com/teensy/td_libs_FreqCount.html
+// Frequency Counter Lib example
 
-   This example code is in the public domain.
-*/
-#include <FreqCount.h>
+/*
+  Martin Nawrath KHM LAB3
+  Kunsthochschule f¸r Medien Kˆln
+  Academy of Media Arts
+  http://www.khm.de
+  http://interface.khm.de/index.php/labor/experimente/  
+ */
+#include <FreqCounter.h>
+
+
+unsigned long frq;
+int cnt;
+int pinLed=13;
 
 void setup() {
-  Serial.begin(57600);
+  pinMode(pinLed, OUTPUT);
+
+  Serial.begin(115200);        // connect to the serial port
+
+  Serial.println("Frequency Counter");
+
 }
 
-unsigned long total = 0;
+
 
 void loop() {
-  FreqCount.begin(1000);
-  delay(1000);
-  if (FreqCount.available()) {
-    unsigned long count = FreqCount.read();
-    Serial.println(count);
-  }
 
-// We check that 1000 short acquisitions yield the same result as one long
-/*
-  total = 0;
-  for (int i = 0; i < 1000; i++) {
-    FreqCount.begin(1);
-    delay(1);
-    if (FreqCount.available()) {
-      total += FreqCount.read();
-    }
-  }
-  Serial.println(total);
+  // wait if any serial is going on
+  FreqCounter::f_comp=10;   // Cal Value / Calibrate with professional Freq Counter
+  FreqCounter::start(100);  // 100 ms Gate Time
 
-  Serial.println("");
-*/
+  while (FreqCounter::f_ready == 0) 
 
+  frq=FreqCounter::f_freq;
+  Serial.print(cnt++);
+  Serial.print("  Freq: ");
+  Serial.println(frq);
+  delay(20);
+  digitalWrite(pinLed,!digitalRead(pinLed));  // blink Led
 
-}
+}  
+
 
