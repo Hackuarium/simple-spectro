@@ -21,6 +21,7 @@ boolean rotaryPressed = false;
 int rotaryCounter = 0;
 int currentMenu = 0;
 boolean lastMenu;
+boolean captureCounter = false; // use when you need to setup a parameter from the menu
 long lastRotaryEvent = millis();
 
 void setup() {
@@ -38,6 +39,8 @@ void loop() {
   rotaryCounter = 0;
   if ((millis() - lastRotaryEvent) > 10000) {
     currentMenu = 0;
+    captureCounter = false;
+    rotaryPressed = false;
   } else {
     if (currentMenu < 1) currentMenu = 1;
   }
@@ -51,7 +54,12 @@ void lcdMenu() {
   } else {
     lastMenu = false;
     for (byte line = 0; line < LCD_NB_ROWS; line++) {
-      lcdMenu0(line, false);
+      if (line == 0 && rotaryPressed) {
+        lcdMenu0(line, true);
+        rotaryPressed = false;
+      } else {
+        lcdMenu0(line, false);
+      }
       if (lastMenu) return;
     }
   }
@@ -69,7 +77,7 @@ void lcdDefault() {
 }
 
 void lcdMenu0(byte line, boolean doAction) {
-  currentMenu = min(currentMenu, 4);
+  currentMenu = min(currentMenu, 4); // need to put the max number of items in the menu
   lcd.setCursor(0, line);
 
   switch (currentMenu + line) {
@@ -87,6 +95,9 @@ void lcdMenu0(byte line, boolean doAction) {
       break;
     case 4:
       lcd.print(F("4. Backlight"));
+      if (doAction) {
+        digitalWrite(LCD_BL, !digitalRead(LCD_BL));
+      }
   }
   lcd.print(F("                "));
 }
