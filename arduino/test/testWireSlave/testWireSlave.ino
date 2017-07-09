@@ -1,3 +1,4 @@
+#include <Wire.h>
 
 #define RED    A0
 #define GREEN  A1
@@ -7,12 +8,14 @@
 
 byte leds[] = {RED, GREEN, BLUE, UV1, UV2};
 
+
 void setup() {
+  Wire.begin(8);                // join i2c bus with address #8
+  Wire.onRequest(requestEvent); // register event
   for (byte i = 0; i < sizeof(leds); i++) {
-   pinMode(leds[i], OUTPUT);
+    pinMode(leds[i], OUTPUT);
   }
 }
-
 
 void loop() {
   for (byte i = 0; i < sizeof(leds); i++) {
@@ -20,4 +23,8 @@ void loop() {
     delay(500);
     digitalWrite(leds[i], LOW);
   }
+}
+
+void requestEvent() {
+  Wire.write("hello"); // respond with message of 6 bytes
 }
