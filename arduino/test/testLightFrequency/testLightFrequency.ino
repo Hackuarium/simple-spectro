@@ -20,7 +20,7 @@ void loop() {
   }
 
 // We check that 1000 short acquisitions yield the same result as one long
-
+/*
   total = 0;
   for (int i = 0; i < 1000; i++) {
     FreqCount.begin(1);
@@ -32,7 +32,7 @@ void loop() {
   Serial.println(total);
 
   Serial.println("");
-
+*/
 
 
 }

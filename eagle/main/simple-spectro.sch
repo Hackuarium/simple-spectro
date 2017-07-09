@@ -13979,12 +13979,10 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <part name="CON_ISP1" library="lpatiny" deviceset="TINYISP" device="" value="SPI"/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="R6" library="dp_devices" deviceset="TRIMMER" device="-3362P" value="10k"/>
-<part name="BAT" library="jumper" deviceset="JP1E" device=""/>
-<part name="A" library="jumper" deviceset="JP1E" device=""/>
-<part name="V" library="jumper" deviceset="JP1E" device=""/>
+<part name="JP1" library="jumper" deviceset="JP1E" device="" value="BAT"/>
+<part name="JP2" library="jumper" deviceset="JP1E" device="" value="A"/>
+<part name="JP3" library="jumper" deviceset="JP1E" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
-<part name="JP4" library="jumper" deviceset="JP1E" device="" value="PS&gt;5.5V"/>
-<part name="U$6" library="microbuilder" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -14140,14 +14138,12 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="CON_ISP1" gate="G$1" x="170.18" y="254"/>
 <instance part="GND11" gate="1" x="182.88" y="248.92"/>
 <instance part="R6" gate="R" x="137.16" y="50.8" rot="R90"/>
-<instance part="BAT" gate="A" x="325.12" y="170.18" rot="R270"/>
-<instance part="A" gate="A" x="340.36" y="167.64" rot="R90"/>
-<instance part="V" gate="A" x="43.18" y="53.34" rot="R270"/>
+<instance part="JP1" gate="A" x="325.12" y="170.18" rot="R270"/>
+<instance part="JP2" gate="A" x="340.36" y="167.64" rot="R90"/>
+<instance part="JP3" gate="A" x="43.18" y="53.34" rot="R270"/>
 <instance part="GND12" gate="1" x="43.18" y="43.18" smashed="yes">
 <attribute name="VALUE" x="41.275" y="41.275" size="1.27" layer="96"/>
 </instance>
-<instance part="JP4" gate="A" x="205.74" y="193.04" rot="R270"/>
-<instance part="U$6" gate="G$1" x="198.12" y="187.96"/>
 </instances>
 <busses>
 </busses>
@@ -14274,7 +14270,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="350.52" y1="162.56" x2="350.52" y2="157.48" width="0.1524" layer="91"/>
 <junction x="322.58" y="157.48"/>
-<pinref part="BAT" gate="A" pin="2"/>
+<pinref part="JP1" gate="A" pin="2"/>
 </segment>
 <segment>
 <pinref part="LED2" gate="G$1" pin="C"/>
@@ -14353,16 +14349,10 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <label x="83.82" y="35.56" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="V" gate="A" pin="2"/>
+<pinref part="JP3" gate="A" pin="2"/>
 <wire x1="40.64" y1="50.8" x2="40.64" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="GND12" gate="1" pin="GND"/>
 <wire x1="40.64" y1="45.72" x2="43.18" y2="45.72" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="JP4" gate="A" pin="1"/>
-<wire x1="203.2" y1="193.04" x2="198.12" y2="193.04" width="0.1524" layer="91"/>
-<wire x1="198.12" y1="193.04" x2="198.12" y2="190.5" width="0.1524" layer="91"/>
-<pinref part="U$6" gate="G$1" pin="GND"/>
 </segment>
 </net>
 <net name="SCK" class="0">
@@ -14876,7 +14866,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="314.96" y1="170.18" x2="314.96" y2="175.26" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="D"/>
 <wire x1="314.96" y1="175.26" x2="327.66" y2="175.26" width="0.1524" layer="91"/>
-<pinref part="BAT" gate="A" pin="1"/>
+<pinref part="JP1" gate="A" pin="1"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -14931,7 +14921,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <junction x="-2.54" y="43.18"/>
 </segment>
 <segment>
-<pinref part="A" gate="A" pin="1"/>
+<pinref part="JP2" gate="A" pin="1"/>
 <pinref part="SUPPLY4" gate="G$1" pin="VDD"/>
 <wire x1="342.9" y1="167.64" x2="342.9" y2="162.56" width="0.1524" layer="91"/>
 </segment>
@@ -14949,7 +14939,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="38.1" y1="38.1" x2="38.1" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="43.18" x2="38.1" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="43.18" x2="38.1" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="V" gate="A" pin="1"/>
+<pinref part="JP3" gate="A" pin="1"/>
 <wire x1="38.1" y1="53.34" x2="40.64" y2="53.34" width="0.1524" layer="91"/>
 <junction x="38.1" y="43.18"/>
 </segment>
@@ -15069,12 +15059,8 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 </segment>
 <segment>
 <pinref part="IC2" gate="G$1" pin="VI"/>
-<wire x1="200.66" y1="182.88" x2="203.2" y2="182.88" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="182.88" x2="215.9" y2="182.88" width="0.1524" layer="91"/>
 <label x="200.66" y="180.34" size="1.778" layer="95"/>
-<pinref part="JP4" gate="A" pin="2"/>
-<wire x1="203.2" y1="182.88" x2="215.9" y2="182.88" width="0.1524" layer="91"/>
-<wire x1="203.2" y1="190.5" x2="203.2" y2="182.88" width="0.1524" layer="91"/>
-<junction x="203.2" y="182.88"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -15097,7 +15083,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="337.82" y1="175.26" x2="342.9" y2="175.26" width="0.1524" layer="91"/>
 <pinref part="D5" gate="G$1" pin="C"/>
 <wire x1="342.9" y1="175.26" x2="342.9" y2="177.8" width="0.1524" layer="91"/>
-<pinref part="A" gate="A" pin="2"/>
+<pinref part="JP2" gate="A" pin="2"/>
 <wire x1="342.9" y1="170.18" x2="342.9" y2="175.26" width="0.1524" layer="91"/>
 </segment>
 </net>
