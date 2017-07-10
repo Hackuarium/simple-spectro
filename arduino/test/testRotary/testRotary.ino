@@ -2,7 +2,6 @@
 #define ROT_B      1
 #define ROT_PUSH   7
 
-
 void setup() {
   Serial.begin(115200);
   pinMode(ROT_A, INPUT_PULLUP);
@@ -20,8 +19,6 @@ void loop() {
   delay(500);
 }
 
-
-
 void eventA() {
   long current=millis();
   if (current-lastEvent<2) return;
@@ -34,7 +31,6 @@ void eventA() {
  
   lastEvent=current;
 }
-
 
 void eventP() {
   Serial.println("P");

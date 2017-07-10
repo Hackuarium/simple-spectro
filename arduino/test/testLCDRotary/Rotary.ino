@@ -10,21 +10,27 @@ void setupRotary() {
   attachInterrupt(digitalPinToInterrupt(ROT_PUSH), eventRotaryPressed, FALLING);
 }
 
-
+boolean accelerationMode = false;
 
 void eventRotaryA() {
-  long current=millis();
-  if (current-lastRotaryEvent<2) return;
-  int increment=digitalRead(ROT_B)*2-1;
-  if ((current-lastRotaryEvent)<10) {
-    rotaryCounter-=increment*5;
+  int increment = digitalRead(ROT_B) * 2 - 1;
+  long current = millis();
+  if (current - lastRotaryEvent < 5) return;
+  if ((current - lastRotaryEvent) < 25) {
+    if (accelerationMode) {
+      rotaryCounter -= (increment * 5);
+    } else {
+      accelerationMode = true;
+      rotaryCounter -= increment;
+    }
   } else {
-     rotaryCounter-=increment;
+    accelerationMode = false;
+    rotaryCounter -= increment;
   }
-  lastRotaryEvent=current;
+  lastRotaryEvent = current;
 }
 
 void eventRotaryPressed() {
-  rotaryPressed=true;
-  lastRotaryEvent=millis();
+  rotaryPressed = true;
+  lastRotaryEvent = millis();
 }
