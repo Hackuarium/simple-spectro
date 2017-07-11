@@ -7,7 +7,7 @@ void setupRotary() {
   pinMode(ROT_B, INPUT_PULLUP);
   pinMode(ROT_PUSH, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(ROT_A), eventRotaryA, FALLING);
-  attachInterrupt(digitalPinToInterrupt(ROT_PUSH), eventRotaryPressed, FALLING);
+  attachInterrupt(digitalPinToInterrupt(ROT_PUSH), eventRotaryPressed, CHANGE);
 }
 
 boolean accelerationMode = false;
@@ -15,8 +15,10 @@ boolean accelerationMode = false;
 void eventRotaryA() {
   int increment = digitalRead(ROT_B) * 2 - 1;
   long current = millis();
-  if (current - lastRotaryEvent < 5) return;
-  if ((current - lastRotaryEvent) < 25) {
+  long diff = current - lastRotaryEvent;
+  lastRotaryEvent = current;
+  if (diff < 5) return;
+  if (diff < 25) {
     if (accelerationMode) {
       rotaryCounter -= (increment * 5);
     } else {
@@ -27,10 +29,15 @@ void eventRotaryA() {
     accelerationMode = false;
     rotaryCounter -= increment;
   }
-  lastRotaryEvent = current;
+
 }
 
+
 void eventRotaryPressed() {
+  long current = millis();
+  long diff = current - lastRotaryEvent;
+  lastRotaryEvent = current;
+  if (diff < 5 || digitalRead(ROT_PUSH) == HIGH) return;
   rotaryPressed = true;
-  lastRotaryEvent = millis();
+  lastRotaryEvent = current;
 }
