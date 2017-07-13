@@ -1,3 +1,7 @@
+#define THR_LCD 1
+
+#ifdef THR_LCD
+
 #include <LiquidCrystal.h>
 
 #define LCD_E      12
@@ -9,20 +13,15 @@
 #define LCD_BL     11    // back light
 #define LCD_VO     13    // contrast (on / off to spare energy)
 #define LCD_ON     MOSI  // power on LCD
-byte pins[] = {LCD_E, LCD_RS, LCD_D4, LCD_D5, LCD_D6, LCD_D7, LCD_VO};
 
 #define LCD_NB_ROWS     2
 #define LCD_NB_COLUMNS  16
 
-// initialize the library with the numbers of the interface pins
-LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
+#define ROT_A      0
+#define ROT_B      1
+#define ROT_PUSH   7
 
-#define PARAM_A           0
-#define PARAM_B           1
-#define PARAM_C           2
-#define PARAM_D           3
-#define PARAM_E           4
-#define PARAM_F           5
+LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 
 boolean rotaryPressed = false;
@@ -31,22 +30,27 @@ int currentMenu = 0;
 boolean captureCounter = false; // use when you need to setup a parameter from the menu
 long lastRotaryEvent = millis();
 
-void setup() {
-  Serial.begin(115200);
+
+
+NIL_WORKING_AREA(waThreadLcd, 128);
+NIL_THREAD(ThreadLcd, arg) {
+  // initialize the library with the numbers of the interface pins
+
   setupRotary();
-  setupParameters();
   pinMode(LCD_BL, OUTPUT);
   digitalWrite(LCD_BL, HIGH); // backlight
   pinMode(LCD_ON, HIGH); // LCD on / off
   digitalWrite(LCD_ON, HIGH); // LCD on
-  delay(10);
+  nilThdSleepMilliseconds(10);
   lcd.begin(LCD_NB_COLUMNS, LCD_NB_ROWS);
+
+
+  while (true) {
+    lcdMenu();
+    nilThdSleepMilliseconds(40);
+  }
 }
 
-void loop() {
-  lcdMenu();
-  delay(40);
-}
 
 byte noEventCounter = 0;
 void lcdMenu() {
@@ -133,7 +137,7 @@ void updateCurrentMenu(int counter, byte maxValue) {
 void lcdMenuHome(int counter, boolean doAction) {
   if (noEventCounter > 2) return;
   lcd.clear();
-  byte lastMenu = 4;
+  byte lastMenu = 5;
   updateCurrentMenu(counter, lastMenu);
 
   for (byte line = 0; line < LCD_NB_ROWS; line++) {
@@ -167,6 +171,12 @@ void lcdMenuHome(int counter, boolean doAction) {
         if (doAction) {
           resetParameters();
           currentMenu = 20;
+        }
+        break;
+        case 5:
+        lcd.print(F("Test LED"));
+        if (doAction) {
+          testRGB();
         }
         break;
     }
@@ -246,5 +256,53 @@ void lcdPrintBlank(byte number) {
     lcd.print(" ");
   }
 }
+
+
+void setupRotary() {
+  pinMode(ROT_A, INPUT_PULLUP);
+  pinMode(ROT_B, INPUT_PULLUP);
+  pinMode(ROT_PUSH, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(ROT_A), eventRotaryA, FALLING);
+  attachInterrupt(digitalPinToInterrupt(ROT_PUSH), eventRotaryPressed, CHANGE);
+}
+
+boolean accelerationMode = false;
+
+void eventRotaryA() {
+  int increment = digitalRead(ROT_B) * 2 - 1;
+  long current = millis();
+  long diff = current - lastRotaryEvent;
+  lastRotaryEvent = current;
+  if (diff < 15) return;
+  if (diff < 50) {
+    if (accelerationMode) {
+      rotaryCounter -= (increment * 5);
+    } else {
+      accelerationMode = true;
+      rotaryCounter -= increment;
+    }
+  } else {
+    accelerationMode = false;
+    rotaryCounter -= increment;
+  }
+}
+
+
+boolean rotaryMayPress = true; // be sure to go through release. Seems to allow some deboucing
+
+void eventRotaryPressed() {
+  byte state = digitalRead(ROT_PUSH);
+  if (state == 0) {
+    if (rotaryMayPress) {
+      rotaryPressed = true;
+      rotaryMayPress = false;
+    }
+  } else {
+    rotaryMayPress = true;
+  }
+}
+
+#endif
+
 
 

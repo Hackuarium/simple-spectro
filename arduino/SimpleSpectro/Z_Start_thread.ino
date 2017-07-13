@@ -33,24 +33,11 @@ NIL_THREADS_TABLE_BEGIN()
 NIL_THREADS_TABLE_ENTRY(NULL, ThreadSerial, NULL, waThreadSerial, sizeof(waThreadSerial))
 
 
-// First detection otherwise bad initialized variables !!!!
 
-#ifdef THR_ACTION1
-NIL_THREADS_TABLE_ENTRY(NULL, ThreadAction1, NULL, waThreadAction1, sizeof(waThreadAction1))
+
+#ifdef THR_LCD
+NIL_THREADS_TABLE_ENTRY(NULL, ThreadLcd, NULL, waThreadLcd, sizeof(waThreadLcd))
 #endif
-
-#ifdef THR_ACTION2
-NIL_THREADS_TABLE_ENTRY(NULL, ThreadAction2, NULL, waThreadAction2, sizeof(waThreadAction2))
-#endif
-
-#ifdef THR_ACTION3
-NIL_THREADS_TABLE_ENTRY(NULL, ThreadAction3, NULL, waThreadAction3, sizeof(waThreadAction3))
-#endif
-
-#ifdef THR_ACTION4
-NIL_THREADS_TABLE_ENTRY(NULL, ThreadAction4, NULL, waThreadAction4, sizeof(waThreadAction4))
-#endif
-
 
 #ifdef THR_MONITORING
 NIL_THREADS_TABLE_ENTRY(NULL, ThreadMonitoring, NULL, waThreadMonitoring, sizeof(waThreadMonitoring))                           

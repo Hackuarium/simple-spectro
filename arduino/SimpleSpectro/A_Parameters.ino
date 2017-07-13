@@ -16,29 +16,14 @@
 
 #define MAX_PARAM 26   // If the MAX_PARAM change you need to change the pointer in the EEPROM
 
-#define PARAM_RED_POINT         0
-#define PARAM_GREEN_POINT       1 
-#define PARAM_BLUE_POINT        2
-#define PARAM_COMPRESSION       3
-#define PARAM_RED_INTENSITY     4
-#define PARAM_GREEN_INTENSITY   5
-#define PARAM_BLUE_INTENSITY    6
-#define PARAM_NUMBER_SCAN       7
-#define PARAM_DELAY_EXPERIMENT  8
-#define PARAM_INTEGRATION_TIME  9
 
-#define PARAM_RED_NM            10
-#define PARAM_GREEN_NM          11
-#define PARAM_BLUE_NM           12
+#define PARAM_A           0
+#define PARAM_B           1
+#define PARAM_C           2
+#define PARAM_D           3
+#define PARAM_E           4
+#define PARAM_F           5
 
-#define PARAM_RED_TEST          20
-#define PARAM_GREEN_TEST        21
-#define PARAM_BLUE_TEST         22
-#define PARAM_WHITE_TEST        23
-
-byte TEST[] = {
-  PARAM_RED_TEST, PARAM_GREEN_TEST, PARAM_BLUE_TEST, PARAM_WHITE_TEST
-};
 
 //When parameters are set (and saved) an event is recorded (256-281 : A-Z + .... (if more parameters than 26))
 #define EVENT_SAVE_ALL_PARAMETER     255
@@ -165,25 +150,13 @@ void setQualifier(uint16_t value) {
 
 
 void resetParameters() {
-  setAndSaveParameter(PARAM_RED_POINT, 212);
-  setAndSaveParameter(PARAM_GREEN_POINT, 100);
-  setAndSaveParameter(PARAM_BLUE_POINT, 75);
-  setAndSaveParameter(PARAM_COMPRESSION, 0);
-  setAndSaveParameter(PARAM_RED_INTENSITY, 255);
-  setAndSaveParameter(PARAM_GREEN_INTENSITY, 255);
-  setAndSaveParameter(PARAM_BLUE_INTENSITY, 255);
-  setAndSaveParameter(PARAM_NUMBER_SCAN, 63);
-  setAndSaveParameter(PARAM_DELAY_EXPERIMENT, 10);
-  setAndSaveParameter(PARAM_INTEGRATION_TIME, 20);
-  setAndSaveParameter(PARAM_RED_NM, 627);
-  setAndSaveParameter(PARAM_GREEN_NM, 520);
-  setAndSaveParameter(PARAM_BLUE_NM, 455);
-  setAndSaveParameter(PARAM_RED_TEST, 255);
-  setAndSaveParameter(PARAM_GREEN_TEST, 255);
-  setAndSaveParameter(PARAM_BLUE_TEST, 255);
-  setAndSaveParameter(PARAM_WHITE_TEST, 255);
+  setAndSaveParameter(PARAM_A, 0);
+  setAndSaveParameter(PARAM_B, 1);
+  setAndSaveParameter(PARAM_C, 2);
+  setAndSaveParameter(PARAM_D, 3);
+  setAndSaveParameter(PARAM_E, 4);
+  setAndSaveParameter(PARAM_F, 5);
   setQualifier(21313);
-  calibrate();
 }
 
 

@@ -1,9 +1,3 @@
-
-// WE SHOULD PROBABLY USE AN EXISTING LIBRARY
-// INTERESTING ONE: EXROM  http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1264276992
-
-// We want to save and load easily from EEPROM
-
 #include <avr/eeprom.h>
 
 #define EE_PARAMETERS            140 // 32 bytes
