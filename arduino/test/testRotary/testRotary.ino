@@ -8,30 +8,73 @@ void setup() {
   pinMode(ROT_B, INPUT_PULLUP);
   pinMode(ROT_PUSH, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(ROT_A), eventA, FALLING);
-  attachInterrupt(digitalPinToInterrupt(ROT_PUSH), eventP, FALLING);
+  attachInterrupt(digitalPinToInterrupt(ROT_PUSH), eventRotaryPressed, CHANGE);
 }
 
-int counter=0;
-long lastEvent=millis();
+int rotaryCounter = 0;
+int lastCounter = 0;
+long lastRotaryEvent = millis();
+boolean accelerationMode=true;
+boolean rotaryPressed=false;
+boolean rotaryMayPressed=true;
 
 void loop() {
-  Serial.println(counter);
+  if (lastCounter != rotaryCounter) {
+  //  Serial.println(rotaryCounter);
+  }
+ // Serial.println(rotaryPressed);
+  lastCounter = rotaryCounter;
   delay(500);
 }
 
 void eventA() {
-  long current=millis();
-  if (current-lastEvent<2) return;
-  int increment=digitalRead(ROT_B)*2-1;
-  if ((current-lastEvent)<10) {
-    counter-=increment*5;
+  int increment = digitalRead(ROT_B) * 2 - 1;
+  long current = millis();
+  long diff = current - lastRotaryEvent;
+  lastRotaryEvent = current;
+  if (diff < 15) return;
+  if (diff < 50) {
+    if (accelerationMode) {
+      rotaryCounter -= (increment * 5);
+    } else {
+      accelerationMode = true;
+      rotaryCounter -= increment;
+    }
   } else {
-     counter-=increment;
+    accelerationMode = false;
+    rotaryCounter -= increment;
   }
- 
-  lastEvent=current;
 }
 
-void eventP() {
+
+
+void eventRotaryPressed() {
+    byte state= digitalRead(ROT_PUSH);
+if (state==0) {
+   if (rotaryMayPressed) {
+    rotaryPressed=true;
+    rotaryMayPressed=false;
+    Serial.println("P");
+   }
+} else {
+  rotaryMayPressed=true;
+}
+
+
+/*
+  byte state= digitalRead(ROT_PUSH);
+  long current = millis();
+  long diff = current - lastRotaryEvent;
+  lastRotaryEvent = current;
+  if (diff < 15 || state==HIGH) {
+      Serial.print(current);
+  Serial.print(" ");
+    Serial.println(state);
+    return;
+  }
+  Serial.print(current);
+  Serial.print(" ");
   Serial.println("P");
+  rotaryPressed = true;
+ */
 }

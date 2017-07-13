@@ -27,12 +27,14 @@ LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 boolean rotaryPressed = false;
 int rotaryCounter = 0;
+int rotaryCaptureCounter = 0;
 int currentMenu = 0;
 boolean lastMenu;
 boolean captureCounter = false; // use when you need to setup a parameter from the menu
 long lastRotaryEvent = millis();
 
 void setup() {
+  Serial.begin(115200);
   setupRotary();
   setupParameters();
   pinMode(LCD_BL, OUTPUT);
@@ -52,13 +54,15 @@ void loop() {
     if (! captureCounter) {
       if (rotaryCounter < 0) {
         currentMenu += max(rotaryCounter, - currentMenu % 10);
-      } else {
+      } else if (rotaryCounter > 0) {
         currentMenu += min(rotaryCounter, 9 - currentMenu % 10);
       }
+    } else {
+      rotaryCaptureCounter = rotaryCounter;
     }
   }
-  lcdMenu();
   rotaryCounter = 0;
+  lcdMenu();
   delay(40);
 }
 
@@ -109,7 +113,7 @@ void lcdDefault() {
 
 
 void lcdNumberLine(byte line) {
-  lcd.print(currentMenu % 10 + line);
+  lcd.print(currentMenu % 10 + line + 1);
   if (line == 0) {
     lcd.print(".*");
   } else {
@@ -119,9 +123,10 @@ void lcdNumberLine(byte line) {
 
 void lcdMenuHome(byte line, boolean doAction) {
   currentMenu = min(currentMenu, 4); // need to put the max number of items in the menu
-  lcd.setCursor(0, line);
+  lcd.setCursor(3, line);
+    lcd.setCursor(0, line);
   lcdNumberLine(line);
-
+  
   switch (currentMenu + line) {
     case 0:
       lcd.print(F("Status"));
@@ -146,7 +151,7 @@ void lcdMenuHome(byte line, boolean doAction) {
       if (doAction) {
         resetParameters();;
       }
-      break;
+      break; 
   }
 }
 
@@ -188,6 +193,9 @@ void lcdMenuSettings(byte line, boolean doAction) {
       break;
     case 6:
       lcd.print(F("Exit"));
+  lcdBlankLine();
+    lcd.setCursor(0, line + 1);
+    lcdBlankLine();
       if (doAction) {
         currentMenu = 1;
         return;
@@ -214,10 +222,11 @@ void lcdMenuSettings(byte line, boolean doAction) {
     } else {
       lcd.print(" ");
     }
-    setParameter(currentParameter, getParameter(currentParameter) + rotaryCounter);
+    setParameter(currentParameter, getParameter(currentParameter) + rotaryCaptureCounter);
+    rotaryCaptureCounter = 0;
   }
-    lcd.print(((float)getParameter(currentParameter))*currentFactor);
-    lcd.print(" ");
+  lcd.print(((float)getParameter(currentParameter))*currentFactor);
+  lcd.print(" ");
   lcd.print(currentUnit);
 }
 

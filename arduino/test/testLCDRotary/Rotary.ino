@@ -17,8 +17,8 @@ void eventRotaryA() {
   long current = millis();
   long diff = current - lastRotaryEvent;
   lastRotaryEvent = current;
-  if (diff < 5) return;
-  if (diff < 25) {
+  if (diff < 15) return;
+  if (diff < 50) {
     if (accelerationMode) {
       rotaryCounter -= (increment * 5);
     } else {
@@ -29,15 +29,19 @@ void eventRotaryA() {
     accelerationMode = false;
     rotaryCounter -= increment;
   }
-
 }
 
 
+boolean rotaryMayPress = true; // be sure to go through release. Seems to allow some deboucing
+
 void eventRotaryPressed() {
-  long current = millis();
-  long diff = current - lastRotaryEvent;
-  lastRotaryEvent = current;
-  if (diff < 5 || digitalRead(ROT_PUSH) == HIGH) return;
-  rotaryPressed = true;
-  lastRotaryEvent = current;
+  byte state = digitalRead(ROT_PUSH);
+  if (state == 0) {
+    if (rotaryMayPress) {
+      rotaryPressed = true;
+      rotaryMayPress = false;
+    }
+  } else {
+    rotaryMayPress = true;
+  }
 }
