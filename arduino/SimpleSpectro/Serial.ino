@@ -2,12 +2,12 @@
 
 #ifdef THR_SERIAL
 
-#define SERIAL_BUFFER_LENGTH 32
+#define SERIAL_BUFFER_LENGTH           32
 #define SERIAL_MAX_PARAM_VALUE_LENGTH  32
 char serialBuffer[SERIAL_BUFFER_LENGTH];
 byte serialBufferPosition = 0;
 
-NIL_WORKING_AREA(waThreadSerial, 1700); // minimum 128
+NIL_WORKING_AREA(waThreadSerial, 200); // minimum 128
 NIL_THREAD(ThreadSerial, arg) {
 
   Serial.begin(115200);

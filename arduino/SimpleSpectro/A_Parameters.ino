@@ -12,30 +12,27 @@
    to the EEPROM
  *********************************************/
 
-#include <avr/eeprom.h>
 
 #define MAX_PARAM 26   // If the MAX_PARAM change you need to change the pointer in the EEPROM
 
 
-#define PARAM_A           0
-#define PARAM_B           1
-#define PARAM_C           2
-#define PARAM_D           3
-#define PARAM_E           4
-#define PARAM_F           5
+#define PARAM_R           0
+#define PARAM_G           1
+#define PARAM_B           2
+#define PARAM_UV1         3
+#define PARAM_UV2         4
 
 
-//When parameters are set (and saved) an event is recorded (256-281 : A-Z + .... (if more parameters than 26))
-#define EVENT_SAVE_ALL_PARAMETER     255
-#define EVENT_PARAMETER_SET          256
+#define PARAM_BEFORE_DELAY  10  // delay before taking blank
+#define PARAM_FIRST_DELAY   11
+#define PARAM_INTER_DELAY   12
+#define PARAM_NUMPER_EXP    13
+#define PARAM_NEXT_EXP      14 // next experiment, 0 blank and then for kinetic
+                               // last experiment: MAX_EXPERIMENTS
+#define PARAM_WAITING       15 // current time to wait
 
-#define EE_QUALIFIER             222
 
-#define EE_START_PARAM           0 // We save the parameter from byte 0 of EEPROM
-#define EE_LAST_PARAM            (MAX_PARAM*2-1) // The last parameter is stored at byte 50-51
 
-#define EEPROM_MIN_ADDR            0
-#define EEPROM_MAX_ADDR          511
 
 
 // value that should not be taken into account
@@ -80,7 +77,6 @@ void saveParameters() {
   for (byte i = 0; i < MAX_PARAM; i++) {
     eeprom_write_word((uint16_t*) EE_START_PARAM + i, parameters[i]);
   }
-  writeLog(EVENT_SAVE_ALL_PARAMETER, 0);
 }
 
 /*
@@ -91,9 +87,6 @@ void setAndSaveParameter(byte number, int value) {
   parameters[number] = value;
   //The address of the parameter is given by : EE_START_PARAM+number*2
   eeprom_write_word((uint16_t*) EE_START_PARAM + number, value);
-
-
-  writeLog(EVENT_PARAMETER_SET + number, value);
 }
 
 
@@ -147,15 +140,12 @@ void setQualifier(uint16_t value) {
   eeprom_write_word((uint16_t*)(EE_QUALIFIER), value);
 }
 
-
-
 void resetParameters() {
-  setAndSaveParameter(PARAM_A, 0);
-  setAndSaveParameter(PARAM_B, 1);
-  setAndSaveParameter(PARAM_C, 2);
-  setAndSaveParameter(PARAM_D, 3);
-  setAndSaveParameter(PARAM_E, 4);
-  setAndSaveParameter(PARAM_F, 5);
+  setAndSaveParameter(PARAM_R, 0);
+  setAndSaveParameter(PARAM_G, 0);
+  setAndSaveParameter(PARAM_B, 0);
+  setAndSaveParameter(PARAM_UV1, 0);
+  setAndSaveParameter(PARAM_UV2, 0);
   setQualifier(21313);
 }
 

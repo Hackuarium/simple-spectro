@@ -60,7 +60,7 @@ void lcdMenu() {
     noEventCounter = 0;
   }
   if (noEventCounter > 250) {
-    currentMenu = 20;
+    if (currentMenu - currentMenu % 10 != 20) currentMenu = 20;
     captureCounter = false;
     noEventCounter = 0;
   }
@@ -80,40 +80,91 @@ void lcdMenu() {
     case 20:
       lcdDefault(counter, doAction);
       break;
+    case 30:
+      lcdAcquisition(counter, doAction);
+      break;
   }
 }
 
 void lcdDefault(int counter, boolean doAction) {
   if (doAction) currentMenu = 0;
-  updateCurrentMenu(counter, 1);
+  updateCurrentMenu(counter, 2);
   if (noEventCounter < 2) lcd.clear();
   switch (currentMenu % 10) {
     case 0:
       lcd.setCursor(0, 0);
-      lcd.print("A:");
-      lcd.print(getParameter(PARAM_A));
+      lcd.print("R:");
+      lcd.print(getParameter(PARAM_R));
       lcdPrintBlank(2);
       lcd.setCursor(8, 0);
+      lcd.print("G:");
+      lcd.print(getParameter(PARAM_G));
+      lcdPrintBlank(2);
+      lcd.setCursor(0, 1);
       lcd.print("B:");
       lcd.print(getParameter(PARAM_B));
       lcdPrintBlank(2);
-      lcd.setCursor(0, 1);
-      lcd.print("C:");
-      lcd.print(getParameter(PARAM_C));
-      lcdPrintBlank(2);
-      lcd.setCursor(8, 1);
-      lcd.print("D:");
-      lcd.print(getParameter(PARAM_D));
-      lcdPrintBlank(2);
       break;
     case 1:
+      lcd.setCursor(0, 0);
+      lcd.print("UV 1: ");
+      lcd.print(getParameter(PARAM_UV1));
+      lcdPrintBlank(2);
+      lcd.setCursor(0, 1);
+      lcd.print("UV 2: ");
+      lcd.print(getParameter(PARAM_UV2));
+      break;
+    case 2:
+      lcd.setCursor(0, 0);
+      epochToString(now(), &lcd);
       lcd.setCursor(8, 1);
       lcd.print("s:");
       lcd.print(millis() / 1000);
       break;
   }
-
 }
+
+void lcdAcquisition(int counter, boolean doAction) {
+  if (doAction) currentMenu = 0;
+  if (noEventCounter < 2) lcd.clear();
+  switch (currentMenu % 10) {
+    case 0:
+      lcd.setCursor(0, 0);
+      lcd.print(F("Waiting blank"));
+      lcd.setCursor(0, 1);
+      lcd.print(getParameter(PARAM_WAIT));
+      lcd.print(" s");
+      break;
+    case 1:
+      lcd.setCursor(0, 0);
+      lcd.print(F("Waiting exp."));
+      lcd.setCursor(0, 1);
+      lcd.print(getParameter(PARAM_WAIT));
+      lcd.print(" s");
+      break;
+    case 2:
+      lcd.setCursor(0, 0);
+      lcd.print(F("Waiting next"));
+      lcd.setCursor(0, 1);
+      lcd.print(getParameter(PARAM_WAIT));
+      lcd.print(" s");
+      break;
+    case 3:
+      lcd.setCursor(0, 0);
+      lcd.print(F("Acquiring"));
+      lcd.setCursor(0, 1);
+      if (getParameter(PARAM_NEXT_EXP) == 0) {
+        lcd.print(F("Blank"));
+      } else if (getParameter(PARAM_NEXT_EXP) == 1) {
+        lcd.print(F("Sample"));
+      } else if (getParameter(PARAM_NEXT_EXP) > 1) {
+        lcd.print(F("Kinetic "));
+        lcd.print(getParameter(PARAM_NEXT_EXP));
+      }
+      break;
+  }
+}
+
 
 
 void lcdNumberLine(byte line) {
@@ -159,6 +210,9 @@ void lcdMenuHome(int counter, boolean doAction) {
         break;
       case 2:
         lcd.print(F("Acquire"));
+        if (doAction) {
+          runExperiment();
+        }
         break;
       case 3:
         lcd.print(F("Backlight"));
@@ -173,7 +227,7 @@ void lcdMenuHome(int counter, boolean doAction) {
           currentMenu = 20;
         }
         break;
-        case 5:
+      case 5:
         lcd.print(F("Test LED"));
         if (doAction) {
           testRGB();
@@ -223,7 +277,7 @@ void lcdMenuSettings(int counter, boolean doAction) {
       lcd.print(F("Param F"));
       break;
     case 6:
-      lcd.print(F("Exit"));
+      lcd.print(F("Main menu"));
       if (doAction) {
         currentMenu = 1;
       }

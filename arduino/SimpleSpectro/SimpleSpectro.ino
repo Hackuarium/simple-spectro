@@ -16,27 +16,17 @@
 
 byte LEDS[] = {RED, GREEN, BLUE, UV1, UV2};
 
-
-
+#define MAX_EXPERIMENTS 25;
 
 
 // #define THR_MONITORING     13  // will also take care of the watch dog
 
-
-
-
 void setup() {
-  delay(2000);
-#ifdef LOGGER
-  setupLogger();
-#endif
 
   setupParameters();
-
 
   nilSysBegin();
 }
 
-void loop() {
-}
+void loop() {}
 
