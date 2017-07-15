@@ -73,7 +73,6 @@ void lcdMenu() {
   rotaryPressed = false;
   int counter = rotaryCounter;
   rotaryCounter = 0;
-
   switch (currentMenu - currentMenu % 10) {
     case 0:
       lcdMenuHome(counter, doAction);
@@ -86,6 +85,9 @@ void lcdMenu() {
       break;
     case 30:
       lcdAcquisition(counter, doAction);
+      break;
+    case 40:
+      lcdUtilities(counter, doAction);
       break;
   }
 }
@@ -139,15 +141,11 @@ void lcdAcquisition(int counter, boolean doAction) {
       break;
     case 1:
       lcd.setCursor(0, 0);
-      lcd.print(F("Waiting exp."));
+      lcd.print(F("Waiting exp. "));
+      lcd.print(getParameter(PARAM_NEXT_EXP));
       lcdWait();
       break;
     case 2:
-      lcd.setCursor(0, 0);
-      lcd.print(F("Waiting next"));
-      lcdWait();
-      break;
-    case 3:
       lcd.setCursor(0, 0);
       lcd.print(F("Acquiring"));
       lcd.setCursor(0, 1);
@@ -191,7 +189,7 @@ void updateCurrentMenu(int counter, byte maxValue) {
 void lcdMenuHome(int counter, boolean doAction) {
   if (noEventCounter > 2) return;
   lcd.clear();
-  byte lastMenu = 5;
+  byte lastMenu = 4;
   updateCurrentMenu(counter, lastMenu);
 
   for (byte line = 0; line < LCD_NB_ROWS; line++) {
@@ -206,38 +204,74 @@ void lcdMenuHome(int counter, boolean doAction) {
         }
         break;
       case 1:
+        lcd.print(F("Acquire"));
+        if (doAction) {
+          setParameter(PARAM_STATUS, STATUS_ONE_SPECTRUM);
+          setParameter(PARAM_NEXT_EXP, 0);
+        }
+        break;
+      case 2:
+        lcd.print(F("Kinetic"));
+        if (doAction) {
+          setParameter(PARAM_STATUS, STATUS_KINETIC);
+          setParameter(PARAM_NEXT_EXP, 0);
+        }
+        break;
+      case 3:
         lcd.print(F("Settings"));
         if (doAction) {
           currentMenu = 10;
         }
         break;
-      case 2:
-        lcd.print(F("Acquire"));
+      case 4:
+        lcd.print(F("Utilities"));
         if (doAction) {
-          setParameter(PARAM_NEXT_EXP, 0);
+          currentMenu = 40;
         }
         break;
-      case 3:
+    }
+    doAction = false;
+  }
+}
+
+void lcdUtilities(int counter, boolean doAction) {
+  if (noEventCounter > 2) return;
+  lcd.clear();
+  byte lastMenu = 3;
+  updateCurrentMenu(counter, lastMenu);
+
+  for (byte line = 0; line < LCD_NB_ROWS; line++) {
+    lcd.setCursor(0, line);
+    if ( currentMenu % 10 + line <= lastMenu) lcdNumberLine(line);
+
+    switch (currentMenu % 10 + line) {
+      case 0:
         lcd.print(F("Backlight"));
         if (doAction) {
           digitalWrite(LCD_BL, !digitalRead(LCD_BL));
         }
         break;
-      case 4:
+      case 1:
+        lcd.print(F("Test LED"));
+        if (doAction) {
+          testRGB();
+        }
+        break;
+      case 2:
         lcd.print(F("Reset"));
         if (doAction) {
           resetParameters();
           currentMenu = 20;
         }
         break;
-      case 5:
-        lcd.print(F("Test LED"));
+      case 3:
+        lcd.print(F("Main menu"));
         if (doAction) {
-          testRGB();
+          currentMenu = 1;
         }
-        break;
+        return;
     }
-    doAction = false;
+      doAction = false;
   }
 }
 

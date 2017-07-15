@@ -29,9 +29,12 @@
 #define PARAM_NUMPER_EXP    13
 #define PARAM_NEXT_EXP      14 // next experiment, 0 blank and then for kinetic
 // last experiment: MAX_EXPERIMENTS
-#define PARAM_WAIT       15 // current time to wait
+#define PARAM_WAIT          15 // current time to wait
+#define PARAM_STATUS        0
+#define PARAM_MENU          25 // current time to wait
 
-
+#define STATUS_ONE_SPECTRUM 1
+#define STATUS_KINETIC      2
 
 
 
@@ -150,7 +153,7 @@ void resetParameters() {
   setAndSaveParameter(PARAM_BEFORE_DELAY, 2);
   setAndSaveParameter(PARAM_FIRST_DELAY, 10);
   setAndSaveParameter(PARAM_INTER_DELAY, 20);
-  setAndSaveParameter(PARAM_NUMPER_EXP, 0);
+  setAndSaveParameter(PARAM_NUMPER_EXP, MAX_EXPERIMENTS);
   setAndSaveParameter(PARAM_NEXT_EXP, -1);
   setAndSaveParameter(PARAM_WAIT, 0);
 
