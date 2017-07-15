@@ -13896,19 +13896,19 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
 <part name="R13" library="resistor" deviceset="R-EU_" device="R0805" value="1k"/>
 <part name="X4" library="con-cypressindustries" deviceset="MINI-USB-SCHIELD-" device="32005-201" value="MINI-USB"/>
-<part name="RUSB2" library="resistor" deviceset="R-EU_" device="M1206" value="22"/>
-<part name="RUSB1" library="resistor" deviceset="R-EU_" device="M1206" value="22"/>
-<part name="C10" library="rcl" deviceset="C-EU" device="C1206" value="100nF"/>
+<part name="RUSB2" library="resistor" deviceset="R-EU_" device="M0805" value="22"/>
+<part name="RUSB1" library="resistor" deviceset="R-EU_" device="M0805" value="22"/>
+<part name="C10" library="rcl" deviceset="C-EU" device="C0805" value="100nF"/>
 <part name="32U4" library="adafruit" deviceset="ATMEGA32U4" device="-AU" value="32U4"/>
-<part name="CX2" library="rcl" deviceset="C-EU" device="C1206" value="22pF"/>
-<part name="CX1" library="rcl" deviceset="C-EU" device="C1206" value="22pF"/>
+<part name="CX2" library="rcl" deviceset="C-EU" device="C0805" value="22pF"/>
+<part name="CX1" library="rcl" deviceset="C-EU" device="C0805" value="22pF"/>
 <part name="U$10" library="MyPOW" deviceset="VUSB" device=""/>
 <part name="RK7" library="resistor" deviceset="R-EU_" device="M0805" value="10k"/>
-<part name="C13" library="rcl" deviceset="C-EU" device="C1206" value="100nF"/>
+<part name="C13" library="rcl" deviceset="C-EU" device="C0805" value="100nF"/>
 <part name="X2" library="lpatiny" deviceset="XTAL" device="NX6035" value="8MHz"/>
 <part name="SUPPLY6" library="supply1" deviceset="VCC" device=""/>
 <part name="SUPPLY7" library="supply1" deviceset="VCC" device=""/>
-<part name="C12" library="rcl" deviceset="C-EU" device="C1206" value="100nF"/>
+<part name="C12" library="rcl" deviceset="C-EU" device="C0805" value="100nF"/>
 <part name="LDPW5" library="adafruit" deviceset="LED" device="CHIP-LED0805" value="RED"/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="GND32" library="supply1" deviceset="GND" device=""/>

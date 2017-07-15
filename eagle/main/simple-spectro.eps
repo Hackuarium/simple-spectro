@@ -1,0 +1,206 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Title: EAGLE Drawing /home/lpatiny/git/open-spectro/simple-spectro/eagle/main/simple-spectro.brd
+%%Creator: EAGLE
+%%Pages: 1
+%%BoundingBox: 0 0 287 211
+%%EndComments
+
+% Coordinate transfer:
+
+/EU { 254 div 0.072 mul } def
+/inch { 72 mul } def
+
+% Linestyle:
+
+1 setlinecap
+1 setlinejoin
+
+% Drawing functions:
+
+/l {  % draw a line
+   /lw exch def
+   /y2 exch def
+   /x2 exch def
+   /y1 exch def
+   /x1 exch def
+   newpath
+   x1 EU y1 EU moveto
+   x2 EU y2 EU lineto
+   lw EU setlinewidth
+   stroke
+   } def
+
+/h {  % draw a hole
+   /d  exch def
+   /y  exch def
+   /x  exch def
+   d 0 gt {
+     newpath
+     x EU y EU d 2 div EU 0 360 arc
+     currentgray dup
+     1 exch sub setgray
+     fill
+     setgray
+     } if
+   } def
+
+/b {  % draw a bar
+   /an exch def
+   /y2 exch def
+   /x2 exch def
+   /y1 exch def
+   /x1 exch def
+   /w2 x2 x1 sub 2 div EU def
+   /h2 y2 y1 sub 2 div EU def
+   gsave
+   x1 x2 add 2 div EU y1 y2 add 2 div EU translate
+   an rotate
+   newpath
+   w2     h2     moveto
+   w2 neg h2     lineto
+   w2 neg h2 neg lineto
+   w2     h2 neg lineto
+   closepath
+   fill
+   grestore
+   } def
+
+/c {  % draw a circle
+   /lw exch def
+   /rd exch def
+   /y  exch def
+   /x  exch def
+   newpath
+   lw EU setlinewidth
+   x EU y EU rd EU 0 360 arc
+   stroke
+   } def
+
+/a {  % draw an arc
+   /lc exch def
+   /ae exch def
+   /as exch def
+   /lw exch def
+   /rd exch def
+   /y  exch def
+   /x  exch def
+   lw rd 2 mul gt {
+     /rd rd lw 2 div add 2 div def
+     /lw rd 2 mul def
+     } if
+   currentlinecap currentlinejoin
+   lc setlinecap 0 setlinejoin
+   newpath
+   lw EU setlinewidth
+   x EU y EU rd EU as ae arc
+   stroke
+   setlinejoin setlinecap
+   } def
+
+/p {  % draw a pie
+   /d exch def
+   /y exch def
+   /x exch def
+   newpath
+   x EU y EU d 2 div EU 0 360 arc
+   fill
+   } def
+
+/edge { 0.20710678119 mul } def
+
+/o {  % draw an octagon
+   /an exch def
+   /dy exch def
+   /dx exch def
+   /y  exch def
+   /x  exch def
+   gsave
+   x EU y EU translate
+   an dx dy lt { 90 add /dx dy /dy dx def def } if rotate
+   newpath
+      0 dx 2 div sub EU                    0 dy edge  add EU moveto
+      0 dx dy sub 2 div sub dy edge sub EU 0 dy 2 div add EU lineto
+      0 dx dy sub 2 div add dy edge add EU 0 dy 2 div add EU lineto
+      0 dx 2 div add EU                    0 dy edge  add EU lineto
+      0 dx 2 div add EU                    0 dy edge  sub EU lineto
+      0 dx dy sub 2 div add dy edge add EU 0 dy 2 div sub EU lineto
+      0 dx dy sub 2 div sub dy edge sub EU 0 dy 2 div sub EU lineto
+      0 dx 2 div sub EU                    0 dy edge  sub EU lineto
+   closepath
+   fill
+   grestore
+   } def
+
+10795 741172 10795 4572 4064 l
+10795 4572 1001395 4572 4064 l
+1001395 4572 1001395 741172 4064 l
+1001395 741172 10795 741172 4064 l
+366395 207772 531495 207772 4064 l
+531495 207772 531495 42672 4064 l
+531495 42672 366395 42672 4064 l
+366395 42672 366395 207772 4064 l
+48895 703072 16000 0 c
+38735 703072 59055 703072 254 l
+48895 692912 48895 713232 254 l
+48895 703072 9906 254 c
+48895 703072 4953 254 c
+48895 42672 16000 0 c
+38735 42672 59055 42672 254 l
+48895 32512 48895 52832 254 l
+48895 42672 9906 254 c
+48895 42672 4953 254 c
+963295 703072 16000 0 c
+953135 703072 973455 703072 254 l
+963295 692912 963295 713232 254 l
+963295 703072 9906 254 c
+963295 703072 4953 254 c
+963295 42672 16000 0 c
+953135 42672 973455 42672 254 l
+963295 32512 963295 52832 254 l
+963295 42672 9906 254 c
+963295 42672 4953 254 c
+321945 391922 4445 0 c
+321945 391922 9906 254 c
+311785 381762 332105 402082 254 l
+271145 381762 4445 0 c
+271145 381762 9906 254 c
+260985 371602 281305 391922 254 l
+271145 402082 4445 0 c
+271145 402082 9906 254 c
+260985 391922 281305 412242 254 l
+950595 458372 4500 0 c
+940435 448212 960755 468532 254 l
+960755 468532 940435 468532 254 l
+940435 468532 960755 448212 254 l
+960755 448212 940435 448212 254 l
+950595 414372 4500 0 c
+940435 404212 960755 424532 254 l
+960755 424532 940435 424532 254 l
+940435 424532 960755 404212 254 l
+960755 404212 940435 404212 254 l
+130095 692972 16000 0 c
+119935 692972 140255 692972 254 l
+130095 682812 130095 703132 254 l
+130095 692972 9906 254 c
+130095 692972 4953 254 c
+130095 382972 16000 0 c
+119935 382972 140255 382972 254 l
+130095 372812 130095 393132 254 l
+130095 382972 9906 254 c
+130095 382972 4953 254 c
+882095 382972 16000 0 c
+871935 382972 892255 382972 254 l
+882095 372812 882095 393132 254 l
+882095 382972 9906 254 c
+882095 382972 4953 254 c
+882095 692972 16000 0 c
+871935 692972 892255 692972 254 l
+882095 682812 882095 703132 254 l
+882095 692972 9906 254 c
+882095 692972 4953 254 c
+950595 648772 11800 0 c
+950595 648772 9906 254 c
+940435 638612 960755 658932 254 l
+950595 528772 11800 0 c
+950595 528772 9906 254 c
+940435 518612 960755 538932 254 l
