@@ -2,6 +2,8 @@
 
 #ifdef THR_LCD
 
+long data[MAX_EXPERIMENTS * 6]; // epoch R G B UV1 UV2
+
 #include <LiquidCrystal.h>
 
 #define LCD_E      12
@@ -64,7 +66,7 @@ void lcdMenu() {
   } else {
     noEventCounter = 0;
   }
-  if (noEventCounter > 250) {
+  if (noEventCounter > 250 && getParameter(PARAM_STATUS) == 0) {
     if (currentMenu - currentMenu % 10 != 20) currentMenu = 20;
     captureCounter = false;
     noEventCounter = 0;
@@ -73,7 +75,7 @@ void lcdMenu() {
   rotaryPressed = false;
   int counter = rotaryCounter;
   rotaryCounter = 0;
-  switch (currentMenu - currentMenu % 10) {
+  switch (currentMenu < 100 ? currentMenu - currentMenu % 10 : currentMenu - currentMenu % 50) {
     case 0:
       lcdMenuHome(counter, doAction);
       break;
@@ -89,6 +91,28 @@ void lcdMenu() {
     case 40:
       lcdUtilities(counter, doAction);
       break;
+    case 100:
+      lcdResults(counter, doAction);
+      break;
+  }
+}
+
+void lcdResults(int counter, boolean doAction) {
+  if (doAction) currentMenu = 0;
+   if (noEventCounter < 2) lcd.clear();
+  updateCurrentMenu(counter, MAX_EXPERIMENTS-1, 50);
+  byte start = currentMenu % 50;
+  for (byte i = start; i < min(MAX_EXPERIMENTS, start + LCD_NB_ROWS); i++) {
+    lcd.setCursor(0, i - start);
+    lcd.print(i);
+    lcd.print(" ");
+    lcd.print((data[i * 6] - data[0]) / 1000);
+    lcd.print(" ");
+    if (i == 0) {
+      lcd.print(data[i * 6 + getParameter(PARAM_COLOR)]);
+    } else {
+      lcd.print(data[i * 6 + getParameter(PARAM_COLOR)] - data[getParameter(PARAM_COLOR)]);
+    }
   }
 }
 
@@ -178,18 +202,22 @@ void lcdNumberLine(byte line) {
 }
 
 void updateCurrentMenu(int counter, byte maxValue) {
+  updateCurrentMenu(counter, maxValue, 10);
+}
+
+void updateCurrentMenu(int counter, byte maxValue, byte modulo) {
   if (captureCounter) return;
   if (counter < 0) {
-    currentMenu += max(counter, - currentMenu % 10);
+    currentMenu += max(counter, - currentMenu % modulo);
   } else if (counter > 0) {
-    currentMenu += min(counter, maxValue - currentMenu % 10);
+    currentMenu += min(counter, maxValue - currentMenu % modulo);
   }
 }
 
 void lcdMenuHome(int counter, boolean doAction) {
   if (noEventCounter > 2) return;
   lcd.clear();
-  byte lastMenu = 4;
+  byte lastMenu = 5;
   updateCurrentMenu(counter, lastMenu);
 
   for (byte line = 0; line < LCD_NB_ROWS; line++) {
@@ -198,23 +226,23 @@ void lcdMenuHome(int counter, boolean doAction) {
 
     switch (currentMenu % 10 + line) {
       case 0:
-        lcd.print(F("Status"));
-        if (doAction) {
-          currentMenu = 20;
-        }
-        break;
-      case 1:
         lcd.print(F("Acquire"));
         if (doAction) {
           setParameter(PARAM_STATUS, STATUS_ONE_SPECTRUM);
           setParameter(PARAM_NEXT_EXP, 0);
         }
         break;
-      case 2:
+      case 1:
         lcd.print(F("Kinetic"));
         if (doAction) {
           setParameter(PARAM_STATUS, STATUS_KINETIC);
           setParameter(PARAM_NEXT_EXP, 0);
+        }
+        break;
+      case 2:
+        lcd.print(F("Results"));
+        if (doAction) {
+          currentMenu = 100;
         }
         break;
       case 3:
@@ -224,6 +252,12 @@ void lcdMenuHome(int counter, boolean doAction) {
         }
         break;
       case 4:
+        lcd.print(F("Status"));
+        if (doAction) {
+          currentMenu = 20;
+        }
+        break;
+      case 5:
         lcd.print(F("Utilities"));
         if (doAction) {
           currentMenu = 40;
@@ -271,13 +305,13 @@ void lcdUtilities(int counter, boolean doAction) {
         }
         return;
     }
-      doAction = false;
+    doAction = false;
   }
 }
 
 void lcdMenuSettings(int counter, boolean doAction) {
 
-  byte lastMenu = 4;
+  byte lastMenu = 5;
   if (! captureCounter) updateCurrentMenu(counter, lastMenu);
 
   byte currentParameter = 0;
@@ -314,6 +348,12 @@ void lcdMenuSettings(int counter, boolean doAction) {
       maxValue = MAX_EXPERIMENTS;
       break;
     case 4:
+      lcd.print(F("Result color"));
+      currentParameter = PARAM_COLOR;
+      minValue = 1;
+      maxValue = sizeof(LEDS);
+      break;
+    case 5:
       lcd.print(F("Main menu"));
       if (doAction) {
         currentMenu = 1;

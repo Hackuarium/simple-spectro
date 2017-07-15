@@ -30,7 +30,9 @@
 #define PARAM_NEXT_EXP      14 // next experiment, 0 blank and then for kinetic
 // last experiment: MAX_EXPERIMENTS
 #define PARAM_WAIT          15 // current time to wait
-#define PARAM_STATUS        0
+#define PARAM_COLOR         23 // color used to display the results
+
+#define PARAM_STATUS        24
 #define PARAM_MENU          25 // current time to wait
 
 #define STATUS_ONE_SPECTRUM 1
