@@ -12,7 +12,7 @@
 #define GREEN  A1
 #define BLUE   A2
 #define UV1   A3
-#define UV2   A4
+#define UV2   A4   
 
 byte LEDS[] = {RED, GREEN, BLUE, UV1, UV2};
 

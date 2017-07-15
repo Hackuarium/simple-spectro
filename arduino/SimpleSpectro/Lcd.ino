@@ -6,14 +6,14 @@ long data[MAX_EXPERIMENTS * 6]; // epoch R G B UV1 UV2
 
 #include <LiquidCrystal.h>
 
-#define LCD_E      12
+#define LCD_E      6
 #define LCD_RS     A6
-#define LCD_D4     6
-#define LCD_D5     8
-#define LCD_D6     9
-#define LCD_D7     10
-#define LCD_BL     11    // back light
-#define LCD_VO     13    // contrast (on / off to spare energy)
+#define LCD_D4     8
+#define LCD_D5     9
+#define LCD_D6     10
+#define LCD_D7     5
+#define LCD_BL     13    // back light
+#define LCD_VO     11    // contrast (on / off to spare energy)
 #define LCD_ON     MOSI  // power on LCD
 
 #define LCD_NB_ROWS     2
