@@ -26,11 +26,16 @@ NIL_THREAD(ThreadMonitoring, arg) {
 
 
 NIL_THREADS_TABLE_BEGIN()
+
 NIL_THREADS_TABLE_ENTRY(NULL, ThreadSerial, NULL, waThreadSerial, sizeof(waThreadSerial))
 
 #ifdef THR_LCD
 NIL_THREADS_TABLE_ENTRY(NULL, ThreadLcd, NULL, waThreadLcd, sizeof(waThreadLcd))
 #endif
+
+NIL_THREADS_TABLE_ENTRY(NULL, ThreadAcquisition, NULL, waThreadAcquisition, sizeof(waThreadAcquisition))
+
+
 
 #ifdef THR_MONITORING
 NIL_THREADS_TABLE_ENTRY(NULL, ThreadMonitoring, NULL, waThreadMonitoring, sizeof(waThreadMonitoring))                           

@@ -1,14 +1,12 @@
 void processSpecificCommand(char* data, char* paramValue, Print* output) {
-  
+
   switch (data[0]) {
     case 'k':
-      runKinetic();
+      setParameter(PARAM_NEXT_EXP, 0);
       break;
-    
     case 'r':
-      runExperiment();
+      setParameter(PARAM_NEXT_EXP, 0);
       break;
-
     case 't':
       testRGB();
       break;

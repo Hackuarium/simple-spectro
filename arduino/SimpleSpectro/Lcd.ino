@@ -44,7 +44,6 @@ NIL_THREAD(ThreadLcd, arg) {
   nilThdSleepMilliseconds(10);
   lcd.begin(LCD_NB_COLUMNS, LCD_NB_ROWS);
 
-
   while (true) {
     lcdMenu();
     nilThdSleepMilliseconds(40);
@@ -53,7 +52,13 @@ NIL_THREAD(ThreadLcd, arg) {
 
 
 byte noEventCounter = 0;
+byte previousMenu = 0;
+
 void lcdMenu() {
+  if (previousMenu != currentMenu) { // this is used to clear screen from external process for example
+    noEventCounter = 0;
+    previousMenu = currentMenu;
+  }
   if (rotaryCounter == 0 && ! rotaryPressed) {
     if (noEventCounter < 255) noEventCounter++;
   } else {
@@ -68,7 +73,6 @@ void lcdMenu() {
   rotaryPressed = false;
   int counter = rotaryCounter;
   rotaryCounter = 0;
-
 
   switch (currentMenu - currentMenu % 10) {
     case 0:
@@ -131,23 +135,17 @@ void lcdAcquisition(int counter, boolean doAction) {
     case 0:
       lcd.setCursor(0, 0);
       lcd.print(F("Waiting blank"));
-      lcd.setCursor(0, 1);
-      lcd.print(getParameter(PARAM_WAIT));
-      lcd.print(" s");
+      lcdWait();
       break;
     case 1:
       lcd.setCursor(0, 0);
       lcd.print(F("Waiting exp."));
-      lcd.setCursor(0, 1);
-      lcd.print(getParameter(PARAM_WAIT));
-      lcd.print(" s");
+      lcdWait();
       break;
     case 2:
       lcd.setCursor(0, 0);
       lcd.print(F("Waiting next"));
-      lcd.setCursor(0, 1);
-      lcd.print(getParameter(PARAM_WAIT));
-      lcd.print(" s");
+      lcdWait();
       break;
     case 3:
       lcd.setCursor(0, 0);
@@ -165,6 +163,11 @@ void lcdAcquisition(int counter, boolean doAction) {
   }
 }
 
+void lcdWait() {
+  lcd.setCursor(0, 1);
+  lcd.print(getParameter(PARAM_WAIT));
+  lcd.print(" s ");
+}
 
 
 void lcdNumberLine(byte line) {
@@ -211,7 +214,7 @@ void lcdMenuHome(int counter, boolean doAction) {
       case 2:
         lcd.print(F("Acquire"));
         if (doAction) {
-          runExperiment();
+          setParameter(PARAM_NEXT_EXP, 0);
         }
         break;
       case 3:
@@ -240,43 +243,43 @@ void lcdMenuHome(int counter, boolean doAction) {
 
 void lcdMenuSettings(int counter, boolean doAction) {
 
-  byte lastMenu = 6;
+  byte lastMenu = 4;
   if (! captureCounter) updateCurrentMenu(counter, lastMenu);
 
   byte currentParameter = 0;
   float currentFactor = 1;
   char currentUnit[5] = "\0";
+  int maxValue = 32767;
+  int minValue = -32768;
 
   lcd.clear();
 
   switch (currentMenu % 10) {
     case 0:
-      lcd.print(F("Param A"));
-      currentParameter = 0;
-      currentFactor = 1;
-      strcpy(currentUnit, "\337C\0"); // 337 is in octal (0xDF) !!!
+      lcd.print(F("Before delay"));
+      currentParameter = PARAM_BEFORE_DELAY;
+      minValue = 0;
+      strcpy(currentUnit, "s\0");
       break;
     case 1:
-      lcd.print(F("Param B"));
-      currentParameter = 1;
-      currentFactor = 10;
-      strcpy(currentUnit, "mmHg\0");
+      lcd.print(F("First delay"));
+      currentParameter = PARAM_FIRST_DELAY;
+      minValue = 0;
+      strcpy(currentUnit, "s\0");
       break;
     case 2:
-      lcd.print(F("Param C"));
-      currentParameter = 2;
-      currentFactor = 0.1;
+      lcd.print(F("Inter exp. delay"));
+      currentParameter = PARAM_INTER_DELAY;
+      minValue = 0;
+      strcpy(currentUnit, "s\0");
       break;
     case 3:
-      lcd.print(F("Param D"));
+      lcd.print(F("Number exp."));
+      currentParameter = PARAM_NUMPER_EXP;
+      minValue = 1;
+      maxValue = MAX_EXPERIMENTS;
       break;
     case 4:
-      lcd.print(F("Param E"));
-      break;
-    case 5:
-      lcd.print(F("Param F"));
-      break;
-    case 6:
       lcd.print(F("Main menu"));
       if (doAction) {
         currentMenu = 1;
@@ -291,7 +294,8 @@ void lcdMenuSettings(int counter, boolean doAction) {
     }
   }
   if (captureCounter) {
-    setParameter(currentParameter, getParameter(currentParameter) + counter);
+    int newValue = getParameter(currentParameter) + counter;
+    setParameter(currentParameter, max(min(maxValue, newValue), minValue));
   }
 
   lcd.setCursor(0, 1);
@@ -300,7 +304,11 @@ void lcdMenuSettings(int counter, boolean doAction) {
   } else {
     lcd.print(" ");
   }
-  lcd.print(((float)getParameter(currentParameter))*currentFactor);
+  if (currentFactor == 1) {
+    lcd.print((getParameter(currentParameter)));
+  } else {
+    lcd.print(((float)getParameter(currentParameter))*currentFactor);
+  }
   lcd.print(" ");
   lcd.print(currentUnit);
 }
