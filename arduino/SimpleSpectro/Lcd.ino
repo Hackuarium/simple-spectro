@@ -99,8 +99,8 @@ void lcdMenu() {
 
 void lcdResults(int counter, boolean doAction) {
   if (doAction) currentMenu = 0;
-   if (noEventCounter < 2) lcd.clear();
-  updateCurrentMenu(counter, MAX_EXPERIMENTS-1, 50);
+  if (noEventCounter < 2) lcd.clear();
+  updateCurrentMenu(counter, MAX_EXPERIMENTS - 1, 50);
   byte start = currentMenu % 50;
   for (byte i = start; i < min(MAX_EXPERIMENTS, start + LCD_NB_ROWS); i++) {
     lcd.setCursor(0, i - start);
@@ -226,11 +226,19 @@ void lcdMenuHome(int counter, boolean doAction) {
 
     switch (currentMenu % 10 + line) {
       case 0:
-        lcd.print(F("Acquire"));
-        if (doAction) {
-          setParameter(PARAM_STATUS, STATUS_ONE_SPECTRUM);
-          setParameter(PARAM_NEXT_EXP, 0);
+        if (getParameter(PARAM_NEXT_EXP) >= 0) {
+          lcd.print(F("Stop acquis."));
+          if (doAction) {
+            setParameter(PARAM_NEXT_EXP, -1);
+          }
+        } else {
+          lcd.print(F("Acquire"));
+          if (doAction) {
+            setParameter(PARAM_STATUS, STATUS_ONE_SPECTRUM);
+            setParameter(PARAM_NEXT_EXP, 0);
+          }
         }
+
         break;
       case 1:
         lcd.print(F("Kinetic"));
