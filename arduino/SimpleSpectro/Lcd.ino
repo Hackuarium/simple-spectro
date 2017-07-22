@@ -28,7 +28,6 @@ LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 boolean rotaryPressed = false;
 int rotaryCounter = 0;
-int currentMenu = 0;
 boolean captureCounter = false; // use when you need to setup a parameter from the menu
 long lastRotaryEvent = millis();
 
@@ -46,6 +45,8 @@ NIL_THREAD(ThreadLcd, arg) {
   nilThdSleepMilliseconds(10);
   lcd.begin(LCD_NB_COLUMNS, LCD_NB_ROWS);
 
+  setParameter(PARAM_MENU, 0);
+
   while (true) {
     lcdMenu();
     nilThdSleepMilliseconds(40);
@@ -57,6 +58,7 @@ byte noEventCounter = 0;
 byte previousMenu = 0;
 
 void lcdMenu() {
+  byte currentMenu = getParameter(PARAM_MENU);
   if (previousMenu != currentMenu) { // this is used to clear screen from external process for example
     noEventCounter = 0;
     previousMenu = currentMenu;
@@ -98,10 +100,10 @@ void lcdMenu() {
 }
 
 void lcdResults(int counter, boolean doAction) {
-  if (doAction) currentMenu = 0;
+  if (doAction) setParameter(PARAM_MENU, 0);
   if (noEventCounter < 2) lcd.clear();
   updateCurrentMenu(counter, MAX_EXPERIMENTS - 1, 50);
-  byte start = currentMenu % 50;
+  byte start = getParameter(PARAM_MENU) % 50;
   for (byte i = start; i < min(MAX_EXPERIMENTS, start + LCD_NB_ROWS); i++) {
     lcd.setCursor(0, i - start);
     lcd.print(i);
@@ -117,10 +119,10 @@ void lcdResults(int counter, boolean doAction) {
 }
 
 void lcdDefault(int counter, boolean doAction) {
-  if (doAction) currentMenu = 0;
+  if (doAction) setParameter(PARAM_MENU, 0);
   updateCurrentMenu(counter, 2);
   if (noEventCounter < 2) lcd.clear();
-  switch (currentMenu % 10) {
+  switch (getParameter(PARAM_MENU) % 10) {
     case 0:
       lcd.setCursor(0, 0);
       lcd.print("R:");
@@ -155,9 +157,9 @@ void lcdDefault(int counter, boolean doAction) {
 }
 
 void lcdAcquisition(int counter, boolean doAction) {
-  if (doAction) currentMenu = 0;
+  if (doAction) setParameter(PARAM_MENU, 0);
   if (noEventCounter < 2) lcd.clear();
-  switch (currentMenu % 10) {
+  switch (getParameter(PARAM_MENU) % 10) {
     case 0:
       lcd.setCursor(0, 0);
       lcd.print(F("Waiting blank"));
@@ -193,7 +195,7 @@ void lcdWait() {
 
 
 void lcdNumberLine(byte line) {
-  lcd.print(currentMenu % 10 + line + 1);
+  lcd.print(getParameter(PARAM_MENU) % 10 + line + 1);
   if (line == 0) {
     lcd.print(".*");
   } else {
@@ -206,11 +208,12 @@ void updateCurrentMenu(int counter, byte maxValue) {
 }
 
 void updateCurrentMenu(int counter, byte maxValue, byte modulo) {
+  byte currentMenu = getParameter(PARAM_MENU);
   if (captureCounter) return;
   if (counter < 0) {
-    currentMenu += max(counter, - currentMenu % modulo);
+    setParameter(PARAM_MENU, currentMenu + max(counter, - currentMenu % modulo));
   } else if (counter > 0) {
-    currentMenu += min(counter, maxValue - currentMenu % modulo);
+    setParameter(PARAM_MENU, currentMenu + min(counter, maxValue - currentMenu % modulo));
   }
 }
 
@@ -222,9 +225,9 @@ void lcdMenuHome(int counter, boolean doAction) {
 
   for (byte line = 0; line < LCD_NB_ROWS; line++) {
     lcd.setCursor(0, line);
-    if ( currentMenu % 10 + line <= lastMenu) lcdNumberLine(line);
+    if ( getParameter(PARAM_MENU) % 10 + line <= lastMenu) lcdNumberLine(line);
 
-    switch (currentMenu % 10 + line) {
+    switch (getParameter(PARAM_MENU) % 10 + line) {
       case 0:
         if (getParameter(PARAM_NEXT_EXP) >= 0) {
           lcd.print(F("Stop acquis."));
@@ -250,25 +253,25 @@ void lcdMenuHome(int counter, boolean doAction) {
       case 2:
         lcd.print(F("Results"));
         if (doAction) {
-          currentMenu = 100;
+          setParameter(PARAM_MENU, 100);
         }
         break;
       case 3:
         lcd.print(F("Settings"));
         if (doAction) {
-          currentMenu = 10;
+          setParameter(PARAM_MENU, 10);
         }
         break;
       case 4:
         lcd.print(F("Status"));
         if (doAction) {
-          currentMenu = 20;
+          setParameter(PARAM_MENU, 20);
         }
         break;
       case 5:
         lcd.print(F("Utilities"));
         if (doAction) {
-          currentMenu = 40;
+          setParameter(PARAM_MENU, 40);
         }
         break;
     }
@@ -284,9 +287,9 @@ void lcdUtilities(int counter, boolean doAction) {
 
   for (byte line = 0; line < LCD_NB_ROWS; line++) {
     lcd.setCursor(0, line);
-    if ( currentMenu % 10 + line <= lastMenu) lcdNumberLine(line);
+    if ( getParameter(PARAM_MENU) % 10 + line <= lastMenu) lcdNumberLine(line);
 
-    switch (currentMenu % 10 + line) {
+    switch (getParameter(PARAM_MENU) % 10 + line) {
       case 0:
         lcd.print(F("Backlight"));
         if (doAction) {
@@ -303,13 +306,13 @@ void lcdUtilities(int counter, boolean doAction) {
         lcd.print(F("Reset"));
         if (doAction) {
           resetParameters();
-          currentMenu = 20;
+          setParameter(PARAM_MENU, 20);
         }
         break;
       case 3:
         lcd.print(F("Main menu"));
         if (doAction) {
-          currentMenu = 1;
+          setParameter(PARAM_MENU, 1);
         }
         return;
     }
@@ -330,7 +333,7 @@ void lcdMenuSettings(int counter, boolean doAction) {
 
   lcd.clear();
 
-  switch (currentMenu % 10) {
+  switch (getParameter(PARAM_MENU) % 10) {
     case 0:
       lcd.print(F("Before delay"));
       currentParameter = PARAM_BEFORE_DELAY;
@@ -364,7 +367,7 @@ void lcdMenuSettings(int counter, boolean doAction) {
     case 5:
       lcd.print(F("Main menu"));
       if (doAction) {
-        currentMenu = 1;
+        setParameter(PARAM_MENU, 1);
       }
       return;
   }
@@ -437,9 +440,10 @@ boolean rotaryMayPress = true; // be sure to go through release. Seems to allow 
 void eventRotaryPressed() {
   byte state = digitalRead(ROT_PUSH);
   if (state == 0) {
-    if (rotaryMayPress) {
+    if (rotaryMayPress && ((millis()-lastRotaryEvent)>200)) {
       rotaryPressed = true;
       rotaryMayPress = false;
+      lastRotaryEvent = millis();
     }
   } else {
     rotaryMayPress = true;

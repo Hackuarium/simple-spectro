@@ -35,10 +35,10 @@ void waitExperiment() {
   long wait = 0;
   if (getParameter(PARAM_NEXT_EXP) == 0) {
     wait = getParameter(PARAM_BEFORE_DELAY);
-    currentMenu = 30;
+      setParameter(PARAM_MENU, 30);
   } else if (getParameter(PARAM_NEXT_EXP) > 1) {
     wait = getParameter(PARAM_INTER_DELAY);
-    currentMenu = 31;
+     setParameter(PARAM_MENU, 31);
   }
 
   long timeEnd = millis() + wait * 1000;
@@ -61,7 +61,7 @@ void runExperiment(byte nbExperiments) {
     if (getParameter(PARAM_NEXT_EXP)<0) return;
     if (i > 0) calculateResult(i);
   }
-  currentMenu = 20;
+   setParameter(PARAM_MENU, 20);
   setParameter(PARAM_STATUS, 0);
   setParameter(PARAM_NEXT_EXP, -1);
 
@@ -75,7 +75,7 @@ void calculateResult(byte experimentNumber) {
 }
 
 void acquire() {
-  currentMenu = 32;
+    setParameter(PARAM_MENU, 32);
   byte target = getParameter(PARAM_NEXT_EXP) * 6;
   if (target < 0) return;
   data[target] = millis();
