@@ -33,7 +33,7 @@
 #define PARAM_COLOR         23 // color used to display the results
 
 #define PARAM_STATUS        24
-#define PARAM_MENU          25 // current time to wait
+#define PARAM_MENU          25 // current menu
 
 #define STATUS_ONE_SPECTRUM 1
 #define STATUS_KINETIC      2
