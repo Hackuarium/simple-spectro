@@ -149,7 +149,7 @@ void lcdDefault(int counter, boolean doAction) {
     case 2:
       lcd.setCursor(0, 0);
       epochToString(now(), &lcd);
-      lcd.setCursor(8, 1);
+      lcd.setCursor(6, 1);
       lcd.print("s:");
       lcd.print(millis() / 1000);
       break;
