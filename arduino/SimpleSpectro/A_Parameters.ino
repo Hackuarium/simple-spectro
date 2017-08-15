@@ -21,6 +21,11 @@
 #define PARAM_B           2
 #define PARAM_UV1         3
 #define PARAM_UV2         4
+#define PARAM_BLANK_R     5
+#define PARAM_BLANK_G     6
+#define PARAM_BLANK_B     7
+#define PARAM_BLANK_UV1   8
+#define PARAM_BLANK_UV2   9
 
 
 #define PARAM_BEFORE_DELAY  10  // delay before taking blank
@@ -158,6 +163,7 @@ void resetParameters() {
   setAndSaveParameter(PARAM_NUMPER_EXP, MAX_EXPERIMENTS);
   setAndSaveParameter(PARAM_NEXT_EXP, -1);
   setAndSaveParameter(PARAM_WAIT, 0);
+  setAndSaveParameter(PARAM_COLOR, 0);
 
   setQualifier(21313);
 }

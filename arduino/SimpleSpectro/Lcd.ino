@@ -120,31 +120,53 @@ void lcdResults(int counter, boolean doAction) {
 
 void lcdDefault(int counter, boolean doAction) {
   if (doAction) setParameter(PARAM_MENU, 0);
+  updateCurrentMenu(counter, 6);
+  if (noEventCounter < 2) lcd.clear();
+  byte menu = getParameter(PARAM_MENU) % 10;
+  if (menu < 5) {
+    lcd.setCursor(0, 0);
+    lcdPrintColor(menu);
+    lcd.setCursor(0, 1);
+    lcd.print(F("Absorb."));
+    lcd.setCursor(8, 1);
+    lcd.print(log10(getParameter(menu + 5) / getParameter(menu)));
+    lcdPrintBlank(2);
+  } else {
+    lcd.setCursor(0, 0);
+    epochToString(now(), &lcd);
+    lcd.setCursor(6, 1);
+    lcd.print("s:");
+    lcd.print(millis() / 1000);
+  }
+}
+
+void lcdDefaultGlobal(int counter, boolean doAction) {
+  if (doAction) setParameter(PARAM_MENU, 0);
   updateCurrentMenu(counter, 2);
   if (noEventCounter < 2) lcd.clear();
   switch (getParameter(PARAM_MENU) % 10) {
     case 0:
       lcd.setCursor(0, 0);
       lcd.print("R:");
-      lcd.print(getParameter(PARAM_R));
+      lcd.print(getParameter(PARAM_R) - getParameter(PARAM_BLANK_R));
       lcdPrintBlank(2);
       lcd.setCursor(8, 0);
       lcd.print("G:");
-      lcd.print(getParameter(PARAM_G));
+      lcd.print(getParameter(PARAM_G) - getParameter(PARAM_BLANK_G));
       lcdPrintBlank(2);
       lcd.setCursor(0, 1);
       lcd.print("B:");
-      lcd.print(getParameter(PARAM_B));
+      lcd.print(getParameter(PARAM_B) - getParameter(PARAM_BLANK_B));
       lcdPrintBlank(2);
       break;
     case 1:
       lcd.setCursor(0, 0);
       lcd.print("UV 1: ");
-      lcd.print(getParameter(PARAM_UV1));
+      lcd.print(getParameter(PARAM_UV1) - getParameter(PARAM_BLANK_UV1));
       lcdPrintBlank(2);
       lcd.setCursor(0, 1);
       lcd.print("UV 2: ");
-      lcd.print(getParameter(PARAM_UV2));
+      lcd.print(getParameter(PARAM_UV2) - getParameter(PARAM_BLANK_UV2));
       break;
     case 2:
       lcd.setCursor(0, 0);
@@ -241,7 +263,6 @@ void lcdMenuHome(int counter, boolean doAction) {
             setParameter(PARAM_NEXT_EXP, 0);
           }
         }
-
         break;
       case 1:
         lcd.print(F("Kinetic"));
@@ -317,6 +338,26 @@ void lcdUtilities(int counter, boolean doAction) {
         return;
     }
     doAction = false;
+  }
+}
+
+void lcdPrintColor(byte color) {
+  switch (color) {
+    case 0:
+      lcd.print("Red");
+      break;
+    case 1:
+      lcd.print("Green");
+      break;
+    case 2:
+      lcd.print("Blue");
+      break;
+    case 3:
+      lcd.print("UV1");
+      break;
+    case 4:
+      lcd.print("UV2");
+      break;
   }
 }
 
@@ -440,7 +481,7 @@ boolean rotaryMayPress = true; // be sure to go through release. Seems to allow 
 void eventRotaryPressed() {
   byte state = digitalRead(ROT_PUSH);
   if (state == 0) {
-    if (rotaryMayPress && ((millis()-lastRotaryEvent)>200)) {
+    if (rotaryMayPress && ((millis() - lastRotaryEvent) > 200)) {
       rotaryPressed = true;
       rotaryMayPress = false;
       lastRotaryEvent = millis();
