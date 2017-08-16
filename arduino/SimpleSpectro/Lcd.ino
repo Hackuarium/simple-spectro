@@ -102,18 +102,21 @@ void lcdMenu() {
 void lcdResults(int counter, boolean doAction) {
   if (doAction) setParameter(PARAM_MENU, 0);
   if (noEventCounter < 2) lcd.clear();
-  updateCurrentMenu(counter, MAX_EXPERIMENTS - 1, 50);
+
+byte lastExperiment;
+  for (lastExperiment; lastExperiment < MAX_EXPERIMENTS; lastExperiment++) {
+    if (data[lastExperiment * 6] < data[0]) break;
+  }
+
+  updateCurrentMenu(counter, lastExperiment - 1, 50);
   byte start = getParameter(PARAM_MENU) % 50;
-  for (byte i = start; i < min(MAX_EXPERIMENTS, start + LCD_NB_ROWS); i++) {
+  for (byte i = start; i < min(lastExperiment, start + LCD_NB_ROWS); i++) {
     lcd.setCursor(0, i - start);
-    lcd.print(i);
-    lcd.print(" ");
+    //  lcd.print(i);
+    //  lcd.print(" ");
     lcd.print((data[i * 6] - data[0]) / 1000);
     lcd.print(" ");
-    lcd.print(log10(data[getParameter(PARAM_COLOR)]/data[i * 6 + getParameter(PARAM_COLOR)]));
-
-  lcd.print(log10(getParameter(menu + 5) / getParameter(menu)));
-    
+    lcd.print(log10(data[getParameter(PARAM_COLOR)] / data[i * 6 + getParameter(PARAM_COLOR)]));
     lcd.print(" ");
     lcd.print(data[i * 6 + getParameter(PARAM_COLOR)]);
     lcdPrintBlank(6);
