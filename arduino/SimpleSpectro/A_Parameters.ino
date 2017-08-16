@@ -163,7 +163,7 @@ void resetParameters() {
   setAndSaveParameter(PARAM_NUMPER_EXP, MAX_EXPERIMENTS);
   setAndSaveParameter(PARAM_NEXT_EXP, -1);
   setAndSaveParameter(PARAM_WAIT, 0);
-  setAndSaveParameter(PARAM_COLOR, 0);
+  setAndSaveParameter(PARAM_COLOR, 1);
 
   setQualifier(21313);
 }

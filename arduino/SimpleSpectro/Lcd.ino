@@ -33,7 +33,7 @@ long lastRotaryEvent = millis();
 
 
 
-NIL_WORKING_AREA(waThreadLcd, 128);
+NIL_WORKING_AREA(waThreadLcd, 192);
 NIL_THREAD(ThreadLcd, arg) {
   // initialize the library with the numbers of the interface pins
 
@@ -110,11 +110,13 @@ void lcdResults(int counter, boolean doAction) {
     lcd.print(" ");
     lcd.print((data[i * 6] - data[0]) / 1000);
     lcd.print(" ");
-    if (i == 0) {
-      lcd.print(data[i * 6 + getParameter(PARAM_COLOR)]);
-    } else {
-      lcd.print(data[i * 6 + getParameter(PARAM_COLOR)] - data[getParameter(PARAM_COLOR)]);
-    }
+    lcd.print(log10(data[getParameter(PARAM_COLOR)]/data[i * 6 + getParameter(PARAM_COLOR)]));
+
+  lcd.print(log10(getParameter(menu + 5) / getParameter(menu)));
+    
+    lcd.print(" ");
+    lcd.print(data[i * 6 + getParameter(PARAM_COLOR)]);
+    lcdPrintBlank(6);
   }
 }
 
@@ -140,7 +142,7 @@ void lcdDefault(int counter, boolean doAction) {
   }
 }
 
-void lcdDefaultGlobal(int counter, boolean doAction) {
+void lcdDefaultExact(int counter, boolean doAction) {
   if (doAction) setParameter(PARAM_MENU, 0);
   updateCurrentMenu(counter, 2);
   if (noEventCounter < 2) lcd.clear();
@@ -148,25 +150,25 @@ void lcdDefaultGlobal(int counter, boolean doAction) {
     case 0:
       lcd.setCursor(0, 0);
       lcd.print("R:");
-      lcd.print(getParameter(PARAM_R) - getParameter(PARAM_BLANK_R));
+      lcd.print(getParameter(PARAM_BLANK_R) - getParameter(PARAM_R));
       lcdPrintBlank(2);
       lcd.setCursor(8, 0);
       lcd.print("G:");
-      lcd.print(getParameter(PARAM_G) - getParameter(PARAM_BLANK_G));
+      lcd.print(getParameter(PARAM_BLANK_G) - getParameter(PARAM_G));
       lcdPrintBlank(2);
       lcd.setCursor(0, 1);
       lcd.print("B:");
-      lcd.print(getParameter(PARAM_B) - getParameter(PARAM_BLANK_B));
+      lcd.print(getParameter(PARAM_BLANK_B) - getParameter(PARAM_B));
       lcdPrintBlank(2);
       break;
     case 1:
       lcd.setCursor(0, 0);
       lcd.print("UV 1: ");
-      lcd.print(getParameter(PARAM_UV1) - getParameter(PARAM_BLANK_UV1));
+      lcd.print(getParameter(PARAM_BLANK_UV1) - getParameter(PARAM_UV1));
       lcdPrintBlank(2);
       lcd.setCursor(0, 1);
       lcd.print("UV 2: ");
-      lcd.print(getParameter(PARAM_UV2) - getParameter(PARAM_BLANK_UV2));
+      lcd.print(getParameter(PARAM_BLANK_UV2) - getParameter(PARAM_UV2));
       break;
     case 2:
       lcd.setCursor(0, 0);
@@ -455,16 +457,19 @@ void setupRotary() {
 }
 
 boolean accelerationMode = false;
+int lastIncrement = 0;
 
 void eventRotaryA() {
   int increment = digitalRead(ROT_B) * 2 - 1;
   long current = millis();
   long diff = current - lastRotaryEvent;
+  if (lastIncrement != increment && diff < 100) return;
+  lastIncrement = increment;
   lastRotaryEvent = current;
-  if (diff < 15) return;
-  if (diff < 50) {
+  if (diff < 5) return;
+  if (diff < 30) {
     if (accelerationMode) {
-      rotaryCounter -= (increment * 5);
+      rotaryCounter -= (increment * 20);
     } else {
       accelerationMode = true;
       rotaryCounter -= increment;
