@@ -103,9 +103,10 @@ void lcdResults(int counter, boolean doAction) {
   if (doAction) setParameter(PARAM_MENU, 0);
   if (noEventCounter < 2) lcd.clear();
 
-byte lastExperiment;
+// calculate the last experiment based on epoch of each experiment
+  byte lastExperiment;
   for (lastExperiment; lastExperiment < MAX_EXPERIMENTS; lastExperiment++) {
-    if (data[lastExperiment * 6] < data[0]) break;
+    if (data[lastExperiment * 6] <= data[0]) break;
   }
 
   updateCurrentMenu(counter, lastExperiment - 1, 50);
