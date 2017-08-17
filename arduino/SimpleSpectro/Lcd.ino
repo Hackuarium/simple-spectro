@@ -103,7 +103,7 @@ void lcdResults(int counter, boolean doAction) {
   if (doAction) setParameter(PARAM_MENU, 0);
   if (noEventCounter < 2) lcd.clear();
 
-// calculate the last experiment based on epoch of each experiment
+  // calculate the last experiment based on epoch of each experiment
   byte lastExperiment;
   for (lastExperiment; lastExperiment < MAX_EXPERIMENTS; lastExperiment++) {
     if (data[lastExperiment * 6] <= data[0]) break;
@@ -436,13 +436,19 @@ void lcdMenuSettings(int counter, boolean doAction) {
   } else {
     lcd.print(" ");
   }
-  if (currentFactor == 1) {
-    lcd.print((getParameter(currentParameter)));
-  } else {
-    lcd.print(((float)getParameter(currentParameter))*currentFactor);
+  switch (getParameter(PARAM_MENU) % 10) {
+    case 4: //
+      lcdPrintColor(getParameter(currentParameter) - 1);
+      break;
+    default:
+      if (currentFactor == 1) {
+        lcd.print((getParameter(currentParameter)));
+      } else {
+        lcd.print(((float)getParameter(currentParameter))*currentFactor);
+      }
+      lcd.print(" ");
+      lcd.print(currentUnit);
   }
-  lcd.print(" ");
-  lcd.print(currentUnit);
 }
 
 void lcdPrintBlank(byte number) {
