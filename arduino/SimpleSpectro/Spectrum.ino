@@ -87,7 +87,7 @@ void acquire() {
   for (byte i = 0; i < sizeof(LEDS); i++) {
     pinMode(LEDS[i], OUTPUT);
     data[target + i + 1] = 0;
-    for (byte j = 0; j < 10; j++) {
+    for (byte j = 0; j <  getParameter(PARAM_NUMBER_ACQ); j++) {
       digitalWrite(LEDS[i], HIGH);
       FreqCount.begin(100);
       nilThdSleepMilliseconds(105);

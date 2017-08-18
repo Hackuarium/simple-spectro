@@ -35,6 +35,7 @@
 #define PARAM_NEXT_EXP      14 // next experiment, 0 blank and then for kinetic
 // last experiment: MAX_EXPERIMENTS
 #define PARAM_WAIT          15 // current time to wait
+#define PARAM_NUMBER_ACQ    16 // number of acquisition of 100ms that will be taken
 #define PARAM_COLOR         23 // color used to display the results
 
 #define PARAM_STATUS        24
@@ -164,6 +165,7 @@ void resetParameters() {
   setAndSaveParameter(PARAM_NEXT_EXP, -1);
   setAndSaveParameter(PARAM_WAIT, 0);
   setAndSaveParameter(PARAM_COLOR, 1);
+  setAndSaveParameter(PARAM_NUMBER_ACQ, 10);
 
   setQualifier(21313);
 }
