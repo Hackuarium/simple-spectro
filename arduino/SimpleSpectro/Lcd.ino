@@ -104,7 +104,7 @@ void lcdResults(int counter, boolean doAction) {
   if (noEventCounter < 2) lcd.clear();
 
   // calculate the last experiment based on epoch of each experiment
-  byte lastExperiment;
+  byte lastExperiment = 1;
   for (lastExperiment; lastExperiment < MAX_EXPERIMENTS; lastExperiment++) {
     if (data[lastExperiment * 6] <= data[0]) break;
   }
@@ -117,7 +117,7 @@ void lcdResults(int counter, boolean doAction) {
     //  lcd.print(" ");
     lcd.print((data[i * 6] - data[0]) / 1000);
     lcd.print(" ");
-    lcd.print(log10(data[getParameter(PARAM_COLOR)] / data[i * 6 + getParameter(PARAM_COLOR)]));
+    lcd.print(log10((double)data[getParameter(PARAM_COLOR)] / (double)data[i * 6 + getParameter(PARAM_COLOR)]));
     lcd.print(" ");
     lcd.print(data[i * 6 + getParameter(PARAM_COLOR)]);
     lcdPrintBlank(6);
@@ -135,7 +135,7 @@ void lcdDefault(int counter, boolean doAction) {
     lcd.setCursor(0, 1);
     lcd.print(F("Absorb."));
     lcd.setCursor(8, 1);
-    lcd.print(log10((double)getParameter(menu + 5) / (double)getParameter(menu)));
+    lcd.print(-log10((double)getParameter(menu + 5) / (double)getParameter(menu)));
     lcdPrintBlank(2);
   } else {
     lcd.setCursor(0, 0);
