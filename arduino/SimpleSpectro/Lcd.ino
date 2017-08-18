@@ -135,7 +135,7 @@ void lcdDefault(int counter, boolean doAction) {
     lcd.setCursor(0, 1);
     lcd.print(F("Absorb."));
     lcd.setCursor(8, 1);
-    lcd.print(-log10((double)getParameter(menu + 5) / (double)getParameter(menu)));
+    lcd.print(log10((double)getParameter(menu + 5) / (double)getParameter(menu)));
     lcdPrintBlank(2);
   } else {
     lcd.setCursor(0, 0);
