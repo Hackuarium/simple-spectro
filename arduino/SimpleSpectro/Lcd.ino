@@ -2,6 +2,35 @@
 
 #ifdef THR_LCD
 
+#define TEXT_ABSORBANCE "Absorb."
+#define TEXT_WAITING_BLANK "Waiting blank"
+#define TEXT_WAITING_EXP "Waiting exp."
+#define TEXT_ACQUIRING "Acquiring"
+#define TEXT_BLANK "Blank"
+#define TEXT_SAMPLE "Sample"
+#define TEXT_KINETIC "Kinetic"
+#define TEXT_STOP "Stop acquis."
+#define TEXT_ACQUIRE "Acquire"
+#define TEXT_ACQ_KINETIC "Acq. kinetic"
+#define TEXT_RESULTS "Results"
+#define TEXT_SETTINGS "Settings"
+#define TEXT_STATUS "Status"
+#define TEXT_UTILITIES "Utilities"
+#define TEXT_BACKLIGHT "Backlight"
+#define TEXT_TEST_LEDS "Test LED"
+#define TEXT_RESET "Reset"
+#define TEXT_MAIN_MENU "Main menu"
+#define TEXT_RED "Red"
+#define TEXT_GREEN "Green"
+#define TEXT_BLUE "Blue"
+#define TEXT_UV1 "UV 1"
+#define TEXT_UV2 "UV 2"
+#define TEXT_BEFORE_DELAY "Before delay"
+#define TEXT_FIRST_DELAY "First delay"
+#define TEXT_INTER_DELAY "Inter exp. delay"
+#define TEXT_NUMBER_EXP "Number exp."
+#define TEXT_RESULT_COLOR "Result color"
+
 long data[MAX_EXPERIMENTS * 6]; // epoch R G B UV1 UV2
 
 #include <LiquidCrystal.h>
@@ -113,8 +142,6 @@ void lcdResults(int counter, boolean doAction) {
   byte start = getParameter(PARAM_MENU) % 50;
   for (byte i = start; i < min(lastExperiment, start + LCD_NB_ROWS); i++) {
     lcd.setCursor(0, i - start);
-    //  lcd.print(i);
-    //  lcd.print(" ");
     lcd.print((data[i * 6] - data[0]) / 1000);
     lcd.print(" ");
     lcd.print(log10((double)data[getParameter(PARAM_COLOR)] / (double)data[i * 6 + getParameter(PARAM_COLOR)]));
@@ -133,7 +160,7 @@ void lcdDefault(int counter, boolean doAction) {
     lcd.setCursor(0, 0);
     lcdPrintColor(menu);
     lcd.setCursor(0, 1);
-    lcd.print(F("Absorb."));
+    lcd.print(F(TEXT_ABSORBANCE));
     lcd.setCursor(8, 1);
     lcd.print(log10((double)getParameter(menu + 5) / (double)getParameter(menu)));
     lcdPrintBlank(2);
@@ -190,25 +217,25 @@ void lcdAcquisition(int counter, boolean doAction) {
   switch (getParameter(PARAM_MENU) % 10) {
     case 0:
       lcd.setCursor(0, 0);
-      lcd.print(F("Waiting blank"));
+      lcd.print(F(TEXT_WAITING_BLANK));
       lcdWait();
       break;
     case 1:
       lcd.setCursor(0, 0);
-      lcd.print(F("Waiting exp. "));
+      lcd.print(F(TEXT_WAITING_EXP));
       lcd.print(getParameter(PARAM_NEXT_EXP));
       lcdWait();
       break;
     case 2:
       lcd.setCursor(0, 0);
-      lcd.print(F("Acquiring"));
+      lcd.print(F(TEXT_ACQUIRING));
       lcd.setCursor(0, 1);
       if (getParameter(PARAM_NEXT_EXP) == 0) {
-        lcd.print(F("Blank"));
+        lcd.print(F(TEXT_BLANK));
       } else if (getParameter(PARAM_NEXT_EXP) == 1) {
-        lcd.print(F("Sample"));
+        lcd.print(F(TEXT_SAMPLE));
       } else if (getParameter(PARAM_NEXT_EXP) > 1) {
-        lcd.print(F("Kinetic "));
+        lcd.print(F(TEXT_KINETIC));
         lcd.print(getParameter(PARAM_NEXT_EXP));
       }
       break;
@@ -258,12 +285,12 @@ void lcdMenuHome(int counter, boolean doAction) {
     switch (getParameter(PARAM_MENU) % 10 + line) {
       case 0:
         if (getParameter(PARAM_NEXT_EXP) >= 0) {
-          lcd.print(F("Stop acquis."));
+          lcd.print(F(TEXT_STOP));
           if (doAction) {
             setParameter(PARAM_NEXT_EXP, -1);
           }
         } else {
-          lcd.print(F("Acquire"));
+          lcd.print(F(TEXT_ACQUIRE));
           if (doAction) {
             setParameter(PARAM_STATUS, STATUS_ONE_SPECTRUM);
             setParameter(PARAM_NEXT_EXP, 0);
@@ -271,32 +298,32 @@ void lcdMenuHome(int counter, boolean doAction) {
         }
         break;
       case 1:
-        lcd.print(F("Kinetic"));
+        lcd.print(F(TEXT_ACQ_KINETIC));
         if (doAction) {
           setParameter(PARAM_STATUS, STATUS_KINETIC);
           setParameter(PARAM_NEXT_EXP, 0);
         }
         break;
       case 2:
-        lcd.print(F("Results"));
+        lcd.print(F(TEXT_RESULTS));
         if (doAction) {
           setParameter(PARAM_MENU, 100);
         }
         break;
       case 3:
-        lcd.print(F("Settings"));
+        lcd.print(F(TEXT_SETTINGS));
         if (doAction) {
           setParameter(PARAM_MENU, 10);
         }
         break;
       case 4:
-        lcd.print(F("Status"));
+        lcd.print(F(TEXT_STATUS));
         if (doAction) {
           setParameter(PARAM_MENU, 20);
         }
         break;
       case 5:
-        lcd.print(F("Utilities"));
+        lcd.print(F(TEXT_UTILITIES));
         if (doAction) {
           setParameter(PARAM_MENU, 40);
         }
@@ -318,26 +345,26 @@ void lcdUtilities(int counter, boolean doAction) {
 
     switch (getParameter(PARAM_MENU) % 10 + line) {
       case 0:
-        lcd.print(F("Backlight"));
+        lcd.print(F(TEXT_BACKLIGHT));
         if (doAction) {
           digitalWrite(LCD_BL, !digitalRead(LCD_BL));
         }
         break;
       case 1:
-        lcd.print(F("Test LED"));
+        lcd.print(F(TEXT_TEST_LEDS));
         if (doAction) {
           testRGB();
         }
         break;
       case 2:
-        lcd.print(F("Reset"));
+        lcd.print(F(TEXT_RESET));
         if (doAction) {
           resetParameters();
           setParameter(PARAM_MENU, 20);
         }
         break;
       case 3:
-        lcd.print(F("Main menu"));
+        lcd.print(F(TEXT_MAIN_MENU));
         if (doAction) {
           setParameter(PARAM_MENU, 1);
         }
@@ -350,19 +377,19 @@ void lcdUtilities(int counter, boolean doAction) {
 void lcdPrintColor(byte color) {
   switch (color) {
     case 0:
-      lcd.print("Red");
+      lcd.print(F(TEXT_RED));
       break;
     case 1:
-      lcd.print("Green");
+      lcd.print(F(TEXT_GREEN));
       break;
     case 2:
-      lcd.print("Blue");
+      lcd.print(TEXT_BLUE);
       break;
     case 3:
-      lcd.print("UV1");
+      lcd.print(TEXT_UV1);
       break;
     case 4:
-      lcd.print("UV2");
+      lcd.print(TEXT_UV2);
       break;
   }
 }
@@ -382,37 +409,37 @@ void lcdMenuSettings(int counter, boolean doAction) {
 
   switch (getParameter(PARAM_MENU) % 10) {
     case 0:
-      lcd.print(F("Before delay"));
+      lcd.print(F(TEXT_BEFORE_DELAY));
       currentParameter = PARAM_BEFORE_DELAY;
       minValue = 0;
       strcpy(currentUnit, "s\0");
       break;
     case 1:
-      lcd.print(F("First delay"));
+      lcd.print(F(TEXT_FIRST_DELAY));
       currentParameter = PARAM_FIRST_DELAY;
       minValue = 0;
       strcpy(currentUnit, "s\0");
       break;
     case 2:
-      lcd.print(F("Inter exp. delay"));
+      lcd.print(F(TEXT_INTER_DELAY));
       currentParameter = PARAM_INTER_DELAY;
       minValue = 0;
       strcpy(currentUnit, "s\0");
       break;
     case 3:
-      lcd.print(F("Number exp."));
+      lcd.print(F(TEXT_NUMBER_EXP));
       currentParameter = PARAM_NUMPER_EXP;
       minValue = 1;
       maxValue = MAX_EXPERIMENTS;
       break;
     case 4:
-      lcd.print(F("Result color"));
+      lcd.print(F(TEXT_RESULT_COLOR));
       currentParameter = PARAM_COLOR;
       minValue = 1;
       maxValue = sizeof(LEDS);
       break;
     case 5:
-      lcd.print(F("Main menu"));
+      lcd.print(F(TEXT_MAIN_MENU));
       if (doAction) {
         setParameter(PARAM_MENU, 1);
       }
