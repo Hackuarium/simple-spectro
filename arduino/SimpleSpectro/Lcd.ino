@@ -2,6 +2,7 @@
 
 #ifdef THR_LCD
 
+#if LANGUAGE == en
 #define TEXT_ABSORBANCE "Absorb."
 #define TEXT_WAITING_BLANK "Waiting blank"
 #define TEXT_WAITING_EXP "Waiting exp."
@@ -30,6 +31,38 @@
 #define TEXT_INTER_DELAY "Inter exp. delay"
 #define TEXT_NUMBER_EXP "Number exp."
 #define TEXT_RESULT_COLOR "Result color"
+#endif
+
+#if LANGUAGE == es
+#define TEXT_ABSORBANCE "Absorb."
+#define TEXT_WAITING_BLANK "Esperando blanco"
+#define TEXT_WAITING_EXP "Esperando exp."
+#define TEXT_ACQUIRING "Adquiriendo"
+#define TEXT_BLANK "Blanco"
+#define TEXT_SAMPLE "Muestra"
+#define TEXT_KINETIC "Cinetica"
+#define TEXT_STOP "Detener"
+#define TEXT_ACQUIRE "Adquiriendo"
+#define TEXT_ACQ_KINETIC "Adq. Cinetica"
+#define TEXT_RESULTS "Resultados"
+#define TEXT_SETTINGS "Ajustes"
+#define TEXT_STATUS "Estado"
+#define TEXT_UTILITIES "Utilidades"
+#define TEXT_BACKLIGHT "Iluminar"
+#define TEXT_TEST_LEDS "prueba de LED"
+#define TEXT_RESET "Reiniciar"
+#define TEXT_MAIN_MENU "Menu"
+#define TEXT_RED "Rojo"
+#define TEXT_GREEN "Verde"
+#define TEXT_BLUE "Azul"
+#define TEXT_UV1 "UV 1"
+#define TEXT_UV2 "UV 2"
+#define TEXT_BEFORE_DELAY "Tiempo inicio"
+#define TEXT_FIRST_DELAY "Primera pausa"
+#define TEXT_INTER_DELAY "Tiempo entre exp"
+#define TEXT_NUMBER_EXP "Numero de exp"
+#define TEXT_RESULT_COLOR "Color"
+#endif
 
 long data[MAX_EXPERIMENTS * 6]; // epoch R G B UV1 UV2
 
