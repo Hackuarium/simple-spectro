@@ -12,7 +12,7 @@ The device is rather cheap if you buy all the component on aliexpress
 (but one) and hav eaccess to a 3D printer. By constructing 10 the price
 per spectrophotometer is around $25.
 
-<img src='images/patent-blue-v.jpg' wuidth=600>
+<img src='images/patent-blue-v.jpg' width=600>
 
 ## Can we do science with this ?
 
