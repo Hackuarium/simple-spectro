@@ -57,7 +57,23 @@ would be a better choice.
 
 ### Using the simple spectrophotometer to teach science
 
+The use of the spectrophotometer is rather simple. Just put a blank, press the button,
+wait 10s and put the sample. The result is displayed on the screen.
+
+[Using the spectrophotometer](https://www.youtube.com/watch?v=ZfckWQn0Nws)
+
 This device allows to understand hor spectrophotometer works and we were
 teaching to group of children and teenager some basic of science
 
 [School in Mondomo (Colombia)](https://www.youtube.com/watch?v=Be6p4-nW06k)
+
+## How to make it ?
+
+The project is composed of 3 parts:
+* the PCB (using eagle)
+* the case (using FreeCAD and 3D printer)
+* the programmation (using Arduino)
+
+## The PCB
+
+<img src='images/pcb-description/pcb-description.001.jpeg' width=600>
