@@ -1,5 +1,7 @@
 #define THR_LCD 1
 
+#define LANGUAGE en
+
 #ifdef THR_LCD
 
 #if LANGUAGE == en
@@ -42,7 +44,7 @@
 #define TEXT_SAMPLE "Muestra"
 #define TEXT_KINETIC "Cinetica"
 #define TEXT_STOP "Detener"
-#define TEXT_ACQUIRE "Adquiriendo"
+#define TEXT_ACQUIRE "Adquirir"
 #define TEXT_ACQ_KINETIC "Adq. Cinetica"
 #define TEXT_RESULTS "Resultados"
 #define TEXT_SETTINGS "Ajustes"
