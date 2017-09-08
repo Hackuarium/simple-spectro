@@ -98,3 +98,16 @@ frequency converter (TSL235R)[https://www.sparkfun.com/datasheets/Sensors/Imagin
 that we buy on (Mouser website)[http://www.mouser.com].
 
 <img src='images/pcb-description/pcb-description.001.jpeg' width=600>
+
+The board is rather straighforward. The only 
+
+
+## The case
+
+The case is done using FreeCAD. This software looks rather complex at first but has the huge
+advantage that all the parameters may be set in an internal spreadsheet. This allows to design
+parametrics boxes that can be easily changed and updated.
+
+We are still improving it a little bit but the top part of the obx is in 'top.stl'
+
+## The software
