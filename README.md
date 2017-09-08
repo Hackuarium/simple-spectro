@@ -38,6 +38,10 @@ to 100mL of water. Not the more accurate method.
 
 ### Escherichia coli
 
+Another feature of the simple spectrophotometer is that it works on a 
+rechargeable battery (for 2 days) and therefore you can measure a kinetic
+even in an incubator.
+
 Optical density (OD) at 600nm is often used in biology to determine the
 biomass increase versus the time. In this experiment we have placed 
 Escherichia coli with cell growing media directly in the spectrophotometer
@@ -51,3 +55,9 @@ This experiment shows clearly the log phase and the stationary phase. But
 the experiment was faster than expected ... an acquisition every 15 minutes
 would be a better choice.
 
+### Using the simple spectrophotometer to teach science
+
+This device allows to understand hor spectrophotometer works and we were
+teaching to group of children and teenager some basic of science
+
+[School in Mondomo (Colombia)](https://www.youtube.com/watch?v=Be6p4-nW06k)
