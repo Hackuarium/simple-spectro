@@ -12,7 +12,7 @@ The device is rather cheap if you buy all the component on aliexpress
 (but one) and hav eaccess to a 3D printer. By constructing 10 the price
 per spectrophotometer is around $25.
 
-<img src='images/patent-blue-v.jpg'>
+<img src='images/patent-blue-v.jpg' wuidth=600>
 
 ## Can we do science with this ?
 
@@ -28,7 +28,7 @@ absorbance of solutions containing different known concentration of
 pattent blue V (E131). A blue pigment that is used in various bleu
 candies.
 
-<img src='images/patent-blue-v-regression.png'>
+<img src='images/patent-blue-v-regression.png' width=400>
 
 The result is rather good knowing that the solutions were simply prepared by
 adding with a 1mL seringe various volume (0 to 2 mL) of a concentrated solution
