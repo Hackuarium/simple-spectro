@@ -23,6 +23,8 @@ component that converts the light energy to frequency and that is linear
 on a range of nearly 10^6. This look really promising that we could
 do something that gives good results.
 
+### Patent blue V
+
 To begin we did a very simple experiment that allows to measure the 
 absorbance of solutions containing different known concentration of
 pattent blue V (E131). A blue pigment that is used in various bleu
@@ -34,8 +36,9 @@ The result is rather good knowing that the solutions were simply prepared by
 adding with a 1mL seringe various volume (0 to 2 mL) of a concentrated solution
 to 100mL of water. Not the more accurate method.
 
+### Escherichia coli
 
-
+<img src='bacteria-growing-preliminary.png'>
 
 
 
