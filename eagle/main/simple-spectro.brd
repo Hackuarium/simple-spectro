@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.3.1">
+<eagle version="8.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -3471,13 +3471,13 @@ design rules under a new name.</description>
 <attribute name="NAME" x="34.2183" y="55.2025375" size="1.778" layer="26" rot="MR180"/>
 <attribute name="VALUE" x="33.05353125" y="47.531809375" size="1.778" layer="28" rot="MR90"/>
 </element>
-<element name="CX2" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" package3d_urn="urn:adsk.eagle:package:26140/1" value="22pF" x="19.685" y="48.26" smashed="yes" rot="MR90">
-<attribute name="NAME" x="20.955" y="46.99" size="1.27" layer="26" rot="MR90"/>
-<attribute name="VALUE" x="17.328715625" y="46.44700625" size="1.27" layer="28" rot="MR90"/>
+<element name="CX2" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" package3d_urn="urn:adsk.eagle:package:26140/1" value="22pF" x="18.415" y="47.625" smashed="yes" rot="MR90">
+<attribute name="NAME" x="19.685" y="46.355" size="1.27" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="16.058715625" y="45.81200625" size="1.27" layer="28" rot="MR90"/>
 </element>
-<element name="CX1" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" package3d_urn="urn:adsk.eagle:package:26140/1" value="22pF" x="19.685" y="53.34" smashed="yes" rot="MR270">
-<attribute name="NAME" x="22.32500625" y="54.61" size="1.27" layer="26" rot="MR270"/>
-<attribute name="VALUE" x="18.4485875" y="55.77928125" size="1.27" layer="28" rot="MR270"/>
+<element name="CX1" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" package3d_urn="urn:adsk.eagle:package:26140/1" value="22pF" x="18.415" y="53.975" smashed="yes" rot="MR270">
+<attribute name="NAME" x="21.05500625" y="55.245" size="1.27" layer="26" rot="MR270"/>
+<attribute name="VALUE" x="17.1785875" y="56.41428125" size="1.27" layer="28" rot="MR270"/>
 </element>
 <element name="RK7" library="rcl" package="M1206" value="10k" x="44.45" y="57.785" rot="MR0"/>
 <element name="C13" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" package3d_urn="urn:adsk.eagle:package:26140/1" value="100nF" x="35.8775" y="39.37" smashed="yes" rot="MR90">
@@ -3689,8 +3689,8 @@ design rules under a new name.</description>
 <wire x1="42.63" y1="54" x2="47.305" y2="54" width="0.4064" layer="16"/>
 <via x="51.435" y="46.355" extent="1-16" drill="0.3048" shape="square"/>
 <via x="47.305" y="54" extent="1-16" drill="0.3048" shape="square"/>
-<wire x1="19.685" y1="54.74" x2="21.59" y2="54.61" width="0.4064" layer="16"/>
-<via x="21.59" y="54.61" extent="1-16" drill="0.3048" shape="square"/>
+<wire x1="18.415" y1="55.375" x2="20.955" y2="55.245" width="0.4064" layer="16"/>
+<via x="20.955" y="55.245" extent="1-16" drill="0.3048" shape="square"/>
 <wire x1="31.03" y1="49.2" x2="29.2227" y2="49.2" width="0.4064" layer="16"/>
 <wire x1="29.2227" y1="49.2" x2="29.2227" y2="49.1998" width="0.4064" layer="16"/>
 <via x="29.2227" y="49.1998" extent="1-16" drill="0.3048" shape="square"/>
@@ -3710,8 +3710,8 @@ design rules under a new name.</description>
 <via x="37.465" y="38.1" extent="1-16" drill="0.6" shape="square"/>
 <contactref element="R6" pad="1"/>
 <contactref element="JP1" pad="2"/>
-<wire x1="19.685" y1="46.86" x2="21.59" y2="46.99" width="0.4064" layer="16"/>
-<via x="21.59" y="46.99" extent="1-16" drill="0.3048" shape="square"/>
+<wire x1="18.415" y1="46.225" x2="20.955" y2="46.355" width="0.4064" layer="16"/>
+<via x="20.955" y="46.355" extent="1-16" drill="0.3048" shape="square"/>
 <wire x1="59.91" y1="64.135" x2="59.69" y2="64.135" width="1.27" layer="16"/>
 <wire x1="59.69" y1="64.135" x2="59.69" y2="66.04" width="1.27" layer="16"/>
 <via x="59.69" y="66.04" extent="1-16" drill="0.7" shape="square"/>
@@ -4072,7 +4072,7 @@ design rules under a new name.</description>
 <wire x1="25.4" y1="48.26" x2="27.94" y2="48.26" width="0.4064" layer="16"/>
 <wire x1="27.94" y1="48.26" x2="27.94" y2="50" width="0.4064" layer="16"/>
 <wire x1="31.03" y1="50" x2="27.94" y2="50" width="0.4064" layer="16"/>
-<wire x1="19.685" y1="49.66" x2="21.59" y2="49.66" width="0.4064" layer="16"/>
+<wire x1="18.415" y1="49.025" x2="21.59" y2="49.66" width="0.4064" layer="16"/>
 <wire x1="21.59" y1="49.66" x2="22.225" y2="49.4" width="0.4064" layer="16"/>
 </signal>
 <signal name="HWB">
@@ -4094,7 +4094,7 @@ design rules under a new name.</description>
 <wire x1="25.4" y1="53.365" x2="22.225" y2="53.365" width="0.4064" layer="16"/>
 <wire x1="22.225" y1="53.365" x2="22.225" y2="52.2" width="0.4064" layer="16"/>
 <wire x1="22.225" y1="52.2" x2="17.78" y2="51.75" width="0" layer="19" extent="1-16"/>
-<wire x1="17.78" y1="51.75" x2="19.685" y2="51.94" width="0" layer="19" extent="16-16"/>
+<wire x1="17.78" y1="51.75" x2="18.415" y2="52.575" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$1">
 <contactref element="32U4" pad="6"/>
