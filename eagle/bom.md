@@ -12,8 +12,8 @@
 | Led             |  GREEN         |  1206     |  1  |
 | Led             |  RED           |  1206     |  2  |
 | Led             |  RGB-COMMON-CATHODE  |  RGB 5mm led  |  1  |
-| Led             |  UV            |  5mm      |  1  |
-| Led             |  UV            |  3mm      |  1  |
+| Led             |  Blue          |  5mm      |  1  |
+| Led             |  Blue / Violet |  3mm      |  1  |
 | Light detector  |  TSL237        |  3x1 2.54mm  |  1  |
 | LiPo charger    |  MCP73831T     |  SOT23-5  |  1  |
 | Microcontroller |  ATMEGA32U4-AU |  TQFP44  |  1  |
