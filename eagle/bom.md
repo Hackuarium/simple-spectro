@@ -1,10 +1,11 @@
 | Kind            |  Value         |  Package  |  Qty  |
-| ----------------|----------------|-----------|-------  |
-| Capacitor       |  100nF         |  1206     |  4  |
-| Capacitor       |  10u           |  1206     |  4  |
-| Capacitor       |  22pF          |  1206     |  2  |
-| Connector       |  BAT           |  2.54mm   |  1  |
-| Crystal         |  8MHz          |  6035     |  1  |
+| ----------------|----------------|-----------|-------|
+| Battery         |  LiPo 4.2v     |           |  1    |
+| Capacitor       |  100nF         |  1206     |  4    |
+| Capacitor       |  10u           |  1206     |  4    |
+| Capacitor       |  22pF          |  1206     |  2    |
+| Connector       |  BAT           |  2.54mm   |  1    |
+| Crystal         |  8MHz          |  6035     |  1    |
 | ICSP            |  ICSP          |  2 x 3, 2.54mm  |  1  |
 | ICSP            |  TINYISP       |  Tag connect  |  1  |
 | Jumper          |  Jumper        |  2.54mm   |  2  |
