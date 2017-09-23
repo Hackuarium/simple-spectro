@@ -74,8 +74,16 @@ void runExperiment(byte nbExperiments) {
 void calculateResult(byte experimentNumber) {
   // we calculate the difference with blank
   for (byte i = 0; i < sizeof(LEDS); i++) {
-    setParameter(i, data[experimentNumber * 6 + i + 1] / 16); // current experiment
-    setParameter(i + sizeof(LEDS), data[i + 1] / 16); // blank
+    if (data[experimentNumber * 6 + i + 1] == LONG_MAX_VALUE) {
+      setParameter(i, INT_MAX_VALUE); // current experiment
+    } else {
+      setParameter(i, data[experimentNumber * 6 + i + 1] / 16); // current experiment
+    }
+    if (data[i + 1] == LONG_MAX_VALUE) {
+      setParameter(i + sizeof(LEDS), INT_MAX_VALUE); // blank
+    } else {
+      setParameter(i + sizeof(LEDS), data[i + 1] / 16); // blank
+    }
   }
 }
 
@@ -91,11 +99,26 @@ void acquire() {
       digitalWrite(LEDS[i], HIGH);
       FreqCount.begin(100);
       nilThdSleepMilliseconds(105);
-      data[target + i + 1] += FreqCount.read();
+      long currentCount = FreqCount.read();
+      data[target + i + 1] += currentCount;
       digitalWrite(LEDS[i], LOW);
+      if (currentCount > 50000) {
+        // there is an error, the frequency was too high for the detector
+        // this means we should either work in a darker environnement (at least close the box)
+        // or that the LED is too strong !
+        data[target + i + 1] = LONG_MAX_VALUE;
+        break;
+      }
       FreqCount.begin(100);
       nilThdSleepMilliseconds(105);
-      data[target + i + 1] -= FreqCount.read();
+      currentCount = FreqCount.read();
+      if (currentCount > 10000) {
+        // there is an error, the frequency was too high without led on
+        // this means we should work in a darker environnement (at least close the box)
+        data[target + i + 1] = LONG_MAX_VALUE;
+        break;
+      }
+      data[target + i + 1] -= currentCount;
       if (getParameter(PARAM_NEXT_EXP) < 0) return;
     }
   }
@@ -104,7 +127,11 @@ void acquire() {
 void printData(Print* output) {
   for (byte i = 0; i < MAX_EXPERIMENTS; i++) {
     for (byte j = 0; j <= sizeof(LEDS); j++) {
-      output->print(data[i * (sizeof(LEDS) + 1) + j]);
+      if (data[i * (sizeof(LEDS) + 1) + j] == LONG_MAX_VALUE) {
+        output->print("OVER");
+      } else {
+        output->print(data[i * (sizeof(LEDS) + 1) + j]);
+      }
       output->print(" ");
     }
     output->println("");

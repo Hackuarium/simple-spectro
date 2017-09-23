@@ -179,7 +179,11 @@ void lcdResults(int counter, boolean doAction) {
     lcd.setCursor(0, i - start);
     lcd.print((data[i * 6] - data[0]) / 1000);
     lcd.print(" ");
-    lcd.print(log10((double)data[getParameter(PARAM_COLOR)] / (double)data[i * 6 + getParameter(PARAM_COLOR)]));
+    if (data[getParameter(PARAM_COLOR)] == LONG_MAX_VALUE || data[i * 6 + getParameter(PARAM_COLOR)] == LONG_MAX_VALUE) {
+      lcd.print(F("OVER"));
+    } else {
+      lcd.print(log10((double)data[getParameter(PARAM_COLOR)] / (double)data[i * 6 + getParameter(PARAM_COLOR)]));
+    }
     lcd.print(" ");
     lcd.print(data[i * 6 + getParameter(PARAM_COLOR)]);
     lcdPrintBlank(6);
@@ -197,7 +201,11 @@ void lcdDefault(int counter, boolean doAction) {
     lcd.setCursor(0, 1);
     lcd.print(F(TEXT_ABSORBANCE));
     lcd.setCursor(8, 1);
-    lcd.print(log10((double)getParameter(menu + 5) / (double)getParameter(menu)));
+    if (getParameter(menu + 5) == INT_MAX_VALUE || getParameter(menu) == INT_MAX_VALUE) {
+      lcd.print(F("OVER"));
+    } else {
+      lcd.print(log10((double)getParameter(menu + 5) / (double)getParameter(menu)));
+    }
     lcdPrintBlank(2);
   } else {
     lcd.setCursor(0, 0);

@@ -36,14 +36,17 @@
 // last experiment: MAX_EXPERIMENTS
 #define PARAM_WAIT          15 // current time to wait
 #define PARAM_NUMBER_ACQ    16 // number of acquisition of 100ms that will be taken
-#define PARAM_COLOR         23 // color used to display the results
 
+#define PARAM_ERROR         22 // color used to display the results
+#define PARAM_COLOR         23 // color used to display the results
 #define PARAM_STATUS        24
 #define PARAM_MENU          25 // current menu
 
 #define STATUS_ONE_SPECTRUM 1
 #define STATUS_KINETIC      2
 
+#define INT_MAX_VALUE       32767
+#define LONG_MAX_VALUE      2147483647
 
 
 // value that should not be taken into account
@@ -165,6 +168,7 @@ void resetParameters() {
   setAndSaveParameter(PARAM_NEXT_EXP, -1);
   setAndSaveParameter(PARAM_WAIT, 0);
   setAndSaveParameter(PARAM_COLOR, 1);
+  setAndSaveParameter(PARAM_ERROR, 0);
   setAndSaveParameter(PARAM_NUMBER_ACQ, 10);
 
   setQualifier(21313);
