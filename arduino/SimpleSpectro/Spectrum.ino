@@ -4,29 +4,37 @@ void testRGB() {
   for (byte i = 0; i < sizeof(LEDS); i++) {
     pinMode(LEDS[i], OUTPUT);
   }
-  for (byte j = 0; j < 5; j++) {
+  while (true) {
     for (byte i = 0; i < sizeof(LEDS); i++) {
       digitalWrite(LEDS[i], HIGH);
       nilThdSleepMilliseconds(500);
       digitalWrite(LEDS[i], LOW);
+      nilThdSleepMilliseconds(500);
+      if (getParameter(PARAM_STATUS) != STATUS_TEST_LEDS) {
+        return;
+      }
     }
   }
 }
 
 NIL_WORKING_AREA(waThreadAcquisition, 128);
 NIL_THREAD(ThreadAcquisition, arg) {
+  clearData();
   setParameter(PARAM_NEXT_EXP, -1);
   while (true) {
     if (getParameter(PARAM_NEXT_EXP) == 0) {
+      clearData();
       switch (getParameter(PARAM_STATUS)) {
         case STATUS_ONE_SPECTRUM:
           runExperiment();
           break;
         case STATUS_KINETIC:
-          clearData();
           runExperiment(getParameter(PARAM_NUMPER_EXP));
           break;
       }
+    }
+    if (getParameter(PARAM_STATUS) == STATUS_TEST_LEDS) {
+      testRGB();
     }
     nilThdSleepMilliseconds(100);
   }
@@ -145,8 +153,4 @@ void clearData() {
     }
   }
 }
-
-
-
-
 

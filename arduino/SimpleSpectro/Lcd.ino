@@ -1,8 +1,8 @@
-#define THR_LCD 1
+
 
 #define LANGUAGE en
 
-#ifdef THR_LCD
+// https://docs.google.com/spreadsheets/d/1oek6pKHUvD7NI2u9-_iEOfVL-NeUmnj1pZCFRRo7n_4/edit?usp=sharing
 
 #if LANGUAGE == en
 #define TEXT_ABSORBANCE "Absorb."
@@ -66,7 +66,7 @@
 #define TEXT_RESULT_COLOR "Color"
 #endif
 
-long data[MAX_EXPERIMENTS * 6]; // epoch R G B UV1 UV2
+
 
 #include <LiquidCrystal.h>
 
@@ -394,10 +394,18 @@ void lcdUtilities(int counter, boolean doAction) {
         }
         break;
       case 1:
-        lcd.print(F(TEXT_TEST_LEDS));
-        if (doAction) {
-          testRGB();
+        if (getParameter(PARAM_STATUS) == STATUS_TEST_LEDS) {
+          lcd.print(F("Stop test"));
+          if (doAction) {
+            setParameter(PARAM_STATUS, 0);
+          }
+        } else {
+          lcd.print(F(TEXT_TEST_LEDS));
+          if (doAction) {
+            setParameter(PARAM_STATUS, STATUS_TEST_LEDS);
+          }
         }
+
         break;
       case 2:
         lcd.print(F(TEXT_RESET));
@@ -575,8 +583,5 @@ void eventRotaryPressed() {
     rotaryMayPress = true;
   }
 }
-
-#endif
-
 
 

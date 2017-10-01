@@ -44,6 +44,7 @@
 
 #define STATUS_ONE_SPECTRUM 1
 #define STATUS_KINETIC      2
+#define STATUS_TEST_LEDS    3      
 
 #define INT_MAX_VALUE       32767
 #define LONG_MAX_VALUE      2147483647
