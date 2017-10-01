@@ -16,16 +16,16 @@
 #define MAX_PARAM 26   // If the MAX_PARAM change you need to change the pointer in the EEPROM
 
 
-#define PARAM_R           0
-#define PARAM_G           1
-#define PARAM_B           2
-#define PARAM_UV1         3
-#define PARAM_UV2         4
-#define PARAM_BLANK_R     5
-#define PARAM_BLANK_G     6
-#define PARAM_BLANK_B     7
-#define PARAM_BLANK_UV1   8
-#define PARAM_BLANK_UV2   9
+#define PARAM_COLOR_1     0
+#define PARAM_COLOR_2     1
+#define PARAM_COLOR_3     2
+#define PARAM_COLOR_4     3
+#define PARAM_COLOR_5     4
+#define PARAM_BLANK_1     5
+#define PARAM_BLANK_2     6
+#define PARAM_BLANK_3     7
+#define PARAM_BLANK_4     8
+#define PARAM_BLANK_5     9
 
 
 #define PARAM_BEFORE_DELAY  10  // delay before taking blank
@@ -158,11 +158,9 @@ void setQualifier(uint16_t value) {
 }
 
 void resetParameters() {
-  setAndSaveParameter(PARAM_R, 0);
-  setAndSaveParameter(PARAM_G, 0);
-  setAndSaveParameter(PARAM_B, 0);
-  setAndSaveParameter(PARAM_UV1, 0);
-  setAndSaveParameter(PARAM_UV2, 0);
+  for (byte i = 0; i < 10; i++) {
+    setAndSaveParameter(i, 0);
+  }
 
   setAndSaveParameter(PARAM_BEFORE_DELAY, 2);
   setAndSaveParameter(PARAM_FIRST_DELAY, 10);
@@ -174,7 +172,7 @@ void resetParameters() {
   setAndSaveParameter(PARAM_ERROR, 0);
   setAndSaveParameter(PARAM_NUMBER_ACQ, 10);
   setAndSaveParameter(PARAM_INVERT_ROTARY, 1);
-  setAndSaveParameter(PARAM_ACTIVE_LEDS, pow(2,sizeof(ALL_LEDS))-1);
+  setAndSaveParameter(PARAM_ACTIVE_LEDS, pow(2, sizeof(ALL_LEDS)) - 1);
 
   setQualifier(32767);
 }

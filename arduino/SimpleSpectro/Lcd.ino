@@ -26,7 +26,7 @@
 #define TEXT_RED "Red"
 #define TEXT_GREEN "Green"
 #define TEXT_BLUE "Blue"
-#define TEXT_UV1 "UV 1"
+#define TEXT_UV1 "UV"
 #define TEXT_UV2 "UV 2"
 #define TEXT_BEFORE_DELAY "Before delay"
 #define TEXT_FIRST_DELAY "First delay"
@@ -57,7 +57,7 @@
 #define TEXT_RED "Rojo"
 #define TEXT_GREEN "Verde"
 #define TEXT_BLUE "Azul"
-#define TEXT_UV1 "UV 1"
+#define TEXT_UV1 "UV"
 #define TEXT_UV2 "UV 2"
 #define TEXT_BEFORE_DELAY "Tiempo inicio"
 #define TEXT_FIRST_DELAY "Primera pausa"
@@ -192,7 +192,7 @@ void lcdResults(int counter, boolean doAction) {
 
 void lcdDefault(int counter, boolean doAction) {
   if (doAction) setParameter(PARAM_MENU, 0);
-  updateCurrentMenu(counter, nbLeds + 1);
+  updateCurrentMenu(counter, nbLeds);
   if (noEventCounter < 2) lcd.clear();
   byte menu = getParameter(PARAM_MENU) % 10;
   if (menu < nbLeds) {
@@ -209,7 +209,7 @@ void lcdDefault(int counter, boolean doAction) {
     lcdPrintBlank(2);
   } else {
     lcd.setCursor(0, 0);
-    epochToString(now(), &lcd);
+    //epochToString(now(), &lcd);
     lcd.setCursor(6, 1);
     lcd.print("s:");
     lcd.print(millis() / 1000);
@@ -218,33 +218,19 @@ void lcdDefault(int counter, boolean doAction) {
 
 void lcdDefaultExact(int counter, boolean doAction) {
   if (doAction) setParameter(PARAM_MENU, 0);
-  updateCurrentMenu(counter, 2);
+  updateCurrentMenu(counter, 1);
   if (noEventCounter < 2) lcd.clear();
   switch (getParameter(PARAM_MENU) % 10) {
     case 0:
-      lcd.setCursor(0, 0);
-      lcd.print("R:");
-      lcd.print(getParameter(PARAM_BLANK_R) - getParameter(PARAM_R));
-      lcdPrintBlank(2);
-      lcd.setCursor(8, 0);
-      lcd.print("G:");
-      lcd.print(getParameter(PARAM_BLANK_G) - getParameter(PARAM_G));
-      lcdPrintBlank(2);
-      lcd.setCursor(0, 1);
-      lcd.print("B:");
-      lcd.print(getParameter(PARAM_BLANK_B) - getParameter(PARAM_B));
-      lcdPrintBlank(2);
+      for (byte i = 0; i < min(nbLeds, 4); i++) {
+        lcd.setCursor((i % 2) * 8, floor(i/2));
+        lcdPrintColorOne(LEDS[i]);
+        lcd.print(":");
+        lcd.print(getParameter(i + 5) - getParameter(i));
+        lcdPrintBlank(2);
+      }
       break;
     case 1:
-      lcd.setCursor(0, 0);
-      lcd.print("UV 1: ");
-      lcd.print(getParameter(PARAM_BLANK_UV1) - getParameter(PARAM_UV1));
-      lcdPrintBlank(2);
-      lcd.setCursor(0, 1);
-      lcd.print("UV 2: ");
-      lcd.print(getParameter(PARAM_BLANK_UV2) - getParameter(PARAM_UV2));
-      break;
-    case 2:
       lcd.setCursor(0, 0);
       epochToString(now(), &lcd);
       lcd.setCursor(6, 1);
@@ -279,6 +265,7 @@ void lcdAcquisition(int counter, boolean doAction) {
         lcd.print(F(TEXT_SAMPLE));
       } else if (getParameter(PARAM_NEXT_EXP) > 1) {
         lcd.print(F(TEXT_KINETIC));
+  xx
         lcd.print(getParameter(PARAM_NEXT_EXP));
       }
       break;
@@ -434,13 +421,34 @@ void lcdPrintColor(byte colorPin) {
       lcd.print(F(TEXT_GREEN));
       break;
     case BLUE:
-      lcd.print(TEXT_BLUE);
+      lcd.print(F(TEXT_BLUE));
       break;
     case UV1:
-      lcd.print(TEXT_UV1);
+      lcd.print(F(TEXT_UV1));
       break;
     case UV2:
-      lcd.print(TEXT_UV2);
+      lcd.print(F(TEXT_UV2));
+      break;
+  }
+}
+
+
+void lcdPrintColorOne(byte colorPin) {
+  switch (colorPin) {
+    case RED:
+      lcd.print("R");
+      break;
+    case GREEN:
+      lcd.print("G");
+      break;
+    case BLUE:
+      lcd.print("B");
+      break;
+    case UV1:
+      lcd.print("UV");
+      break;
+    case UV2:
+      lcd.print("UV2");
       break;
   }
 }
@@ -499,7 +507,7 @@ void lcdMenuSettings(int counter, boolean doAction) {
       lcd.print(F("Active leds"));
       currentParameter = PARAM_ACTIVE_LEDS;
       minValue = 0;
-      maxValue = pow(2, sizeof(ALL_LEDS))-1;
+      maxValue = pow(2, sizeof(ALL_LEDS)) - 1;
       break;
     case 7:
       lcd.print(F(TEXT_MAIN_MENU));

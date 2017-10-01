@@ -43,7 +43,8 @@ NIL_THREAD(ThreadAcquisition, arg) {
           runExperiment();
           break;
         case STATUS_KINETIC:
-          runExperiment(getParameter(PARAM_NUMPER_EXP));
+          byte numberExperiments=min(maxNbRows,getParameter(PARAM_NUMPER_EXP));
+          runExperiment(numberExperiments);
           break;
       }
     }
@@ -96,15 +97,15 @@ void runExperiment(byte nbExperiments) {
 void calculateResult(byte experimentNumber) {
   // we calculate the difference with blank
   for (byte i = 0; i < nbLeds; i++) {
-    if (data[experimentNumber * 6 + i + 1] == LONG_MAX_VALUE) {
+    if (data[experimentNumber * dataRowSize + i + 1] == LONG_MAX_VALUE) {
       setParameter(i, INT_MAX_VALUE); // current experiment
     } else {
-      setParameter(i, data[experimentNumber * 6 + i + 1] / 16); // current experiment
+      setParameter(i, data[experimentNumber * dataRowSize + i + 1] / 16); // current experiment
     }
     if (data[i + 1] == LONG_MAX_VALUE) {
-      setParameter(i + nbLeds, INT_MAX_VALUE); // blank
+      setParameter(i + 5, INT_MAX_VALUE); // blank saturation
     } else {
-      setParameter(i + nbLeds, data[i + 1] / 16); // blank
+      setParameter(i + 5, data[i + 1] / 16); // blank value
     }
   }
 }
