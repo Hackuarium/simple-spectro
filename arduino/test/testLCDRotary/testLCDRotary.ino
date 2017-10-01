@@ -1,14 +1,15 @@
 #include <LiquidCrystal.h>
 
-#define LCD_E      12
+#define LCD_E      6
 #define LCD_RS     A6
-#define LCD_D4     6
-#define LCD_D5     8
-#define LCD_D6     9
-#define LCD_D7     10
-#define LCD_BL     11    // back light
-#define LCD_VO     13    // contrast (on / off to spare energy)
+#define LCD_D4     8
+#define LCD_D5     9
+#define LCD_D6     10
+#define LCD_D7     5
+#define LCD_BL     13    // back light
+#define LCD_VO     11    // contrast (on / off to spare energy)
 #define LCD_ON     MOSI  // power on LCD
+
 byte pins[] = {LCD_E, LCD_RS, LCD_D4, LCD_D5, LCD_D6, LCD_D7, LCD_VO};
 
 #define LCD_NB_ROWS     2
@@ -33,14 +34,14 @@ long lastRotaryEvent = millis();
 
 void setup() {
   Serial.begin(115200);
+
   setupRotary();
-  setupParameters();
   pinMode(LCD_BL, OUTPUT);
   digitalWrite(LCD_BL, HIGH); // backlight
   pinMode(LCD_ON, HIGH); // LCD on / off
   digitalWrite(LCD_ON, HIGH); // LCD on
-  delay(10);
   lcd.begin(LCD_NB_COLUMNS, LCD_NB_ROWS);
+
 }
 
 void loop() {

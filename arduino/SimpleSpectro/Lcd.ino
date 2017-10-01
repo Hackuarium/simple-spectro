@@ -223,7 +223,7 @@ void lcdDefaultExact(int counter, boolean doAction) {
   switch (getParameter(PARAM_MENU) % 10) {
     case 0:
       for (byte i = 0; i < min(nbLeds, 4); i++) {
-        lcd.setCursor((i % 2) * 8, floor(i/2));
+        lcd.setCursor((i % 2) * 8, floor(i / 2));
         lcdPrintColorOne(LEDS[i]);
         lcd.print(":");
         lcd.print(getParameter(i + 5) - getParameter(i));
@@ -265,7 +265,7 @@ void lcdAcquisition(int counter, boolean doAction) {
         lcd.print(F(TEXT_SAMPLE));
       } else if (getParameter(PARAM_NEXT_EXP) > 1) {
         lcd.print(F(TEXT_KINETIC));
-  xx
+        lcdPrintBlank(1);
         lcd.print(getParameter(PARAM_NEXT_EXP));
       }
       break;
@@ -596,31 +596,46 @@ void setupRotary() {
   attachInterrupt(digitalPinToInterrupt(ROT_PUSH), eventRotaryPressed, CHANGE);
 }
 
-boolean accelerationMode = false;
+byte accelerationMode = 0;
 int lastIncrement = 0;
 
 void eventRotaryA() {
   int increment = digitalRead(ROT_B) * 2 - 1;
+  long current = millis();
+  long diff = current - lastRotaryEvent;
+  lastRotaryEvent = current;
+  if (diff < 5) return;
+  /*
+    Serial.print(diff);
+    Serial.print(" ");
+    Serial.print(increment);
+    Serial.print(" ");
+    Serial.println(accelerationMode);
+  */
+  if (lastIncrement != increment && diff < 100) return;
+  lastIncrement = increment;
+
+
+  if (diff < 50) {
+    accelerationMode++;
+    if (accelerationMode < 5) return;
+    if (accelerationMode > 20) accelerationMode = 20;
+  } else {
+    accelerationMode = 0;
+  }
+
   if (  getParameter(PARAM_INVERT_ROTARY) == 1) {
     increment *= -1;
   }
-  long current = millis();
-  long diff = current - lastRotaryEvent;
-  if (lastIncrement != increment && diff < 100) return;
-  lastIncrement = increment;
-  lastRotaryEvent = current;
-  if (diff < 5) return;
-  if (diff < 30) {
-    if (accelerationMode) {
-      rotaryCounter -= (increment * 20);
-    } else {
-      accelerationMode = true;
-      rotaryCounter -= increment;
-    }
+
+  if (accelerationMode > 4) {
+    rotaryCounter += (increment * accelerationMode);
   } else {
-    accelerationMode = false;
-    rotaryCounter -= increment;
+    if (accelerationMode == 0) {
+      rotaryCounter += increment;
+    }
   }
+
 }
 
 
