@@ -192,12 +192,12 @@ void lcdResults(int counter, boolean doAction) {
 
 void lcdDefault(int counter, boolean doAction) {
   if (doAction) setParameter(PARAM_MENU, 0);
-  updateCurrentMenu(counter, 6);
+  updateCurrentMenu(counter, nbLeds+1);
   if (noEventCounter < 2) lcd.clear();
   byte menu = getParameter(PARAM_MENU) % 10;
-  if (menu < 5) {
+  if (menu < nbLeds) {
     lcd.setCursor(0, 0);
-    lcdPrintColor(menu);
+    lcdPrintColor(LEDS[menu]);
     lcd.setCursor(0, 1);
     lcd.print(F(TEXT_ABSORBANCE));
     lcd.setCursor(8, 1);
@@ -425,21 +425,21 @@ void lcdUtilities(int counter, boolean doAction) {
   }
 }
 
-void lcdPrintColor(byte color) {
-  switch (color) {
-    case 0:
+void lcdPrintColor(byte colorPin) {
+  switch (colorPin) {
+    case RED:
       lcd.print(F(TEXT_RED));
       break;
-    case 1:
+    case GREEN:
       lcd.print(F(TEXT_GREEN));
       break;
-    case 2:
+    case BLUE:
       lcd.print(TEXT_BLUE);
       break;
-    case 3:
+    case UV1:
       lcd.print(TEXT_UV1);
       break;
-    case 4:
+    case UV2:
       lcd.print(TEXT_UV2);
       break;
   }
@@ -516,7 +516,7 @@ void lcdMenuSettings(int counter, boolean doAction) {
   }
   switch (getParameter(PARAM_MENU) % 10) {
     case 4: //
-      lcdPrintColor(getParameter(currentParameter) - 1);
+      lcdPrintColor(LEDS[getParameter(currentParameter) - 1]);
       break;
     default:
       if (currentFactor == 1) {
