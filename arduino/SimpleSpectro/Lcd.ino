@@ -192,7 +192,7 @@ void lcdResults(int counter, boolean doAction) {
 
 void lcdDefault(int counter, boolean doAction) {
   if (doAction) setParameter(PARAM_MENU, 0);
-  updateCurrentMenu(counter, nbLeds+1);
+  updateCurrentMenu(counter, nbLeds + 1);
   if (noEventCounter < 2) lcd.clear();
   byte menu = getParameter(PARAM_MENU) % 10;
   if (menu < nbLeds) {
@@ -447,7 +447,7 @@ void lcdPrintColor(byte colorPin) {
 
 void lcdMenuSettings(int counter, boolean doAction) {
 
-  byte lastMenu = 5;
+  byte lastMenu = 7;
   if (! captureCounter) updateCurrentMenu(counter, lastMenu);
 
   byte currentParameter = 0;
@@ -490,6 +490,18 @@ void lcdMenuSettings(int counter, boolean doAction) {
       maxValue = nbLeds;
       break;
     case 5:
+      lcd.print(F("Rotary mode"));
+      currentParameter = PARAM_INVERT_ROTARY;
+      minValue = 0;
+      maxValue = 1;
+      break;
+    case 6:
+      lcd.print(F("Active leds"));
+      currentParameter = PARAM_ACTIVE_LEDS;
+      minValue = 0;
+      maxValue = sizeof(ALL_LEDS);
+      break;
+    case 7:
       lcd.print(F(TEXT_MAIN_MENU));
       if (doAction) {
         setParameter(PARAM_MENU, 1);
@@ -550,7 +562,7 @@ int lastIncrement = 0;
 void eventRotaryA() {
   int increment = digitalRead(ROT_B) * 2 - 1;
   if (  getParameter(PARAM_INVERT_ROTARY) == -1) {
-    increment*=-1;
+    increment *= -1;
   }
   long current = millis();
   long diff = current - lastRotaryEvent;
