@@ -499,7 +499,7 @@ void lcdMenuSettings(int counter, boolean doAction) {
       lcd.print(F("Active leds"));
       currentParameter = PARAM_ACTIVE_LEDS;
       minValue = 0;
-      maxValue = sizeof(ALL_LEDS);
+      maxValue = pow(2, sizeof(ALL_LEDS))-1;
       break;
     case 7:
       lcd.print(F(TEXT_MAIN_MENU));
@@ -527,8 +527,40 @@ void lcdMenuSettings(int counter, boolean doAction) {
     lcd.print(" ");
   }
   switch (getParameter(PARAM_MENU) % 10) {
-    case 4: //
+    case 4:
       lcdPrintColor(LEDS[getParameter(currentParameter) - 1]);
+      break;
+    case 5:
+      if (getParameter(PARAM_INVERT_ROTARY) == 0) {
+        lcd.print(F("Normal"));
+      } else {
+        lcd.print(F("Inverted"));
+      }
+      break;
+    case 6: // active leds
+      lcd.print((getParameter(currentParameter)));
+      lcd.print(" ");
+      setActiveLeds();
+      for (byte i = 0; i < nbLeds; i++) {
+        switch (LEDS[i]) {
+          case RED:
+            lcd.print("R ");
+            break;
+          case GREEN:
+            lcd.print("G ");
+            break;
+          case BLUE:
+            lcd.print("B ");
+            break;
+          case UV1:
+            lcd.print("UV ");
+            break;
+          case UV2:
+            lcd.print("UV2");
+            break;
+        }
+      }
+
       break;
     default:
       if (currentFactor == 1) {
@@ -561,7 +593,7 @@ int lastIncrement = 0;
 
 void eventRotaryA() {
   int increment = digitalRead(ROT_B) * 2 - 1;
-  if (  getParameter(PARAM_INVERT_ROTARY) == -1) {
+  if (  getParameter(PARAM_INVERT_ROTARY) == 1) {
     increment *= -1;
   }
   long current = millis();
