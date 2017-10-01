@@ -169,7 +169,7 @@ void lcdResults(int counter, boolean doAction) {
 
   // calculate the last experiment based on epoch of each experiment
   byte lastExperiment = 1;
-  for (lastExperiment; lastExperiment < MAX_EXPERIMENTS; lastExperiment++) {
+  for (lastExperiment; lastExperiment < maxNbData; lastExperiment++) {
     if (data[lastExperiment * 6] <= data[0]) break;
   }
 
@@ -481,7 +481,7 @@ void lcdMenuSettings(int counter, boolean doAction) {
       lcd.print(F(TEXT_NUMBER_EXP));
       currentParameter = PARAM_NUMPER_EXP;
       minValue = 1;
-      maxValue = MAX_EXPERIMENTS;
+      maxValue = maxNbData;
       break;
     case 4:
       lcd.print(F(TEXT_RESULT_COLOR));
@@ -549,6 +549,9 @@ int lastIncrement = 0;
 
 void eventRotaryA() {
   int increment = digitalRead(ROT_B) * 2 - 1;
+  if (  getParameter(PARAM_INVERT_ROTARY) == -1) {
+    increment*=-1;
+  }
   long current = millis();
   long diff = current - lastRotaryEvent;
   if (lastIncrement != increment && diff < 100) return;

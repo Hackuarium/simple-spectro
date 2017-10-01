@@ -11,27 +11,23 @@
 #define RED    A0
 #define GREEN  A1
 #define BLUE   A2
-//#define UV1   A3
+#define UV1   A3
 #define UV2   A4
 
 #define DATA_SIZE 240
-#ifdef UV1
-byte LEDS[] = {RED, GREEN, BLUE, UV1, UV2};
-#define MAX_EXPERIMENTS 40
-#else
-byte LEDS[] = {RED, GREEN, BLUE, UV2};
-#define MAX_EXPERIMENTS 48
-#endif
-
-byte nbLeds=sizeof(LEDS);
-byte rowSize=nbLeds+1;
-byte nbEntries=DATA_SIZE/rowSize;
 long data[DATA_SIZE]; // epoch R G B UV1 UV2
 
+
+byte ALL_LEDS[] = {RED, GREEN, BLUE, UV1, UV2};
+byte LEDS[] = {RED, GREEN, BLUE, UV1, UV2};
+byte nbLeds;
+byte dataRowSize;
+byte maxNbData;
 
 
 void setup() {
   setupParameters();
+  setActiveLeds();
   nilSysBegin();
 }
 

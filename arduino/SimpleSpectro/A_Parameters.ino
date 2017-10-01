@@ -33,10 +33,12 @@
 #define PARAM_INTER_DELAY   12
 #define PARAM_NUMPER_EXP    13
 #define PARAM_NEXT_EXP      14 // next experiment, 0 blank and then for kinetic
-// last experiment: MAX_EXPERIMENTS
 #define PARAM_WAIT          15 // current time to wait
 #define PARAM_NUMBER_ACQ    16 // number of acquisition of 100ms that will be taken
 
+#define PARAM_INVERT_ROTARY 17 // invert rotary direction
+
+#define PARAM_ACTIVE_LEDS   21
 #define PARAM_ERROR         22 // color used to display the results
 #define PARAM_COLOR         23 // color used to display the results
 #define PARAM_STATUS        24
@@ -44,7 +46,7 @@
 
 #define STATUS_ONE_SPECTRUM 1
 #define STATUS_KINETIC      2
-#define STATUS_TEST_LEDS    3      
+#define STATUS_TEST_LEDS    3
 
 #define INT_MAX_VALUE       32767
 #define LONG_MAX_VALUE      2147483647
@@ -165,14 +167,19 @@ void resetParameters() {
   setAndSaveParameter(PARAM_BEFORE_DELAY, 2);
   setAndSaveParameter(PARAM_FIRST_DELAY, 10);
   setAndSaveParameter(PARAM_INTER_DELAY, 20);
-  setAndSaveParameter(PARAM_NUMPER_EXP, MAX_EXPERIMENTS);
+  setAndSaveParameter(PARAM_NUMPER_EXP, maxNbData);
   setAndSaveParameter(PARAM_NEXT_EXP, -1);
   setAndSaveParameter(PARAM_WAIT, 0);
   setAndSaveParameter(PARAM_COLOR, 1);
   setAndSaveParameter(PARAM_ERROR, 0);
   setAndSaveParameter(PARAM_NUMBER_ACQ, 10);
 
-  setQualifier(21313);
+  setAndSaveParameter(PARAM_INVERT_ROTARY, -1);
+
+
+  setAndSaveParameter(PARAM_ACTIVE_LEDS, 31);
+
+  setQualifier(32767);
 }
 
 

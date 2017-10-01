@@ -17,6 +17,19 @@ void testRGB() {
   }
 }
 
+void setActiveLeds() {
+  int active = getParameter(PARAM_ACTIVE_LEDS);
+  byte nbLeds = 0;
+  for (byte i = 0; i < sizeof(ALL_LEDS); i++) {
+    if (active & (2 << nbLeds)) {
+      LEDS[nbLeds] = ALL_LEDS[i];
+      nbLeds++;
+    }
+  }
+  dataRowSize = nbLeds + 1;
+  maxNbData = DATA_SIZE / dataRowSize;
+}
+
 NIL_WORKING_AREA(waThreadAcquisition, 128);
 NIL_THREAD(ThreadAcquisition, arg) {
   clearData();
@@ -133,7 +146,7 @@ void acquire() {
 }
 
 void printData(Print* output) {
-  for (byte i = 0; i < MAX_EXPERIMENTS; i++) {
+  for (byte i = 0; i < maxNbData; i++) {
     for (byte j = 0; j <= sizeof(LEDS); j++) {
       if (data[i * (sizeof(LEDS) + 1) + j] == LONG_MAX_VALUE) {
         output->print("OVER");
@@ -147,10 +160,8 @@ void printData(Print* output) {
 }
 
 void clearData() {
-  for (byte i = 0; i < MAX_EXPERIMENTS; i++) {
-    for (byte j = 0; j <= sizeof(LEDS); j++) {
-      data[i * (sizeof(LEDS) + 1) + j] = 0;
-    }
+  for (byte i = 0; i < DATA_SIZE; i++) {
+    data[i] = 0;
   }
 }
 
