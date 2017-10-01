@@ -1,11 +1,11 @@
 #include <FreqCount.h>
 
 void testRGB() {
-  for (byte i = 0; i < sizeof(LEDS); i++) {
+  for (byte i = 0; i < nbLeds; i++) {
     pinMode(LEDS[i], OUTPUT);
   }
   while (true) {
-    for (byte i = 0; i < sizeof(LEDS); i++) {
+    for (byte i = 0; i < nbLeds; i++) {
       digitalWrite(LEDS[i], HIGH);
       nilThdSleepMilliseconds(500);
       digitalWrite(LEDS[i], LOW);
@@ -19,15 +19,15 @@ void testRGB() {
 
 void setActiveLeds() {
   int active = getParameter(PARAM_ACTIVE_LEDS);
-  byte nbLeds = 0;
+  nbLeds = 0;
   for (byte i = 0; i < sizeof(ALL_LEDS); i++) {
-    if (active & (2 << nbLeds)) {
+    if (active & (1 << i)) {
       LEDS[nbLeds] = ALL_LEDS[i];
       nbLeds++;
     }
   }
   dataRowSize = nbLeds + 1;
-  maxNbData = DATA_SIZE / dataRowSize;
+  maxNbRows = DATA_SIZE / dataRowSize;
 }
 
 NIL_WORKING_AREA(waThreadAcquisition, 128);
@@ -36,6 +36,7 @@ NIL_THREAD(ThreadAcquisition, arg) {
   setParameter(PARAM_NEXT_EXP, -1);
   while (true) {
     if (getParameter(PARAM_NEXT_EXP) == 0) {
+      setActiveLeds();
       clearData();
       switch (getParameter(PARAM_STATUS)) {
         case STATUS_ONE_SPECTRUM:
@@ -94,28 +95,31 @@ void runExperiment(byte nbExperiments) {
 
 void calculateResult(byte experimentNumber) {
   // we calculate the difference with blank
-  for (byte i = 0; i < sizeof(LEDS); i++) {
+  for (byte i = 0; i < nbLeds; i++) {
     if (data[experimentNumber * 6 + i + 1] == LONG_MAX_VALUE) {
       setParameter(i, INT_MAX_VALUE); // current experiment
     } else {
       setParameter(i, data[experimentNumber * 6 + i + 1] / 16); // current experiment
     }
     if (data[i + 1] == LONG_MAX_VALUE) {
-      setParameter(i + sizeof(LEDS), INT_MAX_VALUE); // blank
+      setParameter(i + nbLeds, INT_MAX_VALUE); // blank
     } else {
-      setParameter(i + sizeof(LEDS), data[i + 1] / 16); // blank
+      setParameter(i + nbLeds, data[i + 1] / 16); // blank
     }
   }
 }
 
 void acquire() {
+
   setParameter(PARAM_MENU, 32);
-  byte target = getParameter(PARAM_NEXT_EXP) * 6;
+  byte target = getParameter(PARAM_NEXT_EXP) * dataRowSize;
   if (target < 0) return;
   data[target] = millis();
-  for (byte i = 0; i < sizeof(LEDS); i++) {
+  for (byte i = 0; i < nbLeds; i++) {
+    
     pinMode(LEDS[i], OUTPUT);
     data[target + i + 1] = 0;
+   
     for (byte j = 0; j <  getParameter(PARAM_NUMBER_ACQ); j++) {
       digitalWrite(LEDS[i], HIGH);
       FreqCount.begin(100);
@@ -146,12 +150,12 @@ void acquire() {
 }
 
 void printData(Print* output) {
-  for (byte i = 0; i < maxNbData; i++) {
-    for (byte j = 0; j <= sizeof(LEDS); j++) {
-      if (data[i * (sizeof(LEDS) + 1) + j] == LONG_MAX_VALUE) {
+  for (byte i = 0; i < maxNbRows; i++) {
+    for (byte j = 0; j < dataRowSize; j++) {
+      if (data[i * dataRowSize + j] == LONG_MAX_VALUE) {
         output->print("OVER");
       } else {
-        output->print(data[i * (sizeof(LEDS) + 1) + j]);
+        output->print(data[i * dataRowSize + j]);
       }
       output->print(" ");
     }

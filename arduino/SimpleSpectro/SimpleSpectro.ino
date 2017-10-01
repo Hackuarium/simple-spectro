@@ -11,18 +11,18 @@
 #define RED    A0
 #define GREEN  A1
 #define BLUE   A2
-#define UV1   A3
-#define UV2   A4
+#define UV1    A3
+#define UV2    A4
 
 #define DATA_SIZE 240
 long data[DATA_SIZE]; // epoch R G B UV1 UV2
 
 
-byte ALL_LEDS[] = {RED, GREEN, BLUE, UV1, UV2};
-byte LEDS[] = {RED, GREEN, BLUE, UV1, UV2};
-byte nbLeds;
-byte dataRowSize;
-byte maxNbData;
+byte ALL_LEDS[] = {RED, GREEN, BLUE, UV1, UV2};  // all possible leds
+byte LEDS[] = {RED, GREEN, BLUE, UV1, UV2};      // will contain th active les
+byte nbLeds;                                     // number of active leds
+byte dataRowSize;                                // size of a data row (number of entries in data)
+byte maxNbRows;                                  // 
 
 
 void setup() {

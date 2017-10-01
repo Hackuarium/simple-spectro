@@ -1,10 +1,10 @@
 
 
-#define LANGUAGE en
+#define LANGUAGE 'en'
 
 // https://docs.google.com/spreadsheets/d/1oek6pKHUvD7NI2u9-_iEOfVL-NeUmnj1pZCFRRo7n_4/edit?usp=sharing
 
-#if LANGUAGE == en
+#if LANGUAGE == 'en'
 #define TEXT_ABSORBANCE "Absorb."
 #define TEXT_WAITING_BLANK "Waiting blank"
 #define TEXT_WAITING_EXP "Waiting exp."
@@ -35,7 +35,7 @@
 #define TEXT_RESULT_COLOR "Result color"
 #endif
 
-#if LANGUAGE == es
+#if LANGUAGE == 'es'
 #define TEXT_ABSORBANCE "Absorb."
 #define TEXT_WAITING_BLANK "Esperando blanco"
 #define TEXT_WAITING_EXP "Esperando exp."
@@ -169,23 +169,23 @@ void lcdResults(int counter, boolean doAction) {
 
   // calculate the last experiment based on epoch of each experiment
   byte lastExperiment = 1;
-  for (lastExperiment; lastExperiment < maxNbData; lastExperiment++) {
-    if (data[lastExperiment * 6] <= data[0]) break;
+  for (lastExperiment; lastExperiment < maxNbRows; lastExperiment++) {
+    if (data[lastExperiment * dataRowSize] <= data[0]) break;
   }
 
   updateCurrentMenu(counter, lastExperiment - 1, 50);
   byte start = getParameter(PARAM_MENU) % 50;
   for (byte i = start; i < min(lastExperiment, start + LCD_NB_ROWS); i++) {
     lcd.setCursor(0, i - start);
-    lcd.print((data[i * 6] - data[0]) / 1000);
+    lcd.print((data[i * dataRowSize] - data[0]) / 1000);
     lcd.print(" ");
-    if (data[getParameter(PARAM_COLOR)] == LONG_MAX_VALUE || data[i * 6 + getParameter(PARAM_COLOR)] == LONG_MAX_VALUE) {
+    if (data[getParameter(PARAM_COLOR)] == LONG_MAX_VALUE || data[i * dataRowSize + getParameter(PARAM_COLOR)] == LONG_MAX_VALUE) {
       lcd.print(F("OVER"));
     } else {
-      lcd.print(log10((double)data[getParameter(PARAM_COLOR)] / (double)data[i * 6 + getParameter(PARAM_COLOR)]));
+      lcd.print(log10((double)data[getParameter(PARAM_COLOR)] / (double)data[i * dataRowSize + getParameter(PARAM_COLOR)]));
     }
     lcd.print(" ");
-    lcd.print(data[i * 6 + getParameter(PARAM_COLOR)]);
+    lcd.print(data[i * dataRowSize + getParameter(PARAM_COLOR)]);
     lcdPrintBlank(6);
   }
 }
@@ -481,13 +481,13 @@ void lcdMenuSettings(int counter, boolean doAction) {
       lcd.print(F(TEXT_NUMBER_EXP));
       currentParameter = PARAM_NUMPER_EXP;
       minValue = 1;
-      maxValue = maxNbData;
+      maxValue = maxNbRows;
       break;
     case 4:
       lcd.print(F(TEXT_RESULT_COLOR));
       currentParameter = PARAM_COLOR;
       minValue = 1;
-      maxValue = sizeof(LEDS);
+      maxValue = nbLeds;
       break;
     case 5:
       lcd.print(F(TEXT_MAIN_MENU));

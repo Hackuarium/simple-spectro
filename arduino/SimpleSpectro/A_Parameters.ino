@@ -167,16 +167,13 @@ void resetParameters() {
   setAndSaveParameter(PARAM_BEFORE_DELAY, 2);
   setAndSaveParameter(PARAM_FIRST_DELAY, 10);
   setAndSaveParameter(PARAM_INTER_DELAY, 20);
-  setAndSaveParameter(PARAM_NUMPER_EXP, maxNbData);
+  setAndSaveParameter(PARAM_NUMPER_EXP, maxNbRows);
   setAndSaveParameter(PARAM_NEXT_EXP, -1);
   setAndSaveParameter(PARAM_WAIT, 0);
   setAndSaveParameter(PARAM_COLOR, 1);
   setAndSaveParameter(PARAM_ERROR, 0);
   setAndSaveParameter(PARAM_NUMBER_ACQ, 10);
-
   setAndSaveParameter(PARAM_INVERT_ROTARY, -1);
-
-
   setAndSaveParameter(PARAM_ACTIVE_LEDS, 31);
 
   setQualifier(32767);
