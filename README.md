@@ -12,7 +12,7 @@ The device is rather cheap if you buy all the component on aliexpress
 (but one) and hav eaccess to a 3D printer. By constructing 10 the price
 per spectrophotometer is around $25.
 
-<img src='images/patent-blue-v.jpg' width=600>
+<img src='images/patent-blue-v.jpg' width='600px' />
 
 ## Can we do science with this ?
 
@@ -30,7 +30,7 @@ absorbance of solutions containing different known concentration of
 pattent blue V (E131). A blue pigment that is used in various bleu
 candies.
 
-<img src='images/patent-blue-v-regression.png' width=600>
+<img src='images/patent-blue-v-regression.png' width='600px' />
 
 The result is rather good knowing that the solutions were simply prepared by
 adding with a 1mL seringe various volume (0 to 2 mL) of a concentrated solution
@@ -49,13 +49,13 @@ cuvette and place the spectrophotometer itself on a shaker in the incubator.
 We can then program it to take an abosrbance every X seconds. In our case
 we did every 30 minutes (up to 40 measures). The following curve is obtained
 
-<img src='images/bacteria-growing-preliminary.png'>
+<img src='images/bacteria-growing-preliminary.png' />
 
 This experiment shows clearly the log phase and the stationary phase. But
 the experiment was faster than expected ... an acquisition every 15 minutes
 would be a better choice.
 
-### Using the simple spectrophotometer to teach science
+## Using the simple spectrophotometer to teach science
 
 The use of the spectrophotometer is rather simple. Just put a blank, press the button,
 wait 10s and put the sample. The result is displayed on the screen.
@@ -67,6 +67,10 @@ teaching to group of children and teenager some basic of science
 
 [School in Mondomo (Colombia)](https://www.youtube.com/watch?v=Be6p4-nW06k)
 
+## How to use it ?
+
+
+
 ## How to make it ?
 
 The project is composed of 3 parts:
@@ -74,7 +78,7 @@ The project is composed of 3 parts:
 * the case (using FreeCAD and 3D printer)
 * the programmation (using Arduino)
 
-## Electronics, the PCB
+### Electronics, the PCB
 
 The design is compatible with an Arduino. We use the microcontroller
 ATMEGA32U4 that is directly connected to the components we need for
@@ -94,10 +98,10 @@ fast. In our case it cost $30 with shipping and we receive PCBs in one week.
 
 All the components we use but one are rather mainstream and can
 be found on ebay or aliexpress. The only special component  is the light to
-frequency converter (TSL235R)[https://www.sparkfun.com/datasheets/Sensors/Imaging/TSL235R-LF.pdf]
-that we buy on (Mouser website)[http://www.mouser.com].
+frequency converter [TSL235R](https://www.sparkfun.com/datasheets/Sensors/Imaging/TSL235R-LF.pdf)
+that we buy on [Mouser website](http://www.mouser.com).
 
-<img src='images/pcb-description/pcb-description.001.jpeg' width=600>
+<img src='images/pcb-description/pcb-description.001.jpeg' width='600' />
 
 The board is rather straighforward. The values for the LEDs may however have to be tuned
 depending the LED you are using. Currently the following values are used:
@@ -109,7 +113,7 @@ depending the LED you are using. Currently the following values are used:
 If the value is too weak the detector may saturate and you will get a message 'OVER'.
 
 
-## The case
+### The case
 
 The case is done using FreeCAD. This software looks rather complex at first but has the huge
 advantage that all the parameters may be set in an internal spreadsheet. This allows to design
@@ -117,4 +121,4 @@ parametrics boxes that can be easily changed and updated.
 
 We are still improving it a little bit but the top part of the obx is in 'top.stl'
 
-## The software
+### The software
