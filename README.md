@@ -97,8 +97,17 @@ You may now control the spectrophotometer. To see the available command just ent
 
 The instruction  s  will show you the current settings
 
+|             |          Grouping           ||
+First Header  | Second Header | Third Header |
+ ------------ | :-----------: | -----------: |
+Content       |          *Long Cell*        ||
+Content       |   **Cell**    |         Cell |
+
+New section   |     More      |         Data |
+And more      | With an escaped '\|'         || 
+
 |----------------|--------|-------------|
-|xxx|yyy|zzz|
+| xxx |yyy|zzz|
 |----------------|--------|-------------|
 |xxx|yyy|zzz|
 |xxx|yyy|zzz|
