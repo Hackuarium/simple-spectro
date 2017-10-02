@@ -69,6 +69,35 @@ teaching to group of children and teenager some basic of science
 
 ## How to use it ?
 
+You have mainly 2 modes:
+* one acquisition (Blank + Sample)
+* a kinetic (Blank + Sample x times)
+
+For one acquisition you may specify the time before the first experiment (Before delay)
+as well as the time between the 2 experiments (First delay). Those parameters are accessible
+from the 'settings' menu. You may use the rotary push button to select settings and then
+press the button to enter the menu.
+To change a value, press the button and turn to set the new value. After press again the button
+to validate.
+
+
+### Accessing the device from the Serial Port
+
+It is possible to control the device from the Serial over USB. You may use for example
+the command 'screen' on the bash but the easiest is probably to use the program Arduino.
+Indeed the spectrophotometer appears as a 'Lilipad Arduino USB'. It contains an Atmega 32U4 at 8MHz.
+If you install the Arduino software you should first select in 'Tools -> Board -> Lilypad Arduino USB' and
+it should appear in 'Tools -> Port -> xxx Lilypad Arduino USB'.
+
+One you select the port on which the spectrophotometer is connect you may use the Serial Monitor
+(top right icon) to connect to this device and control it from the keyboard. When you are in the
+serial monitor window, first thing is to select 'Both NL & CR' in the bottom right select menu.
+
+You may now control the spectrophotometer. To see the available command just enter  h  and Enter.
+
+The instruction  s  will show you the current settings
+
+|----------------|--------|-------------|
 
 
 ## How to make it ?
@@ -106,8 +135,8 @@ that we buy on [Mouser website](http://www.mouser.com).
 The board is rather straighforward. The values for the LEDs may however have to be tuned
 depending the LED you are using. Currently the following values are used:
 * R: 470 Ω
-* G: 680 Ω
-* B: 680 Ω
+* G: 1 kΩ
+* B: 1 kΩ
 * UV: 100 Ω
 
 If the value is too weak the detector may saturate and you will get a message 'OVER'.
@@ -117,7 +146,7 @@ If the value is too weak the detector may saturate and you will get a message 'O
 
 The case is done using FreeCAD. This software looks rather complex at first but has the huge
 advantage that all the parameters may be set in an internal spreadsheet. This allows to design
-parametrics boxes that can be easily changed and updated.
+parametric boxes that can be easily changed and updated.
 
 We are still improving it a little bit but the top part of the obx is in 'top.stl'
 
