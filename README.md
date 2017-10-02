@@ -30,7 +30,7 @@ absorbance of solutions containing different known concentration of
 pattent blue V (E131). A blue pigment that is used in various bleu
 candies.
 
-<img src='images/patent-blue-v-regression.png' width=600>
+<img src='images/patent-blue-v-regression.png' width='600px' />
 
 The result is rather good knowing that the solutions were simply prepared by
 adding with a 1mL seringe various volume (0 to 2 mL) of a concentrated solution
