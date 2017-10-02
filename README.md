@@ -98,7 +98,11 @@ You may now control the spectrophotometer. To see the available command just ent
 The instruction  s  will show you the current settings
 
 |----------------|--------|-------------|
-
+|xxx|yyy|zzz|
+|----------------|--------|-------------|
+|xxx|yyy|zzz|
+|xxx|yyy|zzz|
+|xxx|yyy|zzz|
 
 ## How to make it ?
 
