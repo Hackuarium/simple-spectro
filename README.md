@@ -55,7 +55,7 @@ This experiment shows clearly the log phase and the stationary phase. But
 the experiment was faster than expected ... an acquisition every 15 minutes
 would be a better choice.
 
-### Using the simple spectrophotometer to teach science
+## Using the simple spectrophotometer to teach science
 
 The use of the spectrophotometer is rather simple. Just put a blank, press the button,
 wait 10s and put the sample. The result is displayed on the screen.
@@ -67,6 +67,10 @@ teaching to group of children and teenager some basic of science
 
 [School in Mondomo (Colombia)](https://www.youtube.com/watch?v=Be6p4-nW06k)
 
+## How to use it ?
+
+
+
 ## How to make it ?
 
 The project is composed of 3 parts:
@@ -74,7 +78,7 @@ The project is composed of 3 parts:
 * the case (using FreeCAD and 3D printer)
 * the programmation (using Arduino)
 
-## Electronics, the PCB
+### Electronics, the PCB
 
 The design is compatible with an Arduino. We use the microcontroller
 ATMEGA32U4 that is directly connected to the components we need for
@@ -102,7 +106,7 @@ that we buy on [Mouser website](http://www.mouser.com).
 The board is rather straighforward. The only 
 
 
-## The case
+### The case
 
 The case is done using FreeCAD. This software looks rather complex at first but has the huge
 advantage that all the parameters may be set in an internal spreadsheet. This allows to design
@@ -110,4 +114,4 @@ parametrics boxes that can be easily changed and updated.
 
 We are still improving it a little bit but the top part of the obx is in 'top.stl'
 
-## The software
+### The software
