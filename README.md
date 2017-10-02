@@ -99,7 +99,14 @@ that we buy on (Mouser website)[http://www.mouser.com].
 
 <img src='images/pcb-description/pcb-description.001.jpeg' width=600>
 
-The board is rather straighforward. The only 
+The board is rather straighforward. The values for the LEDs may however have to be tuned
+depending the LED you are using. Currently the following values are used:
+* R: 470 Ω
+* G: 680 Ω
+* B: 680 Ω
+* UV: 100 Ω
+
+If the value is too weak the detector may saturate and you will get a message 'OVER'.
 
 
 ## The case
