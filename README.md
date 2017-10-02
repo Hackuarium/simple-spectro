@@ -12,7 +12,7 @@ The device is rather cheap if you buy all the component on aliexpress
 (but one) and hav eaccess to a 3D printer. By constructing 10 the price
 per spectrophotometer is around $25.
 
-<img src='images/patent-blue-v.jpg' width=600>
+<img src='images/patent-blue-v.jpg' width='600px' />
 
 ## Can we do science with this ?
 
@@ -49,7 +49,7 @@ cuvette and place the spectrophotometer itself on a shaker in the incubator.
 We can then program it to take an abosrbance every X seconds. In our case
 we did every 30 minutes (up to 40 measures). The following curve is obtained
 
-<img src='images/bacteria-growing-preliminary.png'>
+<img src='images/bacteria-growing-preliminary.png' />
 
 This experiment shows clearly the log phase and the stationary phase. But
 the experiment was faster than expected ... an acquisition every 15 minutes
@@ -94,10 +94,10 @@ fast. In our case it cost $30 with shipping and we receive PCBs in one week.
 
 All the components we use but one are rather mainstream and can
 be found on ebay or aliexpress. The only special component  is the light to
-frequency converter (TSL235R)[https://www.sparkfun.com/datasheets/Sensors/Imaging/TSL235R-LF.pdf]
-that we buy on (Mouser website)[http://www.mouser.com].
+frequency converter [TSL235R](https://www.sparkfun.com/datasheets/Sensors/Imaging/TSL235R-LF.pdf)
+that we buy on [Mouser website](http://www.mouser.com).
 
-<img src='images/pcb-description/pcb-description.001.jpeg' width=600>
+<img src='images/pcb-description/pcb-description.001.jpeg' width='600' />
 
 The board is rather straighforward. The only 
 
