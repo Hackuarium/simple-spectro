@@ -124,9 +124,12 @@ The instruction  s  will show you the current settings
 |    Y      |  24    | Status
 |    Z      |  25    | Current menu
 
-You may change the parameter K, L, M, N, Q, R, V from the command line. To check a value just enter the corresponding
-uppercase letter (ie `N`) followed by `Enter`. To set a value just enter the new value just after (ie `N20` to set 20 
-experiments for kinetic).
+You may change the parameter `K`, `L`, `M`, `N`, `Q`, `R`, `V` from the command line. To check a value just enter the corresponding uppercase letter (ie `N`) followed by `Enter`. To set a value just enter the new value just after (ie `N20` to set 20 experiments for kinetic).
+
+To retrieve all the data acquired in a kinetic, the easiest is use the `d` command. This will dump all the acquired data. Please take care that the data are stored in RAM and it is lost in case there is no power.
+
+The dump data will contains many columns. The first column corresponds to the time (in ms) since the device was started, the next columns correspond to all the acquired colors.
+The first line corresponds to the blank and the next lines to the kinetic. The values for each column is directly proprotional to the quantity of light that reach the detector. If you want to calculate the corresponding absorbance you need to substract to each value the corresponding value of the first row.
 
 
 ## How to make it ?
