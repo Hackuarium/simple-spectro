@@ -97,21 +97,37 @@ You may now control the spectrophotometer. To see the available command just ent
 
 The instruction  s  will show you the current settings
 
-|             |          Grouping           ||
-First Header  | Second Header | Third Header |
- ------------ | :-----------: | -----------: |
-Content       |          *Long Cell*        ||
-Content       |   **Cell**    |         Cell |
 
-New section   |     More      |         Data |
-And more      | With an escaped '\|'         || 
+| Parameter | Number | Desciption
+|-----------|--------|----------------------
+|    A      |  0     | Transmission sample color 1
+|    B      |  1     | Transmission sample color 2
+|    C      |  2     | Transmission sample color 3
+|    D      |  3     | Transmission sample color 4
+|    E      |  4     | Transmission sample color 5
+|    F      |  5     | Transmission blank color 1
+|    G      |  6     | Transmission blank color 2
+|    H      |  7     | Transmission blank color 3
+|    I      |  8     | Transmission blank color 4
+|    J      |  9     | Transmission blank color 5
+|    K      |  10    | Delay before acquisition of the blank
+|    L      |  11    | Delay before the acquisition of the sample
+|    M      |  12    | Delay between the each acquisition of a kinetic (after blank and first)
+|    N      |  13    | Number of experiments for kinetic (max 240 / (number colros + 1))
+|    O      |  14    | Number of the next experiment
+|    P      |  15    | Current time waiting
+|    Q      |  16    | Number of acquisition of 100ms that will be taken (default 10). This value could be reduced for fast kinetic
+|    R      |  17    | Invert the rotary direction
+|    V      |  21    | Active leds. A number between 0 and 15. Each bit represents a LED (R, G, B and U). 5 would corresponds to Red and Blue.
+|    W      |  22    | Error
+|    X      |  23    | Value of the color that will be displayed in the result
+|    Y      |  24    | Status
+|    Z      |  25    | Current menu
 
-|----------------|--------|-------------|
-| xxx |yyy|zzz|
-|----------------|--------|-------------|
-|xxx|yyy|zzz|
-|xxx|yyy|zzz|
-|xxx|yyy|zzz|
+You may change the parameter K, L, M, N, Q, R, V from the command line. To check a value just enter the corresponding
+uppercase letter (ie `N`) followed by `Enter`. To set a value just enter the new value just after (ie `N20` to set 20 
+experiments for kinetic).
+
 
 ## How to make it ?
 
