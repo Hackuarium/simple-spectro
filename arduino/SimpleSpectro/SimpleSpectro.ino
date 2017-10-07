@@ -15,7 +15,8 @@
 #define UV1    A4 // 5mm
 
 #define DATA_SIZE 240
-long data[DATA_SIZE]; // epoch R G B UV1 UV2
+#define DATA_TYPE 1  // LONG
+
 
 
 byte ALL_LEDS[] = {RED, GREEN, BLUE, UV1};  // all possible leds

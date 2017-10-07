@@ -32,7 +32,6 @@ void setActiveLeds() {
 
 NIL_WORKING_AREA(waThreadAcquisition, 128);
 NIL_THREAD(ThreadAcquisition, arg) {
-  clearData();
   setParameter(PARAM_NEXT_EXP, -1);
   while (true) {
     if (getParameter(PARAM_NEXT_EXP) == 0) {
@@ -97,15 +96,15 @@ void runExperiment(byte nbExperiments) {
 void calculateResult(byte experimentNumber) {
   // we calculate the difference with blank
   for (byte i = 0; i < nbLeds; i++) {
-    if (data[experimentNumber * dataRowSize + i + 1] == LONG_MAX_VALUE) {
+    if (getDataLong(experimentNumber * dataRowSize + i + 1) == LONG_MAX_VALUE) {
       setParameter(i, INT_MAX_VALUE); // current experiment
     } else {
-      setParameter(i, data[experimentNumber * dataRowSize + i + 1] / 16); // current experiment
+      setParameter(i, getDataLong(experimentNumber * dataRowSize + i + 1) / 16); // current experiment
     }
-    if (data[i + 1] == LONG_MAX_VALUE) {
+    if (getDataLong(i + 1) == LONG_MAX_VALUE) {
       setParameter(i + 5, INT_MAX_VALUE); // blank saturation
     } else {
-      setParameter(i + 5, data[i + 1] / 16); // blank value
+      setParameter(i + 5, getDataLong(i + 1) / 16); // blank value
     }
   }
 }
@@ -115,24 +114,26 @@ void acquire() {
   setParameter(PARAM_MENU, 32);
   byte target = getParameter(PARAM_NEXT_EXP) * dataRowSize;
   if (target < 0) return;
-  data[target] = millis();
+  setDataLong(target, millis());
   for (byte i = 0; i < nbLeds; i++) {
     
     pinMode(LEDS[i], OUTPUT);
-    data[target + i + 1] = 0;
+
+    long newValue=0;
+   
    
     for (byte j = 0; j <  getParameter(PARAM_NUMBER_ACQ); j++) {
       digitalWrite(LEDS[i], HIGH);
       FreqCount.begin(100);
       nilThdSleepMilliseconds(105);
       long currentCount = FreqCount.read();
-      data[target + i + 1] += currentCount;
+      newValue += currentCount;
       digitalWrite(LEDS[i], LOW);
       if (currentCount > 50000) {
         // there is an error, the frequency was too high for the detector
         // this means we should either work in a darker environnement (at least close the box)
         // or that the LED is too strong !
-        data[target + i + 1] = LONG_MAX_VALUE;
+       setDataLong(target + i + 1, LONG_MAX_VALUE);
         break;
       }
       FreqCount.begin(100);
@@ -141,22 +142,23 @@ void acquire() {
       if (currentCount > 10000) {
         // there is an error, the frequency was too high without led on
         // this means we should work in a darker environnement (at least close the box)
-        data[target + i + 1] = LONG_MAX_VALUE;
+        setDataLong(target + i + 1, LONG_MAX_VALUE);
         break;
       }
-      data[target + i + 1] -= currentCount;
+      newValue -= currentCount;
       if (getParameter(PARAM_NEXT_EXP) < 0) return;
     }
+    setDataLong(target + i + 1, newValue);
   }
 }
 
 void printData(Print* output) {
   for (byte i = 0; i < maxNbRows; i++) {
     for (byte j = 0; j < dataRowSize; j++) {
-      if (data[i * dataRowSize + j] == LONG_MAX_VALUE) {
+      if (getDataLong(i * dataRowSize + j) == LONG_MAX_VALUE) {
         output->print("OVER");
       } else {
-        output->print(data[i * dataRowSize + j]);
+        output->print(getDataLong(i * dataRowSize + j));
       }
       output->print(" ");
     }
@@ -166,7 +168,7 @@ void printData(Print* output) {
 
 void clearData() {
   for (byte i = 0; i < DATA_SIZE; i++) {
-    data[i] = 0;
+    setDataLong(i, 0);
   }
 }
 

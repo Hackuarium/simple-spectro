@@ -169,23 +169,24 @@ void lcdResults(int counter, boolean doAction) {
 
   // calculate the last experiment based on epoch of each experiment
   byte lastExperiment = 1;
+  long dataZero=getDataLong(0);
   for (lastExperiment; lastExperiment < maxNbRows; lastExperiment++) {
-    if (data[lastExperiment * dataRowSize] <= data[0]) break;
+    if (getDataLong(lastExperiment * dataRowSize) <= dataZero) break;
   }
 
   updateCurrentMenu(counter, lastExperiment - 1, 50);
   byte start = getParameter(PARAM_MENU) % 50;
   for (byte i = start; i < min(lastExperiment, start + LCD_NB_ROWS); i++) {
     lcd.setCursor(0, i - start);
-    lcd.print((data[i * dataRowSize] - data[0]) / 1000);
+    lcd.print((getDataLong(i * dataRowSize) - getDataLong(0)) / 1000);
     lcd.print(" ");
-    if (data[getParameter(PARAM_COLOR)] == LONG_MAX_VALUE || data[i * dataRowSize + getParameter(PARAM_COLOR)] == LONG_MAX_VALUE) {
+    if (getDataLong(getParameter(PARAM_COLOR)) == LONG_MAX_VALUE || getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)) == LONG_MAX_VALUE) {
       lcd.print(F("OVER"));
     } else {
-      lcd.print(log10((double)data[getParameter(PARAM_COLOR)] / (double)data[i * dataRowSize + getParameter(PARAM_COLOR)]));
+      lcd.print(log10(getDataLong(getParameter(PARAM_COLOR)) / getDataLong(i * dataRowSize + getParameter(PARAM_COLOR))));
     }
     lcd.print(" ");
-    lcd.print(data[i * dataRowSize + getParameter(PARAM_COLOR)]);
+    lcd.print(getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)));
     lcdPrintBlank(6);
   }
 }

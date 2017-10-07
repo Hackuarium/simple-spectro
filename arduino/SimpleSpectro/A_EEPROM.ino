@@ -9,8 +9,20 @@
 
 
 #define EEPROM_MIN_ADDR            0
-#define EEPROM_MAX_ADDR          511
+#define EEPROM_MAX_ADDR          1023
 
+
+
+#define DATA_SIZE 240
+#define DATA_TYPE 0  // LONG
+
+void setDataLong(int index, long value) {
+  eeprom_write_dword((uint32_t*) (EEPROM_MAX_ADDR - 4 * index - 3), value);
+}
+
+long getDataLong(int index) {
+  return eeprom_read_dword((uint32_t*) (EEPROM_MAX_ADDR - 4 * index - 3));
+}
 
 
 // code from http://www.arduino.cc/playground/Code/EepromUtil
