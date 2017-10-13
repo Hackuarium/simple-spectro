@@ -36,13 +36,12 @@ NIL_THREAD(ThreadAcquisition, arg) {
   while (true) {
     if (getParameter(PARAM_NEXT_EXP) == 0) {
       setActiveLeds();
-      clearData();
       switch (getParameter(PARAM_STATUS)) {
         case STATUS_ONE_SPECTRUM:
           runExperiment();
           break;
         case STATUS_KINETIC:
-          byte numberExperiments=min(maxNbRows,getParameter(PARAM_NUMPER_EXP));
+          byte numberExperiments = min(maxNbRows, getParameter(PARAM_NUMPER_EXP));
           runExperiment(numberExperiments);
           break;
       }
@@ -82,6 +81,9 @@ void runExperiment(byte nbExperiments) {
   for (byte i = 0; i <= nbExperiments; i++) {
     setParameter(PARAM_NEXT_EXP, i);
     waitExperiment();
+    if (i == 0) {
+      clearData();
+    }
     if (getParameter(PARAM_NEXT_EXP) < 0) return;
     acquire();
     if (getParameter(PARAM_NEXT_EXP) < 0) return;
@@ -116,12 +118,12 @@ void acquire() {
   if (target < 0) return;
   setDataLong(target, millis());
   for (byte i = 0; i < nbLeds; i++) {
-    
+
     pinMode(LEDS[i], OUTPUT);
 
-    long newValue=0;
-   
-   
+    long newValue = 0;
+
+
     for (byte j = 0; j <  getParameter(PARAM_NUMBER_ACQ); j++) {
       digitalWrite(LEDS[i], HIGH);
       FreqCount.begin(100);
@@ -133,7 +135,7 @@ void acquire() {
         // there is an error, the frequency was too high for the detector
         // this means we should either work in a darker environnement (at least close the box)
         // or that the LED is too strong !
-       setDataLong(target + i + 1, LONG_MAX_VALUE);
+        setDataLong(target + i + 1, LONG_MAX_VALUE);
         break;
       }
       FreqCount.begin(100);
@@ -168,7 +170,9 @@ void printData(Print* output) {
 
 void clearData() {
   for (byte i = 0; i < DATA_SIZE; i++) {
-    setDataLong(i, 0);
+    if (getDataLong(i) != 0) {
+      setDataLong(i, 0);
+    }
   }
 }
 
