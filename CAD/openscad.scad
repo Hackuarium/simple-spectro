@@ -2,21 +2,115 @@ pcbLength=100;
 pcbWidth=50;
 pcbThickness=1.6;
 pcbSpaceAround=5; // need some space because of rounded angles
-thickness=8; // thickness of the external box
+
+sideThickness=8; 
+frontThickness=6; 
+frontHeight=20;
+overlap=4; // overlap between top and bottom
+
+supportWidth=15;
+supportLength=15;
+supportHeight=6;
+
+
+
+$fn=50;
 
 // PCB
-color("red",0.2) cube([pcbLength, pcbWidth, pcbThickness]);
+* color("red",1)
+    cube([pcbLength, pcbWidth, pcbThickness]);
 
 
-rounded3DRectangle(x=20, y=10, z=5, r=2);
+* translate([-(pcbSpaceAround+sideThickness), -(pcbSpaceAround+sideThickness), 10])
+    color("green",0.8) 
+        mirror([0,0,1]) 
+            roundedParallelepiped5(
+                x=pcbLength+pcbSpaceAround+sideThickness,
+                y=pcbWidth+pcbSpaceAround+sideThickness,
+                z=10,
+                r=2
+            );
+
+difference() {
+    // the front box
+    roundedParallelepiped5(
+        x=pcbLength+2*pcbSpaceAround+2*sideThickness,
+        y=pcbWidth+2*pcbSpaceAround+2*sideThickness,
+        z=frontHeight,
+        r=2
+    );
+
+    // remove the top layer where the PCB is fixed
+    translate([sideThickness, sideThickness, supportHeight + frontThickness])
+    roundedParallelepiped4(
+        x=pcbLength+2*pcbSpaceAround,
+        y=pcbWidth+2*pcbSpaceAround,
+        z=frontHeight,
+        r=2
+    );
+    
+    // remove the bottom layer as 2 roundParallelepiped
+    translate([sideThickness+supportLength+pcbSpaceAround, sideThickness+pcbSpaceAround, topThickness])
+    roundedParallelepiped4(
+        x=pcbLength-2*supportLength,
+        y=pcbWidth,
+        z=frontHeight,
+        r=2
+    );
+    translate([sideThickness+pcbSpaceAround, sideThickness+supportWidth+pcbSpaceAround, topThickness])
+    roundedParallelepiped4(
+        x=pcbLength,
+        y=pcbWidth-2*supportWidth,
+        z=frontHeight,
+        r=2
+    );
+    
+    // we need to remove some material so that is fits together
+        translate([sideThickness/2, sideThickness/2, frontHeight - overlap])
+    roundedParallelepiped4(
+        x=pcbLength+2*pcbSpaceAround+sideThickness,
+        y=pcbWidth+2*pcbSpaceAround+sideThickness,
+        z=frontHeight,
+        r=2
+    );
+}
 
 
-module rounded3DRectangle(x, y, z, r) {
+
+module roundedParallelepiped4(x, y, z, r) {
     hull() {
         translate([r,r,0]) cylinder(h=z, r=r);
         translate([x-r,r,0]) cylinder(h=z, r=r);
         translate([r,y-r,0]) cylinder(h=z, r=r);
         translate([x-r,y-r,0]) cylinder(h=z, r=r);
     }
+}
 
+// top face is flat
+module roundedParallelepiped5(x, y, z, r) {
+   echo(x,y,z,r);
+    hull() {
+        translate([r,r,0]) sphere(r=r);
+        translate([x-r,r,0]) sphere(r=r);
+        translate([r,y-r,0]) sphere(r=r);
+        translate([x-r,y-r,0]) sphere(r=r);
+        translate([r,r,z-r]) cylinder(h=r, r=r);
+        translate([x-r,r,z-r]) cylinder(h=r, r=r);
+        translate([r,y-r,z-r]) cylinder(h=r, r=r);
+        translate([x-r,y-r,z-r]) cylinder(h=r, r=r);
+    }
+}
+
+module roundedParallelepiped6(x, y, z, r) {
+   echo(x,y,z,r);
+    hull() {
+        translate([r,r,0]) sphere(r=r);
+        translate([x-r,r,0]) sphere(r=r);
+        translate([r,y-r,0]) sphere(r=r);
+        translate([x-r,y-r,0]) sphere(r=r);
+        translate([r,r,z-r]) sphere(r=r);
+        translate([x-r,r,z-r]) sphere(r=r);
+        translate([r,y-r,z-r]) sphere(r=r);
+        translate([x-r,y-r,z-r]) sphere(r=r);
+    }
 }
