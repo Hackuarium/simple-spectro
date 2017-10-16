@@ -11,8 +11,14 @@ overlap=4; // overlap between top and bottom
 supportWidth=15;
 supportLength=15;
 supportHeight=6;
+supportHoleX=6;
+supportHoleY=4;
+supportHoleR=1.5;
 
-
+screenX=50;
+screenY=30;
+screenLength=40;
+screenWidth=20;
 
 $fn=50;
 
@@ -73,6 +79,23 @@ difference() {
         z=frontHeight,
         r=2
     );
+    
+    // remove the holes to fix the PCB
+    translate([sideThickness+pcbSpaceAround+supportHoleX, sideThickness+pcbSpaceAround+supportHoleY, frontThickness])
+        cylinder(r=supportHoleR, h=frontHeight);
+    
+    translate([sideThickness+pcbSpaceAround+pcbLength-supportHoleX, sideThickness+pcbSpaceAround+supportHoleY, frontThickness])
+        cylinder(r=supportHoleR, h=frontHeight);
+    
+    translate([sideThickness+pcbSpaceAround+supportHoleX, sideThickness+pcbSpaceAround++pcbWidth-supportHoleY, frontThickness])
+        cylinder(r=supportHoleR, h=frontHeight);
+    
+    translate([sideThickness+pcbSpaceAround+pcbLength-supportHoleX, sideThickness+pcbSpaceAround+pcbWidth-supportHoleY, frontThickness])
+        cylinder(r=supportHoleR, h=frontHeight);
+        
+    // we will remove the hole for the screen
+    translate([screenX, screenY, -10])
+        cube([screenLength, screenWidth, frontHeight]);
 }
 
 
