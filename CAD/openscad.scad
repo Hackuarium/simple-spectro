@@ -1,11 +1,10 @@
 pcbLength=98.7;
 pcbWidth=73.2;
 pcbThickness=1.6;
-pcbSpaceAround=5; // need some space because of rounded angles
+pcbSpaceAround=1; // need some space because of rounded angles
 
-sideThickness=6; 
+sideThickness=4; 
 frontThickness=4; 
-frontHeight=25;
 bottomThickness=6;
 bottomHeight=12;
 overlap=4; // overlap between top and bottom
@@ -47,7 +46,13 @@ batteryWidth=30;
 
 screenProtectionHeight=1.5;
 
-radius=2.5; // using bit of 5
+radius=3; // using bit of 3
+
+usbHeight=5.8;
+usbWidth=10;
+usbY=38.2+shift;
+
+frontHeight=frontThickness+usbHeight+supportHeight+pcbThickness;
 
 $fn=50;
 
@@ -146,12 +151,11 @@ translate([cuvetteX, cuvetteY, 0])
 translate([0, 0, 0])
     difference() {
         // the front box
-        roundedParallelepiped5(
-            x=pcbLength+2*pcbSpaceAround+2*sideThickness,
-            y=pcbWidth+2*pcbSpaceAround+2*sideThickness,
-            z=frontHeight,
-            r=radius
-        );
+        cube([
+            pcbLength+2*pcbSpaceAround+2*sideThickness,
+            pcbWidth+2*pcbSpaceAround+2*sideThickness,
+            frontHeight
+        ]);
 
         // remove the top layer where the PCB is fixed
         translate([sideThickness, sideThickness, supportHeight + frontThickness])
@@ -220,8 +224,15 @@ translate([0, 0, 0])
                 y=pcbWidth+2*pcbSpaceAround,
                 z=screenProtectionHeight,
                 r=radius
-            );        
+            );
+        
+        // we remove the USB port
+        translate([0,usbY,pcbThickness+frontThickness+supportHeight])
+            cube([sideThickness,usbWidth,usbHeight]);
+    
+
     }
+    
     
     // we add a border around push button
     difference() {
@@ -231,11 +242,6 @@ translate([0, 0, 0])
         translate([rotaryX, rotaryY, -2])
             cylinder(r=rotaryR, h=height);
     }
-
-
-
-
-
 
 
 
@@ -262,12 +268,15 @@ module cuvette() {
         }
        
         // round corners
-        translate([-r-cuvetteThickness,-cuvetteY+r+sideThickness+pcbSpaceAround,0]) cylinder(h=supportHeight+frontThickness, r=r);
-        translate([cuvetteInternal+cuvetteThickness+r,-cuvetteY+r+sideThickness+pcbSpaceAround,0]) cylinder(h=supportHeight+frontThickness, r=r);
+        translate([-r-cuvetteThickness,-cuvetteY+r+sideThickness+pcbSpaceAround,0])
+            cylinder(h=supportHeight+frontThickness, r=r);
+        translate([cuvetteInternal+cuvetteThickness+r,-cuvetteY+r+sideThickness+pcbSpaceAround,0])
+            cylinder(h=supportHeight+frontThickness, r=r);
         
+
         // round corners
-        translate([-r-cuvetteThickness,sideThickness-cuvetteY+r,0]) cylinder(h=frontHeight-overlap, r=r);
-        translate([cuvetteInternal+cuvetteThickness+r,sideThickness-cuvetteY+r,0]) cylinder(h=frontHeight-overlap, r=r);
+        translate([-r-cuvetteThickness,sideThickness-cuvetteY+r,frontThickness+supportHeight]) cylinder(h=frontHeight-overlap, r=r);
+        translate([cuvetteInternal+cuvetteThickness+r,sideThickness-cuvetteY+r,frontThickness+supportHeight]) cylinder(h=frontHeight-overlap, r=r);
         
         // create the hole for cuvette
         translate([0, 0, 0])
@@ -281,6 +290,10 @@ module cuvette() {
             cube([cuvetteThickness, cuvetteWindow, frontHeight-overlap]);
         translate([(cuvetteInternal-cuvetteWindow)/2, cuvetteInternal,  heightWindow])
             cube([cuvetteWindow, cuvetteThickness, frontHeight-overlap]);
+        
+        // TEMPORARY to print as today design 
+        translate([-r-cuvetteThickness,-cuvetteY, frontThickness+supportHeight])
+                cube([cuvetteInternal+cuvetteThickness*2+2*r,cuvetteY-cuvetteThickness,frontHeight-overlap-screenProtectionHeight]);
     }
 }
 
