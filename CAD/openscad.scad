@@ -248,8 +248,10 @@ module cuvette() {
                 translate([-cuvetteThickness,-cuvetteY+sideThickness,screenProtectionHeight]) cube([r,r,frontHeight-overlap-screenProtectionHeight]);
                 translate([cuvetteInternal+cuvetteThickness-r,-cuvetteY+sideThickness,screenProtectionHeight]) cube([r,r,frontHeight-overlap-screenProtectionHeight]);
             
-                translate([-cuvetteThickness+r,cuvetteInternal + cuvetteThickness - r,screenProtectionHeight]) cylinder(h=frontHeight-overlap-screenProtectionHeight, r=r);
-                translate([cuvetteInternal+cuvetteThickness-r,cuvetteInternal+cuvetteThickness-r,screenProtectionHeight]) cylinder(h=frontHeight-overlap-screenProtectionHeight, r=r);
+                translate([-cuvetteThickness,cuvetteInternal + cuvetteThickness - r,screenProtectionHeight]) cube([r,r,frontHeight-overlap-screenProtectionHeight]);
+                translate([cuvetteInternal+cuvetteThickness-r,cuvetteInternal+cuvetteThickness-r,screenProtectionHeight]) cube([r,r,frontHeight-overlap-screenProtectionHeight]);
+                
+     
             }
             // little extension to make round corners
             translate([-r-cuvetteThickness,sideThickness-cuvetteY, screenProtectionHeight])
