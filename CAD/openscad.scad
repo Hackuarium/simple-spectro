@@ -1,61 +1,69 @@
-pcbLength=100;
-pcbWidth=50;
+pcbLength=98.7;
+pcbWidth=73.2;
 pcbThickness=1.6;
 pcbSpaceAround=5; // need some space because of rounded angles
 
-sideThickness=8; 
-frontThickness=6; 
-frontHeight=20;
+sideThickness=6; 
+frontThickness=4; 
+frontHeight=25;
 bottomThickness=6;
-bottomHeight=30;
+bottomHeight=12;
 overlap=4; // overlap between top and bottom
 
-supportWidth=15;
-supportLength=15;
-supportHeight=6;
-supportHoleX=6;
-supportHoleY=4;
+shift=pcbSpaceAround+sideThickness;
+
+supportWidth=6;
+supportLength=6;
+supportHeight=7;
+supportHoleX=3.5;
+supportHoleY=3.5;
 supportHoleR=1.5;
 bottomHoleR=3;
 bottomHoleHeight=4;
 
-rotaryX=80;
-rotaryY=30;
-rotaryR=2;
+rotaryX=13.2+shift;
+rotaryY=12.8+shift;
+rotaryR=4;
+rotaryExtension=2;
+rotaryExtensionR=6;
 
-screenX=30;
-screenY=30;
-screenLength=40;
-screenWidth=20;
+screenX=13.4+shift;
+screenY=40.5+shift;
+screenLength=71.6;
+screenWidth=25.1;
 
-cuvetteX=50;
-cuvetteY=10;
-cuvetteInternal=10;
-cuvetteThickness=3;
-cuvetteWindow=4;
+cuvetteX=48.7+shift;
+cuvetteY=5.4+shift;
+cuvetteInternal=12.9;
+cuvetteThickness=1.6;
+cuvetteWindow=3;
 cuvetteWindowHeight=5;
 cuvetteBottomSpace=2;
 
-batteryX=70;
-batteryY=20;
-batteryLength=30;
+batteryX=10+shift;
+batteryY=40+shift;
+batteryLength=70;
 batteryWidth=30;
 
-$fn=30;
+screenProtectionHeight=1.5;
+
+radius=2.5; // using bit of 5
+
+$fn=50;
 
 // PCB
 * color("red",0.2)
-    translate([0,0,supportHeight+frontThickness])
+    translate([shift,shift,-50])
         cube([pcbLength, pcbWidth, pcbThickness]);
 
 // create the bottom part 
-translate([-pcbSpaceAround-sideThickness, -pcbSpaceAround-sideThickness, 50])
+*translate([0, 0, 50])
     difference() {
         roundedParallelepiped6(
             x=pcbLength+2*pcbSpaceAround+2*sideThickness,
             y=pcbWidth+2*pcbSpaceAround+2*sideThickness,
             z=bottomHeight,
-            r=2
+            r=radius
         );
         
         // remove the external border so it fits in the other part
@@ -64,73 +72,85 @@ translate([-pcbSpaceAround-sideThickness, -pcbSpaceAround-sideThickness, 50])
                 x=pcbLength+2*pcbSpaceAround+2*sideThickness,
                 y=pcbWidth+2*pcbSpaceAround+2*sideThickness,
                 z=overlap,
-                r=2
+                r=radius
             );
             translate([sideThickness/2, sideThickness/2, 0])
                 roundedParallelepiped4(
                     x=pcbLength+2*pcbSpaceAround+sideThickness,
                     y=pcbWidth+2*pcbSpaceAround+sideThickness,
                     z=overlap,
-                    r=2
+                    r=radius
                 );
         }
         
         // remove the hole for cuvette
         translate([
-            cuvetteX-cuvetteBottomSpace+pcbSpaceAround+sideThickness,
-            cuvetteY-cuvetteBottomSpace+pcbSpaceAround+sideThickness,
+            cuvetteX-cuvetteBottomSpace,
+            cuvetteY-cuvetteBottomSpace,
             0
         ])
-        roundedParallelepiped4(x=cuvetteInternal+2*cuvetteBottomSpace, y=cuvetteInternal+2*cuvetteBottomSpace, z=bottomHeight-bottomThickness, r=2);
+        roundedParallelepiped4(x=cuvetteInternal+2*cuvetteBottomSpace, y=cuvetteInternal+2*cuvetteBottomSpace, z=bottomHeight-bottomThickness, r=radius);
         
           // remove the hole for battery
         translate([
-            batteryX+pcbSpaceAround+sideThickness,
-            batteryY+pcbSpaceAround+sideThickness,
+            batteryX,
+            batteryY,
             0
         ])
-        roundedParallelepiped4(x=batteryLength, y=batteryWidth, z=bottomHeight-bottomThickness, r=2);
+            roundedParallelepiped4(x=batteryLength, y=batteryWidth, z=bottomHeight-bottomThickness, r=radius);
         
-        // make holes for screws
-        translate([sideThickness+pcbSpaceAround+supportHoleX, sideThickness+pcbSpaceAround+supportHoleY, 0])
-            cylinder(r=bottomHoleR, h=bottomHoleHeight);
+        // make holes for screws        
+        translate([shift+supportHoleX, shift+supportHoleY, 0])
+            screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);
         
-        translate([sideThickness+pcbSpaceAround+pcbLength-supportHoleX, sideThickness+pcbSpaceAround+supportHoleY, 0])
-            cylinder(r=bottomHoleR, h=bottomHoleHeight);
+        translate([shift+pcbLength-supportHoleX, shift+supportHoleY, 0])
+            screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);
         
-        translate([sideThickness+pcbSpaceAround+supportHoleX, sideThickness+pcbSpaceAround++pcbWidth-supportHoleY, 0])
-            cylinder(r=bottomHoleR, h=bottomHoleHeight);
+        translate([shift+supportHoleX, shift+pcbWidth-supportHoleY, 0])
+            screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);
         
-        translate([sideThickness+pcbSpaceAround+pcbLength-supportHoleX, sideThickness+pcbSpaceAround+pcbWidth-supportHoleY, 0])
-            cylinder(r=bottomHoleR, h=bottomHoleHeight);
+        translate([shift+pcbLength-supportHoleX, shift+pcbWidth-supportHoleY, 0])
+            screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);
+        
             
     }
     
+
+// create a hole that is smaller in the middle
+module screwHole(rSmall=2, rLarge=4, height=10, heightLarge=3) {
+    heightSmall=height-2*heightLarge;
+    cylinder(r=rLarge, h=heightLarge);
+    translate([0,0,heightLarge])
+        cylinder(r=rSmall, h=heightSmall);
+     translate([0,0,heightLarge+heightSmall])
+        cylinder(r=rLarge, h=heightLarge);
+}
 
 
 // create the cuvette
 translate([cuvetteX, cuvetteY, 0])
     cuvette(
         frontHeight,
-        r=2,
+        r=radius,
         cuvetteInternal,
         cuvetteY,
         overlap,
         pcbSpaceAround,
         supportHeight,
         frontThickness,
-        pcbThickness
+        pcbThickness,
+        screenProtectionHeight
     );
 
 // create the box with the holes
-translate([-pcbSpaceAround-sideThickness, -pcbSpaceAround-sideThickness, 0])
+translate([0, 0, 0])
     difference() {
         // the front box
         roundedParallelepiped5(
             x=pcbLength+2*pcbSpaceAround+2*sideThickness,
             y=pcbWidth+2*pcbSpaceAround+2*sideThickness,
             z=frontHeight,
-            r=2
+            r=radius
         );
 
         // remove the top layer where the PCB is fixed
@@ -139,7 +159,7 @@ translate([-pcbSpaceAround-sideThickness, -pcbSpaceAround-sideThickness, 0])
                 x=pcbLength+2*pcbSpaceAround,
                 y=pcbWidth+2*pcbSpaceAround,
                 z=frontHeight,
-                r=2
+                r=radius
             );
         
         // remove the bottom layer as 2 roundParallelepiped
@@ -148,14 +168,14 @@ translate([-pcbSpaceAround-sideThickness, -pcbSpaceAround-sideThickness, 0])
                 x=pcbLength-2*supportLength,
                 y=pcbWidth,
                 z=frontHeight,
-                r=2
+                r=radius
             );
         translate([sideThickness+pcbSpaceAround, sideThickness+supportWidth+pcbSpaceAround, frontThickness])
             roundedParallelepiped4(
                 x=pcbLength,
                 y=pcbWidth-2*supportWidth,
                 z=frontHeight,
-                r=2
+                r=radius
             );
         
         // we need to remove some material so that is fits together
@@ -164,7 +184,7 @@ translate([-pcbSpaceAround-sideThickness, -pcbSpaceAround-sideThickness, 0])
             x=pcbLength+2*pcbSpaceAround+sideThickness,
             y=pcbWidth+2*pcbSpaceAround+sideThickness,
             z=frontHeight,
-            r=2
+            r=radius
         );
         
         // remove the holes to fix the PCB
@@ -190,9 +210,28 @@ translate([-pcbSpaceAround-sideThickness, -pcbSpaceAround-sideThickness, 0])
             cube([screenLength, screenWidth, frontThickness]);
             
                 // create the hole for cuvette
-        translate([cuvetteX+sideThickness+pcbSpaceAround, cuvetteY+sideThickness+pcbSpaceAround, 0])
+        translate([cuvetteX, cuvetteY, 0])
             cube([cuvetteInternal, cuvetteInternal, frontHeight]);
+            
+        // remove part for the screen protection
+        translate([sideThickness, sideThickness, 0])
+            roundedParallelepiped4(
+                x=pcbLength+2*pcbSpaceAround,
+                y=pcbWidth+2*pcbSpaceAround,
+                z=screenProtectionHeight,
+                r=radius
+            );        
     }
+    
+    // we add a border around push button
+    difference() {
+        height=rotaryExtension+screenProtectionHeight;
+        translate([rotaryX, rotaryY, -2])
+            cylinder(r=rotaryExtensionR, h=height);
+        translate([rotaryX, rotaryY, -2])
+            cylinder(r=rotaryR, h=height);
+    }
+
 
 
 
@@ -206,27 +245,27 @@ module cuvette() {
         union() {
             // the cuvette itself
             hull() {
-                translate([-cuvetteThickness,-cuvetteY-pcbSpaceAround,0]) cube([r,r,frontHeight-overlap]);
-                translate([cuvetteInternal+cuvetteThickness-r,-cuvetteY-pcbSpaceAround,0]) cube([r,r,frontHeight-overlap]);
+                translate([-cuvetteThickness,-cuvetteY+sideThickness,screenProtectionHeight]) cube([r,r,frontHeight-overlap-screenProtectionHeight]);
+                translate([cuvetteInternal+cuvetteThickness-r,-cuvetteY+sideThickness,screenProtectionHeight]) cube([r,r,frontHeight-overlap-screenProtectionHeight]);
             
-                translate([-cuvetteThickness+r,cuvetteInternal + cuvetteThickness - r,0]) cylinder(h=frontHeight-overlap, r=r);
-                translate([cuvetteInternal+cuvetteThickness-r,cuvetteInternal+cuvetteThickness-r,0]) cylinder(h=frontHeight-overlap, r=r);
+                translate([-cuvetteThickness+r,cuvetteInternal + cuvetteThickness - r,screenProtectionHeight]) cylinder(h=frontHeight-overlap-screenProtectionHeight, r=r);
+                translate([cuvetteInternal+cuvetteThickness-r,cuvetteInternal+cuvetteThickness-r,screenProtectionHeight]) cylinder(h=frontHeight-overlap-screenProtectionHeight, r=r);
             }
             // little extension to make round corners
-            translate([-r-cuvetteThickness,-pcbSpaceAround-cuvetteY, 0])
-                cube([cuvetteInternal+cuvetteThickness*2+2*r,r,frontHeight-overlap]);
+            translate([-r-cuvetteThickness,sideThickness-cuvetteY, screenProtectionHeight])
+                cube([cuvetteInternal+cuvetteThickness*2+2*r,r,frontHeight-overlap-screenProtectionHeight]);
             
-            translate([-r-cuvetteThickness,-cuvetteY, 0])
-                cube([cuvetteInternal+cuvetteThickness*2+2*r,r,supportHeight+frontThickness]);
+            translate([-r-cuvetteThickness,sideThickness+pcbSpaceAround-cuvetteY, screenProtectionHeight])
+                cube([cuvetteInternal+cuvetteThickness*2+2*r,r,supportHeight+frontThickness-screenProtectionHeight]);
         }
        
         // round corners
-        translate([-r-cuvetteThickness,-cuvetteY+r,0]) cylinder(h=supportHeight+frontThickness, r=r);
-        translate([cuvetteInternal+cuvetteThickness+r,-cuvetteY+r,0]) cylinder(h=supportHeight+frontThickness, r=r);
+        translate([-r-cuvetteThickness,-cuvetteY+r+sideThickness+pcbSpaceAround,0]) cylinder(h=supportHeight+frontThickness, r=r);
+        translate([cuvetteInternal+cuvetteThickness+r,-cuvetteY+r+sideThickness+pcbSpaceAround,0]) cylinder(h=supportHeight+frontThickness, r=r);
         
         // round corners
-        translate([-r-cuvetteThickness,-pcbSpaceAround-cuvetteY+r,0]) cylinder(h=frontHeight-overlap, r=r);
-        translate([cuvetteInternal+cuvetteThickness+r,-pcbSpaceAround-cuvetteY+r,0]) cylinder(h=frontHeight-overlap, r=r);
+        translate([-r-cuvetteThickness,sideThickness-cuvetteY+r,0]) cylinder(h=frontHeight-overlap, r=r);
+        translate([cuvetteInternal+cuvetteThickness+r,sideThickness-cuvetteY+r,0]) cylinder(h=frontHeight-overlap, r=r);
         
         // create the hole for cuvette
         translate([0, 0, 0])
