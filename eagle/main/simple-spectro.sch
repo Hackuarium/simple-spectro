@@ -14667,16 +14667,16 @@ Source: AVX .. aphvc.pdf</description>
 <part name="U1" library="microbuilder" deviceset="MCP73831/2" device="" value="MCP73831T"/>
 <part name="LED1" library="SparkFun" deviceset="LED" device="1206" value="RED"/>
 <part name="LED2" library="SparkFun" deviceset="LED" device="1206" value="GREEN"/>
-<part name="R1" library="rcl" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="470"/>
-<part name="R4" library="rcl" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="470"/>
+<part name="R1" library="rcl" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="1k"/>
+<part name="R4" library="rcl" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="1k"/>
 <part name="C2" library="dp_devices" deviceset="CAPACITOR_NPOL" device="-1206" value="10µF"/>
 <part name="U$3" library="microbuilder" deviceset="GND" device=""/>
 <part name="C3" library="dp_devices" deviceset="CAPACITOR_NPOL" device="-1206" value="10µF"/>
 <part name="U$5" library="microbuilder" deviceset="GND" device=""/>
 <part name="R5" library="rcl" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="10K\"/>
-<part name="RL2" library="rcl" deviceset="R-EU_" device="M1206" value="150"/>
-<part name="RL3" library="rcl" deviceset="R-EU_" device="M1206" value="100"/>
-<part name="RL4" library="rcl" deviceset="R-EU_" device="M1206" value="150"/>
+<part name="RL2" library="rcl" deviceset="R-EU_" device="M1206" value="1k"/>
+<part name="RL3" library="rcl" deviceset="R-EU_" device="M1206" value="1k"/>
+<part name="RL4" library="rcl" deviceset="R-EU_" device="M1206" value="1k"/>
 <part name="U$9" library="lpatiny" deviceset="RGB-COMMON-CATHODE" device=""/>
 <part name="U$11" library="HD44780LCD" deviceset="LCD-HD44780" device="16X2-4-HOLES" technology="4-HOLES"/>
 <part name="CU7" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:26140/1" value="10u"/>
@@ -14691,7 +14691,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="SUPPLY4" library="supply1" deviceset="VDD" device=""/>
 <part name="U$2" library="MyPOW" deviceset="VUSB" device=""/>
 <part name="D4" library="lpatiny" deviceset="1N581*" device="D1206" value="1N581D1206"/>
-<part name="R9" library="rcl" deviceset="R-EU_" device="M1206" value="1k"/>
+<part name="R9" library="rcl" deviceset="R-EU_" device="M1206" value="100"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="L1" library="SparkFun" deviceset="LED" device="5MM" value="UV"/>
 <part name="U$7" library="lpatiny" deviceset="TSL237" device=""/>
@@ -14701,7 +14701,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="D8" library="lpatiny" deviceset="1N581*" device="D1206" value="1N581D1206"/>
 <part name="CU1" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:26140/1" value="100nF"/>
 <part name="RK3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="100k"/>
-<part name="R2" library="rcl" deviceset="R-EU_" device="M1206" value="1k"/>
+<part name="R2" library="rcl" deviceset="R-EU_" device="M1206" value="100"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="L2" library="led" deviceset="LED" device="3MM" value="UV"/>
 <part name="CON_ISP1" library="lpatiny" deviceset="TINYISP" device="" value="SPI"/>
