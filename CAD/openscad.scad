@@ -54,7 +54,7 @@ usbY=38.2+shift;
 
 frontHeight=frontThickness+usbHeight+supportHeight+pcbThickness;
 
-$fn=50;
+$fn=10;
 
 // PCB
 * color("red",0.2)
@@ -64,21 +64,19 @@ $fn=50;
 // create the bottom part 
 *translate([0, 0, 50])
     difference() {
-        roundedParallelepiped6(
-            x=pcbLength+2*pcbSpaceAround+2*sideThickness,
-            y=pcbWidth+2*pcbSpaceAround+2*sideThickness,
-            z=bottomHeight,
-            r=radius
-        );
+        cube([
+            pcbLength+2*pcbSpaceAround+2*sideThickness,
+            pcbWidth+2*pcbSpaceAround+2*sideThickness,
+            bottomHeight
+        ]);
         
         // remove the external border so it fits in the other part
         difference() {
-            roundedParallelepiped5(
-                x=pcbLength+2*pcbSpaceAround+2*sideThickness,
-                y=pcbWidth+2*pcbSpaceAround+2*sideThickness,
-                z=overlap,
-                r=radius
-            );
+            cube([
+                pcbLength+2*pcbSpaceAround+2*sideThickness,
+                pcbWidth+2*pcbSpaceAround+2*sideThickness,
+                overlap
+            ]);
             translate([sideThickness/2, sideThickness/2, 0])
                 roundedParallelepiped4(
                     x=pcbLength+2*pcbSpaceAround+sideThickness,
@@ -251,11 +249,11 @@ module cuvette() {
         union() {
             // the cuvette itself
             hull() {
-                translate([-cuvetteThickness,-cuvetteY+sideThickness,screenProtectionHeight]) cube([r,r,frontHeight-overlap-screenProtectionHeight]);
-                translate([cuvetteInternal+cuvetteThickness-r,-cuvetteY+sideThickness,screenProtectionHeight]) cube([r,r,frontHeight-overlap-screenProtectionHeight]);
+                translate([-cuvetteThickness,-cuvetteY+sideThickness,screenProtectionHeight]) cube([r,r,frontHeight-screenProtectionHeight]);
+                translate([cuvetteInternal+cuvetteThickness-r,-cuvetteY+sideThickness,screenProtectionHeight]) cube([r,r,frontHeight-screenProtectionHeight]);
             
-                translate([-cuvetteThickness,cuvetteInternal + cuvetteThickness - r,screenProtectionHeight]) cube([r,r,frontHeight-overlap-screenProtectionHeight]);
-                translate([cuvetteInternal+cuvetteThickness-r,cuvetteInternal+cuvetteThickness-r,screenProtectionHeight]) cube([r,r,frontHeight-overlap-screenProtectionHeight]);
+                translate([-cuvetteThickness,cuvetteInternal + cuvetteThickness - r,screenProtectionHeight]) cube([r,r,frontHeight-screenProtectionHeight]);
+                translate([cuvetteInternal+cuvetteThickness-r,cuvetteInternal+cuvetteThickness-r,screenProtectionHeight]) cube([r,r,frontHeight-screenProtectionHeight]);
                 
      
             }
