@@ -1,12 +1,14 @@
 pcbLength=98.7;
 pcbWidth=73.2;
 pcbThickness=1.6;
-pcbSpaceAround=1; // need some space because of rounded angles
+pcbSpaceAround=10; // need some space because of rounded angles
 
 sideThickness=4; 
-frontThickness=4; 
+frontThickness=4;
 bottomThickness=6;
+bottomMinimal=2;
 bottomHeight=12;
+bottomClosureSpace=0.3; // number of mm to be sure it can close
 overlap=4; // overlap between top and bottom
 
 shift=pcbSpaceAround+sideThickness;
@@ -18,7 +20,7 @@ supportHoleX=3.5;
 supportHoleY=3.5;
 supportHoleR=1.5;
 bottomHoleR=3;
-bottomHoleHeight=4;
+bottomHoleHeight=3;
 
 rotaryX=13.2+shift;
 rotaryY=12.8+shift;
@@ -39,12 +41,18 @@ cuvetteWindow=3;
 cuvetteWindowHeight=5;
 cuvetteBottomSpace=2;
 
-batteryX=10+shift;
-batteryY=40+shift;
-batteryLength=70;
+batteryX=48+shift;
+batteryY=30+shift;
+batteryLength=50;
 batteryWidth=30;
 
+connectorX=25+shift;
+connectorLength=20;
+connectorWidth=15;
+connectorY=pcbWidth-15+shift;
+
 screenProtectionHeight=1.5;
+screenProtectionSize=2;
 
 radius=3; // using bit of 3
 
@@ -54,7 +62,7 @@ usbY=38.2+shift;
 
 frontHeight=frontThickness+usbHeight+supportHeight+pcbThickness;
 
-$fn=10;
+$fn=50;
 
 // PCB
 * color("red",0.2)
@@ -62,65 +70,107 @@ $fn=10;
         cube([pcbLength, pcbWidth, pcbThickness]);
 
 // create the bottom part 
-*translate([0, 0, 50])
-    difference() {
-        cube([
-            pcbLength+2*pcbSpaceAround+2*sideThickness,
-            pcbWidth+2*pcbSpaceAround+2*sideThickness,
-            bottomHeight
-        ]);
-        
-        // remove the external border so it fits in the other part
+! translate([0, 0, 50])
+    union() {
         difference() {
+            
+                // the bottom
             cube([
                 pcbLength+2*pcbSpaceAround+2*sideThickness,
                 pcbWidth+2*pcbSpaceAround+2*sideThickness,
-                overlap
+                bottomHeight
             ]);
-            translate([sideThickness/2, sideThickness/2, 0])
+            
+            // remove the external border so it fits in the other part
+            difference() {
+                cube([
+                    pcbLength+2*pcbSpaceAround+2*sideThickness,
+                    pcbWidth+2*pcbSpaceAround+2*sideThickness,
+                    overlap
+                ]);
+                translate([sideThickness/2+bottomClosureSpace, sideThickness/2+bottomClosureSpace, 0])
+                    roundedParallelepiped4(
+                        x=pcbLength+2*pcbSpaceAround+sideThickness-2*bottomClosureSpace,
+                        y=pcbWidth+2*pcbSpaceAround+sideThickness-2*bottomClosureSpace,
+                        z=overlap,
+                        r=radius
+                    );
+            }
+            
+            // remove some volume to have room for pcb
+            translate([sideThickness, sideThickness, 0])
                 roundedParallelepiped4(
-                    x=pcbLength+2*pcbSpaceAround+sideThickness,
-                    y=pcbWidth+2*pcbSpaceAround+sideThickness,
-                    z=overlap,
+                    x=pcbLength+2*pcbSpaceAround,
+                    y=pcbWidth+2*pcbSpaceAround,
+                    z=bottomThickness,
                     r=radius
                 );
-        }
-        
-        // remove the hole for cuvette
-        translate([
-            cuvetteX-cuvetteBottomSpace,
-            cuvetteY-cuvetteBottomSpace,
-            0
-        ])
-        roundedParallelepiped4(x=cuvetteInternal+2*cuvetteBottomSpace, y=cuvetteInternal+2*cuvetteBottomSpace, z=bottomHeight-bottomThickness, r=radius);
-        
-          // remove the hole for battery
-        translate([
-            batteryX,
-            batteryY,
-            0
-        ])
-            roundedParallelepiped4(x=batteryLength, y=batteryWidth, z=bottomHeight-bottomThickness, r=radius);
-        
-        // make holes for screws        
-        translate([shift+supportHoleX, shift+supportHoleY, 0])
-            screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);
-        
-        translate([shift+pcbLength-supportHoleX, shift+supportHoleY, 0])
-            screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);
-        
-        translate([shift+supportHoleX, shift+pcbWidth-supportHoleY, 0])
-            screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);
-        
-        translate([shift+pcbLength-supportHoleX, shift+pcbWidth-supportHoleY, 0])
-            screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);
-        
             
-    }
-    
+            // remove the hole for cuvette
+            translate([
+                cuvetteX-cuvetteBottomSpace,
+                cuvetteY-cuvetteBottomSpace,
+                0
+            ])
+            roundedParallelepiped4(x=cuvetteInternal+2*cuvetteBottomSpace, y=cuvetteInternal+2*cuvetteBottomSpace, z=bottomHeight-bottomMinimal, r=radius);
+            
+              // remove the hole for battery
+            translate([
+                batteryX,
+                batteryY,
+                0
+            ])
+                roundedParallelepiped4(x=batteryLength, y=batteryWidth, z=bottomHeight-bottomMinimal, r=radius);
+            
+            translate([
+                connectorX,
+                connectorY,
+                0
+            ])
+                roundedParallelepiped4(x=connectorLength, y=connectorWidth, z=bottomHeight-bottomMinimal, r=radius);
+            
+            
+              // we remove the USB port
+            translate([0,usbY,0])
+                cube([sideThickness,usbWidth,usbHeight]);
+            
+            // make holes for screws        
+            translate([shift+supportHoleX, shift+supportHoleY, 0])
+                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);
+            
+            translate([shift+pcbLength-supportHoleX, shift+supportHoleY, 0])
+                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);
+            
+            translate([shift+supportHoleX, shift+pcbWidth-supportHoleY, 0])
+                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);
+            
+            translate([shift+pcbLength-supportHoleX, shift+pcbWidth-supportHoleY, 0])
+                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);     
+        };
+        
+        translate([
+            cuvetteX-cuvetteBottomSpace-cuvetteThickness,
+            cuvetteY-cuvetteBottomSpace-cuvetteThickness,
+            overlap
+        ])
+            difference() {
+                cube([
+                    cuvetteInternal+2*cuvetteBottomSpace+2*cuvetteThickness,
+                    cuvetteInternal+2*cuvetteBottomSpace+2*cuvetteThickness,
+                    bottomHeight-bottomMinimal-overlap
+                ]);
+             // remove the hole for cuvette
+                translate([
+                    cuvetteThickness,
+                    cuvetteThickness,
+                    0
+                ])
+                roundedParallelepiped4(x=cuvetteInternal+2*cuvetteBottomSpace, y=cuvetteInternal+2*cuvetteBottomSpace, z=bottomHeight-bottomMinimal, r=radius);
+            }
+    };
 
 // create a hole that is smaller in the middle
-module screwHole(rSmall=2, rLarge=4, height=10, heightLarge=3) {
+module screwHole(rSmall=2, rLarge=4, height=10, heightLarge=2.5) {
     heightSmall=height-2*heightLarge;
     cylinder(r=rLarge, h=heightLarge);
     translate([0,0,heightLarge])
@@ -216,13 +266,11 @@ translate([0, 0, 0])
             cube([cuvetteInternal, cuvetteInternal, frontHeight]);
             
         // remove part for the screen protection
-        translate([sideThickness, sideThickness, 0])
-            roundedParallelepiped4(
-                x=pcbLength+2*pcbSpaceAround,
-                y=pcbWidth+2*pcbSpaceAround,
-                z=screenProtectionHeight,
-                r=radius
-            );
+        translate([screenX-screenProtectionSize, screenY-screenProtectionSize, 0])
+            cube([screenLength+2*screenProtectionSize,
+                screenWidth+2*screenProtectionSize,
+                screenProtectionHeight
+            ]);
         
         // we remove the USB port
         translate([0,usbY,pcbThickness+frontThickness+supportHeight])
