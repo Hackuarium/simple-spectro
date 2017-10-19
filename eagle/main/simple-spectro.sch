@@ -12068,15 +12068,15 @@ Source: AVX .. aphvc.pdf</description>
 <part name="R2" library="rcl" deviceset="R-EU_" device="M1206" value="1k">
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
-<part name="C5" library="dp_devices" deviceset="CAPACITOR_NPOL" device="-1206" value="10µF">
+<part name="C5" library="dp_devices" deviceset="CAPACITOR_NPOL" device="-1206" value="10u">
 <attribute name="MPN" value="77-VJ1206V106MXQTBC"/>
 </part>
 <part name="U$3" library="microbuilder" deviceset="GND" device=""/>
-<part name="C4" library="dp_devices" deviceset="CAPACITOR_NPOL" device="-1206" value="10µF">
+<part name="C4" library="dp_devices" deviceset="CAPACITOR_NPOL" device="-1206" value="10u">
 <attribute name="MPN" value="77-VJ1206V106MXQTBC"/>
 </part>
 <part name="U$5" library="microbuilder" deviceset="GND" device=""/>
-<part name="R3" library="rcl" deviceset="R-EU_" device="M1206" value="10K\">
+<part name="R3" library="rcl" deviceset="R-EU_" device="M1206" value="10K">
 <attribute name="MPN" value="603-RC1206FR-0710KL"/>
 </part>
 <part name="R7" library="rcl" deviceset="R-EU_" device="M1206" value="1k">
