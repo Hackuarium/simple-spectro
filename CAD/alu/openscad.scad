@@ -28,6 +28,9 @@ rotaryR=4;
 rotaryExtension=2;
 rotaryExtensionR=6;
 
+logoX=100+shift;
+logoY=0+shift;
+
 screenX=13.4+shift;
 screenY=40.5+shift;
 screenLength=71.6;
@@ -62,15 +65,18 @@ usbY=38.2+shift;
 
 frontHeight=frontThickness+usbHeight+supportHeight+pcbThickness;
 
-$fn=50;
+$fn=5;
 
 // PCB
 * color("red",0.2)
     translate([shift,shift,-50])
         cube([pcbLength, pcbWidth, pcbThickness]);
 
+// Adding the logo
+translate([logoX, logoY, -0.5]) linear_extrude(height=0.5)  rotate(a=[0,180,0]) scale(0.6) color("purple") import("logo.dxf");
+
 // create the bottom part 
-! translate([0, 0, 50])
+translate([0, 0, 50])
     union() {
         difference() {
             
