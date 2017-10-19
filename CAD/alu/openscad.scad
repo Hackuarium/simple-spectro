@@ -1,7 +1,7 @@
 pcbLength=98.7;
 pcbWidth=73.2;
 pcbThickness=1.6;
-pcbSpaceAround=10; // need some space because of rounded angles
+pcbSpaceAround=1; // need some space because of rounded angles
 
 sideThickness=4; 
 frontThickness=4;
@@ -65,7 +65,7 @@ usbY=38.2+shift;
 
 frontHeight=frontThickness+usbHeight+supportHeight+pcbThickness;
 
-$fn=5;
+$fn=50;
 
 // PCB
 * color("red",0.2)
@@ -76,7 +76,7 @@ $fn=5;
 translate([logoX, logoY, -0.5]) linear_extrude(height=0.5)  rotate(a=[0,180,0]) scale(0.6) color("purple") import("logo.dxf");
 
 // create the bottom part 
-translate([0, 0, 50])
+! translate([0, 0, 50])
     union() {
         difference() {
             
