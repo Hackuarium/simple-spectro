@@ -1,12 +1,14 @@
+Partlist exported from /home/lpatiny/git/hackuarium/simple-spectro/eagle/main/simple-spectro.sch at 10/21/17 12:20 PM
+
 Part Value                          Device                         Package                  Description                                      MF MPN                  OC_FARNELL OC_NEWARK
 C1   18pF                           C-EUC1206                      C1206                    CAPACITOR, European symbol                          77-VJ1206A180JXXPBC                      
 C2   18pF                           C-EUC1206                      C1206                    CAPACITOR, European symbol                          77-VJ1206A180JXXPBC                      
 C3   100nF                          C-EUC1206                      C1206                    CAPACITOR, European symbol                          80-C1206C104K5R                          
-C4   10u                            CAPACITOR_NPOL-1206            C1206                    Non-Polarized capacitor in various packages         77-VJ1206V106MXQTBC                      
-C5   10u                            CAPACITOR_NPOL-1206            C1206                    Non-Polarized capacitor in various packages         77-VJ1206V106MXQTBC                      
-C6   10u                            C-EUC1206                      C1206                    CAPACITOR, European symbol                          77-VJ1206V106MXQTBC                      
+C4   10u                            CAPACITOR_NPOL-1206            C1206                    Non-Polarized capacitor in various packages         77-VJ1206V106ZXQTBC                      
+C5   10u                            CAPACITOR_NPOL-1206            C1206                    Non-Polarized capacitor in various packages         77-VJ1206V106ZXQTBC                      
+C6   10u                            C-EUC1206                      C1206                    CAPACITOR, European symbol                          77-VJ1206V106ZXQTBC                      
 C7   100nF                          C-EUC1206                      C1206                    CAPACITOR, European symbol                          80-C1206C104K5R                          
-C8   10u                            C-EUC1206                      C1206                    CAPACITOR, European symbol                          77-VJ1206V106MXQTBC                      
+C8   10u                            C-EUC1206                      C1206                    CAPACITOR, European symbol                          77-VJ1206V106ZXQTBC                      
 C9   100nF                          C-EUC1206                      C1206                    CAPACITOR, European symbol                          80-C1206C104K5R                          
 C10  100nF                          C-EUC1206                      C1206                    CAPACITOR, European symbol                          80-C1206C104K5R                          
 D1   Schottky                       1N581D1206                     LED-1206                 1.0A SCHOTTKY BARRIER RECTIFIER                     579-MCP1703-3302E/DB                     
@@ -34,5 +36,5 @@ R12  1M                             R-EU_M1206                     M1206        
 R13  10k                            R-EU_M1206                     M1206                    RESISTOR, European symbol                           603-RC1206FR-0710KL                      
 R14  1k                             R-EU_M1206                     M1206                    RESISTOR, European symbol                           667-ERJ-8GEYJ101V                        
 R15  100k                           R-EU_M1206                     M1206                    RESISTOR, European symbol                           RC1206FR-07100KL                         
-X1   8MHz                           XTALNX6035                     NX6035                   Low cost SMT crystals, no capacitors included       520-8.0-18-23G-JGNT                      
+X1   8MHz                           XTALNX6035                     NX6035                   Low cost SMT crystals, no capacitors included       729-F60800010                            
 X2   MINI-USB                       MINI-USB-SCHIELD-32005-201     32005-201                MINI USB-B Conector                                 649-10033526-N3212LF                     

@@ -12022,7 +12022,7 @@ Source: AVX .. aphvc.pdf</description>
 <attribute name="MPN" value="80-C1206C104K5R"/>
 </part>
 <part name="X1" library="lpatiny" deviceset="XTAL" device="NX6035" value="8MHz">
-<attribute name="MPN" value="520-8.0-18-23G-JGNT"/>
+<attribute name="MPN" value="729-F60800010"/>
 </part>
 <part name="SUPPLY6" library="supply1" deviceset="VCC" device=""/>
 <part name="SUPPLY7" library="supply1" deviceset="VCC" device=""/>
@@ -12069,11 +12069,11 @@ Source: AVX .. aphvc.pdf</description>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="C5" library="dp_devices" deviceset="CAPACITOR_NPOL" device="-1206" value="10u">
-<attribute name="MPN" value="77-VJ1206V106MXQTBC"/>
+<attribute name="MPN" value="77-VJ1206V106ZXQTBC"/>
 </part>
 <part name="U$3" library="microbuilder" deviceset="GND" device=""/>
 <part name="C4" library="dp_devices" deviceset="CAPACITOR_NPOL" device="-1206" value="10u">
-<attribute name="MPN" value="77-VJ1206V106MXQTBC"/>
+<attribute name="MPN" value="77-VJ1206V106ZXQTBC"/>
 </part>
 <part name="U$5" library="microbuilder" deviceset="GND" device=""/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="M1206" value="10K">
@@ -12091,11 +12091,11 @@ Source: AVX .. aphvc.pdf</description>
 <part name="LED5" library="lpatiny" deviceset="RGB-COMMON-CATHODE" device=""/>
 <part name="LCD" library="HD44780LCD" deviceset="LCD-HD44780" device="16X2-4-HOLES" technology="4-HOLES"/>
 <part name="C8" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="10u">
-<attribute name="MPN" value="77-VJ1206V106MXQTBC"/>
+<attribute name="MPN" value="77-VJ1206V106ZXQTBC"/>
 </part>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="C6" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="10u">
-<attribute name="MPN" value="77-VJ1206V106MXQTBC"/>
+<attribute name="MPN" value="77-VJ1206V106ZXQTBC"/>
 </part>
 <part name="IC3" library="linear" deviceset="MCP1703" device="DB" value="MCP1703-33">
 <attribute name="MPN" value="579-MCP1703-3302E/DB"/>

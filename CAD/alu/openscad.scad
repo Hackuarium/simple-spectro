@@ -1,14 +1,16 @@
+$fn=50;
+
 pcbLength=98.7;
 pcbWidth=73.2;
 pcbThickness=1.6;
 pcbSpaceAround=1; // need some space because of rounded angles
 
 sideThickness=4; 
-frontThickness=4;
+frontThickness=5;
 bottomThickness=6;
 bottomMinimal=2;
-bottomHeight=12;
-bottomClosureSpace=0.3; // number of mm to be sure it can close
+bottomHeight=20;
+bottomClosureSpace=0.1; // number of mm to be sure it can close
 overlap=4; // overlap between top and bottom
 
 shift=pcbSpaceAround+sideThickness;
@@ -20,7 +22,8 @@ supportHoleX=3.5;
 supportHoleY=3.5;
 supportHoleR=1.5;
 bottomHoleR=3;
-bottomHoleHeight=3;
+bottomHoleExternalHeight=3;
+bottomHoleInternalHeight=3;
 
 rotaryX=13.2+shift;
 rotaryY=12.8+shift;
@@ -44,28 +47,32 @@ cuvetteWindow=3;
 cuvetteWindowHeight=5;
 cuvetteBottomSpace=2;
 
-batteryX=48+shift;
+batteryX=46+shift;
 batteryY=30+shift;
-batteryLength=50;
-batteryWidth=30;
+batteryLength=50+2;
+batteryWidth=33.6+2;
+batteryHeight=5.8+2;
 
 connectorX=25+shift;
 connectorLength=20;
 connectorWidth=15;
 connectorY=pcbWidth-15+shift;
+connectHeight=batteryHeight;
 
-screenProtectionHeight=1.5;
-screenProtectionSize=2;
+screenProtectionHeight=2;
+screenProtectionSize=3;
 
 radius=3; // using bit of 3
 
-usbHeight=5.8;
+usbHeight=4.6;
 usbWidth=10;
+usbSpace=2;
+usbSpaceThickness=sideThickness/2+bottomClosureSpace;
+
 usbY=38.2+shift;
 
 frontHeight=frontThickness+usbHeight+supportHeight+pcbThickness;
 
-$fn=50;
 
 // PCB
 * color("red",0.2)
@@ -73,7 +80,7 @@ $fn=50;
         cube([pcbLength, pcbWidth, pcbThickness]);
 
 // Adding the logo
-translate([logoX, logoY, -0.5]) linear_extrude(height=0.5)  rotate(a=[0,180,0]) scale(0.6) color("purple") import("logo.dxf");
+* translate([logoX, logoY, -0.5]) linear_extrude(height=0.5)  rotate(a=[0,180,0]) scale(0.6) color("purple") import("logo.dxf");
 
 // create the bottom part 
 ! translate([0, 0, 50])
@@ -126,32 +133,40 @@ translate([logoX, logoY, -0.5]) linear_extrude(height=0.5)  rotate(a=[0,180,0]) 
                 batteryY,
                 0
             ])
-                roundedParallelepiped4(x=batteryLength, y=batteryWidth, z=bottomHeight-bottomMinimal, r=radius);
+                roundedParallelepiped4(x=batteryLength, y=batteryWidth, z=bottomHeight-batteryHeight, r=radius);
             
             translate([
                 connectorX,
                 connectorY,
                 0
             ])
-                roundedParallelepiped4(x=connectorLength, y=connectorWidth, z=bottomHeight-bottomMinimal, r=radius);
+                roundedParallelepiped4(x=connectorLength, y=connectorWidth, z=bottomHeight-connectHeight, r=radius);
             
             
               // we remove the USB port
             translate([0,usbY,0])
-                cube([sideThickness,usbWidth,usbHeight]);
+                cube([sideThickness,usbWidth,overlap]);
+            // remove some more space so the USB plug fits in
+            translate([-usbSpaceThickness,usbY-usbSpace,0])
+                roundedParallelepiped4(
+                    x=usbSpaceThickness*2,
+                    y=usbWidth+2*usbSpace,
+                    z=overlap+usbSpace,
+                    r=1
+                );
             
             // make holes for screws        
             translate([shift+supportHoleX, shift+supportHoleY, 0])
-                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);
+                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);
             
             translate([shift+pcbLength-supportHoleX, shift+supportHoleY, 0])
-                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);
+                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);
             
             translate([shift+supportHoleX, shift+pcbWidth-supportHoleY, 0])
-                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);
+                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);
             
             translate([shift+pcbLength-supportHoleX, shift+pcbWidth-supportHoleY, 0])
-                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightLarge=bottomHoleHeight);     
+                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);     
         };
         
         translate([
@@ -175,14 +190,18 @@ translate([logoX, logoY, -0.5]) linear_extrude(height=0.5)  rotate(a=[0,180,0]) 
             }
     };
 
+
+
+
 // create a hole that is smaller in the middle
-module screwHole(rSmall=2, rLarge=4, height=10, heightLarge=2.5) {
-    heightSmall=height-2*heightLarge;
-    cylinder(r=rLarge, h=heightLarge);
-    translate([0,0,heightLarge])
-        cylinder(r=rSmall, h=heightSmall);
-     translate([0,0,heightLarge+heightSmall])
-        cylinder(r=rLarge, h=heightLarge);
+module screwHole(rSmall=2, rLarge=4, height=10, heightExternal=2.5, heightInternal=2.5) {
+    echo(rLarge,heightExternal);
+    translate([0,0,height-heightExternal])
+    cylinder(r=rLarge, h=heightExternal);
+    translate([0,0,height-heightExternal-heightInternal])
+        cylinder(r=rSmall, h=heightInternal);
+    translate([0,0,0])
+        cylinder(r=rLarge, h=height-heightExternal-heightInternal);
 }
 
 
@@ -281,8 +300,19 @@ translate([0, 0, 0])
         // we remove the USB port
         translate([0,usbY,pcbThickness+frontThickness+supportHeight])
             cube([sideThickness,usbWidth,usbHeight]);
-    
-
+            
+        // enlarge the USB to have place for the plastic connector
+        translate([-usbSpaceThickness,usbY-usbSpace,pcbThickness+frontThickness+supportHeight-usbSpace])
+                roundedParallelepiped4(
+                    x=usbSpaceThickness*2,
+                    y=usbWidth+2*usbSpace,
+                    z=usbHeight+usbSpace,
+                    r=1
+                );
+                
+         translate([0,usbY-usbSpace,frontHeight-overlap])       
+            cube([usbSpaceThickness,usbWidth+2*usbSpace,overlap]);
+                
     }
     
     
