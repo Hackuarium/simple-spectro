@@ -42,7 +42,7 @@ screenWidth=25.1;
 cuvetteX=48.7+shift;
 cuvetteY=5.4+shift;
 cuvetteInternal=12.9;
-cuvetteThickness=1.6;
+cuvetteThickness=3; // 1.6 for current design
 cuvetteWindow=3;
 cuvetteWindowHeight=5;
 cuvetteBottomSpace=2;
@@ -83,7 +83,7 @@ frontHeight=frontThickness+usbHeight+supportHeight+pcbThickness;
 * translate([logoX, logoY, -0.5]) linear_extrude(height=0.5)  rotate(a=[0,180,0]) scale(0.6) color("purple") import("logo.dxf");
 
 // create the bottom part 
-! translate([0, 0, 50])
+translate([0, 0, 50])
     union() {
         difference() {
             
@@ -316,14 +316,14 @@ translate([0, 0, 0])
     }
     
     
-    // we add a border around push button
-    difference() {
-        height=rotaryExtension+screenProtectionHeight;
-        translate([rotaryX, rotaryY, -2])
-            cylinder(r=rotaryExtensionR, h=height);
-        translate([rotaryX, rotaryY, -2])
-            cylinder(r=rotaryR, h=height);
-    }
+// we add a border around push button
+difference() {
+    height=rotaryExtension+screenProtectionHeight;
+    translate([rotaryX, rotaryY, -2])
+        cylinder(r=rotaryExtensionR, h=height);
+    translate([rotaryX, rotaryY, -2])
+        cylinder(r=rotaryR, h=height);
+}
 
 
 
@@ -332,15 +332,10 @@ module cuvette() {
     difference() {
         union() {
             // the cuvette itself
-            hull() {
-                translate([-cuvetteThickness,-cuvetteY+sideThickness,screenProtectionHeight]) cube([r,r,frontHeight-screenProtectionHeight]);
-                translate([cuvetteInternal+cuvetteThickness-r,-cuvetteY+sideThickness,screenProtectionHeight]) cube([r,r,frontHeight-screenProtectionHeight]);
+            translate([-cuvetteThickness,-cuvetteY+sideThickness,screenProtectionHeight]) 
+                cube([cuvetteInternal+cuvetteThickness*2,cuvetteInternal+cuvetteThickness+cuvetteY-sideThickness,frontHeight-screenProtectionHeight]);
             
-                translate([-cuvetteThickness,cuvetteInternal + cuvetteThickness - r,screenProtectionHeight]) cube([r,r,frontHeight-screenProtectionHeight]);
-                translate([cuvetteInternal+cuvetteThickness-r,cuvetteInternal+cuvetteThickness-r,screenProtectionHeight]) cube([r,r,frontHeight-screenProtectionHeight]);
-                
-     
-            }
+            
             // little extension to make round corners
             translate([-r-cuvetteThickness,sideThickness-cuvetteY, screenProtectionHeight])
                 cube([cuvetteInternal+cuvetteThickness*2+2*r,r,frontHeight-overlap-screenProtectionHeight]);
