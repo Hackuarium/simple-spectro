@@ -7,7 +7,7 @@ pcbSpaceAround=1; // need some space because of rounded angles
 
 sideThickness=4; 
 frontThickness=5;
-bottomThickness=6;
+bottomDigged=8;
 bottomMinimal=2;
 bottomHeight=20;
 bottomClosureSpace=0.1; // number of mm to be sure it can close
@@ -17,7 +17,7 @@ shift=pcbSpaceAround+sideThickness;
 
 supportWidth=6;
 supportLength=6;
-supportHeight=7;
+supportHeight=8;
 supportHoleX=3.5;
 supportHoleY=3.5;
 supportHoleR=1.5;
@@ -42,18 +42,19 @@ screenWidth=25.1;
 cuvetteX=48.7+shift;
 cuvetteY=5.4+shift;
 cuvetteInternal=12.9;
-cuvetteThickness=3; // 1.6 for current design
+cuvetteThickness=1.6; // 1.6 for current design, 3 in new design
 cuvetteWindow=3;
+cuvetteUVWindow=5;
 cuvetteWindowHeight=5;
 cuvetteBottomSpace=2;
 
 batteryX=46+shift;
-batteryY=30+shift;
+batteryY=26+shift;
 batteryLength=50+2;
-batteryWidth=33.6+2;
+batteryWidth=33.6+4;
 batteryHeight=5.8+2;
 
-connectorX=25+shift;
+connectorX=22+shift;
 connectorLength=20;
 connectorWidth=15;
 connectorY=pcbWidth-15+shift;
@@ -115,7 +116,7 @@ translate([0, 0, 50])
                 roundedParallelepiped4(
                     x=pcbLength+2*pcbSpaceAround,
                     y=pcbWidth+2*pcbSpaceAround,
-                    z=bottomThickness,
+                    z=bottomDigged,
                     r=radius
                 );
             
@@ -284,7 +285,12 @@ translate([0, 0, 0])
             
         // we will remove the hole for the screen
         translate([screenX, screenY, 0])
-            cube([screenLength, screenWidth, frontThickness]);
+            roundedParallelepiped4(
+                    x=screenLength,
+                    y=screenWidth,
+                    z=screenWidth,
+                    r=0.5
+                );
             
                 // create the hole for cuvette
         translate([cuvetteX, cuvetteY, 0])
@@ -292,10 +298,12 @@ translate([0, 0, 0])
             
         // remove part for the screen protection
         translate([screenX-screenProtectionSize, screenY-screenProtectionSize, 0])
-            cube([screenLength+2*screenProtectionSize,
-                screenWidth+2*screenProtectionSize,
-                screenProtectionHeight
-            ]);
+            roundedParallelepiped4(
+                x=screenLength+2*screenProtectionSize,
+                y=screenWidth+2*screenProtectionSize,
+                z=screenProtectionHeight,
+                r=1
+            );
         
         // we remove the USB port
         translate([0,usbY,pcbThickness+frontThickness+supportHeight])
@@ -365,8 +373,8 @@ module cuvette() {
             cube([cuvetteThickness, cuvetteWindow, frontHeight-overlap]);
         translate([cuvetteInternal, (cuvetteInternal-cuvetteWindow)/2, heightWindow])
             cube([cuvetteThickness, cuvetteWindow, frontHeight-overlap]);
-        translate([(cuvetteInternal-cuvetteWindow)/2, cuvetteInternal,  heightWindow])
-            cube([cuvetteWindow, cuvetteThickness, frontHeight-overlap]);
+        translate([(cuvetteInternal-cuvetteUVWindow)/2, cuvetteInternal,  heightWindow])
+            cube([cuvetteUVWindow, cuvetteThickness, frontHeight-overlap]);
         
         // TEMPORARY to print as today design 
         translate([-r-cuvetteThickness,-cuvetteY, frontThickness+supportHeight])

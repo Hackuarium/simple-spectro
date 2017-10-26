@@ -11989,6 +11989,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="CON3" library="lpatiny" deviceset="TINYISP" device="T" value="SPI"/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
 <part name="R14" library="rcl" deviceset="R-EU_" device="M1206" value="1k">
+<attribute name="LCSC" value="C1469"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="X2" library="con-cypressindustries" deviceset="MINI-USB-SCHIELD-" device="32005-201" value="MINI-USB">
@@ -11997,39 +11998,50 @@ Source: AVX .. aphvc.pdf</description>
 <attribute name="OC_NEWARK" value=""/>
 </part>
 <part name="R4" library="rcl" deviceset="R-EU_" device="M1206" value="22">
+<attribute name="LCSC" value="C99734"/>
 <attribute name="MPN" value="603-RC1206FR-0722RL"/>
 </part>
 <part name="R5" library="rcl" deviceset="R-EU_" device="M1206" value="22">
+<attribute name="LCSC" value="C99734"/>
 <attribute name="MPN" value="603-RC1206FR-0722RL"/>
 </part>
 <part name="C10" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="100nF">
+<attribute name="LCSC" value="C77502"/>
 <attribute name="MPN" value="80-C1206C104K5R"/>
 </part>
 <part name="IC1" library="adafruit" deviceset="ATMEGA32U4" device="-AU" value="32U4">
+<attribute name="LCSC" value=""/>
 <attribute name="MPN" value="556-ATMEGA32U4RC-AU"/>
 </part>
 <part name="C1" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="18pF">
+<attribute name="LCSC" value="C1889"/>
 <attribute name="MPN" value="77-VJ1206A180JXXPBC"/>
 </part>
 <part name="C2" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="18pF">
+<attribute name="LCSC" value="C1889"/>
 <attribute name="MPN" value="77-VJ1206A180JXXPBC"/>
 </part>
 <part name="U$10" library="MyPOW" deviceset="VUSB" device=""/>
 <part name="R13" library="rcl" deviceset="R-EU_" device="M1206" value="10k">
+<attribute name="LCSC" value="C1489"/>
 <attribute name="MPN" value="603-RC1206FR-0710KL"/>
 </part>
 <part name="C9" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="100nF">
+<attribute name="LCSC" value="C77502"/>
 <attribute name="MPN" value="80-C1206C104K5R"/>
 </part>
 <part name="X1" library="lpatiny" deviceset="XTAL" device="NX6035" value="8MHz">
+<attribute name="LCSC" value="C90881"/>
 <attribute name="MPN" value="729-F60800010"/>
 </part>
 <part name="SUPPLY6" library="supply1" deviceset="VCC" device=""/>
 <part name="SUPPLY7" library="supply1" deviceset="VCC" device=""/>
 <part name="C3" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="100nF">
+<attribute name="LCSC" value="C77502"/>
 <attribute name="MPN" value="80-C1206C104K5R"/>
 </part>
 <part name="LED3" library="SparkFun" deviceset="LED" device="1206" value="YELLOW">
+<attribute name="LCSC" value="C84273"/>
 <attribute name="MPN" value="604-APTR3216YC"/>
 </part>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
@@ -12048,53 +12060,67 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="R10" library="rcl" deviceset="R-EU_" device="M1206" value="220">
+<attribute name="LCSC" value=""/>
 <attribute name="MPN" value="667-ERJ-U08J221V"/>
 </part>
 <part name="U$1" library="lpatiny" deviceset="EC11E" device=""/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="IC2" library="microbuilder" deviceset="MCP73831/2" device="" value="MCP73831T">
+<attribute name="LCSC" value=""/>
 <attribute name="MPN" value="579-MCP73831T-3ACIOT"/>
 </part>
 <part name="LED1" library="SparkFun" deviceset="LED" device="1206" value="RED">
+<attribute name="LCSC" value="C49018"/>
 <attribute name="MPN" value="604-APT3216EC"/>
 </part>
 <part name="LED2" library="SparkFun" deviceset="LED" device="1206" value="GREEN">
+<attribute name="LCSC" value="C14641"/>
 <attribute name="MPN" value="604-APTR3216SGC"/>
 </part>
 <part name="R1" library="rcl" deviceset="R-EU_" device="M1206" value="1k">
+<attribute name="LCSC" value="C1469"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="R2" library="rcl" deviceset="R-EU_" device="M1206" value="1k">
+<attribute name="LCSC" value="C1469"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="C5" library="dp_devices" deviceset="CAPACITOR_NPOL" device="-1206" value="10u">
+<attribute name="LCSC" value="C92789"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC"/>
 </part>
 <part name="U$3" library="microbuilder" deviceset="GND" device=""/>
 <part name="C4" library="dp_devices" deviceset="CAPACITOR_NPOL" device="-1206" value="10u">
+<attribute name="LCSC" value="C92789"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC"/>
 </part>
 <part name="U$5" library="microbuilder" deviceset="GND" device=""/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="M1206" value="10K">
+<attribute name="LCSC" value=""/>
 <attribute name="MPN" value="603-RC1206FR-0710KL"/>
 </part>
 <part name="R7" library="rcl" deviceset="R-EU_" device="M1206" value="1k">
+<attribute name="LCSC" value="C1469"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="R8" library="rcl" deviceset="R-EU_" device="M1206" value="1k">
+<attribute name="LCSC" value="C1469"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="R9" library="rcl" deviceset="R-EU_" device="M1206" value="1k">
+<attribute name="LCSC" value="C1469"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="LED5" library="lpatiny" deviceset="RGB-COMMON-CATHODE" device=""/>
 <part name="LCD" library="HD44780LCD" deviceset="LCD-HD44780" device="16X2-4-HOLES" technology="4-HOLES"/>
 <part name="C8" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="10u">
+<attribute name="LCSC" value="C92789"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC"/>
 </part>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="C6" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="10u">
+<attribute name="LCSC" value="C92789"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC"/>
 </part>
 <part name="IC3" library="linear" deviceset="MCP1703" device="DB" value="MCP1703-33">
@@ -12103,20 +12129,25 @@ Source: AVX .. aphvc.pdf</description>
 <part name="SUPPLY3" library="supply1" deviceset="VDD" device=""/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
 <part name="IC4" library="dp_devices" deviceset="TRANSISTOR_FET_TSM2301CX" device="" value="DMP1045U">
+<attribute name="LCSC" value=""/>
 <attribute name="MPN" value="621-DMP1045U-7"/>
 </part>
 <part name="R15" library="rcl" deviceset="R-EU_" device="M1206" value="100k">
+<attribute name="LCSC" value=""/>
 <attribute name="MPN" value="RC1206FR-07100KL"/>
 </part>
 <part name="D3" library="lpatiny" deviceset="1N581*" device="D1206" value="Schottky">
+<attribute name="LCSC" value=""/>
 <attribute name="MPN" value="579-MCP1703-3302E/DB"/>
 </part>
 <part name="SUPPLY4" library="supply1" deviceset="VDD" device=""/>
 <part name="U$2" library="MyPOW" deviceset="VUSB" device=""/>
 <part name="D1" library="lpatiny" deviceset="1N581*" device="D1206" value="Schottky">
+<attribute name="LCSC" value=""/>
 <attribute name="MPN" value="579-MCP1703-3302E/DB"/>
 </part>
 <part name="R6" library="rcl" deviceset="R-EU_" device="M1206" value="100">
+<attribute name="LCSC" value="C4410"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
@@ -12126,12 +12157,15 @@ Source: AVX .. aphvc.pdf</description>
 <part name="SUPPLY2" library="supply1" deviceset="VCC" device=""/>
 <part name="SUPPLY1" library="supply1" deviceset="VCC" device=""/>
 <part name="D2" library="lpatiny" deviceset="1N581*" device="D1206" value="Schottky">
+<attribute name="LCSC" value=""/>
 <attribute name="MPN" value="579-MCP1703-3302E/DB"/>
 </part>
 <part name="C7" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="100nF">
+<attribute name="LCSC" value="C77502"/>
 <attribute name="MPN" value="80-C1206C104K5R"/>
 </part>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" value="100k">
+<attribute name="LCSC" value=""/>
 <attribute name="MPN" value="RC1206FR-07100KL"/>
 </part>
 <part name="CON2" library="lpatiny" deviceset="TINYISP" device="" value="SPI"/>
@@ -12195,35 +12229,45 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="GND14" gate="1" x="172.72" y="243.84"/>
 <instance part="R14" gate="G$1" x="152.4" y="233.68" rot="MR180">
 <attribute name="MPN" x="152.4" y="233.68" size="1.778" layer="96" rot="MR180" display="off"/>
+<attribute name="LCSC" x="152.4" y="233.68" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="X2" gate="G$1" x="63.5" y="17.78" rot="R270"/>
 <instance part="R4" gate="G$1" x="63.5" y="33.02" rot="R270">
 <attribute name="MPN" x="63.5" y="33.02" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="LCSC" x="63.5" y="33.02" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="R5" gate="G$1" x="66.04" y="33.02" rot="R270">
 <attribute name="MPN" x="66.04" y="33.02" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="LCSC" x="66.04" y="33.02" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="C10" gate="G$1" x="83.82" y="177.8" rot="R270">
 <attribute name="MPN" x="83.82" y="177.8" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="LCSC" x="83.82" y="177.8" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="IC1" gate="G$1" x="111.76" y="175.26">
 <attribute name="MPN" x="111.76" y="175.26" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="111.76" y="175.26" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C1" gate="G$1" x="48.26" y="162.56" rot="R90">
 <attribute name="MPN" x="48.26" y="162.56" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="LCSC" x="48.26" y="162.56" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="C2" gate="G$1" x="48.26" y="172.72" rot="R90">
 <attribute name="MPN" x="48.26" y="172.72" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="LCSC" x="48.26" y="172.72" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="U$10" gate="G$1" x="68.58" y="215.9"/>
 <instance part="R13" gate="G$1" x="157.48" y="200.66" rot="R180">
 <attribute name="MPN" x="157.48" y="200.66" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="LCSC" x="157.48" y="200.66" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="C9" gate="G$1" x="81.28" y="182.88" rot="R90">
 <attribute name="MPN" x="81.28" y="182.88" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="LCSC" x="81.28" y="182.88" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="X1" gate="G$1" x="60.96" y="167.64" rot="R90">
 <attribute name="MPN" x="60.96" y="167.64" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="LCSC" x="60.96" y="167.64" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="SUPPLY6" gate="VCC" x="50.8" y="220.98"/>
 <instance part="SUPPLY7" gate="VCC" x="83.82" y="210.82"/>
@@ -12231,9 +12275,11 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="NAME" x="58.039" y="199.644" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="63.119" y="199.644" size="1.778" layer="96" rot="R90"/>
 <attribute name="MPN" x="58.42" y="198.12" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="LCSC" x="58.42" y="198.12" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="LED3" gate="G$1" x="162.56" y="233.68" rot="MR270">
 <attribute name="MPN" x="162.56" y="233.68" size="1.778" layer="96" rot="MR270" display="off"/>
+<attribute name="LCSC" x="162.56" y="233.68" size="1.778" layer="96" rot="MR270" display="off"/>
 </instance>
 <instance part="GND5" gate="1" x="172.72" y="233.68" rot="R90"/>
 <instance part="GND32" gate="1" x="50.8" y="198.12" rot="R270"/>
@@ -12260,55 +12306,69 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 </instance>
 <instance part="R10" gate="G$1" x="149.86" y="20.32" rot="MR180">
 <attribute name="MPN" x="149.86" y="20.32" size="1.778" layer="96" rot="MR180" display="off"/>
+<attribute name="LCSC" x="149.86" y="20.32" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="U$1" gate="G$1" x="12.7" y="251.46"/>
 <instance part="GND7" gate="1" x="5.08" y="241.3"/>
 <instance part="GND8" gate="1" x="30.48" y="256.54"/>
 <instance part="IC2" gate="G$1" x="86.36" y="93.98">
 <attribute name="MPN" x="86.36" y="93.98" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="86.36" y="93.98" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="LED1" gate="G$1" x="53.34" y="91.44" rot="R90">
 <attribute name="MPN" x="53.34" y="91.44" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="LCSC" x="53.34" y="91.44" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="LED2" gate="G$1" x="53.34" y="83.82" rot="R270">
 <attribute name="MPN" x="53.34" y="83.82" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="LCSC" x="53.34" y="83.82" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="R1" gate="G$1" x="63.5" y="91.44">
 <attribute name="MPN" x="63.5" y="91.44" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="63.5" y="91.44" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R2" gate="G$1" x="63.5" y="83.82">
 <attribute name="MPN" x="63.5" y="83.82" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="63.5" y="83.82" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C5" gate="C" x="40.64" y="91.44">
 <attribute name="MPN" x="40.64" y="91.44" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="40.64" y="91.44" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="U$3" gate="G$1" x="40.64" y="81.28"/>
 <instance part="C4" gate="C" x="119.38" y="88.9">
 <attribute name="MPN" x="119.38" y="88.9" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="119.38" y="88.9" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="U$5" gate="G$1" x="119.38" y="78.74"/>
 <instance part="R3" gate="G$1" x="109.22" y="93.98">
 <attribute name="MPN" x="109.22" y="93.98" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="109.22" y="93.98" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R7" gate="G$1" x="106.68" y="35.56" rot="MR180">
 <attribute name="MPN" x="106.68" y="35.56" size="1.778" layer="96" rot="MR180" display="off"/>
+<attribute name="LCSC" x="106.68" y="35.56" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="R8" gate="G$1" x="106.68" y="40.64" rot="MR180">
 <attribute name="MPN" x="106.68" y="40.64" size="1.778" layer="96" rot="MR180" display="off"/>
+<attribute name="LCSC" x="106.68" y="40.64" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="R9" gate="G$1" x="106.68" y="45.72" rot="MR0">
 <attribute name="MPN" x="106.68" y="45.72" size="1.778" layer="96" rot="MR0" display="off"/>
+<attribute name="LCSC" x="106.68" y="45.72" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
 <instance part="LED5" gate="G$1" x="93.98" y="40.64" rot="R90"/>
 <instance part="LCD" gate="G$1" x="185.42" y="35.56"/>
 <instance part="C8" gate="G$1" x="-2.54" y="40.64">
 <attribute name="MPN" x="-2.54" y="40.64" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="-2.54" y="40.64" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND19" gate="1" x="15.24" y="25.4" smashed="yes">
 <attribute name="VALUE" x="13.335" y="23.495" size="1.27" layer="96"/>
 </instance>
 <instance part="C6" gate="G$1" x="30.48" y="35.56">
 <attribute name="MPN" x="30.48" y="35.56" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="30.48" y="35.56" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="IC3" gate="G$1" x="15.24" y="43.18">
 <attribute name="MPN" x="15.24" y="43.18" size="1.778" layer="96" display="off"/>
@@ -12317,20 +12377,25 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="P+1" gate="VCC" x="30.48" y="50.8"/>
 <instance part="IC4" gate="G$1" x="137.16" y="104.14" rot="MR270">
 <attribute name="MPN" x="137.16" y="104.14" size="1.778" layer="96" rot="MR270" display="off"/>
+<attribute name="LCSC" x="137.16" y="104.14" size="1.778" layer="96" rot="MR270" display="off"/>
 </instance>
 <instance part="R15" gate="G$1" x="154.94" y="93.98" rot="MR90">
 <attribute name="MPN" x="154.94" y="93.98" size="1.778" layer="96" rot="MR90" display="off"/>
+<attribute name="LCSC" x="154.94" y="93.98" size="1.778" layer="96" rot="MR90" display="off"/>
 </instance>
 <instance part="D3" gate="G$1" x="147.32" y="106.68" rot="R270">
 <attribute name="MPN" x="147.32" y="106.68" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="LCSC" x="147.32" y="106.68" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="SUPPLY4" gate="G$1" x="147.32" y="86.36" rot="R180"/>
 <instance part="U$2" gate="G$1" x="5.08" y="99.06"/>
 <instance part="D1" gate="G$1" x="20.32" y="96.52">
 <attribute name="MPN" x="20.32" y="96.52" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="20.32" y="96.52" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R6" gate="G$1" x="99.06" y="22.86" rot="MR180">
 <attribute name="MPN" x="99.06" y="22.86" size="1.778" layer="96" rot="MR180" display="off"/>
+<attribute name="LCSC" x="99.06" y="22.86" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="GND9" gate="1" x="119.38" y="22.86" smashed="yes" rot="R90">
 <attribute name="VALUE" x="121.285" y="20.955" size="1.27" layer="96" rot="R90"/>
@@ -12342,12 +12407,15 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="SUPPLY1" gate="VCC" x="144.78" y="236.22"/>
 <instance part="D2" gate="G$1" x="20.32" y="86.36">
 <attribute name="MPN" x="20.32" y="86.36" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="20.32" y="86.36" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C7" gate="G$1" x="38.1" y="35.56">
 <attribute name="MPN" x="38.1" y="35.56" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="38.1" y="35.56" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R11" gate="G$1" x="60.96" y="218.44" rot="R180">
 <attribute name="MPN" x="60.96" y="218.44" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="LCSC" x="60.96" y="218.44" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="CON2" gate="G$1" x="160.02" y="266.7"/>
 <instance part="GND11" gate="1" x="172.72" y="261.62"/>
