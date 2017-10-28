@@ -2778,47 +2778,6 @@ This setting can be found in the board layout editor under the Edit menu.  Selec
 <vertex x="1.27" y="0.2413"/>
 </polygon>
 </package>
-<package name="DO41-7.6">
-<description>&lt;b&gt;DO41&lt;/b&gt; 7.6mm x 2mm&lt;p&gt;
-Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
-<wire x1="2.082" y1="-0.92" x2="-2.082" y2="-0.92" width="0.1524" layer="21"/>
-<wire x1="2.082" y1="-0.92" x2="2.082" y2="0.92" width="0.1524" layer="21"/>
-<wire x1="-2.082" y1="0.92" x2="2.082" y2="0.92" width="0.1524" layer="21"/>
-<wire x1="-2.082" y1="0.92" x2="-2.082" y2="-0.92" width="0.1524" layer="21"/>
-<wire x1="3.81" y1="0" x2="2.494" y2="0" width="0.85" layer="51"/>
-<wire x1="-3.81" y1="0" x2="-2.519" y2="0" width="0.85" layer="51"/>
-<wire x1="-0.635" y1="0" x2="0" y2="0" width="0.1524" layer="21"/>
-<wire x1="1.016" y1="0.635" x2="1.016" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="1.016" y1="-0.635" x2="0" y2="0" width="0.1524" layer="21"/>
-<wire x1="0" y1="0" x2="1.524" y2="0" width="0.1524" layer="21"/>
-<wire x1="0" y1="0" x2="1.016" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="0" y2="0" width="0.1524" layer="21"/>
-<wire x1="0" y1="0" x2="0" y2="-0.635" width="0.1524" layer="21"/>
-<pad name="C" x="-3.81" y="0" drill="1.1" diameter="1.7"/>
-<pad name="A" x="3.81" y="0" drill="1.1" diameter="1.7"/>
-<text x="-2.032" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-2.032" y="-2.921" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
-<rectangle x1="-1.651" y1="-0.95" x2="-1.143" y2="0.92" layer="21"/>
-<rectangle x1="2.082" y1="-0.425" x2="2.717" y2="0.425" layer="21"/>
-<rectangle x1="-2.717" y1="-0.425" x2="-2.082" y2="0.425" layer="21"/>
-</package>
-<package name="LED-1206">
-<wire x1="-1" y1="1" x2="-2.4" y2="1" width="0.2032" layer="21"/>
-<wire x1="-2.4" y1="1" x2="-2.4" y2="-1" width="0.2032" layer="21"/>
-<wire x1="-2.4" y1="-1" x2="-1" y2="-1" width="0.2032" layer="21"/>
-<wire x1="1" y1="1" x2="2.4" y2="1" width="0.2032" layer="21"/>
-<wire x1="2.4" y1="1" x2="2.4" y2="-1" width="0.2032" layer="21"/>
-<wire x1="2.4" y1="-1" x2="1" y2="-1" width="0.2032" layer="21"/>
-<wire x1="0.3" y1="0.7" x2="0.3" y2="0" width="0.2032" layer="21"/>
-<wire x1="0.3" y1="0" x2="0.3" y2="-0.7" width="0.2032" layer="21"/>
-<wire x1="0.3" y1="0" x2="-0.3" y2="0.6" width="0.2032" layer="21"/>
-<wire x1="-0.3" y1="0.6" x2="-0.3" y2="-0.6" width="0.2032" layer="21"/>
-<wire x1="-0.3" y1="-0.6" x2="0.3" y2="0" width="0.2032" layer="21"/>
-<smd name="A" x="-1.5" y="0" dx="1.2" dy="1.4" layer="1"/>
-<smd name="C" x="1.5" y="0" dx="1.2" dy="1.4" layer="1"/>
-<text x="-0.889" y="1.397" size="0.4064" layer="25">&gt;NAME</text>
-<text x="-1.016" y="-1.778" size="0.4064" layer="27">&gt;VALUE</text>
-</package>
 <package name="NX8045">
 <wire x1="4" y1="-1.9172" x2="3.7172" y2="-2.2" width="0.127" layer="21" curve="-90"/>
 <wire x1="3.7172" y1="-2.2" x2="-3.7172" y2="-2.2" width="0.127" layer="21"/>
@@ -2967,21 +2926,6 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <pin name="VCC" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="MISO" x="-7.62" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1"/>
 </symbol>
-<symbol name="SCHOTTKY">
-<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
-<wire x1="1.905" y1="1.27" x2="1.27" y2="1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="1.905" y1="1.27" x2="1.905" y2="1.016" width="0.254" layer="94"/>
-<wire x1="1.27" y1="-1.27" x2="0.635" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="0.635" y1="-1.016" x2="0.635" y2="-1.27" width="0.254" layer="94"/>
-<text x="-2.286" y="1.905" size="1.778" layer="95">&gt;NAME</text>
-<text x="-2.286" y="-3.429" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="A" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
-<pin name="C" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
-</symbol>
 <symbol name="XTAL">
 <wire x1="-2.54" y1="2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
@@ -3123,38 +3067,6 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <connect gate="G$1" pin="RESET" pad="RESET"/>
 <connect gate="G$1" pin="SCK" pad="SCK"/>
 <connect gate="G$1" pin="VCC" pad="5V"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="1N581*" prefix="D">
-<description>&lt;b&gt;1.0A SCHOTTKY BARRIER RECTIFIER&lt;/b&gt;&lt;p&gt;
-Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
-<gates>
-<gate name="G$1" symbol="SCHOTTKY" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="DO41-7.6">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name="7-B"/>
-<technology name="7-T"/>
-<technology name="8-B"/>
-<technology name="8-T"/>
-<technology name="9-B"/>
-<technology name="9-T"/>
-</technologies>
-</device>
-<device name="D1206" package="LED-1206">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -11963,6 +11875,76 @@ Source: AVX .. aphvc.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="diode" urn="urn:adsk.eagle:library:210">
+<description>&lt;b&gt;Diodes&lt;/b&gt;&lt;p&gt;
+Based on the following sources:
+&lt;ul&gt;
+&lt;li&gt;Motorola : www.onsemi.com
+&lt;li&gt;Fairchild : www.fairchildsemi.com
+&lt;li&gt;Philips : www.semiconductors.com
+&lt;li&gt;Vishay : www.vishay.de
+&lt;/ul&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SOD123" urn="urn:adsk.eagle:footprint:43203/1" library_version="2">
+<description>&lt;b&gt;Diode&lt;/b&gt;</description>
+<wire x1="-1.1" y1="0.7" x2="1.1" y2="0.7" width="0.254" layer="51"/>
+<wire x1="1.1" y1="0.7" x2="1.1" y2="-0.7" width="0.254" layer="51"/>
+<wire x1="1.1" y1="-0.7" x2="-1.1" y2="-0.7" width="0.254" layer="51"/>
+<wire x1="-1.1" y1="-0.7" x2="-1.1" y2="0.7" width="0.254" layer="51"/>
+<smd name="C" x="-1.9" y="0" dx="1.4" dy="1.4" layer="1"/>
+<smd name="A" x="1.9" y="0" dx="1.4" dy="1.4" layer="1"/>
+<text x="-1.1" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.1" y="-2.3" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.95" y1="-0.45" x2="-1.2" y2="0.4" layer="51"/>
+<rectangle x1="1.2" y1="-0.45" x2="1.95" y2="0.4" layer="51"/>
+<rectangle x1="-1.05" y1="-0.65" x2="-0.15" y2="0.7" layer="51"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="SOD123" urn="urn:adsk.eagle:package:43420/1" type="box" library_version="2">
+<description>Diode</description>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="D" urn="urn:adsk.eagle:symbol:43091/1" library_version="2">
+<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
+<text x="2.54" y="0.4826" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-2.3114" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-2.54" y="0" size="0.4064" layer="99" align="center">SpiceOrder 1</text>
+<text x="2.54" y="0" size="0.4064" layer="99" align="center">SpiceOrder 2</text>
+<pin name="A" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+<pin name="C" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MBR0520LT" urn="urn:adsk.eagle:component:43643/1" prefix="D" library_version="2">
+<description>&lt;b&gt;SCHOTTKY BARRIER RECTIFIER&lt;/b&gt;&lt;p&gt;
+Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
+<gates>
+<gate name="G$1" symbol="D" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOD123">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:43420/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -11989,6 +11971,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="CON3" library="lpatiny" deviceset="TINYISP" device="T" value="SPI"/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
 <part name="R14" library="rcl" deviceset="R-EU_" device="M1206" value="1k">
+<attribute name="ELECROW" value="C4410"/>
 <attribute name="LCSC" value="C1469"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
@@ -11998,35 +11981,42 @@ Source: AVX .. aphvc.pdf</description>
 <attribute name="OC_NEWARK" value=""/>
 </part>
 <part name="R4" library="rcl" deviceset="R-EU_" device="M1206" value="22">
+<attribute name="ELECROW" value="C17958"/>
 <attribute name="LCSC" value="C99734"/>
 <attribute name="MPN" value="603-RC1206FR-0722RL"/>
 </part>
 <part name="R5" library="rcl" deviceset="R-EU_" device="M1206" value="22">
+<attribute name="ELECROW" value="C17958"/>
 <attribute name="LCSC" value="C99734"/>
 <attribute name="MPN" value="603-RC1206FR-0722RL"/>
 </part>
 <part name="C10" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="100nF">
+<attribute name="ELECROW" value="C24497"/>
 <attribute name="LCSC" value="C77502"/>
 <attribute name="MPN" value="80-C1206C104K5R"/>
 </part>
 <part name="IC1" library="adafruit" deviceset="ATMEGA32U4" device="-AU" value="32U4">
-<attribute name="LCSC" value=""/>
+<attribute name="LCSC" value="C44854"/>
 <attribute name="MPN" value="556-ATMEGA32U4RC-AU"/>
 </part>
 <part name="C1" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="18pF">
+<attribute name="ELECROW" value=""/>
 <attribute name="LCSC" value="C1889"/>
 <attribute name="MPN" value="77-VJ1206A180JXXPBC"/>
 </part>
 <part name="C2" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="18pF">
+<attribute name="ELECROW" value=""/>
 <attribute name="LCSC" value="C1889"/>
 <attribute name="MPN" value="77-VJ1206A180JXXPBC"/>
 </part>
 <part name="U$10" library="MyPOW" deviceset="VUSB" device=""/>
 <part name="R13" library="rcl" deviceset="R-EU_" device="M1206" value="10k">
-<attribute name="LCSC" value="C1489"/>
+<attribute name="ELECROW" value="C17902"/>
+<attribute name="LCSC" value="C17902"/>
 <attribute name="MPN" value="603-RC1206FR-0710KL"/>
 </part>
 <part name="C9" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="100nF">
+<attribute name="ELECROW" value="C24497"/>
 <attribute name="LCSC" value="C77502"/>
 <attribute name="MPN" value="80-C1206C104K5R"/>
 </part>
@@ -12037,6 +12027,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="SUPPLY6" library="supply1" deviceset="VCC" device=""/>
 <part name="SUPPLY7" library="supply1" deviceset="VCC" device=""/>
 <part name="C3" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="100nF">
+<attribute name="ELECROW" value="C24497"/>
 <attribute name="LCSC" value="C77502"/>
 <attribute name="MPN" value="80-C1206C104K5R"/>
 </part>
@@ -12052,6 +12043,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND45" library="supply1" deviceset="GND" device=""/>
 <part name="GND54" library="supply1" deviceset="GND" device=""/>
 <part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" value="1M">
+<attribute name="ELECROW" value=""/>
 <attribute name="MPN" value="ERJ-8GEYJ105V"/>
 </part>
 <part name="SUPPLY18" library="supply1" deviceset="VCC" device=""/>
@@ -12060,6 +12052,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="R10" library="rcl" deviceset="R-EU_" device="M1206" value="220">
+<attribute name="ELECROW" value=""/>
 <attribute name="LCSC" value=""/>
 <attribute name="MPN" value="667-ERJ-U08J221V"/>
 </part>
@@ -12067,7 +12060,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="IC2" library="microbuilder" deviceset="MCP73831/2" device="" value="MCP73831T">
-<attribute name="LCSC" value=""/>
+<attribute name="LCSC" value="C14879"/>
 <attribute name="MPN" value="579-MCP73831T-3ACIOT"/>
 </part>
 <part name="LED1" library="SparkFun" deviceset="LED" device="1206" value="RED">
@@ -12079,74 +12072,87 @@ Source: AVX .. aphvc.pdf</description>
 <attribute name="MPN" value="604-APTR3216SGC"/>
 </part>
 <part name="R1" library="rcl" deviceset="R-EU_" device="M1206" value="1k">
+<attribute name="ELECROW" value="C4410"/>
 <attribute name="LCSC" value="C1469"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="R2" library="rcl" deviceset="R-EU_" device="M1206" value="1k">
+<attribute name="ELECROW" value="C4410"/>
 <attribute name="LCSC" value="C1469"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="C5" library="dp_devices" deviceset="CAPACITOR_NPOL" device="-1206" value="10u">
+<attribute name="ELECROW" value="C13585"/>
 <attribute name="LCSC" value="C92789"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC"/>
 </part>
 <part name="U$3" library="microbuilder" deviceset="GND" device=""/>
 <part name="C4" library="dp_devices" deviceset="CAPACITOR_NPOL" device="-1206" value="10u">
+<attribute name="ELECROW" value="C13585"/>
 <attribute name="LCSC" value="C92789"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC"/>
 </part>
 <part name="U$5" library="microbuilder" deviceset="GND" device=""/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="M1206" value="10K">
-<attribute name="LCSC" value=""/>
+<attribute name="ELECROW" value="C17902"/>
+<attribute name="LCSC" value="C17902"/>
 <attribute name="MPN" value="603-RC1206FR-0710KL"/>
 </part>
 <part name="R7" library="rcl" deviceset="R-EU_" device="M1206" value="1k">
+<attribute name="ELECROW" value="C4410"/>
 <attribute name="LCSC" value="C1469"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="R8" library="rcl" deviceset="R-EU_" device="M1206" value="1k">
+<attribute name="ELECROW" value="C4410"/>
 <attribute name="LCSC" value="C1469"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="R9" library="rcl" deviceset="R-EU_" device="M1206" value="1k">
+<attribute name="ELECROW" value="C4410"/>
 <attribute name="LCSC" value="C1469"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="LED5" library="lpatiny" deviceset="RGB-COMMON-CATHODE" device=""/>
 <part name="LCD" library="HD44780LCD" deviceset="LCD-HD44780" device="16X2-4-HOLES" technology="4-HOLES"/>
 <part name="C8" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="10u">
+<attribute name="ELECROW" value="C13585"/>
 <attribute name="LCSC" value="C92789"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC"/>
 </part>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="C6" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="10u">
+<attribute name="ELECROW" value="C13585"/>
 <attribute name="LCSC" value="C92789"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC"/>
 </part>
 <part name="IC3" library="linear" deviceset="MCP1703" device="DB" value="MCP1703-33">
+<attribute name="LCSC" value="C50754"/>
 <attribute name="MPN" value="579-MCP1703-3302E/DB"/>
 </part>
 <part name="SUPPLY3" library="supply1" deviceset="VDD" device=""/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
-<part name="IC4" library="dp_devices" deviceset="TRANSISTOR_FET_TSM2301CX" device="" value="DMP1045U">
-<attribute name="LCSC" value=""/>
+<part name="IC4" library="dp_devices" deviceset="TRANSISTOR_FET_TSM2301CX" device="" value="DMP1045U or DMG2302">
+<attribute name="LCSC" value="C96613"/>
 <attribute name="MPN" value="621-DMP1045U-7"/>
 </part>
 <part name="R15" library="rcl" deviceset="R-EU_" device="M1206" value="100k">
+<attribute name="ELECROW" value="C17900"/>
 <attribute name="LCSC" value=""/>
 <attribute name="MPN" value="RC1206FR-07100KL"/>
 </part>
-<part name="D3" library="lpatiny" deviceset="1N581*" device="D1206" value="Schottky">
-<attribute name="LCSC" value=""/>
-<attribute name="MPN" value="579-MCP1703-3302E/DB"/>
+<part name="D3" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="MBR0520LT" device="" package3d_urn="urn:adsk.eagle:package:43420/1" value="Schottky">
+<attribute name="LCSC" value="C82544"/>
+<attribute name="MPN" value="621-1N5819HW-F"/>
 </part>
 <part name="SUPPLY4" library="supply1" deviceset="VDD" device=""/>
 <part name="U$2" library="MyPOW" deviceset="VUSB" device=""/>
-<part name="D1" library="lpatiny" deviceset="1N581*" device="D1206" value="Schottky">
-<attribute name="LCSC" value=""/>
-<attribute name="MPN" value="579-MCP1703-3302E/DB"/>
+<part name="D1" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="MBR0520LT" device="" package3d_urn="urn:adsk.eagle:package:43420/1" value="Schottky">
+<attribute name="LCSC" value="C82544"/>
+<attribute name="MPN" value="621-1N5819HW-F"/>
 </part>
 <part name="R6" library="rcl" deviceset="R-EU_" device="M1206" value="100">
+<attribute name="ELECROW" value=""/>
 <attribute name="LCSC" value="C4410"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
@@ -12156,15 +12162,17 @@ Source: AVX .. aphvc.pdf</description>
 <part name="U$8" library="microbuilder" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="supply1" deviceset="VCC" device=""/>
 <part name="SUPPLY1" library="supply1" deviceset="VCC" device=""/>
-<part name="D2" library="lpatiny" deviceset="1N581*" device="D1206" value="Schottky">
-<attribute name="LCSC" value=""/>
-<attribute name="MPN" value="579-MCP1703-3302E/DB"/>
+<part name="D2" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="MBR0520LT" device="" package3d_urn="urn:adsk.eagle:package:43420/1" value="Schottky">
+<attribute name="LCSC" value="C82544"/>
+<attribute name="MPN" value="621-1N5819HW-F"/>
 </part>
 <part name="C7" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" value="100nF">
+<attribute name="ELECROW" value="C24497"/>
 <attribute name="LCSC" value="C77502"/>
 <attribute name="MPN" value="80-C1206C104K5R"/>
 </part>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" value="100k">
+<attribute name="ELECROW" value="C17900"/>
 <attribute name="LCSC" value=""/>
 <attribute name="MPN" value="RC1206FR-07100KL"/>
 </part>
@@ -12230,19 +12238,23 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="R14" gate="G$1" x="152.4" y="233.68" rot="MR180">
 <attribute name="MPN" x="152.4" y="233.68" size="1.778" layer="96" rot="MR180" display="off"/>
 <attribute name="LCSC" x="152.4" y="233.68" size="1.778" layer="96" rot="MR180" display="off"/>
+<attribute name="ELECROW" x="152.4" y="233.68" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="X2" gate="G$1" x="63.5" y="17.78" rot="R270"/>
 <instance part="R4" gate="G$1" x="63.5" y="33.02" rot="R270">
 <attribute name="MPN" x="63.5" y="33.02" size="1.778" layer="96" rot="R270" display="off"/>
 <attribute name="LCSC" x="63.5" y="33.02" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="ELECROW" x="63.5" y="33.02" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="R5" gate="G$1" x="66.04" y="33.02" rot="R270">
 <attribute name="MPN" x="66.04" y="33.02" size="1.778" layer="96" rot="R270" display="off"/>
 <attribute name="LCSC" x="66.04" y="33.02" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="ELECROW" x="66.04" y="33.02" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="C10" gate="G$1" x="83.82" y="177.8" rot="R270">
 <attribute name="MPN" x="83.82" y="177.8" size="1.778" layer="96" rot="R270" display="off"/>
 <attribute name="LCSC" x="83.82" y="177.8" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="ELECROW" x="83.82" y="177.8" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="IC1" gate="G$1" x="111.76" y="175.26">
 <attribute name="MPN" x="111.76" y="175.26" size="1.778" layer="96" display="off"/>
@@ -12251,19 +12263,23 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="C1" gate="G$1" x="48.26" y="162.56" rot="R90">
 <attribute name="MPN" x="48.26" y="162.56" size="1.778" layer="96" rot="R90" display="off"/>
 <attribute name="LCSC" x="48.26" y="162.56" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="ELECROW" x="48.26" y="162.56" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="C2" gate="G$1" x="48.26" y="172.72" rot="R90">
 <attribute name="MPN" x="48.26" y="172.72" size="1.778" layer="96" rot="R90" display="off"/>
 <attribute name="LCSC" x="48.26" y="172.72" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="ELECROW" x="48.26" y="172.72" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="U$10" gate="G$1" x="68.58" y="215.9"/>
 <instance part="R13" gate="G$1" x="157.48" y="200.66" rot="R180">
 <attribute name="MPN" x="157.48" y="200.66" size="1.778" layer="96" rot="R180" display="off"/>
 <attribute name="LCSC" x="157.48" y="200.66" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="ELECROW" x="157.48" y="200.66" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="C9" gate="G$1" x="81.28" y="182.88" rot="R90">
 <attribute name="MPN" x="81.28" y="182.88" size="1.778" layer="96" rot="R90" display="off"/>
 <attribute name="LCSC" x="81.28" y="182.88" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="ELECROW" x="81.28" y="182.88" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="X1" gate="G$1" x="60.96" y="167.64" rot="R90">
 <attribute name="MPN" x="60.96" y="167.64" size="1.778" layer="96" rot="R90" display="off"/>
@@ -12276,6 +12292,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="VALUE" x="63.119" y="199.644" size="1.778" layer="96" rot="R90"/>
 <attribute name="MPN" x="58.42" y="198.12" size="1.778" layer="96" rot="R90" display="off"/>
 <attribute name="LCSC" x="58.42" y="198.12" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="ELECROW" x="58.42" y="198.12" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="LED3" gate="G$1" x="162.56" y="233.68" rot="MR270">
 <attribute name="MPN" x="162.56" y="233.68" size="1.778" layer="96" rot="MR270" display="off"/>
@@ -12290,6 +12307,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="GND54" gate="1" x="170.18" y="195.58"/>
 <instance part="R12" gate="G$1" x="73.66" y="167.64" rot="MR90">
 <attribute name="MPN" x="73.66" y="167.64" size="1.778" layer="96" rot="MR90" display="off"/>
+<attribute name="ELECROW" x="73.66" y="167.64" size="1.778" layer="96" rot="MR90" display="off"/>
 </instance>
 <instance part="SUPPLY18" gate="VCC" x="73.66" y="205.74"/>
 <instance part="GND1" gate="1" x="152.4" y="55.88" smashed="yes" rot="R270">
@@ -12307,6 +12325,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="R10" gate="G$1" x="149.86" y="20.32" rot="MR180">
 <attribute name="MPN" x="149.86" y="20.32" size="1.778" layer="96" rot="MR180" display="off"/>
 <attribute name="LCSC" x="149.86" y="20.32" size="1.778" layer="96" rot="MR180" display="off"/>
+<attribute name="ELECROW" x="149.86" y="20.32" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="U$1" gate="G$1" x="12.7" y="251.46"/>
 <instance part="GND7" gate="1" x="5.08" y="241.3"/>
@@ -12326,42 +12345,51 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="R1" gate="G$1" x="63.5" y="91.44">
 <attribute name="MPN" x="63.5" y="91.44" size="1.778" layer="96" display="off"/>
 <attribute name="LCSC" x="63.5" y="91.44" size="1.778" layer="96" display="off"/>
+<attribute name="ELECROW" x="63.5" y="91.44" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R2" gate="G$1" x="63.5" y="83.82">
 <attribute name="MPN" x="63.5" y="83.82" size="1.778" layer="96" display="off"/>
 <attribute name="LCSC" x="63.5" y="83.82" size="1.778" layer="96" display="off"/>
+<attribute name="ELECROW" x="63.5" y="83.82" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C5" gate="C" x="40.64" y="91.44">
 <attribute name="MPN" x="40.64" y="91.44" size="1.778" layer="96" display="off"/>
 <attribute name="LCSC" x="40.64" y="91.44" size="1.778" layer="96" display="off"/>
+<attribute name="ELECROW" x="40.64" y="91.44" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="U$3" gate="G$1" x="40.64" y="81.28"/>
 <instance part="C4" gate="C" x="119.38" y="88.9">
 <attribute name="MPN" x="119.38" y="88.9" size="1.778" layer="96" display="off"/>
 <attribute name="LCSC" x="119.38" y="88.9" size="1.778" layer="96" display="off"/>
+<attribute name="ELECROW" x="119.38" y="88.9" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="U$5" gate="G$1" x="119.38" y="78.74"/>
 <instance part="R3" gate="G$1" x="109.22" y="93.98">
 <attribute name="MPN" x="109.22" y="93.98" size="1.778" layer="96" display="off"/>
 <attribute name="LCSC" x="109.22" y="93.98" size="1.778" layer="96" display="off"/>
+<attribute name="ELECROW" x="109.22" y="93.98" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R7" gate="G$1" x="106.68" y="35.56" rot="MR180">
 <attribute name="MPN" x="106.68" y="35.56" size="1.778" layer="96" rot="MR180" display="off"/>
 <attribute name="LCSC" x="106.68" y="35.56" size="1.778" layer="96" rot="MR180" display="off"/>
+<attribute name="ELECROW" x="106.68" y="35.56" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="R8" gate="G$1" x="106.68" y="40.64" rot="MR180">
 <attribute name="MPN" x="106.68" y="40.64" size="1.778" layer="96" rot="MR180" display="off"/>
 <attribute name="LCSC" x="106.68" y="40.64" size="1.778" layer="96" rot="MR180" display="off"/>
+<attribute name="ELECROW" x="106.68" y="40.64" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="R9" gate="G$1" x="106.68" y="45.72" rot="MR0">
 <attribute name="MPN" x="106.68" y="45.72" size="1.778" layer="96" rot="MR0" display="off"/>
 <attribute name="LCSC" x="106.68" y="45.72" size="1.778" layer="96" rot="MR0" display="off"/>
+<attribute name="ELECROW" x="106.68" y="45.72" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
 <instance part="LED5" gate="G$1" x="93.98" y="40.64" rot="R90"/>
 <instance part="LCD" gate="G$1" x="185.42" y="35.56"/>
 <instance part="C8" gate="G$1" x="-2.54" y="40.64">
 <attribute name="MPN" x="-2.54" y="40.64" size="1.778" layer="96" display="off"/>
 <attribute name="LCSC" x="-2.54" y="40.64" size="1.778" layer="96" display="off"/>
+<attribute name="ELECROW" x="-2.54" y="40.64" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND19" gate="1" x="15.24" y="25.4" smashed="yes">
 <attribute name="VALUE" x="13.335" y="23.495" size="1.27" layer="96"/>
@@ -12369,9 +12397,11 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="C6" gate="G$1" x="30.48" y="35.56">
 <attribute name="MPN" x="30.48" y="35.56" size="1.778" layer="96" display="off"/>
 <attribute name="LCSC" x="30.48" y="35.56" size="1.778" layer="96" display="off"/>
+<attribute name="ELECROW" x="30.48" y="35.56" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="IC3" gate="G$1" x="15.24" y="43.18">
 <attribute name="MPN" x="15.24" y="43.18" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="15.24" y="43.18" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="SUPPLY3" gate="G$1" x="-2.54" y="48.26"/>
 <instance part="P+1" gate="VCC" x="30.48" y="50.8"/>
@@ -12382,6 +12412,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="R15" gate="G$1" x="154.94" y="93.98" rot="MR90">
 <attribute name="MPN" x="154.94" y="93.98" size="1.778" layer="96" rot="MR90" display="off"/>
 <attribute name="LCSC" x="154.94" y="93.98" size="1.778" layer="96" rot="MR90" display="off"/>
+<attribute name="ELECROW" x="154.94" y="93.98" size="1.778" layer="96" rot="MR90" display="off"/>
 </instance>
 <instance part="D3" gate="G$1" x="147.32" y="106.68" rot="R270">
 <attribute name="MPN" x="147.32" y="106.68" size="1.778" layer="96" rot="R270" display="off"/>
@@ -12396,6 +12427,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="R6" gate="G$1" x="99.06" y="22.86" rot="MR180">
 <attribute name="MPN" x="99.06" y="22.86" size="1.778" layer="96" rot="MR180" display="off"/>
 <attribute name="LCSC" x="99.06" y="22.86" size="1.778" layer="96" rot="MR180" display="off"/>
+<attribute name="ELECROW" x="99.06" y="22.86" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="GND9" gate="1" x="119.38" y="22.86" smashed="yes" rot="R90">
 <attribute name="VALUE" x="121.285" y="20.955" size="1.27" layer="96" rot="R90"/>
@@ -12412,10 +12444,12 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="C7" gate="G$1" x="38.1" y="35.56">
 <attribute name="MPN" x="38.1" y="35.56" size="1.778" layer="96" display="off"/>
 <attribute name="LCSC" x="38.1" y="35.56" size="1.778" layer="96" display="off"/>
+<attribute name="ELECROW" x="38.1" y="35.56" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R11" gate="G$1" x="60.96" y="218.44" rot="R180">
 <attribute name="MPN" x="60.96" y="218.44" size="1.778" layer="96" rot="R180" display="off"/>
 <attribute name="LCSC" x="60.96" y="218.44" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="ELECROW" x="60.96" y="218.44" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="CON2" gate="G$1" x="160.02" y="266.7"/>
 <instance part="GND11" gate="1" x="172.72" y="261.62"/>
@@ -13272,6 +13306,16 @@ which will not be processed correctly with this version.
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
 with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports URNs for individual library
+assets (packages, symbols, and devices). The URNs of those assets
+will not be understood (or retained) with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports the association of 3D packages
+with devices in libraries, schematics, and board files. Those 3D
+packages will not be understood (or retained) with this version.
 </note>
 </compatibility>
 </eagle>

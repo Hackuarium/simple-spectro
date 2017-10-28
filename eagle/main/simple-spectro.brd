@@ -3433,23 +3433,6 @@ V 1.3.0</text>
 <vertex x="1.27" y="0.2413"/>
 </polygon>
 </package>
-<package name="LED-1206">
-<wire x1="-1" y1="1" x2="-2.4" y2="1" width="0.2032" layer="21"/>
-<wire x1="-2.4" y1="1" x2="-2.4" y2="-1" width="0.2032" layer="21"/>
-<wire x1="-2.4" y1="-1" x2="-1" y2="-1" width="0.2032" layer="21"/>
-<wire x1="1" y1="1" x2="2.4" y2="1" width="0.2032" layer="21"/>
-<wire x1="2.4" y1="1" x2="2.4" y2="-1" width="0.2032" layer="21"/>
-<wire x1="2.4" y1="-1" x2="1" y2="-1" width="0.2032" layer="21"/>
-<wire x1="0.3" y1="0.7" x2="0.3" y2="0" width="0.2032" layer="21"/>
-<wire x1="0.3" y1="0" x2="0.3" y2="-0.7" width="0.2032" layer="21"/>
-<wire x1="0.3" y1="0" x2="-0.3" y2="0.6" width="0.2032" layer="21"/>
-<wire x1="-0.3" y1="0.6" x2="-0.3" y2="-0.6" width="0.2032" layer="21"/>
-<wire x1="-0.3" y1="-0.6" x2="0.3" y2="0" width="0.2032" layer="21"/>
-<smd name="A" x="-1.5" y="0" dx="1.2" dy="1.4" layer="1"/>
-<smd name="C" x="1.5" y="0" dx="1.2" dy="1.4" layer="1"/>
-<text x="-0.889" y="1.397" size="0.4064" layer="25">&gt;NAME</text>
-<text x="-1.016" y="-1.778" size="0.4064" layer="27">&gt;VALUE</text>
-</package>
 <package name="NX6035">
 <wire x1="3.0475" y1="-1.2822" x2="2.7647" y2="-1.565" width="0.127" layer="21" curve="-90"/>
 <wire x1="2.7647" y1="-1.565" x2="-2.7647" y2="-1.565" width="0.127" layer="21"/>
@@ -6235,6 +6218,38 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 </package>
 </packages>
 </library>
+<library name="diode" urn="urn:adsk.eagle:library:210">
+<description>&lt;b&gt;Diodes&lt;/b&gt;&lt;p&gt;
+Based on the following sources:
+&lt;ul&gt;
+&lt;li&gt;Motorola : www.onsemi.com
+&lt;li&gt;Fairchild : www.fairchildsemi.com
+&lt;li&gt;Philips : www.semiconductors.com
+&lt;li&gt;Vishay : www.vishay.de
+&lt;/ul&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SOD123" urn="urn:adsk.eagle:footprint:43203/1" library_version="2">
+<description>&lt;b&gt;Diode&lt;/b&gt;</description>
+<wire x1="-1.1" y1="0.7" x2="1.1" y2="0.7" width="0.254" layer="51"/>
+<wire x1="1.1" y1="0.7" x2="1.1" y2="-0.7" width="0.254" layer="51"/>
+<wire x1="1.1" y1="-0.7" x2="-1.1" y2="-0.7" width="0.254" layer="51"/>
+<wire x1="-1.1" y1="-0.7" x2="-1.1" y2="0.7" width="0.254" layer="51"/>
+<smd name="C" x="-1.9" y="0" dx="1.4" dy="1.4" layer="1"/>
+<smd name="A" x="1.9" y="0" dx="1.4" dy="1.4" layer="1"/>
+<text x="-1.1" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.1" y="-2.3" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.95" y1="-0.45" x2="-1.2" y2="0.4" layer="51"/>
+<rectangle x1="1.2" y1="-0.45" x2="1.95" y2="0.4" layer="51"/>
+<rectangle x1="-1.05" y1="-0.65" x2="-0.15" y2="0.7" layer="51"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="SOD123" urn="urn:adsk.eagle:package:43420/1" type="box" library_version="2">
+<description>Diode</description>
+</package3d>
+</packages3d>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -6442,6 +6457,7 @@ design rules under a new name.</description>
 <attribute name="NAME" x="33.30185" y="33.038428125" size="1.27" layer="26" rot="MR0"/>
 </element>
 <element name="R14" library="rcl" package="M1206" value="1k" x="62.23" y="35.56" smashed="yes" rot="MR270">
+<attribute name="ELECROW" value="C4410" x="62.23" y="35.56" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="LCSC" value="C1469" x="62.23" y="35.56" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V" x="62.23" y="35.56" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="VALUE" x="60.860259375" y="36.42828125" size="1.27" layer="28" rot="MR270"/>
@@ -6455,46 +6471,53 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="98.425" y="36.195" size="1.27" layer="28" rot="MR0"/>
 </element>
 <element name="R4" library="rcl" package="M1206" value="22" x="84.455" y="41.275" smashed="yes" rot="MR180">
+<attribute name="ELECROW" value="C17958" x="84.455" y="41.275" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="LCSC" value="C99734" x="84.455" y="41.275" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="MPN" value="603-RC1206FR-0722RL" x="84.455" y="41.275" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="NAME" x="81.773109375" y="42.5091625" size="1.27" layer="26" rot="MR270"/>
 <attribute name="VALUE" x="83.297290625" y="39.7712875" size="1.27" layer="28" rot="MR180"/>
 </element>
 <element name="R5" library="rcl" package="M1206" value="22" x="84.455" y="44.45" smashed="yes" rot="MR180">
+<attribute name="ELECROW" value="C17958" x="84.455" y="44.45" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="LCSC" value="C99734" x="84.455" y="44.45" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="MPN" value="603-RC1206FR-0722RL" x="84.455" y="44.45" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="NAME" x="87.235653125" y="45.11359375" size="1.27" layer="26" rot="MR180"/>
 <attribute name="VALUE" x="83.148409375" y="47.119859375" size="1.27" layer="28" rot="MR180"/>
 </element>
 <element name="C10" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" value="100nF" x="47.625" y="47.625" smashed="yes" rot="MR180">
+<attribute name="ELECROW" value="C24497" x="47.625" y="47.625" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="LCSC" value="C77502" x="47.625" y="47.625" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="MPN" value="80-C1206C104K5R" x="47.625" y="47.625" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="NAME" x="41.66485" y="48.29308125" size="1.27" layer="26" rot="MR180"/>
 <attribute name="VALUE" x="45.16721875" y="49.938240625" size="1.016" layer="28" rot="MR180"/>
 </element>
 <element name="IC1" library="adafruit" package="TQFP44" value="32U4" x="36.83" y="50.8" smashed="yes" rot="MR90">
-<attribute name="LCSC" value="" x="36.83" y="50.8" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="LCSC" value="C44854" x="36.83" y="50.8" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="MPN" value="556-ATMEGA32U4RC-AU" x="36.83" y="50.8" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="34.2183" y="55.2025375" size="1.778" layer="26" rot="MR180"/>
 <attribute name="VALUE" x="33.05353125" y="47.531809375" size="1.778" layer="28" rot="MR90"/>
 </element>
 <element name="C1" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" value="18pF" x="18.415" y="48.26" smashed="yes" rot="MR90">
+<attribute name="ELECROW" value="" x="18.415" y="48.26" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="LCSC" value="C1889" x="18.415" y="48.26" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="MPN" value="77-VJ1206A180JXXPBC" x="18.415" y="48.26" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="19.685" y="46.99" size="1.27" layer="26" rot="MR90"/>
 <attribute name="VALUE" x="16.058715625" y="46.44700625" size="1.27" layer="28" rot="MR90"/>
 </element>
 <element name="C2" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" value="18pF" x="18.415" y="54.61" smashed="yes" rot="MR270">
+<attribute name="ELECROW" value="" x="18.415" y="54.61" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="LCSC" value="C1889" x="18.415" y="54.61" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="MPN" value="77-VJ1206A180JXXPBC" x="18.415" y="54.61" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="NAME" x="21.05500625" y="55.88" size="1.27" layer="26" rot="MR270"/>
 <attribute name="VALUE" x="17.1785875" y="57.04928125" size="1.27" layer="28" rot="MR270"/>
 </element>
 <element name="R13" library="rcl" package="M1206" value="10k" x="44.45" y="57.785" rot="MR0">
-<attribute name="LCSC" value="C1489" x="44.45" y="57.785" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="ELECROW" value="C17902" x="44.45" y="57.785" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="LCSC" value="C17902" x="44.45" y="57.785" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="MPN" value="603-RC1206FR-0710KL" x="44.45" y="57.785" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
 <element name="C9" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" value="100nF" x="35.8775" y="39.37" smashed="yes" rot="MR90">
+<attribute name="ELECROW" value="C24497" x="35.8775" y="39.37" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="LCSC" value="C77502" x="35.8775" y="39.37" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="MPN" value="80-C1206C104K5R" x="35.8775" y="39.37" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="34.688971875" y="41.9199875" size="1.27" layer="26" rot="MR270"/>
@@ -6507,6 +6530,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="26.267340625" y="53.76658125" size="1.27" layer="28" font="vector" rot="MR270"/>
 </element>
 <element name="C3" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" value="100nF" x="47.625" y="44.45" smashed="yes" rot="MR0">
+<attribute name="ELECROW" value="C24497" x="47.625" y="44.45" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="LCSC" value="C77502" x="47.625" y="44.45" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="MPN" value="80-C1206C104K5R" x="47.625" y="44.45" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="NAME" x="49.400525" y="41.675315625" size="1.27" layer="26" rot="MR0"/>
@@ -6518,11 +6542,13 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="64.77" y="34.29" size="1.27" layer="28" rot="MR180"/>
 </element>
 <element name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" package="M1206" value="1M" x="21.59" y="50.8" smashed="yes" rot="MR90">
+<attribute name="ELECROW" value="" x="21.59" y="50.8" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="MPN" value="ERJ-8GEYJ105V" x="21.59" y="50.8" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="18.95470625" y="49.064965625" size="1.27" layer="26" rot="MR90"/>
 <attribute name="VALUE" x="19.11484375" y="49.698165625" size="1.27" layer="28" rot="MR90"/>
 </element>
 <element name="R10" library="rcl" package="M1206" value="220" x="53.34" y="64.77" smashed="yes" rot="MR90">
+<attribute name="ELECROW" value="" x="53.34" y="64.77" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="LCSC" value="" x="53.34" y="64.77" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="MPN" value="667-ERJ-U08J221V" x="53.34" y="64.77" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="54.61" y="64.135" size="1.27" layer="26" rot="MR90"/>
@@ -6530,7 +6556,7 @@ design rules under a new name.</description>
 </element>
 <element name="U$1" library="lpatiny" package="EC11E" value="EC11E" x="77.47" y="12.7" rot="R270"/>
 <element name="IC2" library="microbuilder" package="SOT23-5" value="MCP73831T" x="75.565" y="66.04" smashed="yes" rot="MR90">
-<attribute name="LCSC" value="" x="75.565" y="66.04" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="LCSC" value="C14879" x="75.565" y="66.04" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="MPN" value="579-MCP73831T-3ACIOT" x="75.565" y="66.04" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="75.565" y="67.818" size="0.8128" layer="26" ratio="18" rot="MR90"/>
 <attribute name="VALUE" x="73.66" y="64.643" size="0.4064" layer="28" ratio="10" rot="MR90"/>
@@ -6548,48 +6574,56 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="62.992" y="64.643" size="0.4064" layer="28" ratio="10" rot="MR270"/>
 </element>
 <element name="R1" library="rcl" package="M1206" value="1k" x="66.675" y="59.69" smashed="yes" rot="MR180">
+<attribute name="ELECROW" value="C4410" x="66.675" y="59.69" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="LCSC" value="C1469" x="66.675" y="59.69" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V" x="66.675" y="59.69" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="NAME" x="68.707" y="59.817" size="0.8128" layer="26" ratio="18" rot="MR180"/>
 <attribute name="VALUE" x="65.532" y="58.547" size="1.016" layer="28" ratio="10" rot="MR180"/>
 </element>
 <element name="R2" library="rcl" package="M1206" value="1k" x="66.675" y="62.865" smashed="yes" rot="MR180">
+<attribute name="ELECROW" value="C4410" x="66.675" y="62.865" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="LCSC" value="C1469" x="66.675" y="62.865" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V" x="66.675" y="62.865" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="NAME" x="68.707" y="62.992" size="0.8128" layer="26" ratio="18" rot="MR180"/>
 <attribute name="VALUE" x="65.532" y="61.722" size="1.016" layer="28" ratio="10" rot="MR180"/>
 </element>
 <element name="C5" library="dp_devices" package="C1206" value="10u" x="75.565" y="69.85" smashed="yes" rot="MR0">
+<attribute name="ELECROW" value="C13585" x="75.565" y="69.85" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="LCSC" value="C92789" x="75.565" y="69.85" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC" x="75.565" y="69.85" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="NAME" x="73.533" y="69.723" size="0.8128" layer="26" ratio="18" rot="MR0"/>
 <attribute name="VALUE" x="76.708" y="70.993" size="1.016" layer="28" ratio="10" rot="MR0"/>
 </element>
 <element name="C4" library="dp_devices" package="C1206" value="10u" x="71.12" y="64.135" smashed="yes" rot="MR270">
+<attribute name="ELECROW" value="C13585" x="71.12" y="64.135" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="LCSC" value="C92789" x="71.12" y="64.135" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC" x="71.12" y="64.135" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="NAME" x="71.247" y="62.103" size="0.8128" layer="26" ratio="18" rot="MR270"/>
 <attribute name="VALUE" x="69.977" y="64.643" size="1.016" layer="28" ratio="10" rot="MR270"/>
 </element>
 <element name="R3" library="rcl" package="M1206" value="10K" x="76.835" y="61.595" smashed="yes" rot="MR0">
-<attribute name="LCSC" value="" x="76.835" y="61.595" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="ELECROW" value="C17902" x="76.835" y="61.595" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="LCSC" value="C17902" x="76.835" y="61.595" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="MPN" value="603-RC1206FR-0710KL" x="76.835" y="61.595" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="NAME" x="74.803" y="61.468" size="0.8128" layer="26" ratio="18" rot="MR0"/>
 <attribute name="VALUE" x="77.978" y="59.563" size="1.016" layer="28" ratio="10" rot="MR0"/>
 </element>
 <element name="R7" library="rcl" package="M1206" value="1k" x="67.945" y="20.955" smashed="yes" rot="MR90">
+<attribute name="ELECROW" value="C4410" x="67.945" y="20.955" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="LCSC" value="C1469" x="67.945" y="20.955" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V" x="67.945" y="20.955" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="69.215" y="20.32" size="1.27" layer="26" rot="MR90"/>
 <attribute name="VALUE" x="67.31" y="23.495" size="1.27" layer="28" rot="MR90"/>
 </element>
 <element name="R8" library="rcl" package="M1206" value="1k" x="61.595" y="20.955" smashed="yes" rot="MR90">
+<attribute name="ELECROW" value="C4410" x="61.595" y="20.955" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="LCSC" value="C1469" x="61.595" y="20.955" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V" x="61.595" y="20.955" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="62.865" y="20.32" size="1.27" layer="26" rot="MR90"/>
 <attribute name="VALUE" x="60.96" y="23.495" size="1.27" layer="28" rot="MR90"/>
 </element>
 <element name="R9" library="rcl" package="M1206" value="1k" x="64.77" y="20.955" smashed="yes" rot="MR270">
+<attribute name="ELECROW" value="C4410" x="64.77" y="20.955" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="LCSC" value="C1469" x="64.77" y="20.955" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V" x="64.77" y="20.955" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="NAME" x="63.5" y="21.59" size="1.27" layer="26" rot="MR270"/>
@@ -6598,47 +6632,52 @@ design rules under a new name.</description>
 <element name="LED5" library="lpatiny" package="LED-TRICOLOR-THROUGHHOLE" value="RGB-COMMON-CATHODE" x="68.58" y="12.065" rot="MR270"/>
 <element name="LCD" library="HD44780LCD" package="LCD-16X2-4HOLES" value="LCD-HD447804-HOLES16X2-4-HOLES" x="49.53" y="53.34"/>
 <element name="C8" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" value="10u" x="69.85" y="41.91" smashed="yes" rot="MR0">
+<attribute name="ELECROW" value="C13585" x="69.85" y="41.91" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="LCSC" value="C92789" x="69.85" y="41.91" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC" x="69.85" y="41.91" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="NAME" x="71.12" y="43.18" size="1.27" layer="26" rot="MR0"/>
 <attribute name="VALUE" x="71.755" y="39.37" size="1.27" layer="28" rot="MR0"/>
 </element>
 <element name="C6" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" value="10u" x="63.5" y="41.91" smashed="yes" rot="MR180">
+<attribute name="ELECROW" value="C13585" x="63.5" y="41.91" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="LCSC" value="C92789" x="63.5" y="41.91" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC" x="63.5" y="41.91" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="NAME" x="62.23" y="40.64" size="1.27" layer="26" rot="MR180"/>
 <attribute name="VALUE" x="58.42" y="42.545" size="1.27" layer="28" rot="MR180"/>
 </element>
 <element name="IC3" library="linear" package="SOT223" value="MCP1703-33" x="64.77" y="48.895" smashed="yes" rot="MR0">
+<attribute name="LCSC" value="C50754" x="64.77" y="48.895" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="MPN" value="579-MCP1703-3302E/DB" x="64.77" y="48.895" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="NAME" x="67.31" y="48.9458" size="1.27" layer="26" rot="MR0"/>
 <attribute name="VALUE" x="70.485" y="52.0192" size="1.27" layer="28" rot="MR0"/>
 </element>
-<element name="IC4" library="dp_devices" package="SOT-23" value="DMP1045U" x="75.565" y="45.72" smashed="yes" rot="MR0">
-<attribute name="LCSC" value="" x="75.565" y="45.72" size="1.778" layer="28" rot="MR0" display="off"/>
+<element name="IC4" library="dp_devices" package="SOT-23" value="DMP1045U or DMG2302" x="75.565" y="45.72" smashed="yes" rot="MR0">
+<attribute name="LCSC" value="C96613" x="75.565" y="45.72" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="MPN" value="621-DMP1045U-7" x="75.565" y="45.72" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="NAME" x="77.47" y="47.9425" size="1.27" layer="26" font="vector" ratio="10" rot="MR0"/>
 <attribute name="VALUE" x="80.645" y="42.8625" size="1.27" layer="28" font="vector" ratio="10" rot="MR0"/>
 </element>
 <element name="R15" library="rcl" package="M1206" value="100k" x="80.645" y="68.58" smashed="yes" rot="MR270">
+<attribute name="ELECROW" value="C17900" x="80.645" y="68.58" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="LCSC" value="" x="80.645" y="68.58" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="MPN" value="RC1206FR-07100KL" x="80.645" y="68.58" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="NAME" x="80.772" y="66.548" size="0.8128" layer="26" ratio="18" rot="MR270"/>
 <attribute name="VALUE" x="82.677" y="70.358" size="1.016" layer="28" ratio="10" rot="MR270"/>
 </element>
-<element name="D3" library="lpatiny" package="LED-1206" value="Schottky" x="75.565" y="41.275" smashed="yes" rot="MR0">
-<attribute name="LCSC" value="" x="75.565" y="41.275" size="1.778" layer="28" rot="MR0" display="off"/>
-<attribute name="MPN" value="579-MCP1703-3302E/DB" x="75.565" y="41.275" size="1.778" layer="28" rot="MR0" display="off"/>
-<attribute name="NAME" x="76.454" y="42.672" size="0.4064" layer="26" rot="MR0"/>
-<attribute name="VALUE" x="76.581" y="39.497" size="0.4064" layer="28" rot="MR0"/>
+<element name="D3" library="diode" library_urn="urn:adsk.eagle:library:210" package="SOD123" package3d_urn="urn:adsk.eagle:package:43420/1" value="Schottky" x="75.565" y="41.91" smashed="yes" rot="MR180">
+<attribute name="LCSC" value="C82544" x="75.565" y="41.91" size="1.778" layer="28" rot="MR180" display="off"/>
+<attribute name="MPN" value="621-1N5819HW-F" x="75.565" y="41.91" size="1.778" layer="28" rot="MR180" display="off"/>
+<attribute name="NAME" x="74.676" y="40.513" size="0.4064" layer="26" rot="MR180"/>
+<attribute name="VALUE" x="74.549" y="43.688" size="0.4064" layer="28" rot="MR180"/>
 </element>
-<element name="D1" library="lpatiny" package="LED-1206" value="Schottky" x="83.82" y="62.23" smashed="yes" rot="MR90">
-<attribute name="LCSC" value="" x="83.82" y="62.23" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="MPN" value="579-MCP1703-3302E/DB" x="83.82" y="62.23" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="NAME" x="85.217" y="61.341" size="0.4064" layer="26" rot="MR90"/>
-<attribute name="VALUE" x="82.042" y="61.214" size="0.4064" layer="28" rot="MR90"/>
+<element name="D1" library="diode" library_urn="urn:adsk.eagle:library:210" package="SOD123" package3d_urn="urn:adsk.eagle:package:43420/1" value="Schottky" x="83.82" y="62.23" smashed="yes" rot="MR270">
+<attribute name="LCSC" value="C82544" x="83.82" y="62.23" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="MPN" value="621-1N5819HW-F" x="83.82" y="62.23" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="NAME" x="82.423" y="63.119" size="0.4064" layer="26" rot="MR270"/>
+<attribute name="VALUE" x="85.598" y="63.246" size="0.4064" layer="28" rot="MR270"/>
 </element>
 <element name="R6" library="rcl" package="M1206" value="100" x="48.26" y="29.845" smashed="yes" rot="MR90">
+<attribute name="ELECROW" value="" x="48.26" y="29.845" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="LCSC" value="C4410" x="48.26" y="29.845" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V" x="48.26" y="29.845" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="49.53" y="29.21" size="1.27" layer="26" rot="MR90"/>
@@ -6646,19 +6685,21 @@ design rules under a new name.</description>
 </element>
 <element name="LED4" library="SparkFun" package="LED5MM" value="UV" x="43.815" y="36.195" rot="MR0"/>
 <element name="U$7" library="lpatiny" package="TSL237" value="TSL237" x="26.035" y="12.065" rot="MR270"/>
-<element name="D2" library="lpatiny" package="LED-1206" value="Schottky" x="83.82" y="69.215" smashed="yes" rot="MR270">
-<attribute name="LCSC" value="" x="83.82" y="69.215" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="MPN" value="579-MCP1703-3302E/DB" x="83.82" y="69.215" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="NAME" x="82.423" y="70.104" size="0.4064" layer="26" rot="MR270"/>
-<attribute name="VALUE" x="85.598" y="72.771" size="0.762" layer="28" rot="MR270"/>
+<element name="D2" library="diode" library_urn="urn:adsk.eagle:library:210" package="SOD123" package3d_urn="urn:adsk.eagle:package:43420/1" value="Schottky" x="83.82" y="69.215" smashed="yes" rot="MR90">
+<attribute name="LCSC" value="C82544" x="83.82" y="69.215" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="MPN" value="621-1N5819HW-F" x="83.82" y="69.215" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="NAME" x="85.217" y="68.326" size="0.4064" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="82.042" y="65.659" size="0.762" layer="28" rot="MR90"/>
 </element>
 <element name="C7" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" value="100nF" x="63.5" y="39.37" smashed="yes" rot="MR180">
+<attribute name="ELECROW" value="C24497" x="63.5" y="39.37" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="LCSC" value="C77502" x="63.5" y="39.37" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="MPN" value="80-C1206C104K5R" x="63.5" y="39.37" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="NAME" x="62.23" y="38.1" size="1.27" layer="26" rot="MR180"/>
 <attribute name="VALUE" x="55.88" y="40.005" size="1.27" layer="28" rot="MR180"/>
 </element>
 <element name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" package="M1206" value="100k" x="24.13" y="43.98645" rot="MR90">
+<attribute name="ELECROW" value="C17900" x="24.13" y="43.98645" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="LCSC" value="" x="24.13" y="43.98645" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="MPN" value="RC1206FR-07100KL" x="24.13" y="43.98645" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
@@ -6974,7 +7015,7 @@ design rules under a new name.</description>
 <wire x1="85.725" y1="60.73" x2="85.725" y2="60.6298" width="0.4064" layer="16"/>
 <wire x1="55.245" y1="31.75" x2="54.61" y2="31.75" width="0.4064" layer="16"/>
 <wire x1="54.61" y1="31.75" x2="53.975" y2="32.385" width="0.4064" layer="16"/>
-<wire x1="83.82" y1="60.73" x2="85.725" y2="60.73" width="1.27" layer="16"/>
+<wire x1="83.82" y1="60.33" x2="85.725" y2="60.73" width="1.27" layer="16"/>
 </signal>
 <signal name="D6*">
 <contactref element="IC1" pad="27"/>
@@ -7231,8 +7272,8 @@ design rules under a new name.</description>
 <signal name="N$11">
 <contactref element="R10" pad="2"/>
 <contactref element="LCD" pad="15"/>
-<wire x1="53.09" y1="68.84" x2="53.09" y2="65.085" width="0.4064" layer="16"/>
-<wire x1="53.09" y1="65.085" x2="53.34" y2="66.17" width="0.4064" layer="16"/>
+<wire x1="53.09" y1="68.84" x2="53.09" y2="66.42" width="0.4064" layer="16"/>
+<wire x1="53.09" y1="66.42" x2="53.34" y2="66.17" width="0.4064" layer="16"/>
 </signal>
 <signal name="N$4">
 <contactref element="LED1" pad="C"/>
@@ -7313,10 +7354,9 @@ design rules under a new name.</description>
 <wire x1="71.12" y1="44.45" x2="71.25" y2="41.91" width="1.27" layer="16"/>
 <contactref element="IC4" pad="2"/>
 <contactref element="D3" pad="C"/>
-<wire x1="74.065" y1="41.275" x2="74.065" y2="44.07" width="1.27" layer="16"/>
+<wire x1="73.665" y1="41.91" x2="74.065" y2="44.07" width="1.27" layer="16"/>
 <wire x1="74.065" y1="44.07" x2="74.615" y2="44.62" width="1.27" layer="16"/>
-<wire x1="71.25" y1="41.91" x2="73.43" y2="41.91" width="1.27" layer="16"/>
-<wire x1="73.43" y1="41.91" x2="74.065" y2="41.275" width="1.27" layer="16"/>
+<wire x1="71.25" y1="41.91" x2="73.665" y2="41.91" width="1.27" layer="16"/>
 </signal>
 <signal name="VCC">
 <contactref element="C6" pad="1"/>
@@ -7402,8 +7442,8 @@ design rules under a new name.</description>
 <wire x1="76.987" y1="69.85" x2="76.8651" y2="69.85" width="0.4064" layer="16"/>
 <wire x1="77.065" y1="44.62" x2="77.0636" y2="44.62" width="0.4064" layer="16"/>
 <wire x1="77.0636" y1="44.62" x2="76.515" y2="44.62" width="0.4064" layer="16"/>
-<wire x1="83.82" y1="63.73" x2="83.82" y2="67.715" width="1.27" layer="16"/>
-<wire x1="77.065" y1="44.62" x2="77.065" y2="41.275" width="1.27" layer="16"/>
+<wire x1="83.82" y1="64.13" x2="83.82" y2="67.315" width="1.27" layer="16"/>
+<wire x1="77.065" y1="44.62" x2="77.465" y2="41.91" width="1.27" layer="16"/>
 <wire x1="77.0636" y1="44.62" x2="77.47" y2="44.62" width="1.27" layer="16"/>
 <wire x1="80.645" y1="57.95645" x2="80.645" y2="51.435" width="1.27" layer="16"/>
 <wire x1="80.645" y1="51.435" x2="80.01" y2="50.8" width="1.27" layer="16"/>
@@ -7415,7 +7455,7 @@ design rules under a new name.</description>
 <wire x1="78.760009375" y1="66.99" x2="80.645" y2="66.99" width="1.27" layer="16"/>
 <wire x1="80.645" y1="66.99" x2="80.645" y2="67.18" width="1.27" layer="16"/>
 <wire x1="80.645" y1="67.18" x2="83.82" y2="67.63" width="1.27" layer="16"/>
-<wire x1="83.82" y1="67.63" x2="83.82" y2="67.715" width="1.27" layer="16"/>
+<wire x1="83.82" y1="67.63" x2="83.82" y2="67.315" width="1.27" layer="16"/>
 <wire x1="60.095" y1="59.69" x2="59.69" y2="59.69" width="0.4064" layer="16"/>
 <wire x1="59.69" y1="59.69" x2="59.69" y2="58.59145" width="0.4064" layer="16"/>
 <wire x1="59.69" y1="58.59145" x2="60.325" y2="57.95645" width="0.4064" layer="16"/>
@@ -7445,7 +7485,7 @@ design rules under a new name.</description>
 <wire x1="14.605" y1="71.12" x2="15.24" y2="71.755" width="1.27" layer="16"/>
 <wire x1="15.24" y1="71.755" x2="83.185" y2="71.755" width="1.27" layer="16"/>
 <wire x1="83.185" y1="71.755" x2="83.82" y2="71.12" width="1.27" layer="16"/>
-<wire x1="83.82" y1="71.12" x2="83.82" y2="70.715" width="1.27" layer="16"/>
+<wire x1="83.82" y1="71.12" x2="83.82" y2="71.115" width="1.27" layer="16"/>
 </signal>
 <signal name="N$3">
 <contactref element="LED4" pad="A"/>
@@ -7499,6 +7539,8 @@ design rules under a new name.</description>
 <approved hash="7,40,c11a8352e2b68586"/>
 <approved hash="7 40 8909afbc258b2dc6"/>
 <approved hash="7 40 7465310d20611d3c"/>
+<approved hash="7	40	8909afbc258b2dc6"/>
+<approved hash="7	40	7465310d20611d3c"/>
 </errors>
 </board>
 </drawing>
@@ -7511,6 +7553,16 @@ which will not be processed correctly with this version.
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
 with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports URNs for individual library
+assets (packages, symbols, and devices). The URNs of those assets
+will not be understood (or retained) with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports the association of 3D packages
+with devices in libraries, schematics, and board files. Those 3D
+packages will not be understood (or retained) with this version.
 </note>
 </compatibility>
 </eagle>

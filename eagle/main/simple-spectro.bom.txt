@@ -1,40 +1,38 @@
-Partlist exported from /home/lpatiny/git/hackuarium/simple-spectro/eagle/main/simple-spectro.sch at 10/21/17 12:20 PM
-
-Part Value                          Device                         Package                  Description                                      MF MPN                  OC_FARNELL OC_NEWARK
-C1   18pF                           C-EUC1206                      C1206                    CAPACITOR, European symbol                          77-VJ1206A180JXXPBC                      
-C2   18pF                           C-EUC1206                      C1206                    CAPACITOR, European symbol                          77-VJ1206A180JXXPBC                      
-C3   100nF                          C-EUC1206                      C1206                    CAPACITOR, European symbol                          80-C1206C104K5R                          
-C4   10u                            CAPACITOR_NPOL-1206            C1206                    Non-Polarized capacitor in various packages         77-VJ1206V106ZXQTBC                      
-C5   10u                            CAPACITOR_NPOL-1206            C1206                    Non-Polarized capacitor in various packages         77-VJ1206V106ZXQTBC                      
-C6   10u                            C-EUC1206                      C1206                    CAPACITOR, European symbol                          77-VJ1206V106ZXQTBC                      
-C7   100nF                          C-EUC1206                      C1206                    CAPACITOR, European symbol                          80-C1206C104K5R                          
-C8   10u                            C-EUC1206                      C1206                    CAPACITOR, European symbol                          77-VJ1206V106ZXQTBC                      
-C9   100nF                          C-EUC1206                      C1206                    CAPACITOR, European symbol                          80-C1206C104K5R                          
-C10  100nF                          C-EUC1206                      C1206                    CAPACITOR, European symbol                          80-C1206C104K5R                          
-D1   Schottky                       1N581D1206                     LED-1206                 1.0A SCHOTTKY BARRIER RECTIFIER                     579-MCP1703-3302E/DB                     
-D2   Schottky                       1N581D1206                     LED-1206                 1.0A SCHOTTKY BARRIER RECTIFIER                     579-MCP1703-3302E/DB                     
-D3   Schottky                       1N581D1206                     LED-1206                 1.0A SCHOTTKY BARRIER RECTIFIER                     579-MCP1703-3302E/DB                     
-IC1  32U4                           ATMEGA32U4-AU                  TQFP44                   http://www.ladyada.net/library/eagle                556-ATMEGA32U4RC-AU                      
-IC2  MCP73831T                      MCP73831/2                     SOT23-5                  MCP73831/2 LIPO Charger                             579-MCP73831T-3ACIOT                     
-IC3  MCP1703-33                     MCP1703DB                      SOT223                   250 mA, 16V, Low Quiescent Current LDO Regulator    579-MCP1703-3302E/DB                     
-IC4  DMP1045U                       TRANSISTOR_FET_TSM2301CX       SOT-23                   20V P-Channel Enhancement Mode MOSFET               621-DMP1045U-7                           
-LED1 RED                            LED1206                        LED-1206                 LEDs                                                604-APT3216EC                            
-LED2 GREEN                          LED1206                        LED-1206                 LEDs                                                604-APTR3216SGC                          
-LED3 YELLOW                         LED1206                        LED-1206                 LEDs                                                604-APTR3216YC                           
-R1   1k                             R-EU_M1206                     M1206                    RESISTOR, European symbol                           667-ERJ-8GEYJ101V                        
-R2   1k                             R-EU_M1206                     M1206                    RESISTOR, European symbol                           667-ERJ-8GEYJ101V                        
-R3   10K                            R-EU_M1206                     M1206                    RESISTOR, European symbol                           603-RC1206FR-0710KL                      
-R4   22                             R-EU_M1206                     M1206                    RESISTOR, European symbol                           603-RC1206FR-0722RL                      
-R5   22                             R-EU_M1206                     M1206                    RESISTOR, European symbol                           603-RC1206FR-0722RL                      
-R6   100                            R-EU_M1206                     M1206                    RESISTOR, European symbol                           667-ERJ-8GEYJ101V                        
-R7   1k                             R-EU_M1206                     M1206                    RESISTOR, European symbol                           667-ERJ-8GEYJ101V                        
-R8   1k                             R-EU_M1206                     M1206                    RESISTOR, European symbol                           667-ERJ-8GEYJ101V                        
-R9   1k                             R-EU_M1206                     M1206                    RESISTOR, European symbol                           667-ERJ-8GEYJ101V                        
-R10  220                            R-EU_M1206                     M1206                    RESISTOR, European symbol                           667-ERJ-U08J221V                         
-R11  100k                           R-EU_M1206                     M1206                    RESISTOR, European symbol                           RC1206FR-07100KL                         
-R12  1M                             R-EU_M1206                     M1206                    RESISTOR, European symbol                           ERJ-8GEYJ105V                            
-R13  10k                            R-EU_M1206                     M1206                    RESISTOR, European symbol                           603-RC1206FR-0710KL                      
-R14  1k                             R-EU_M1206                     M1206                    RESISTOR, European symbol                           667-ERJ-8GEYJ101V                        
-R15  100k                           R-EU_M1206                     M1206                    RESISTOR, European symbol                           RC1206FR-07100KL                         
-X1   8MHz                           XTALNX6035                     NX6035                   Low cost SMT crystals, no capacitors included       729-F60800010                            
-X2   MINI-USB                       MINI-USB-SCHIELD-32005-201     32005-201                MINI USB-B Conector                                 649-10033526-N3212LF                     
+Part,Value,Device,Package,Description,ELECROW,LCSC,MPN
+C1,18pF,C-EUC1206,C1206,"CAPACITOR, European symbol",,C1889,77-VJ1206A180JXXPBC
+C2,18pF,C-EUC1206,C1206,"CAPACITOR, European symbol",,C1889,77-VJ1206A180JXXPBC
+C3,100nF,C-EUC1206,C1206,"CAPACITOR, European symbol",C24497,C77502,80-C1206C104K5R
+C4,10u,CAPACITOR_NPOL-1206,C1206,Non-Polarized capacitor in various packages,C13585,C92789,77-VJ1206V106ZXQTBC
+C5,10u,CAPACITOR_NPOL-1206,C1206,Non-Polarized capacitor in various packages,C13585,C92789,77-VJ1206V106ZXQTBC
+C6,10u,C-EUC1206,C1206,"CAPACITOR, European symbol",C13585,C92789,77-VJ1206V106ZXQTBC
+C7,100nF,C-EUC1206,C1206,"CAPACITOR, European symbol",C24497,C77502,80-C1206C104K5R
+C8,10u,C-EUC1206,C1206,"CAPACITOR, European symbol",C13585,C92789,77-VJ1206V106ZXQTBC
+C9,100nF,C-EUC1206,C1206,"CAPACITOR, European symbol",C24497,C77502,80-C1206C104K5R
+C10,100nF,C-EUC1206,C1206,"CAPACITOR, European symbol",C24497,C77502,80-C1206C104K5R
+D1,Schottky,1N581D1206,LED-1206,1.0A SCHOTTKY BARRIER RECTIFIER,,,579-MCP1703-3302E/DB
+D2,Schottky,1N581D1206,LED-1206,1.0A SCHOTTKY BARRIER RECTIFIER,,,579-MCP1703-3302E/DB
+D3,Schottky,1N581D1206,LED-1206,1.0A SCHOTTKY BARRIER RECTIFIER,,,579-MCP1703-3302E/DB
+IC1,32U4,ATMEGA32U4-AU,TQFP44,http://www.ladyada.net/library/eagle,,,556-ATMEGA32U4RC-AU
+IC2,MCP73831T,MCP73831/2,SOT23-5,MCP73831/2 LIPO Charger,,,579-MCP73831T-3ACIOT
+IC3,MCP1703-33,MCP1703DB,SOT223,"250 mA, 16V, Low Quiescent Current LDO Regulator",,,579-MCP1703-3302E/DB
+IC4,DMP1045U,TRANSISTOR_FET_TSM2301CX,SOT-23,20V P-Channel Enhancement Mode MOSFET,,,621-DMP1045U-7
+LED1,RED,LED1206,LED-1206,LEDs,,C49018,604-APT3216EC
+LED2,GREEN,LED1206,LED-1206,LEDs,,C14641,604-APTR3216SGC
+LED3,YELLOW,LED1206,LED-1206,LEDs,,C84273,604-APTR3216YC
+R1,1k,R-EU_M1206,M1206,"RESISTOR, European symbol",C4410,C1469,667-ERJ-8GEYJ101V
+R2,1k,R-EU_M1206,M1206,"RESISTOR, European symbol",C4410,C1469,667-ERJ-8GEYJ101V
+R3,10K,R-EU_M1206,M1206,"RESISTOR, European symbol",C17902,C17902,603-RC1206FR-0710KL
+R4,22,R-EU_M1206,M1206,"RESISTOR, European symbol",C17958,C99734,603-RC1206FR-0722RL
+R5,22,R-EU_M1206,M1206,"RESISTOR, European symbol",C17958,C99734,603-RC1206FR-0722RL
+R6,100,R-EU_M1206,M1206,"RESISTOR, European symbol",,C4410,667-ERJ-8GEYJ101V
+R7,1k,R-EU_M1206,M1206,"RESISTOR, European symbol",C4410,C1469,667-ERJ-8GEYJ101V
+R8,1k,R-EU_M1206,M1206,"RESISTOR, European symbol",C4410,C1469,667-ERJ-8GEYJ101V
+R9,1k,R-EU_M1206,M1206,"RESISTOR, European symbol",C4410,C1469,667-ERJ-8GEYJ101V
+R10,220,R-EU_M1206,M1206,"RESISTOR, European symbol",,,667-ERJ-U08J221V
+R11,100k,R-EU_M1206,M1206,"RESISTOR, European symbol",C17900,,RC1206FR-07100KL
+R12,1M,R-EU_M1206,M1206,"RESISTOR, European symbol",,,ERJ-8GEYJ105V
+R13,10k,R-EU_M1206,M1206,"RESISTOR, European symbol",C17902,C17902,603-RC1206FR-0710KL
+R14,1k,R-EU_M1206,M1206,"RESISTOR, European symbol",C4410,C1469,667-ERJ-8GEYJ101V
+R15,100k,R-EU_M1206,M1206,"RESISTOR, European symbol",C17900,,RC1206FR-07100KL
+X1,8MHz,XTALNX6035,NX6035,"Low cost SMT crystals, no capacitors included",,C90881,729-F60800010
+X2,MINI-USB,MINI-USB-SCHIELD-32005-201,32005-201,MINI USB-B Conector,,,649-10033526-N3212LF
