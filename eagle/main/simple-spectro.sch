@@ -12068,6 +12068,102 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="infineon">
+<description>&lt;b&gt;Infineon Technologies&lt;/b&gt;&lt;p&gt;
+http://www.infineon.comp&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="PG-SOT-223">
+<description>&lt;b&gt;Small Outline Transistor; 4 leads&lt;/b&gt; Wave soldering&lt;p&gt;
+Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
+<wire x1="3.277" y1="1.778" x2="3.277" y2="-1.778" width="0.2032" layer="21"/>
+<wire x1="3.277" y1="-1.778" x2="-3.277" y2="-1.778" width="0.2032" layer="21"/>
+<wire x1="-3.277" y1="-1.778" x2="-3.277" y2="1.778" width="0.2032" layer="21"/>
+<wire x1="-3.277" y1="1.778" x2="3.277" y2="1.778" width="0.2032" layer="21"/>
+<smd name="1" x="-2.311" y="-3.099" dx="1.2" dy="1.4" layer="1"/>
+<smd name="2" x="0" y="-3.099" dx="1.2" dy="1.4" layer="1"/>
+<smd name="3" x="2.311" y="-3.099" dx="1.2" dy="1.4" layer="1"/>
+<smd name="4" x="0" y="3.099" dx="3.5" dy="1.4" layer="1"/>
+<text x="-2.54" y="0.0508" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.54" y="-1.3208" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
+<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
+<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
+<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
+<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
+<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
+</package>
+</packages>
+<symbols>
+<symbol name="P-SIPMOS-2D">
+<wire x1="0.762" y1="0.762" x2="0.762" y2="0" width="0.254" layer="94"/>
+<wire x1="0.762" y1="0" x2="0.762" y2="-0.762" width="0.254" layer="94"/>
+<wire x1="0.762" y1="3.175" x2="0.762" y2="2.54" width="0.254" layer="94"/>
+<wire x1="0.762" y1="2.54" x2="0.762" y2="1.905" width="0.254" layer="94"/>
+<wire x1="0.762" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0.762" y1="-1.905" x2="0.762" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0.762" y1="-2.54" x2="0.762" y2="-3.175" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="0.762" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="3.81" y1="2.54" x2="3.81" y2="-0.508" width="0.1524" layer="94"/>
+<wire x1="3.81" y1="-0.508" x2="3.81" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="3.81" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0.762" y1="2.54" x2="3.81" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="3.048" y1="-0.762" x2="3.302" y2="-0.508" width="0.1524" layer="94"/>
+<wire x1="3.302" y1="-0.508" x2="3.81" y2="-0.508" width="0.1524" layer="94"/>
+<wire x1="3.81" y1="-0.508" x2="4.318" y2="-0.508" width="0.1524" layer="94"/>
+<wire x1="4.318" y1="-0.508" x2="4.572" y2="-0.254" width="0.1524" layer="94"/>
+<circle x="2.54" y="-2.54" radius="0.254" width="0" layer="94"/>
+<circle x="2.54" y="2.54" radius="0.254" width="0" layer="94"/>
+<text x="-11.43" y="3.81" size="1.778" layer="96" rot="MR180">&gt;VALUE</text>
+<text x="-11.43" y="1.27" size="1.778" layer="95" rot="MR180">&gt;NAME</text>
+<pin name="S" x="2.54" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="G" x="-2.54" y="-2.54" visible="off" length="short" direction="pas"/>
+<pin name="D@1" x="2.54" y="5.08" visible="off" length="short" direction="pas" rot="R270"/>
+<pin name="D@2" x="2.54" y="2.54" visible="off" length="short" direction="pas" rot="R90"/>
+<polygon width="0.1524" layer="94">
+<vertex x="3.81" y="-0.508"/>
+<vertex x="4.318" y="0.254"/>
+<vertex x="3.302" y="0.254"/>
+</polygon>
+<polygon width="0.1524" layer="94">
+<vertex x="2.54" y="0"/>
+<vertex x="1.524" y="-0.762"/>
+<vertex x="1.524" y="0.762"/>
+</polygon>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="BSP613P" prefix="Q">
+<description>&lt;b&gt;SIPMOS (R) Small-Signal-Transistor&lt;/b&gt; P-Channel (2 Drain)&lt;p&gt;
+Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
+<gates>
+<gate name="G$1" symbol="P-SIPMOS-2D" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="PG-SOT-223">
+<connects>
+<connect gate="G$1" pin="D@1" pad="2"/>
+<connect gate="G$1" pin="D@2" pad="4"/>
+<connect gate="G$1" pin="G" pad="1"/>
+<connect gate="G$1" pin="S" pad="3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -12166,7 +12262,7 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <part name="GND45" library="supply1" deviceset="GND" device=""/>
 <part name="GND54" library="supply1" deviceset="GND" device=""/>
 <part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" value="1M">
-<attribute name="ELECROW" value=""/>
+<attribute name="ELECROW" value="C26124"/>
 <attribute name="MPN" value="ERJ-8GEYJ105V"/>
 </part>
 <part name="SUPPLY18" library="supply1" deviceset="VCC" device=""/>
@@ -12176,7 +12272,7 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="R10" library="rcl" deviceset="R-EU_" device="M1206" value="220">
 <attribute name="ELECROW" value=""/>
-<attribute name="LCSC" value=""/>
+<attribute name="LCSC" value="C102128"/>
 <attribute name="MPN" value="667-ERJ-U08J221V"/>
 </part>
 <part name="U$1" library="lpatiny" deviceset="EC11E" device=""/>
@@ -12261,7 +12357,7 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 </part>
 <part name="R15" library="rcl" deviceset="R-EU_" device="M1206" value="100k">
 <attribute name="ELECROW" value="C17900"/>
-<attribute name="LCSC" value=""/>
+<attribute name="LCSC" value="C17900"/>
 <attribute name="MPN" value="RC1206FR-07100KL"/>
 </part>
 <part name="D3" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="MBR0520LT" device="" package3d_urn="urn:adsk.eagle:package:43420/1" value="Schottky">
@@ -12296,7 +12392,7 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 </part>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" value="100k">
 <attribute name="ELECROW" value="C17900"/>
-<attribute name="LCSC" value=""/>
+<attribute name="LCSC" value="C17900"/>
 <attribute name="MPN" value="RC1206FR-07100KL"/>
 </part>
 <part name="CON2" library="lpatiny" deviceset="TINYISP" device="" value="SPI"/>
@@ -12310,17 +12406,25 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="R16" library="rcl" deviceset="R-EU_" device="M1206" value="10K">
+<attribute name="ELECROW" value="C17900"/>
+<attribute name="LCSC" value="C17900"/>
 <attribute name="MPN" value="603-RC1206FR-0710KL"/>
 </part>
 <part name="R17" library="rcl" deviceset="R-EU_" device="M1206" value="10K">
+<attribute name="ELECROW" value="C17900"/>
+<attribute name="LCSC" value="C17900"/>
 <attribute name="MPN" value="603-RC1206FR-0710KL"/>
 </part>
 <part name="SUPPLY8" library="supply1" deviceset="VCC" device=""/>
 <part name="SUPPLY9" library="supply1" deviceset="VCC" device=""/>
 <part name="R18" library="rcl" deviceset="R-EU_" device="M1206" value="10K">
+<attribute name="ELECROW" value="C17900"/>
+<attribute name="LCSC" value="C17900"/>
 <attribute name="MPN" value="603-RC1206FR-0710KL"/>
 </part>
 <part name="R19" library="rcl" deviceset="R-EU_" device="M1206" value="10K">
+<attribute name="ELECROW" value="C17900"/>
+<attribute name="LCSC" value="C17900"/>
 <attribute name="MPN" value="603-RC1206FR-0710KL"/>
 </part>
 <part name="CON4" library="jumper" deviceset="JP1E" device="" value="VIBR"/>
@@ -12329,6 +12433,9 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <attribute name="LCSC" value="C1469"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
+<part name="Q6" library="infineon" deviceset="BSP613P" device="" value="BSP75"/>
+<part name="GND12" library="supply1" deviceset="GND" device=""/>
+<part name="SUPPLY10" library="supply1" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12459,7 +12566,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="GND32" gate="1" x="73.66" y="195.58" rot="R270"/>
 <instance part="GND38" gate="1" x="93.98" y="177.8"/>
 <instance part="GND39" gate="1" x="63.5" y="165.1" rot="R270"/>
-<instance part="GND42" gate="1" x="93.98" y="149.86"/>
+<instance part="GND42" gate="1" x="93.98" y="149.86" rot="MR0"/>
 <instance part="GND45" gate="1" x="99.06" y="142.24"/>
 <instance part="GND54" gate="1" x="187.96" y="193.04"/>
 <instance part="R12" gate="G$1" x="96.52" y="165.1" rot="MR90">
@@ -12620,24 +12727,35 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="GND10" gate="1" x="10.16" y="180.34"/>
 <instance part="R16" gate="G$1" x="10.16" y="205.74" rot="R90">
 <attribute name="MPN" x="10.16" y="205.74" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="LCSC" x="10.16" y="205.74" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="ELECROW" x="10.16" y="205.74" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="R17" gate="G$1" x="0" y="205.74" rot="R90">
 <attribute name="MPN" x="0" y="205.74" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="LCSC" x="0" y="205.74" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="ELECROW" x="0" y="205.74" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="SUPPLY8" gate="VCC" x="10.16" y="215.9"/>
 <instance part="SUPPLY9" gate="VCC" x="0" y="215.9"/>
 <instance part="R18" gate="G$1" x="144.78" y="96.52" rot="R90">
 <attribute name="MPN" x="144.78" y="96.52" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="LCSC" x="144.78" y="96.52" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="ELECROW" x="144.78" y="96.52" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="R19" gate="G$1" x="144.78" y="83.82" rot="R90">
 <attribute name="MPN" x="144.78" y="83.82" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="LCSC" x="144.78" y="83.82" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="ELECROW" x="144.78" y="83.82" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="CON4" gate="A" x="30.48" y="147.32" rot="R270"/>
-<instance part="R20" gate="G$1" x="0" y="147.32">
-<attribute name="MPN" x="0" y="147.32" size="1.778" layer="96" display="off"/>
-<attribute name="LCSC" x="0" y="147.32" size="1.778" layer="96" display="off"/>
-<attribute name="ELECROW" x="0" y="147.32" size="1.778" layer="96" display="off"/>
+<instance part="CON4" gate="A" x="33.02" y="157.48" rot="R270"/>
+<instance part="R20" gate="G$1" x="12.7" y="144.78">
+<attribute name="MPN" x="12.7" y="144.78" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="12.7" y="144.78" size="1.778" layer="96" display="off"/>
+<attribute name="ELECROW" x="12.7" y="144.78" size="1.778" layer="96" display="off"/>
 </instance>
+<instance part="Q6" gate="G$1" x="27.94" y="147.32"/>
+<instance part="GND12" gate="1" x="30.48" y="137.16" rot="MR0"/>
+<instance part="SUPPLY10" gate="VCC" x="30.48" y="162.56"/>
 </instances>
 <busses>
 </busses>
@@ -12839,6 +12957,11 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="10.16" y1="187.96" x2="10.16" y2="182.88" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="Q6" gate="G$1" pin="S"/>
+<pinref part="GND12" gate="1" pin="GND"/>
+<wire x1="30.48" y1="142.24" x2="30.48" y2="139.7" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="SCK" class="0">
 <segment>
@@ -12992,6 +13115,11 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="IC1" gate="G$1" pin="PF0(ADC0)"/>
 <wire x1="160.02" y1="215.9" x2="175.26" y2="215.9" width="0.1524" layer="91"/>
 <label x="170.18" y="215.9" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R20" gate="G$1" pin="1"/>
+<wire x1="7.62" y1="144.78" x2="2.54" y2="144.78" width="0.1524" layer="91"/>
+<label x="2.54" y="144.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="A1" class="0">
@@ -13479,6 +13607,11 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="0" y1="210.82" x2="0" y2="213.36" width="0.1524" layer="91"/>
 <pinref part="SUPPLY9" gate="VCC" pin="VCC"/>
 </segment>
+<segment>
+<pinref part="SUPPLY10" gate="VCC" pin="VCC"/>
+<pinref part="CON4" gate="A" pin="1"/>
+<wire x1="30.48" y1="157.48" x2="30.48" y2="160.02" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$15" class="0">
 <segment>
@@ -13536,6 +13669,20 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="LED4" gate="G$1" pin="A"/>
 <pinref part="R6" gate="G$1" pin="2"/>
 <wire x1="106.68" y1="22.86" x2="104.14" y2="22.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="R20" gate="G$1" pin="2"/>
+<pinref part="Q6" gate="G$1" pin="G"/>
+<wire x1="17.78" y1="144.78" x2="25.4" y2="144.78" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$14" class="0">
+<segment>
+<pinref part="CON4" gate="A" pin="2"/>
+<pinref part="Q6" gate="G$1" pin="D@1"/>
+<wire x1="30.48" y1="154.94" x2="30.48" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
