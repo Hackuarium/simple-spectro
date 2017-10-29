@@ -4659,108 +4659,6 @@ http://dangerousprototypes.com</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="linear">
-<description>&lt;b&gt;Linear Devices&lt;/b&gt;&lt;p&gt;
-Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="SOT223">
-<description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;</description>
-<wire x1="3.2766" y1="1.778" x2="3.2766" y2="-1.778" width="0.2032" layer="21"/>
-<wire x1="3.2766" y1="-1.778" x2="-3.2766" y2="-1.778" width="0.2032" layer="21"/>
-<wire x1="-3.2766" y1="-1.778" x2="-3.2766" y2="1.778" width="0.2032" layer="21"/>
-<wire x1="-3.2766" y1="1.778" x2="3.2766" y2="1.778" width="0.2032" layer="21"/>
-<smd name="1" x="-2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
-<smd name="2" x="0" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
-<smd name="3" x="2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
-<smd name="4" x="0" y="3.099" dx="3.6" dy="2.2" layer="1"/>
-<text x="1.0208" y="-4.318" size="0.8128" layer="21" ratio="12">3</text>
-<text x="1.905" y="2.54" size="0.8128" layer="21" ratio="12">4</text>
-<text x="-3.4526" y="-4.318" size="0.8128" layer="21" ratio="12">1</text>
-<text x="-1.2906" y="-4.3274" size="0.8128" layer="21" ratio="12">2</text>
-<text x="-2.54" y="0.0508" size="1.27" layer="25">&gt;NAME</text>
-<text x="-2.54" y="-1.3208" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
-<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
-<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
-<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
-<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
-<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
-<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
-<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
-</package>
-<package name="SOT23">
-<description>&lt;b&gt;SMALL OUTLINE TRANSISTOR&lt;/b&gt;&lt;p&gt;
-reflow soldering</description>
-<wire x1="-1.973" y1="1.983" x2="1.973" y2="1.983" width="0.0508" layer="39"/>
-<wire x1="1.973" y1="-1.983" x2="-1.973" y2="-1.983" width="0.0508" layer="39"/>
-<wire x1="-1.973" y1="-1.983" x2="-1.973" y2="1.983" width="0.0508" layer="39"/>
-<wire x1="1.973" y1="1.983" x2="1.973" y2="-1.983" width="0.0508" layer="39"/>
-<wire x1="1.422" y1="0.66" x2="1.422" y2="-0.66" width="0.1524" layer="51"/>
-<wire x1="1.422" y1="-0.66" x2="-1.422" y2="-0.66" width="0.1524" layer="51"/>
-<wire x1="-1.422" y1="-0.66" x2="-1.422" y2="0.66" width="0.1524" layer="51"/>
-<wire x1="-1.422" y1="0.66" x2="1.422" y2="0.66" width="0.1524" layer="51"/>
-<wire x1="-1.422" y1="-0.152" x2="-1.422" y2="0.66" width="0.1524" layer="21"/>
-<wire x1="-1.422" y1="0.66" x2="-0.864" y2="0.66" width="0.1524" layer="21"/>
-<wire x1="0.864" y1="0.66" x2="1.422" y2="0.66" width="0.1524" layer="21"/>
-<wire x1="1.422" y1="0.66" x2="1.422" y2="-0.152" width="0.1524" layer="21"/>
-<smd name="3" x="0" y="1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="2" x="0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="1" x="-0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
-<rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
-<rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
-<rectangle x1="-0.5001" y1="-0.3" x2="0.5001" y2="0.3" layer="35"/>
-</package>
-</packages>
-<symbols>
-<symbol name="78XX">
-<wire x1="-7.62" y1="-5.08" x2="7.62" y2="-5.08" width="0.4064" layer="94"/>
-<wire x1="7.62" y1="-5.08" x2="7.62" y2="2.54" width="0.4064" layer="94"/>
-<wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.4064" layer="94"/>
-<wire x1="-7.62" y1="2.54" x2="-7.62" y2="-5.08" width="0.4064" layer="94"/>
-<text x="-7.62" y="5.715" size="1.778" layer="95">&gt;NAME</text>
-<text x="-7.62" y="3.175" size="1.778" layer="96">&gt;VALUE</text>
-<text x="-2.032" y="-4.318" size="1.524" layer="95">GND</text>
-<pin name="VI" x="-10.16" y="0" length="short" direction="in"/>
-<pin name="GND" x="0" y="-7.62" visible="pad" length="short" direction="pas" rot="R90"/>
-<pin name="VO" x="10.16" y="0" length="short" direction="pas" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="MCP1703" prefix="IC">
-<description>&lt;b&gt;250 mA, 16V, Low Quiescent Current LDO Regulator&lt;/b&gt;&lt;p&gt;
-Source: http://ww1.microchip.com/downloads/en/DeviceDoc/22049b.pdf</description>
-<gates>
-<gate name="G$1" symbol="78XX" x="0" y="0"/>
-</gates>
-<devices>
-<device name="DB" package="SOT223">
-<connects>
-<connect gate="G$1" pin="GND" pad="2"/>
-<connect gate="G$1" pin="VI" pad="1"/>
-<connect gate="G$1" pin="VO" pad="3"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="CB" package="SOT23">
-<connects>
-<connect gate="G$1" pin="GND" pad="1"/>
-<connect gate="G$1" pin="VI" pad="3"/>
-<connect gate="G$1" pin="VO" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="SparkFun">
 <description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
 We've spent an enormous amount of time creating and checking these footprints and parts. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
@@ -12164,8 +12062,127 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="burr-brown" urn="urn:adsk.eagle:library:111">
+<description>&lt;b&gt;Burr-Brown Components&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SOT223" urn="urn:adsk.eagle:footprint:4834/1" library_version="1">
+<description>&lt;b&gt;Smal Outline Transistor&lt;/b&gt;</description>
+<wire x1="-3.124" y1="1.731" x2="-3.124" y2="-1.729" width="0.1524" layer="21"/>
+<wire x1="3.124" y1="-1.729" x2="3.124" y2="1.731" width="0.1524" layer="21"/>
+<wire x1="-3.124" y1="1.731" x2="3.124" y2="1.731" width="0.1524" layer="21"/>
+<wire x1="3.124" y1="-1.729" x2="-3.124" y2="-1.729" width="0.1524" layer="21"/>
+<smd name="1" x="-2.2606" y="-3.1496" dx="1.4986" dy="2.0066" layer="1"/>
+<smd name="2" x="0.0254" y="-3.1496" dx="1.4986" dy="2.0066" layer="1"/>
+<smd name="3" x="2.3114" y="-3.1496" dx="1.4986" dy="2.0066" layer="1"/>
+<smd name="4" x="0" y="3.1496" dx="3.81" dy="2.0066" layer="1"/>
+<text x="-2.54" y="4.318" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.794" y="-5.842" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="-1.524" y1="1.778" x2="1.524" y2="3.302" layer="51"/>
+<rectangle x1="-2.667" y1="-3.302" x2="-1.905" y2="-1.778" layer="51"/>
+<rectangle x1="1.905" y1="-3.302" x2="2.667" y2="-1.778" layer="51"/>
+<rectangle x1="-0.381" y1="-3.302" x2="0.381" y2="-1.778" layer="51"/>
+</package>
+<package name="DD-3" urn="urn:adsk.eagle:footprint:4839/1" library_version="1">
+<description>&lt;b&gt;DPAC&lt;/b&gt;</description>
+<wire x1="-5.398" y1="-4.445" x2="-5.084" y2="-4.445" width="0.1524" layer="21"/>
+<wire x1="-5.084" y1="-4.445" x2="5.076" y2="-4.445" width="0.1524" layer="21"/>
+<wire x1="5.076" y1="-4.445" x2="5.398" y2="-4.445" width="0.1524" layer="21"/>
+<wire x1="5.398" y1="-4.445" x2="5.398" y2="4.128" width="0.1524" layer="21"/>
+<wire x1="5.398" y1="4.128" x2="-5.398" y2="4.128" width="0.1524" layer="21"/>
+<wire x1="-5.398" y1="4.128" x2="-5.398" y2="-4.445" width="0.1524" layer="21"/>
+<wire x1="-5.084" y1="3.81" x2="5.076" y2="3.81" width="0.1524" layer="21"/>
+<wire x1="5.076" y1="3.81" x2="5.076" y2="-4.445" width="0.1524" layer="21"/>
+<wire x1="-5.084" y1="-4.445" x2="-5.084" y2="3.81" width="0.1524" layer="21"/>
+<wire x1="-5.398" y1="4.128" x2="-5.084" y2="3.81" width="0.1524" layer="21"/>
+<wire x1="5.398" y1="4.128" x2="5.076" y2="3.81" width="0.1524" layer="21"/>
+<wire x1="-5.398" y1="4.128" x2="-5.398" y2="5.08" width="0.1524" layer="21"/>
+<wire x1="-5.398" y1="5.08" x2="-4.445" y2="5.715" width="0.1524" layer="21"/>
+<wire x1="-4.445" y1="5.715" x2="4.445" y2="5.715" width="0.1524" layer="21"/>
+<wire x1="4.445" y1="5.715" x2="5.398" y2="5.08" width="0.1524" layer="21"/>
+<wire x1="5.398" y1="5.08" x2="5.398" y2="4.128" width="0.1524" layer="21"/>
+<smd name="1" x="-2.54" y="-7.9375" dx="1.27" dy="5.08" layer="1"/>
+<smd name="2" x="0" y="-7.9375" dx="1.27" dy="5.08" layer="1"/>
+<smd name="3" x="2.54" y="-7.9375" dx="1.27" dy="5.08" layer="1"/>
+<text x="-3.81" y="-10.795" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="-2.54" y="-1.27" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="-3.175" y1="-9.525" x2="-1.905" y2="-4.445" layer="51"/>
+<rectangle x1="-0.635" y1="-9.525" x2="0.635" y2="-4.445" layer="51"/>
+<rectangle x1="1.905" y1="-9.525" x2="3.175" y2="-4.445" layer="51"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="SOT223" urn="urn:adsk.eagle:package:4940/1" type="box" library_version="1">
+<description>Smal Outline Transistor</description>
+</package3d>
+<package3d name="DD-3" urn="urn:adsk.eagle:package:4944/1" type="box" library_version="1">
+<description>DPAC</description>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="REG1118" urn="urn:adsk.eagle:symbol:4833/1" library_version="1">
+<wire x1="-7.62" y1="-7.62" x2="7.62" y2="-7.62" width="0.4064" layer="94"/>
+<wire x1="7.62" y1="-7.62" x2="7.62" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="-7.62" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="-7.62" y1="5.08" x2="-7.62" y2="-7.62" width="0.4064" layer="94"/>
+<text x="-7.62" y="5.715" size="1.778" layer="95" ratio="10">&gt;NAME</text>
+<text x="-5.08" y="2.54" size="1.778" layer="96" ratio="10">&gt;VALUE</text>
+<pin name="VIN" x="-12.7" y="0" length="middle" direction="in"/>
+<pin name="VOUT" x="12.7" y="0" length="middle" direction="out" rot="R180"/>
+<pin name="GND" x="0" y="-12.7" length="middle" direction="pwr" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="REG1117" urn="urn:adsk.eagle:component:5129/1" prefix="IC" library_version="1">
+<description>&lt;b&gt;800mA and 1A Low Dropout (LDO) Positive Regulator&lt;/b&gt;&lt;p&gt;
+1.8V, 2.5V, 2.85V, 3.3V, 5V, and Adj</description>
+<gates>
+<gate name="G$1" symbol="REG1118" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOT223">
+<connects>
+<connect gate="G$1" pin="GND" pad="1"/>
+<connect gate="G$1" pin="VIN" pad="3"/>
+<connect gate="G$1" pin="VOUT" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:4940/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="REG1117" constant="no"/>
+<attribute name="OC_FARNELL" value="1097566" constant="no"/>
+<attribute name="OC_NEWARK" value="14P6981" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="F" package="DD-3">
+<connects>
+<connect gate="G$1" pin="GND" pad="1"/>
+<connect gate="G$1" pin="VIN" pad="3"/>
+<connect gate="G$1" pin="VOUT" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:4944/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="TEXAS INSTRUMENTS" constant="no"/>
+<attribute name="MPN" value="REG1117FAKTTT" constant="no"/>
+<attribute name="OC_FARNELL" value="1296120" constant="no"/>
+<attribute name="OC_NEWARK" value="87H2562" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
+<attribute name="DELETE" value="MF"/>
 </attributes>
 <variantdefs>
 </variantdefs>
@@ -12195,6 +12212,7 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="X2" library="con-cypressindustries" deviceset="MINI-USB-SCHIELD-" device="32005-201" value="MINI-USB">
+<attribute name="LCSC" value="C46391"/>
 <attribute name="MPN" value="649-10033526-N3212LF"/>
 <attribute name="OC_FARNELL" value=""/>
 <attribute name="OC_NEWARK" value=""/>
@@ -12240,7 +12258,7 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <attribute name="MPN" value="80-C1206C104K5R"/>
 </part>
 <part name="X1" library="lpatiny" deviceset="XTAL" device="NX6035" value="8MHz">
-<attribute name="LCSC" value="C90881"/>
+<attribute name="LCSC" value="C122522"/>
 <attribute name="MPN" value="729-F60800010"/>
 </part>
 <part name="SUPPLY6" library="supply1" deviceset="VCC" device=""/>
@@ -12262,7 +12280,8 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <part name="GND45" library="supply1" deviceset="GND" device=""/>
 <part name="GND54" library="supply1" deviceset="GND" device=""/>
 <part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M1206" value="1M">
-<attribute name="ELECROW" value="C26124"/>
+<attribute name="ELECROW" value=""/>
+<attribute name="LCSC" value="C26124"/>
 <attribute name="MPN" value="ERJ-8GEYJ105V"/>
 </part>
 <part name="SUPPLY18" library="supply1" deviceset="VCC" device=""/>
@@ -12344,10 +12363,6 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <attribute name="ELECROW" value="C13585"/>
 <attribute name="LCSC" value="C92789"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC"/>
-</part>
-<part name="IC3" library="linear" deviceset="MCP1703" device="DB" value="MCP1703-33">
-<attribute name="LCSC" value="C50754"/>
-<attribute name="MPN" value="579-MCP1703-3302E/DB"/>
 </part>
 <part name="SUPPLY3" library="supply1" deviceset="VDD" device=""/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
@@ -12433,9 +12448,14 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <attribute name="LCSC" value="C1469"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
-<part name="Q6" library="infineon" deviceset="BSP613P" device="" value="BSP75"/>
+<part name="Q6" library="infineon" deviceset="BSP613P" device="" value="BSP75">
+<attribute name="LCSC" value="C111029"/>
+</part>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY10" library="supply1" deviceset="VCC" device=""/>
+<part name="IC5" library="burr-brown" library_urn="urn:adsk.eagle:library:111" deviceset="REG1117" device="" package3d_urn="urn:adsk.eagle:package:4940/1" value="LM1117S-3.3">
+<attribute name="LCSC" value="C126027"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -12504,7 +12524,9 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="LCSC" x="93.98" y="121.92" size="1.778" layer="96" rot="MR180" display="off"/>
 <attribute name="ELECROW" x="93.98" y="121.92" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
-<instance part="X2" gate="G$1" x="63.5" y="17.78" rot="R270"/>
+<instance part="X2" gate="G$1" x="63.5" y="17.78" rot="R270">
+<attribute name="LCSC" x="63.5" y="17.78" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
 <instance part="R4" gate="G$1" x="63.5" y="33.02" rot="R270">
 <attribute name="MPN" x="63.5" y="33.02" size="1.778" layer="96" rot="R270" display="off"/>
 <attribute name="LCSC" x="63.5" y="33.02" size="1.778" layer="96" rot="R270" display="off"/>
@@ -12572,6 +12594,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="R12" gate="G$1" x="96.52" y="165.1" rot="MR90">
 <attribute name="MPN" x="96.52" y="165.1" size="1.778" layer="96" rot="MR90" display="off"/>
 <attribute name="ELECROW" x="96.52" y="165.1" size="1.778" layer="96" rot="MR90" display="off"/>
+<attribute name="LCSC" x="96.52" y="165.1" size="1.778" layer="96" rot="MR90" display="off"/>
 </instance>
 <instance part="SUPPLY18" gate="VCC" x="96.52" y="203.2"/>
 <instance part="GND1" gate="1" x="152.4" y="55.88" smashed="yes" rot="R270">
@@ -12658,17 +12681,13 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="GND19" gate="1" x="15.24" y="25.4" smashed="yes">
 <attribute name="VALUE" x="13.335" y="23.495" size="1.27" layer="96"/>
 </instance>
-<instance part="C6" gate="G$1" x="30.48" y="35.56">
-<attribute name="MPN" x="30.48" y="35.56" size="1.778" layer="96" display="off"/>
-<attribute name="LCSC" x="30.48" y="35.56" size="1.778" layer="96" display="off"/>
-<attribute name="ELECROW" x="30.48" y="35.56" size="1.778" layer="96" display="off"/>
+<instance part="C6" gate="G$1" x="30.48" y="40.64">
+<attribute name="MPN" x="30.48" y="40.64" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="30.48" y="40.64" size="1.778" layer="96" display="off"/>
+<attribute name="ELECROW" x="30.48" y="40.64" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="IC3" gate="G$1" x="15.24" y="43.18">
-<attribute name="MPN" x="15.24" y="43.18" size="1.778" layer="96" display="off"/>
-<attribute name="LCSC" x="15.24" y="43.18" size="1.778" layer="96" display="off"/>
-</instance>
-<instance part="SUPPLY3" gate="G$1" x="-2.54" y="48.26"/>
-<instance part="P+1" gate="VCC" x="30.48" y="50.8"/>
+<instance part="SUPPLY3" gate="G$1" x="-2.54" y="55.88"/>
+<instance part="P+1" gate="VCC" x="30.48" y="55.88"/>
 <instance part="IC4" gate="G$1" x="157.48" y="104.14" rot="MR270">
 <attribute name="MPN" x="157.48" y="104.14" size="1.778" layer="96" rot="MR270" display="off"/>
 <attribute name="LCSC" x="157.48" y="104.14" size="1.778" layer="96" rot="MR270" display="off"/>
@@ -12705,10 +12724,10 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="MPN" x="20.32" y="86.36" size="1.778" layer="96" display="off"/>
 <attribute name="LCSC" x="20.32" y="86.36" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="C7" gate="G$1" x="38.1" y="35.56">
-<attribute name="MPN" x="38.1" y="35.56" size="1.778" layer="96" display="off"/>
-<attribute name="LCSC" x="38.1" y="35.56" size="1.778" layer="96" display="off"/>
-<attribute name="ELECROW" x="38.1" y="35.56" size="1.778" layer="96" display="off"/>
+<instance part="C7" gate="G$1" x="38.1" y="40.64">
+<attribute name="MPN" x="38.1" y="40.64" size="1.778" layer="96" display="off"/>
+<attribute name="LCSC" x="38.1" y="40.64" size="1.778" layer="96" display="off"/>
+<attribute name="ELECROW" x="38.1" y="40.64" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R11" gate="G$1" x="83.82" y="215.9" rot="R180">
 <attribute name="MPN" x="83.82" y="215.9" size="1.778" layer="96" rot="R180" display="off"/>
@@ -12753,9 +12772,14 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="LCSC" x="12.7" y="144.78" size="1.778" layer="96" display="off"/>
 <attribute name="ELECROW" x="12.7" y="144.78" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="Q6" gate="G$1" x="27.94" y="147.32"/>
+<instance part="Q6" gate="G$1" x="27.94" y="147.32">
+<attribute name="LCSC" x="27.94" y="147.32" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND12" gate="1" x="30.48" y="137.16" rot="MR0"/>
 <instance part="SUPPLY10" gate="VCC" x="30.48" y="162.56"/>
+<instance part="IC5" gate="G$1" x="15.24" y="48.26">
+<attribute name="LCSC" x="15.24" y="48.26" size="1.778" layer="96" display="off"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -12904,16 +12928,17 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="15.24" y1="30.48" x2="15.24" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="-2.54" y1="35.56" x2="-2.54" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="-2.54" y1="30.48" x2="15.24" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="30.48" x2="30.48" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="GND19" gate="1" pin="GND"/>
 <pinref part="C8" gate="G$1" pin="2"/>
 <junction x="15.24" y="30.48"/>
 <pinref part="C6" gate="G$1" pin="2"/>
 <wire x1="15.24" y1="30.48" x2="15.24" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="GND"/>
 <pinref part="C7" gate="G$1" pin="2"/>
+<pinref part="IC5" gate="G$1" pin="GND"/>
+<wire x1="15.24" y1="30.48" x2="30.48" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="35.56" x2="30.48" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="30.48" x2="38.1" y2="30.48" width="0.1524" layer="91"/>
-<junction x="30.48" y="30.48"/>
+<wire x1="38.1" y1="30.48" x2="38.1" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U$7" gate="G$1" pin="GND"/>
@@ -13527,10 +13552,11 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <segment>
 <pinref part="C8" gate="G$1" pin="1"/>
 <pinref part="SUPPLY3" gate="G$1" pin="VDD"/>
-<wire x1="-2.54" y1="45.72" x2="-2.54" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="VI"/>
-<wire x1="5.08" y1="43.18" x2="-2.54" y2="43.18" width="0.1524" layer="91"/>
-<junction x="-2.54" y="43.18"/>
+<wire x1="-2.54" y1="53.34" x2="-2.54" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="VIN"/>
+<wire x1="-2.54" y1="48.26" x2="-2.54" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="48.26" x2="-2.54" y2="48.26" width="0.1524" layer="91"/>
+<junction x="-2.54" y="48.26"/>
 </segment>
 <segment>
 <pinref part="SUPPLY4" gate="G$1" pin="VDD"/>
@@ -13543,16 +13569,16 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 </net>
 <net name="VCC" class="0">
 <segment>
-<wire x1="30.48" y1="43.18" x2="30.48" y2="38.1" width="0.1524" layer="91"/>
-<junction x="30.48" y="43.18"/>
+<wire x1="30.48" y1="48.26" x2="30.48" y2="43.18" width="0.1524" layer="91"/>
+<junction x="30.48" y="48.26"/>
 <pinref part="C6" gate="G$1" pin="1"/>
-<wire x1="25.4" y1="43.18" x2="30.48" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="VO"/>
 <pinref part="P+1" gate="VCC" pin="VCC"/>
-<wire x1="30.48" y1="43.18" x2="30.48" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="48.26" x2="30.48" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="48.26" x2="30.48" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="C7" gate="G$1" pin="1"/>
-<wire x1="38.1" y1="38.1" x2="38.1" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="43.18" x2="38.1" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="43.18" x2="38.1" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="48.26" x2="38.1" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="VOUT"/>
 </segment>
 <segment>
 <pinref part="U$7" gate="G$1" pin="VDD"/>
