@@ -12243,7 +12243,7 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 </part>
 <part name="U$3" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$5" library="microbuilder" deviceset="GND" device=""/>
-<part name="R3" library="rcl" deviceset="R-EU_" device="R0805" value="10K">
+<part name="R3" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="ELECROW" value="C17414"/>
 <attribute name="LCSC" value="C17414"/>
 </part>
@@ -12328,21 +12328,21 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <part name="SUPPLY5" library="supply1" deviceset="VCC" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
-<part name="R16" library="rcl" deviceset="R-EU_" device="R0805" value="10K">
+<part name="R16" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="ELECROW" value="C17414"/>
 <attribute name="LCSC" value="C17414"/>
 </part>
-<part name="R17" library="rcl" deviceset="R-EU_" device="R0805" value="10K">
+<part name="R17" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="ELECROW" value="C17414"/>
 <attribute name="LCSC" value="C17414"/>
 </part>
 <part name="SUPPLY8" library="supply1" deviceset="VCC" device=""/>
 <part name="SUPPLY9" library="supply1" deviceset="VCC" device=""/>
-<part name="R18" library="rcl" deviceset="R-EU_" device="R0805" value="10K">
+<part name="R18" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="ELECROW" value="C17414"/>
 <attribute name="LCSC" value="C17414"/>
 </part>
-<part name="R19" library="rcl" deviceset="R-EU_" device="R0805" value="10K">
+<part name="R19" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="ELECROW" value="C17414"/>
 <attribute name="LCSC" value="C17414"/>
 </part>
