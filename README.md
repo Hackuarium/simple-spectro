@@ -9,8 +9,10 @@ optical density for bacteria culture, determination of a pigment in
 a solution, determination of the kinetic of a reaction.
 
 The device is rather cheap if you buy all the component on aliexpress 
-(but one) and hav eaccess to a 3D printer. By constructing 10 the price
-per spectrophotometer is around $25.
+(but one) and have access to a 3D printer. By constructing 10 the price
+per spectrophotometer is around $25. However if you want to have a final
+product with metal case and assembly the cost would rather be $80 if you 
+order 20 of them.
 
 <img src='images/patent-blue-v.jpg' width='600px' />
 
