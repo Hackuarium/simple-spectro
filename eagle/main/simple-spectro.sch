@@ -12279,8 +12279,8 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <attribute name="MPN" value="621-DMP1045U-7"/>
 </part>
 <part name="R15" library="rcl" deviceset="R-EU_" device="R0805" value="100k">
-<attribute name="ELECROW" value="C118844"/>
-<attribute name="LCSC" value="C118844"/>
+<attribute name="ELECROW" value="C17407"/>
+<attribute name="LCSC" value="C17407"/>
 <attribute name="MPN" value="RC1206FR-07100KL"/>
 </part>
 <part name="D3" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="MBR0520LT" device="" package3d_urn="urn:adsk.eagle:package:43420/1" value="Schottky">
@@ -12310,12 +12310,12 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 </part>
 <part name="C7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="100nF">
 <attribute name="ELECROW" value="C49678"/>
-<attribute name="LCSC" value="C77502"/>
+<attribute name="LCSC" value="C49678"/>
 <attribute name="MPN" value="80-C1206C104K5R"/>
 </part>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k">
-<attribute name="ELECROW" value="C118844"/>
-<attribute name="LCSC" value="C118844"/>
+<attribute name="ELECROW" value="C17407"/>
+<attribute name="LCSC" value="C17407"/>
 <attribute name="MPN" value="RC1206FR-07100KL"/>
 </part>
 <part name="CON2" library="lpatiny" deviceset="TINYISP" device="" value="SPI"/>
