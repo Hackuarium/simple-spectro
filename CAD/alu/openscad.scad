@@ -1,4 +1,4 @@
-$fn=10;
+$fn=50;
 
 pcbLength=98.7;
 pcbWidth=73.2;
@@ -85,7 +85,7 @@ frontHeight=frontThickness+usbHeight+supportHeight+pcbThickness;
 * translate([logoX, logoY, -0.5]) linear_extrude(height=0.5)  rotate(a=[0,180,0]) scale(0.6) color("purple") import("logo.dxf");
 
 // create the bottom part 
-translate([0, 0, 100])
+translate([0, 0, 50])
     union() {
         difference() {
             
