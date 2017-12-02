@@ -29,8 +29,8 @@ bottomHoleInternalHeight=3;
 rotaryX=13.2+shift;
 rotaryY=12.8+shift;
 rotaryR=4;
-rotaryExtension=2;
-rotaryExtensionR=6;
+rotaryExtension=2; 
+rotaryExtensionR=6; // 6 if you want an extension
 
 logoX=100+shift;
 logoY=0+shift;
@@ -85,7 +85,7 @@ frontHeight=frontThickness+usbHeight+supportHeight+pcbThickness;
 * translate([logoX, logoY, -0.5]) linear_extrude(height=0.5)  rotate(a=[0,180,0]) scale(0.6) color("purple") import("logo.dxf");
 
 // create the bottom part 
-translate([0, 0, 50])
+* translate([0, 0, 50])
     union() {
         difference() {
             
