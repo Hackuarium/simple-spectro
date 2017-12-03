@@ -131,7 +131,9 @@ void lcdMenu() {
     noEventCounter = 0;
   }
   if (noEventCounter > 250 && getParameter(PARAM_STATUS) == 0) {
-    if (currentMenu - currentMenu % 10 != 20) currentMenu = 20;
+    if (currentMenu - currentMenu % 10 != 20) {
+      setParameter(PARAM_MENU, 20 + nbLeds);
+    }
     captureCounter = false;
     noEventCounter = 0;
   }
@@ -147,7 +149,7 @@ void lcdMenu() {
       lcdMenuSettings(counter, doAction);
       break;
     case 20:
-      lcdDefault(counter, doAction);
+      lcdStatus(counter, doAction);
       break;
     case 30:
       lcdAcquisition(counter, doAction);
@@ -189,7 +191,7 @@ void lcdResults(int counter, boolean doAction) {
   }
 }
 
-void lcdDefault(int counter, boolean doAction) {
+void lcdStatus(int counter, boolean doAction) {
   if (doAction) setParameter(PARAM_MENU, 0);
   updateCurrentMenu(counter, nbLeds);
   if (noEventCounter < 2) lcd.clear();
@@ -222,6 +224,7 @@ void lcdDefault(int counter, boolean doAction) {
   }
 }
 
+// this code is currently not USED
 void lcdDefaultExact(int counter, boolean doAction) {
   if (doAction) setParameter(PARAM_MENU, 0);
   updateCurrentMenu(counter, 1);
