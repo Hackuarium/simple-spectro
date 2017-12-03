@@ -5666,7 +5666,7 @@ design rules under a new name.</description>
 </element>
 <element name="POT" library="dp_devices" package="TRIMMER_3362P" value="10k" x="6.35" y="22.86" rot="MR90"/>
 <element name="CON1" library="jumper" package="JP1" value="BAT" x="64.77" y="67.945" rot="R270"/>
-<element name="U1" library="ti_tmp" package="MSOP8" value="TMP75DGK" x="31.75" y="12.065" rot="MR180">
+<element name="U1" library="ti_tmp" package="MSOP8" value="NCT75DMR2G" x="31.75" y="12.065" rot="MR180">
 <attribute name="LCSC" value="C94387" x="24.13" y="4.445" size="1.778" layer="28" rot="MR180" display="off"/>
 </element>
 <element name="R16" library="rcl" package="R0805" value="10k" x="27.94" y="18.415" rot="MR0">

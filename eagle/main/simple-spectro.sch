@@ -12322,7 +12322,7 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="POT" library="dp_devices" deviceset="TRIMMER" device="-3362P" value="10k"/>
 <part name="CON1" library="jumper" deviceset="JP1E" device="" value="BAT"/>
-<part name="U1" library="ti_tmp" deviceset="TMP75" device="DGK">
+<part name="U1" library="ti_tmp" deviceset="TMP75" device="DGK" value="NCT75DMR2G">
 <attribute name="LCSC" value="C94387"/>
 </part>
 <part name="SUPPLY5" library="supply1" deviceset="VCC" device=""/>
