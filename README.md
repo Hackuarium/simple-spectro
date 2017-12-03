@@ -16,6 +16,11 @@ order 20 of them.
 
 <img src='images/patent-blue-v.jpg' width='600px' />
 
+## Some more documentation
+
+* [Soldering the board](docs/solder/README.md)
+* [Installing the spectrophotometer in the case](docs/case/README.md)
+
 ## Can we do science with this ?
 
 Before trying to explain how it is done more in detail maybe the first
