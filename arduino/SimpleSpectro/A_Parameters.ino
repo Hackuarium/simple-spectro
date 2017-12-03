@@ -37,6 +37,9 @@
 #define PARAM_NUMBER_ACQ    16 // number of acquisition of 100ms that will be taken
 
 #define PARAM_INVERT_ROTARY 17 // invert rotary direction
+#define PARAM_BATTERY       18 // invert rotary direction
+#define PARAM_TEMPERATURE   19 // invert rotary direction
+
 
 #define PARAM_ACTIVE_LEDS   21
 #define PARAM_ERROR         22 // color used to display the results

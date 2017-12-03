@@ -12243,7 +12243,7 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 </part>
 <part name="U$3" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$5" library="microbuilder" deviceset="GND" device=""/>
-<part name="R3" library="rcl" deviceset="R-EU_" device="R0805" value="10K">
+<part name="R3" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="ELECROW" value="C17414"/>
 <attribute name="LCSC" value="C17414"/>
 </part>
@@ -12279,8 +12279,8 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <attribute name="MPN" value="621-DMP1045U-7"/>
 </part>
 <part name="R15" library="rcl" deviceset="R-EU_" device="R0805" value="100k">
-<attribute name="ELECROW" value="C118844"/>
-<attribute name="LCSC" value="C118844"/>
+<attribute name="ELECROW" value="C17407"/>
+<attribute name="LCSC" value="C17407"/>
 <attribute name="MPN" value="RC1206FR-07100KL"/>
 </part>
 <part name="D3" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="MBR0520LT" device="" package3d_urn="urn:adsk.eagle:package:43420/1" value="Schottky">
@@ -12310,39 +12310,39 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 </part>
 <part name="C7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="100nF">
 <attribute name="ELECROW" value="C49678"/>
-<attribute name="LCSC" value="C77502"/>
+<attribute name="LCSC" value="C49678"/>
 <attribute name="MPN" value="80-C1206C104K5R"/>
 </part>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k">
-<attribute name="ELECROW" value="C118844"/>
-<attribute name="LCSC" value="C118844"/>
+<attribute name="ELECROW" value="C17407"/>
+<attribute name="LCSC" value="C17407"/>
 <attribute name="MPN" value="RC1206FR-07100KL"/>
 </part>
 <part name="CON2" library="lpatiny" deviceset="TINYISP" device="" value="SPI"/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="POT" library="dp_devices" deviceset="TRIMMER" device="-3362P" value="10k"/>
 <part name="CON1" library="jumper" deviceset="JP1E" device="" value="BAT"/>
-<part name="U1" library="ti_tmp" deviceset="TMP75" device="DGK">
+<part name="U1" library="ti_tmp" deviceset="TMP75" device="DGK" value="NCT75DMR2G">
 <attribute name="LCSC" value="C94387"/>
 </part>
 <part name="SUPPLY5" library="supply1" deviceset="VCC" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
-<part name="R16" library="rcl" deviceset="R-EU_" device="R0805" value="10K">
+<part name="R16" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="ELECROW" value="C17414"/>
 <attribute name="LCSC" value="C17414"/>
 </part>
-<part name="R17" library="rcl" deviceset="R-EU_" device="R0805" value="10K">
+<part name="R17" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="ELECROW" value="C17414"/>
 <attribute name="LCSC" value="C17414"/>
 </part>
 <part name="SUPPLY8" library="supply1" deviceset="VCC" device=""/>
 <part name="SUPPLY9" library="supply1" deviceset="VCC" device=""/>
-<part name="R18" library="rcl" deviceset="R-EU_" device="R0805" value="10K">
+<part name="R18" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="ELECROW" value="C17414"/>
 <attribute name="LCSC" value="C17414"/>
 </part>
-<part name="R19" library="rcl" deviceset="R-EU_" device="R0805" value="10K">
+<part name="R19" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="ELECROW" value="C17414"/>
 <attribute name="LCSC" value="C17414"/>
 </part>

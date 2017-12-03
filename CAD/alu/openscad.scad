@@ -20,16 +20,17 @@ supportLength=6;
 supportHeight=8;
 supportHoleX=3.5;
 supportHoleY=3.5;
-supportHoleR=1.5;
+supportHoleR=1.1;
 bottomHoleR=3;
+bottomSmallHoleR=1.6; // slightly bigger than M3 
 bottomHoleExternalHeight=3;
 bottomHoleInternalHeight=3;
 
 rotaryX=13.2+shift;
 rotaryY=12.8+shift;
 rotaryR=4;
-rotaryExtension=2;
-rotaryExtensionR=6;
+rotaryExtension=2; 
+rotaryExtensionR=6; // 6 if you want an extension
 
 logoX=100+shift;
 logoY=0+shift;
@@ -42,7 +43,7 @@ screenWidth=25.1;
 cuvetteX=48.7+shift;
 cuvetteY=5.4+shift;
 cuvetteInternal=12.9;
-cuvetteThickness=1.6; // 1.6 for current design, 3 in new design
+cuvetteThickness=2.5; // 1.6 for current design, 2.5 in new design
 cuvetteWindow=3;
 cuvetteUVWindow=5;
 cuvetteWindowHeight=5;
@@ -58,7 +59,7 @@ connectorX=22+shift;
 connectorLength=20;
 connectorWidth=15;
 connectorY=pcbWidth-15+shift;
-connectHeight=batteryHeight;
+connectorHeight=12;
 
 screenProtectionHeight=2;
 screenProtectionSize=3;
@@ -84,7 +85,7 @@ frontHeight=frontThickness+usbHeight+supportHeight+pcbThickness;
 * translate([logoX, logoY, -0.5]) linear_extrude(height=0.5)  rotate(a=[0,180,0]) scale(0.6) color("purple") import("logo.dxf");
 
 // create the bottom part 
-translate([0, 0, 50])
+* translate([0, 0, 50])
     union() {
         difference() {
             
@@ -132,16 +133,16 @@ translate([0, 0, 50])
             translate([
                 batteryX,
                 batteryY,
-                0
+                bottomDigged
             ])
-                roundedParallelepiped4(x=batteryLength, y=batteryWidth, z=bottomHeight-batteryHeight, r=radius);
+                roundedParallelepiped4(x=batteryLength, y=batteryWidth, z=batteryHeight, r=radius);
             
             translate([
                 connectorX,
                 connectorY,
                 0
             ])
-                roundedParallelepiped4(x=connectorLength, y=connectorWidth, z=bottomHeight-connectHeight, r=radius);
+                roundedParallelepiped4(x=connectorLength, y=connectorWidth, z=connectorHeight, r=radius);
             
             
               // we remove the USB port
@@ -158,18 +159,19 @@ translate([0, 0, 50])
             
             // make holes for screws        
             translate([shift+supportHoleX, shift+supportHoleY, 0])
-                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);
+                screwHole(rSmall=bottomSmallHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);
             
             translate([shift+pcbLength-supportHoleX, shift+supportHoleY, 0])
-                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);
+                screwHole(rSmall=bottomSmallHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);
             
             translate([shift+supportHoleX, shift+pcbWidth-supportHoleY, 0])
-                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);
+                screwHole(rSmall=bottomSmallHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);
             
             translate([shift+pcbLength-supportHoleX, shift+pcbWidth-supportHoleY, 0])
-                screwHole(rSmall=supportHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);     
+                screwHole(rSmall=bottomSmallHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);     
         };
         
+        /* little border around the cell
         translate([
             cuvetteX-cuvetteBottomSpace-cuvetteThickness,
             cuvetteY-cuvetteBottomSpace-cuvetteThickness,
@@ -189,6 +191,8 @@ translate([0, 0, 50])
                 ])
                 roundedParallelepiped4(x=cuvetteInternal+2*cuvetteBottomSpace, y=cuvetteInternal+2*cuvetteBottomSpace, z=bottomHeight-bottomMinimal, r=radius);
             }
+        */ 
+            
     };
 
 
@@ -382,42 +386,14 @@ module cuvette() {
     }
 }
 
-
-
 module roundedParallelepiped4(x, y, z, r) {
-    hull() {
+    union() {
         translate([r,r,0]) cylinder(h=z, r=r);
         translate([x-r,r,0]) cylinder(h=z, r=r);
         translate([r,y-r,0]) cylinder(h=z, r=r);
         translate([x-r,y-r,0]) cylinder(h=z, r=r);
+        translate([r,0,0]) cube([x-2*r, y, z]);
+        translate([0,r,0]) cube([x, y-2*r, z]);
     }
 }
 
-// top face is flat
-module roundedParallelepiped5(x, y, z, r) {
-   echo(x,y,z,r);
-    hull() {
-        translate([r,r,r]) sphere(r=r);
-        translate([x-r,r,r]) sphere(r=r);
-        translate([r,y-r,r]) sphere(r=r);
-        translate([x-r,y-r,r]) sphere(r=r);
-        translate([r,r,z-r]) cylinder(h=r, r=r);
-        translate([x-r,r,z-r]) cylinder(h=r, r=r);
-        translate([r,y-r,z-r]) cylinder(h=r, r=r);
-        translate([x-r,y-r,z-r]) cylinder(h=r, r=r);
-    }
-}
-
-module roundedParallelepiped6(x, y, z, r) {
-   echo(x,y,z,r);
-    hull() {
-        translate([r,r,r]) sphere(r=r);
-        translate([x-r,r,r]) sphere(r=r);
-        translate([r,y-r,r]) sphere(r=r);
-        translate([x-r,y-r,r]) sphere(r=r);
-        translate([r,r,z-r]) sphere(r=r);
-        translate([x-r,r,z-r]) sphere(r=r);
-        translate([r,y-r,z-r]) sphere(r=r);
-        translate([x-r,y-r,z-r]) sphere(r=r);
-    }
-}

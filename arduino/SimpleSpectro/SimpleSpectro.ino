@@ -6,13 +6,18 @@
 // git clone https://github.com/PaulStoffregen/Time
 #include <TimeLib.h>
 
-#define LANGUAGE en  // currently only en or es
+#define LANGUAGE  en  // currently only en or es
+#define VERSION   B   // version B as temperature sensor and battery indicator
 
 #define RED    A0
 #define GREEN  A1
 #define BLUE   A2
-#define UV2    A3 // 3mm
 #define UV1    A4 // 5mm
+
+#if VERSION == 'B'
+  #define BATTERY             A3  // if battery we have also the temperature sensor
+  #define TEMPERATURE_ADDRESS 0b1001000
+#endif
 
 #define DATA_SIZE 240
 #define DATA_TYPE 1  // LONG
