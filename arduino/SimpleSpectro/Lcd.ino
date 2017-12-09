@@ -222,8 +222,9 @@ void lcdStatus(int counter, boolean doAction) {
     lcd.print("V");
 #endif
     lcd.setCursor(0, 1);
-    lcd.print(" s: ");
+    lcd.print(F("Uptime: "));
     lcd.print(millis() / 1000);
+    lcd.print("s");
   }
 }
 
