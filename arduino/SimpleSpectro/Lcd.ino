@@ -453,6 +453,12 @@ void lcdPrintColorOne(byte colorPin) {
     case UV1:
       lcd.print("UV");
       break;
+    case TEMPERATURE:
+      lcd.print("T");
+      break;
+    case BATTERY_LEVEL:
+      lcd.print("BAT");
+      break;
   }
 }
 
@@ -566,9 +572,14 @@ void lcdMenuSettings(int counter, boolean doAction) {
           case UV1:
             lcd.print("UV ");
             break;
+          case TEMPERATURE:
+            lcd.print("T ");
+            break;
+          case BATTERY_LEVEL:
+            lcd.print("BAT ");
+            break;
         }
       }
-
       break;
     default:
       if (currentFactor == 1) {

@@ -8,11 +8,11 @@ NIL_THREADS_TABLE_ENTRY(NULL, ThreadSerial, NULL, waThreadSerial, sizeof(waThrea
 NIL_THREADS_TABLE_ENTRY(NULL, ThreadLcd, NULL, waThreadLcd, sizeof(waThreadLcd))
 
 #ifdef TEMPERATURE_ADDRESS
-NIL_THREADS_TABLE_ENTRY(NULL, ThreadTemperature, NULL, waThreadTemperature, sizeof(waThreadTemperature))
+//NIL_THREADS_TABLE_ENTRY(NULL, ThreadTemperature, NULL, waThreadTemperature, sizeof(waThreadTemperature))
 #endif
 
 #ifdef BATTERY
-NIL_THREADS_TABLE_ENTRY(NULL, ThreadBattery, NULL, waThreadBattery, sizeof(waThreadBattery))
+//NIL_THREADS_TABLE_ENTRY(NULL, ThreadBattery, NULL, waThreadBattery, sizeof(waThreadBattery))
 #endif
 
 NIL_THREADS_TABLE_END()

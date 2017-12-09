@@ -25,10 +25,17 @@
 #define DATA_SIZE 240
 #define DATA_TYPE 1  // LONG
 
+#define BATTERY_LEVEL 128   // not available in version A
+#define TEMPERATURE   129   // not available in version A
 
+#if VERSION == 'A'
+  byte ALL_LEDS[] = {RED, GREEN, BLUE, UV1};  // all possible leds
+  byte LEDS[] = {RED, GREEN, BLUE, UV1};      // will contain the active les
+#else
+  byte ALL_LEDS[] = {RED, GREEN, BLUE, UV1, TEMPERATURE, BATTERY_LEVEL};  // all possible leds
+  byte LEDS[] = {RED, GREEN, BLUE, UV1, TEMPERATURE, BATTERY_LEVEL};      // will contain the active les
+#endif
 
-byte ALL_LEDS[] = {RED, GREEN, BLUE, UV1};  // all possible leds
-byte LEDS[] = {RED, GREEN, BLUE, UV1};      // will contain the active les
 byte nbLeds;                                     // number of active leds
 byte dataRowSize;                                // size of a data row (number of entries in data)
 byte maxNbRows;                                  // 
