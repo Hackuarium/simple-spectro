@@ -85,6 +85,7 @@
 #define ROT_B      1
 #define ROT_PUSH   7
 
+
 LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 
@@ -198,7 +199,7 @@ void lcdStatus(int counter, boolean doAction) {
   byte menu = getParameter(PARAM_MENU) % 10;
   if (menu < nbLeds) {
     lcd.setCursor(0, 0);
-    lcdPrintColor(LEDS[menu]);
+    printColor(&lcd, CURRENT_PARAMETERS[menu]);
     lcd.setCursor(0, 1);
     lcd.print(F(TEXT_ABSORBANCE));
     lcd.setCursor(8, 1);
@@ -233,7 +234,7 @@ void lcdDefaultExact(int counter, boolean doAction) {
     case 0:
       for (byte i = 0; i < min(nbLeds, 4); i++) {
         lcd.setCursor((i % 2) * 8, floor(i / 2));
-        lcdPrintColorOne(LEDS[i]);
+        printColorOne(&lcd, CURRENT_PARAMETERS[i]);
         lcd.print(": ");
         lcd.print(getParameter(i + 5) - getParameter(i));
         lcdPrintBlank(2);
@@ -421,46 +422,6 @@ void lcdUtilities(int counter, boolean doAction) {
   }
 }
 
-void lcdPrintColor(byte colorPin) {
-  switch (colorPin) {
-    case RED:
-      lcd.print(F(TEXT_RED));
-      break;
-    case GREEN:
-      lcd.print(F(TEXT_GREEN));
-      break;
-    case BLUE:
-      lcd.print(F(TEXT_BLUE));
-      break;
-    case UV1:
-      lcd.print(F(TEXT_UV1));
-      break;
-  }
-}
-
-
-void lcdPrintColorOne(byte colorPin) {
-  switch (colorPin) {
-    case RED:
-      lcd.print("R");
-      break;
-    case GREEN:
-      lcd.print("G");
-      break;
-    case BLUE:
-      lcd.print("B");
-      break;
-    case UV1:
-      lcd.print("UV");
-      break;
-    case TEMPERATURE:
-      lcd.print("T");
-      break;
-    case BATTERY_LEVEL:
-      lcd.print("BAT");
-      break;
-  }
-}
 
 void lcdMenuSettings(int counter, boolean doAction) {
 
@@ -504,7 +465,7 @@ void lcdMenuSettings(int counter, boolean doAction) {
       lcd.print(F(TEXT_RESULT_COLOR));
       currentParameter = PARAM_COLOR;
       minValue = 1;
-      maxValue = nbLeds;
+      maxValue = nbParameters;
       break;
     case 5:
       lcd.print(F("Rotary mode"));
@@ -516,7 +477,7 @@ void lcdMenuSettings(int counter, boolean doAction) {
       lcd.print(F("Active leds"));
       currentParameter = PARAM_ACTIVE_LEDS;
       minValue = 0;
-      maxValue = pow(2, sizeof(ALL_LEDS)) - 1;
+      maxValue = pow(2, sizeof(ALL_PARAMETERS)) - 1;
       break;
     case 7:
       lcd.print(F(TEXT_MAIN_MENU));
@@ -545,7 +506,7 @@ void lcdMenuSettings(int counter, boolean doAction) {
   }
   switch (getParameter(PARAM_MENU) % 10) {
     case 4:
-      lcdPrintColor(LEDS[getParameter(currentParameter) - 1]);
+      printColor(&lcd, CURRENT_PARAMETERS[getParameter(currentParameter) - 1]);
       break;
     case 5:
       if (getParameter(PARAM_INVERT_ROTARY) == 0) {
@@ -558,27 +519,9 @@ void lcdMenuSettings(int counter, boolean doAction) {
       lcd.print((getParameter(currentParameter)));
       lcd.print(" ");
       setActiveLeds();
-      for (byte i = 0; i < nbLeds; i++) {
-        switch (LEDS[i]) {
-          case RED:
-            lcd.print("R ");
-            break;
-          case GREEN:
-            lcd.print("G ");
-            break;
-          case BLUE:
-            lcd.print("B ");
-            break;
-          case UV1:
-            lcd.print("UV ");
-            break;
-          case TEMPERATURE:
-            lcd.print("T ");
-            break;
-          case BATTERY_LEVEL:
-            lcd.print("BAT ");
-            break;
-        }
+      for (byte i = 0; i < nbParameters; i++) {
+        printColorOne(&lcd, CURRENT_PARAMETERS[i]);
+        lcd.print(" ");
       }
       break;
     default:

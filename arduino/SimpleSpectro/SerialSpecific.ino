@@ -13,7 +13,7 @@ void processSpecificCommand(char* data, char* paramValue, Print* output) {
       setParameter(PARAM_NEXT_EXP, 0);
       break;
     case 't':
-    setParameter(PARAM_STATUS, STATUS_TEST_LEDS);;
+      setParameter(PARAM_STATUS, STATUS_TEST_LEDS);;
       break;
   }
 }

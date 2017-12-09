@@ -2,13 +2,13 @@
 
 void testRGB() {
   for (byte i = 0; i < nbLeds; i++) {
-    pinMode(LEDS[i], OUTPUT);
+    pinMode(CURRENT_PARAMETERS[i], OUTPUT);
   }
   while (true) {
     for (byte i = 0; i < nbLeds; i++) {
-      digitalWrite(LEDS[i], HIGH);
+      digitalWrite(CURRENT_PARAMETERS[i], HIGH);
       nilThdSleepMilliseconds(500);
-      digitalWrite(LEDS[i], LOW);
+      digitalWrite(CURRENT_PARAMETERS[i], LOW);
       nilThdSleepMilliseconds(500);
       if (getParameter(PARAM_STATUS) != STATUS_TEST_LEDS) {
         return;
@@ -20,13 +20,17 @@ void testRGB() {
 void setActiveLeds() {
   int active = getParameter(PARAM_ACTIVE_LEDS);
   nbLeds = 0;
-  for (byte i = 0; i < sizeof(ALL_LEDS); i++) {
+  nbParameters = 0;
+  for (byte i = 0; i < sizeof(ALL_PARAMETERS); i++) {
     if (active & (1 << i)) {
-      LEDS[nbLeds] = ALL_LEDS[i];
-      nbLeds++;
+      CURRENT_PARAMETERS[nbParameters] = ALL_PARAMETERS[i];
+      if (ALL_PARAMETERS[i] < 128) {
+        nbLeds++;
+      }
+      nbParameters++;
     }
   }
-  dataRowSize = nbLeds + 1;
+  dataRowSize = nbParameters + 1;
   maxNbRows = DATA_SIZE / dataRowSize;
 }
 
@@ -117,44 +121,57 @@ void acquire() {
   byte target = getParameter(PARAM_NEXT_EXP) * dataRowSize;
   if (target < 0) return;
   setDataLong(target, millis());
-  for (byte i = 0; i < nbLeds; i++) {
-
-    pinMode(LEDS[i], OUTPUT);
-
+  for (byte i = 0; i < nbParameters; i++) {
     long newValue = 0;
-
-
-    for (byte j = 0; j <  getParameter(PARAM_NUMBER_ACQ); j++) {
-      digitalWrite(LEDS[i], HIGH);
-      FreqCount.begin(100);
-      nilThdSleepMilliseconds(105);
-      long currentCount = FreqCount.read();
-      newValue += currentCount;
-      digitalWrite(LEDS[i], LOW);
-      if (currentCount > 50000) {
-        // there is an error, the frequency was too high for the detector
-        // this means we should either work in a darker environnement (at least close the box)
-        // or that the LED is too strong !
-        setDataLong(target + i + 1, LONG_MAX_VALUE);
-        break;
+    if (CURRENT_PARAMETERS[i] < 128) {
+      pinMode(CURRENT_PARAMETERS[i], OUTPUT);
+      for (byte j = 0; j <  getParameter(PARAM_NUMBER_ACQ); j++) {
+        digitalWrite(CURRENT_PARAMETERS[i], HIGH);
+        FreqCount.begin(100);
+        nilThdSleepMilliseconds(105);
+        long currentCount = FreqCount.read();
+        newValue += currentCount;
+        digitalWrite(CURRENT_PARAMETERS[i], LOW);
+        if (currentCount > 50000) {
+          // there is an error, the frequency was too high for the detector
+          // this means we should either work in a darker environnement (at least close the box)
+          // or that the LED is too strong !
+          setDataLong(target + i + 1, LONG_MAX_VALUE);
+          break;
+        }
+        FreqCount.begin(100);
+        nilThdSleepMilliseconds(105);
+        currentCount = FreqCount.read();
+        if (currentCount > 10000) {
+          // there is an error, the frequency was too high without led on
+          // this means we should work in a darker environnement (at least close the box)
+          setDataLong(target + i + 1, LONG_MAX_VALUE);
+          break;
+        }
+        newValue -= currentCount;
+        if (getParameter(PARAM_NEXT_EXP) < 0) return;
       }
-      FreqCount.begin(100);
-      nilThdSleepMilliseconds(105);
-      currentCount = FreqCount.read();
-      if (currentCount > 10000) {
-        // there is an error, the frequency was too high without led on
-        // this means we should work in a darker environnement (at least close the box)
-        setDataLong(target + i + 1, LONG_MAX_VALUE);
-        break;
+    } else {
+      switch (CURRENT_PARAMETERS[i]) {
+        case BATTERY_LEVEL:
+          newValue = getParameter(PARAM_BATTERY);
+          break;
+        case TEMPERATURE:
+          newValue = getParameter(PARAM_TEMPERATURE);
+          break;
       }
-      newValue -= currentCount;
-      if (getParameter(PARAM_NEXT_EXP) < 0) return;
     }
     setDataLong(target + i + 1, newValue);
   }
 }
 
 void printData(Print* output) {
+  output->print("E ");
+  for (byte i = 0; i < nbParameters; i++) {
+    printColorOne(output, CURRENT_PARAMETERS[i]);
+    output->print(" ");
+  }
+  output->println("");
   for (byte i = 0; i < maxNbRows; i++) {
     for (byte j = 0; j < dataRowSize; j++) {
       if (getDataLong(i * dataRowSize + j) == LONG_MAX_VALUE) {
@@ -175,4 +192,3 @@ void clearData() {
     }
   }
 }
-
