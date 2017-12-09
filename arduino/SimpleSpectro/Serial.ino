@@ -9,8 +9,7 @@ byte serialBufferPosition = 0;
 
 NIL_WORKING_AREA(waThreadSerial, 200); // minimum 128
 NIL_THREAD(ThreadSerial, arg) {
-
-  Serial.begin(115200);
+  Serial.begin(9600);
   while (true) {
     while (Serial.available()) {
       // get the new byte:

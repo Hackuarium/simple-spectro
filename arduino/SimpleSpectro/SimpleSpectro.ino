@@ -3,8 +3,11 @@
 // The lowest priority thread should take care of the watch dog
 #include <avr/wdt.h>
 
-// git clone https://github.com/PaulStoffregen/Time
 #include <TimeLib.h>
+#include "lib/Utility.h"
+
+// git clone https://github.com/PaulStoffregen/Time
+
 
 #define LANGUAGE  en  // currently only en or es
 #define VERSION   A   // version B as temperature sensor and battery indicator
