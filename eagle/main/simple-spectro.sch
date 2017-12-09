@@ -12293,9 +12293,9 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <attribute name="LCSC" value="C82544"/>
 <attribute name="MPN" value="621-1N5819HW-F"/>
 </part>
-<part name="R6" library="rcl" deviceset="R-EU_" device="R0805" value="100">
-<attribute name="ELECROW" value="C17408"/>
-<attribute name="LCSC" value="C17408"/>
+<part name="R6" library="rcl" deviceset="R-EU_" device="R0805" value="22">
+<attribute name="ELECROW" value="C17561"/>
+<attribute name="LCSC" value="C17561"/>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
