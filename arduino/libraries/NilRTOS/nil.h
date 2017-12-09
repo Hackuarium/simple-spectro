@@ -174,7 +174,7 @@
 #error "Nil is not recommended for thread-intensive applications, consider" \
        "ChibiOS/RT instead"
 #endif
-#endif  / *WHG_MOD */
+#endif
 
 #if NIL_CFG_FREQUENCY <= 0
 #error "invalid NIL_CFG_FREQUENCY specified"
