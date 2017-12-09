@@ -213,11 +213,13 @@ void lcdStatus(int counter, boolean doAction) {
     lcd.setCursor(0, 0);
 #ifdef TEMPERATURE_ADDRESS
     lcd.print("T:");
-    lcd.print(((float)getParameter(PARAM_TEMPERATURE)) / 100);
+    lcd.print(((float)getParameter(PARAM_TEMPERATURE)) / 100,1);
+    lcd.print("\xDF\x43");
 #endif
 #ifdef BATTERY
     lcd.print(F(" B:"));
-    lcd.print(getParameter(PARAM_BATTERY));
+    lcd.print(((float)getParameter(PARAM_BATTERY)) / 1000);
+    lcd.print("V");
 #endif
     lcd.setCursor(0, 1);
     lcd.print(" s: ");
