@@ -37,6 +37,12 @@ The socket for the rechargeable battery must be oriented correctly.
 
 <img src='solder-3.jpg' width='600px' />
 
+**IMPORTANT !!! Some batteries have the connector inverted !** Please check your battery so that the red and black cables
+are oriented like on the following picture. 
+
+<img src='solder-3b.jpg' width='600px' />
+
+
 ## Upper face 
 
 The LCD is solder to the board using a single row straight strip pin header. Is is easier to first solder the LCD screen using the smaller part of the pins.
