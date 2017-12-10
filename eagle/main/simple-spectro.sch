@@ -12413,10 +12413,10 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <text x="-10.16" y="281.94" size="5.08" layer="91">Rot encoder</text>
 <text x="-10.16" y="60.96" size="5.08" layer="91">3.3V LDO</text>
 <wire x1="127" y1="7.62" x2="127" y2="68.58" width="1.27" layer="94"/>
-<text x="101.6" y="109.22" size="1.778" layer="97">10K  = 100mA</text>
-<text x="101.6" y="106.68" size="1.778" layer="97">5.0K  = 200mA</text>
-<text x="101.6" y="104.14" size="1.778" layer="97">2.0K  = 500mA</text>
-<text x="101.6" y="101.6" size="1.778" layer="97">1.0K  = 1000mA</text>
+<text x="99.06" y="111.76" size="1.778" layer="97">10K  = 100mA</text>
+<text x="99.06" y="109.22" size="1.778" layer="97">5.0K  = 200mA</text>
+<text x="99.06" y="106.68" size="1.778" layer="97">2.0K  = 500mA</text>
+<text x="99.06" y="104.14" size="1.778" layer="97">1.0K  = 1000mA</text>
 <text x="55.88" y="96.52" size="1.778" layer="97">MAX 6V !</text>
 <text x="157.48" y="116.84" size="0.508" layer="97">Load sharing:
 http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
@@ -12849,6 +12849,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="30.48" y1="35.56" x2="30.48" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="30.48" x2="38.1" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="30.48" x2="38.1" y2="35.56" width="0.1524" layer="91"/>
+<junction x="30.48" y="30.48"/>
 </segment>
 <segment>
 <pinref part="U$7" gate="G$1" pin="GND"/>
@@ -13629,8 +13630,23 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 </sheet>
 </sheets>
 <errors>
-<approved hash="106,1,134.62,134.62,RXLED,,,,,"/>
-<approved hash="106,1,134.62,124.46,TXLED,,,,,"/>
+<approved hash="104,1,175.26,20.32,LCD,A,N$11,,,"/>
+<approved hash="104,1,175.26,17.78,LCD,K,GND,,,"/>
+<approved hash="104,1,175.26,55.88,LCD,VSS,GND,,,"/>
+<approved hash="104,1,66.04,264.16,U$7,VDD,VCC,,,"/>
+<approved hash="106,1,160.02,165.1,RXLED,,,,,"/>
+<approved hash="106,1,160.02,154.94,TXLED,,,,,"/>
+<approved hash="208,1,30.48,53.34,VCC,sup,,,,"/>
+<approved hash="208,1,27.94,48.26,VCC,out,,,,"/>
+<approved hash="208,1,66.04,269.24,VCC,sup,,,,"/>
+<approved hash="208,1,86.36,121.92,VCC,sup,,,,"/>
+<approved hash="208,1,106.68,205.74,VCC,sup,,,,"/>
+<approved hash="208,1,96.52,200.66,VCC,sup,,,,"/>
+<approved hash="208,1,73.66,215.9,VCC,sup,,,,"/>
+<approved hash="208,1,40.64,200.66,VCC,sup,,,,"/>
+<approved hash="208,1,10.16,213.36,VCC,sup,,,,"/>
+<approved hash="208,1,0,213.36,VCC,sup,,,,"/>
+<approved hash="208,1,30.48,160.02,VCC,sup,,,,"/>
 </errors>
 </schematic>
 </drawing>
