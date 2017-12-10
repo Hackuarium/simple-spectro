@@ -12338,13 +12338,13 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 </part>
 <part name="SUPPLY8" library="supply1" deviceset="VCC" device=""/>
 <part name="SUPPLY9" library="supply1" deviceset="VCC" device=""/>
-<part name="R18" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
-<attribute name="ELECROW" value="C17414"/>
-<attribute name="LCSC" value="C17414"/>
+<part name="R18" library="rcl" deviceset="R-EU_" device="R0805" value="1M">
+<attribute name="ELECROW" value="C17514"/>
+<attribute name="LCSC" value="C17514"/>
 </part>
-<part name="R19" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
-<attribute name="ELECROW" value="C17414"/>
-<attribute name="LCSC" value="C17414"/>
+<part name="R19" library="rcl" deviceset="R-EU_" device="R0805" value="1M">
+<attribute name="ELECROW" value="C17514"/>
+<attribute name="LCSC" value="C17514"/>
 </part>
 <part name="CON4" library="jumper" deviceset="JP1E" device="" value="VIBR"/>
 <part name="R20" library="rcl" deviceset="R-EU_" device="R0805" value="1k">
@@ -12368,6 +12368,11 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <attribute name="ELECROW" value="C15850"/>
 <attribute name="LCSC" value="C15850"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC"/>
+</part>
+<part name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="100nF">
+<attribute name="ELECROW" value="C49678"/>
+<attribute name="LCSC" value="C49678"/>
+<attribute name="MPN" value="80-C1206C104K5R"/>
 </part>
 </parts>
 <sheets>
@@ -12676,6 +12681,11 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="LCSC" x="119.38" y="91.44" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="119.38" y="91.44" size="1.778" layer="96" display="off"/>
 </instance>
+<instance part="C11" gate="G$1" x="139.7" y="83.82" rot="R180">
+<attribute name="MPN" x="139.7" y="83.82" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="LCSC" x="139.7" y="83.82" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="ELECROW" x="139.7" y="83.82" size="1.778" layer="96" rot="R180" display="off"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -12797,8 +12807,9 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="114.3" y1="78.74" x2="119.38" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="127" y1="78.74" x2="119.38" y2="78.74" width="0.1524" layer="91"/>
 <junction x="119.38" y="78.74"/>
-<wire x1="127" y1="78.74" x2="144.78" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="127" y1="78.74" x2="139.7" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="R15" gate="G$1" pin="1"/>
+<wire x1="139.7" y1="78.74" x2="144.78" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="78.74" x2="175.26" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="88.9" x2="175.26" y2="78.74" width="0.1524" layer="91"/>
 <junction x="127" y="78.74"/>
@@ -12806,6 +12817,9 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="R19" gate="G$1" pin="1"/>
 <junction x="144.78" y="78.74"/>
 <pinref part="C4" gate="G$1" pin="2"/>
+<pinref part="C11" gate="G$1" pin="1"/>
+<wire x1="139.7" y1="81.28" x2="139.7" y2="78.74" width="0.1524" layer="91"/>
+<junction x="139.7" y="78.74"/>
 </segment>
 <segment>
 <pinref part="LED2" gate="G$1" pin="C"/>
@@ -13016,6 +13030,10 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="144.78" y1="91.44" x2="144.78" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="91.44" x2="149.86" y2="91.44" width="0.1524" layer="91"/>
 <label x="147.32" y="88.9" size="1.778" layer="95"/>
+<pinref part="C11" gate="G$1" pin="2"/>
+<wire x1="144.78" y1="91.44" x2="139.7" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="91.44" x2="139.7" y2="88.9" width="0.1524" layer="91"/>
+<junction x="144.78" y="91.44"/>
 </segment>
 </net>
 <net name="A4" class="0">
