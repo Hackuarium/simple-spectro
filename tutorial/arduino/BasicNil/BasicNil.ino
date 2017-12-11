@@ -12,7 +12,7 @@ NIL_THREAD(Thread1, arg) {
   while (TRUE) {
     digitalWrite(LED_PIN, HIGH);
     digitalWrite(LED_PIN, LOW);
-    nilThdSleep(1); // need to use this method otherwise next thread will not be executed
+    nilThdSleep(10); // need to use this method otherwise next thread will not be executed
   }
 }
 
@@ -20,7 +20,8 @@ NIL_WORKING_AREA(waThread2, 128);
 NIL_THREAD(Thread2, arg) {
   Serial.begin(9600);
   while (TRUE) {
-    Serial.println(millis()); // really bad to nilThdSleep
+    Serial.println(millis()); 
+     nilThdSleep(2500);
   }
 }
 
