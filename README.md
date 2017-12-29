@@ -34,7 +34,7 @@ do something that gives good results.
 
 To begin we did a very simple experiment that allows to measure the 
 absorbance of solutions containing different known concentration of
-pattent blue V (E131). A blue pigment that is used in various bleu
+pattent blue V (E131). A blue pigment that is used in various blue
 candies.
 
 <img src='images/patent-blue-v-regression.png' width='600px' />
