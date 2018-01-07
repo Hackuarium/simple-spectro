@@ -336,6 +336,7 @@ void lcdMenuHome(int counter, boolean doAction) {
           lcd.print(F(TEXT_STOP));
           if (doAction) {
             setParameter(PARAM_NEXT_EXP, -1);
+            setParameter(PARAM_STATUS, 0);
           }
         } else {
           lcd.print(F(TEXT_ACQUIRE));
