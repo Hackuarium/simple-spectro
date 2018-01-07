@@ -19,7 +19,7 @@
 #define TEXT_SETTINGS "Settings"
 #define TEXT_STATUS "Status"
 #define TEXT_UTILITIES "Utilities"
-#define TEXT_BACKLIGHT "Backlight"
+#define TEXT_SLEEP "Sleep"
 #define TEXT_TEST_LEDS "Test LED"
 #define TEXT_RESET "Reset"
 #define TEXT_MAIN_MENU "Main menu"
@@ -49,7 +49,7 @@
 #define TEXT_SETTINGS "Ajustes"
 #define TEXT_STATUS "Estado"
 #define TEXT_UTILITIES "Utilidades"
-#define TEXT_BACKLIGHT "Iluminar"
+#define TEXT_SLEEP "Dormir"
 #define TEXT_TEST_LEDS "prueba de LED"
 #define TEXT_RESET "Reiniciar"
 #define TEXT_MAIN_MENU "Menu"
@@ -85,6 +85,7 @@
 #define ROT_B      1
 #define ROT_PUSH   7
 
+byte lcdPins[] = {LCD_E, LCD_RS, LCD_D4, LCD_D5, LCD_D6, LCD_D7, LCD_VO, LCD_BL, LCD_ON};
 
 LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
@@ -117,7 +118,7 @@ NIL_THREAD(ThreadLcd, arg) {
 }
 
 
-byte noEventCounter = 0;
+int noEventCounter = 0;
 byte previousMenu = 0;
 
 void lcdMenu() {
@@ -127,7 +128,7 @@ void lcdMenu() {
     previousMenu = currentMenu;
   }
   if (rotaryCounter == 0 && ! rotaryPressed) {
-    if (noEventCounter < 255) noEventCounter++;
+    if (noEventCounter < 32760) noEventCounter++;
   } else {
     noEventCounter = 0;
   }
@@ -136,8 +137,12 @@ void lcdMenu() {
       setParameter(PARAM_MENU, 20 + nbLeds);
     }
     captureCounter = false;
+  }
+   if (noEventCounter > 2500 && getParameter(PARAM_STATUS) == 0) {
+    sleepNow();
     noEventCounter = 0;
   }
+  
   boolean doAction = rotaryPressed;
   rotaryPressed = false;
   int counter = rotaryCounter;
@@ -388,9 +393,9 @@ void lcdUtilities(int counter, boolean doAction) {
 
     switch (getParameter(PARAM_MENU) % 10 + line) {
       case 0:
-        lcd.print(F(TEXT_BACKLIGHT));
+        lcd.print(F(TEXT_SLEEP));
         if (doAction) {
-          digitalWrite(LCD_BL, !digitalRead(LCD_BL));
+          sleepNow();
         }
         break;
       case 1:

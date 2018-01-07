@@ -1,4 +1,8 @@
 #include <LiquidCrystal.h>
+#include <avr/sleep.h>
+
+byte wakeUpPin = 1;
+
 
 #define LCD_E      6
 #define LCD_RS     A6
@@ -20,6 +24,13 @@ LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 
 void setup() {
+  Serial.begin(9600);
+  for (byte i = 15; i != 0; i--) {
+    Serial.print("Going to sleep in ");
+    Serial.print(i);
+    Serial.println("s");
+    delay(1000);
+  }
   pinMode(LCD_BL, OUTPUT);
   digitalWrite(LCD_BL, HIGH); // backlight
   pinMode(LCD_ON, HIGH); // LCD on / off
@@ -33,26 +44,33 @@ void loop() {
   delay(2000);
   lcd.setCursor(0, 0);
   lcd.print("            ");
-  delay(2000);
+  delay(1000);
 
+  delay(100);
+  sleepNow();
+}
 
-  for (byte i = 0; i < sizeof(pins); i++) {
-    pinMode(pins[i], INPUT);
-  }
-  delay(4000);
-
+void wakeUp () {
+  sleep_disable ();         // first thing after waking from sleep:
+  detachInterrupt (digitalPinToInterrupt (wakeUpPin));      // stop LOW interrupt on D2
   for (byte i = 0; i < sizeof(pins); i++) {
     pinMode(pins[i], OUTPUT);
   }
-  digitalWrite(11, HIGH);
-  digitalWrite(13, HIGH);
-  digitalWrite(MOSI, HIGH);
+  digitalWrite(LCD_BL, HIGH);
+  digitalWrite(LCD_ON, HIGH);
+  delay(100);
   lcd.begin(LCD_NB_COLUMNS, LCD_NB_ROWS);
-  delay(4000);
-
-
-  
 }
 
-
+void sleepNow () {
+  for (byte i = 0; i < sizeof(pins); i++) {
+    pinMode(pins[i], INPUT);
+  }
+  set_sleep_mode (SLEEP_MODE_PWR_DOWN);
+  noInterrupts ();          // make sure we don't get interrupted before we sleep
+  sleep_enable ();          // enables the sleep bit in the mcucr register
+  attachInterrupt (digitalPinToInterrupt (wakeUpPin), wakeUp, CHANGE);
+  interrupts ();           // interrupts allowed now, next instruction WILL be executed
+  sleep_cpu ();            // here the device is put to sleep
+}
 

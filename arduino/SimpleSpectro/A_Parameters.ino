@@ -69,6 +69,7 @@ void resetParameters() {
   setAndSaveParameter(PARAM_COLOR, 1);
   setAndSaveParameter(PARAM_ERROR, 0);
   setAndSaveParameter(PARAM_NUMBER_ACQ, 10);
+  setAndSaveParameter(PARAM_STATUS, 0);
   setAndSaveParameter(PARAM_INVERT_ROTARY, 0);
   setAndSaveParameter(PARAM_ACTIVE_LEDS, pow(2, sizeof(ALL_PARAMETERS)) - 1);
 
