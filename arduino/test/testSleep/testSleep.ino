@@ -2,8 +2,8 @@
 #include <avr/power.h>
 
 
-#define INTERRUPT_PIN 7
-#define INTERRUPT_ID  4
+#define INTERRUPT_PIN 3
+#define INTERRUPT_ID  0
 
 
 
