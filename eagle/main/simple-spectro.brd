@@ -5540,9 +5540,9 @@ design rules under a new name.</description>
 <attribute name="NAME" x="18.95470625" y="49.064965625" size="1.27" layer="26" rot="MR90"/>
 <attribute name="VALUE" x="19.11484375" y="49.698165625" size="1.27" layer="28" rot="MR90"/>
 </element>
-<element name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="220" x="53.34" y="64.77" smashed="yes" rot="MR90">
-<attribute name="ELECROW" value="C17557" x="53.34" y="64.77" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="LCSC" value="C17557" x="53.34" y="64.77" size="1.778" layer="28" rot="MR90" display="off"/>
+<element name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0" x="53.34" y="64.77" smashed="yes" rot="MR90">
+<attribute name="ELECROW" value="C17477" x="53.34" y="64.77" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="LCSC" value="C17477" x="53.34" y="64.77" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="54.61" y="64.135" size="1.27" layer="26" rot="MR90"/>
 <attribute name="VALUE" x="54.513984375" y="63.454334375" size="1.27" layer="28" rot="MR90"/>
 </element>

@@ -12214,9 +12214,9 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
-<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="220">
-<attribute name="ELECROW" value="C17557"/>
-<attribute name="LCSC" value="C17557"/>
+<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0">
+<attribute name="ELECROW" value="C17477"/>
+<attribute name="LCSC" value="C17477"/>
 </part>
 <part name="U$1" library="lpatiny" deviceset="EC11E" device=""/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
