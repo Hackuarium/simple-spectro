@@ -12135,10 +12135,6 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/22049b.pdf</description>
 <parts>
 <part name="CON3" library="lpatiny" deviceset="TINYISP" device="T" value="SPI"/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
-<part name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k">
-<attribute name="ELECROW" value="C17513"/>
-<attribute name="LCSC" value="C17513"/>
-</part>
 <part name="X2" library="con-cypressindustries" deviceset="MINI-USB-SCHIELD-" device="32005-201" value="MINI-USB">
 <attribute name="LCSC" value="C46391"/>
 <attribute name="MPN" value="649-10033526-N3212LF"/>
@@ -12193,11 +12189,6 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/22049b.pdf</description>
 <attribute name="LCSC" value="C49678"/>
 <attribute name="MPN" value="80-C1206C104K5R"/>
 </part>
-<part name="LED3" library="SparkFun" deviceset="LED" device="1206" value="YELLOW">
-<attribute name="LCSC" value="C84273"/>
-<attribute name="MPN" value="604-APTR3216YC"/>
-</part>
-<part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="GND32" library="supply1" deviceset="GND" device=""/>
 <part name="GND38" library="supply1" deviceset="GND" device=""/>
 <part name="GND39" library="supply1" deviceset="GND" device=""/>
@@ -12224,19 +12215,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/22049b.pdf</description>
 <attribute name="LCSC" value="C14879"/>
 <attribute name="MPN" value="579-MCP73831T-3ACIOT"/>
 </part>
-<part name="LED1" library="SparkFun" deviceset="LED" device="1206" value="RED">
-<attribute name="LCSC" value="C49018"/>
-<attribute name="MPN" value="604-APT3216EC"/>
-</part>
-<part name="LED2" library="SparkFun" deviceset="LED" device="1206" value="GREEN">
-<attribute name="LCSC" value="C14641"/>
-<attribute name="MPN" value="604-APTR3216SGC"/>
-</part>
-<part name="R1" library="rcl" deviceset="R-EU_" device="R0805" value="1k">
-<attribute name="ELECROW" value="C17513"/>
-<attribute name="LCSC" value="C17513"/>
-</part>
-<part name="R2" library="rcl" deviceset="R-EU_" device="R0805" value="1k">
+<part name="R1" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="ELECROW" value="C17513"/>
 <attribute name="LCSC" value="C17513"/>
 </part>
@@ -12301,7 +12280,6 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/22049b.pdf</description>
 <part name="LED4" library="SparkFun" deviceset="LED" device="5MM" value="UV"/>
 <part name="U$7" library="lpatiny" deviceset="TSL237" device=""/>
 <part name="U$8" library="microbuilder" deviceset="GND" device=""/>
-<part name="SUPPLY1" library="supply1" deviceset="VCC" device=""/>
 <part name="D2" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="MBR0520LT" device="" package3d_urn="urn:adsk.eagle:package:43420/1" value="Schottky">
 <attribute name="LCSC" value="C82544"/>
 <attribute name="MPN" value="621-1N5819HW-F"/>
@@ -12442,10 +12420,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instances>
 <instance part="CON3" gate="G$1" x="160.02" y="248.92"/>
 <instance part="GND14" gate="1" x="172.72" y="243.84"/>
-<instance part="R14" gate="G$1" x="93.98" y="121.92" rot="MR180">
-<attribute name="LCSC" x="93.98" y="121.92" size="1.778" layer="96" rot="MR180" display="off"/>
-<attribute name="ELECROW" x="93.98" y="121.92" size="1.778" layer="96" rot="MR180" display="off"/>
-</instance>
 <instance part="X2" gate="G$1" x="63.5" y="17.78" rot="R270">
 <attribute name="LCSC" x="63.5" y="17.78" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
@@ -12499,11 +12473,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="LCSC" x="81.28" y="195.58" size="1.778" layer="96" rot="R90" display="off"/>
 <attribute name="ELECROW" x="81.28" y="195.58" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="LED3" gate="G$1" x="104.14" y="121.92" rot="MR270">
-<attribute name="MPN" x="104.14" y="121.92" size="1.778" layer="96" rot="MR270" display="off"/>
-<attribute name="LCSC" x="104.14" y="121.92" size="1.778" layer="96" rot="MR270" display="off"/>
-</instance>
-<instance part="GND5" gate="1" x="114.3" y="121.92" rot="R90"/>
 <instance part="GND32" gate="1" x="73.66" y="195.58" rot="R270"/>
 <instance part="GND38" gate="1" x="93.98" y="177.8"/>
 <instance part="GND39" gate="1" x="63.5" y="165.1" rot="R270"/>
@@ -12538,21 +12507,9 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="MPN" x="86.36" y="93.98" size="1.778" layer="96" display="off"/>
 <attribute name="LCSC" x="86.36" y="93.98" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="LED1" gate="G$1" x="53.34" y="91.44" rot="R90">
-<attribute name="MPN" x="53.34" y="91.44" size="1.778" layer="96" rot="R90" display="off"/>
-<attribute name="LCSC" x="53.34" y="91.44" size="1.778" layer="96" rot="R90" display="off"/>
-</instance>
-<instance part="LED2" gate="G$1" x="53.34" y="83.82" rot="R270">
-<attribute name="MPN" x="53.34" y="83.82" size="1.778" layer="96" rot="R270" display="off"/>
-<attribute name="LCSC" x="53.34" y="83.82" size="1.778" layer="96" rot="R270" display="off"/>
-</instance>
 <instance part="R1" gate="G$1" x="63.5" y="91.44">
 <attribute name="LCSC" x="63.5" y="91.44" size="1.778" layer="96" display="off"/>
 <attribute name="ELECROW" x="63.5" y="91.44" size="1.778" layer="96" display="off"/>
-</instance>
-<instance part="R2" gate="G$1" x="63.5" y="83.82">
-<attribute name="LCSC" x="63.5" y="83.82" size="1.778" layer="96" display="off"/>
-<attribute name="ELECROW" x="63.5" y="83.82" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="U$3" gate="G$1" x="40.64" y="81.28"/>
 <instance part="U$5" gate="G$1" x="119.38" y="73.66"/>
@@ -12619,7 +12576,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <instance part="LED4" gate="G$1" x="109.22" y="22.86" rot="MR270"/>
 <instance part="U$7" gate="G$1" x="88.9" y="243.84"/>
 <instance part="U$8" gate="G$1" x="81.28" y="243.84"/>
-<instance part="SUPPLY1" gate="VCC" x="86.36" y="124.46"/>
 <instance part="D2" gate="G$1" x="20.32" y="86.36">
 <attribute name="MPN" x="20.32" y="86.36" size="1.778" layer="96" display="off"/>
 <attribute name="LCSC" x="20.32" y="86.36" size="1.778" layer="96" display="off"/>
@@ -12755,11 +12711,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="GND54" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="LED3" gate="G$1" pin="C"/>
-<pinref part="GND5" gate="1" pin="GND"/>
-<wire x1="111.76" y1="121.92" x2="109.22" y2="121.92" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="IC1" gate="G$1" pin="GND2"/>
 <wire x1="111.76" y1="144.78" x2="109.22" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="GND3"/>
@@ -12833,11 +12784,8 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <junction x="139.7" y="78.74"/>
 </segment>
 <segment>
-<pinref part="LED2" gate="G$1" pin="C"/>
 <pinref part="U$3" gate="G$1" pin="GND"/>
 <wire x1="40.64" y1="88.9" x2="40.64" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="48.26" y1="83.82" x2="40.64" y2="83.82" width="0.1524" layer="91"/>
-<junction x="40.64" y="83.82"/>
 <pinref part="C5" gate="G$1" pin="2"/>
 </segment>
 <segment>
@@ -13263,13 +13211,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <label x="137.16" y="20.32" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$12" class="0">
-<segment>
-<pinref part="R14" gate="G$1" pin="2"/>
-<wire x1="99.06" y1="121.92" x2="101.6" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="LED3" gate="G$1" pin="A"/>
-</segment>
-</net>
 <net name="RXLED" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PB0(SS)"/>
@@ -13423,22 +13364,11 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="175.26" y1="20.32" x2="167.64" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="LED1" gate="G$1" pin="C"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-</segment>
-</net>
 <net name="N$5" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
 <pinref part="IC2" gate="G$1" pin="STAT"/>
-<wire x1="68.58" y1="91.44" x2="71.12" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="71.12" y1="91.44" x2="73.66" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="83.82" x2="71.12" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="83.82" x2="71.12" y2="91.44" width="0.1524" layer="91"/>
-<junction x="71.12" y="91.44"/>
+<wire x1="68.58" y1="91.44" x2="73.66" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VBAT1" class="0">
@@ -13463,13 +13393,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="IC2" gate="G$1" pin="PROG"/>
 <pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="99.06" y1="93.98" x2="104.14" y2="93.98" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$7" class="0">
-<segment>
-<pinref part="R2" gate="G$1" pin="1"/>
-<pinref part="LED2" gate="G$1" pin="A"/>
-<wire x1="58.42" y1="83.82" x2="55.88" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -13526,11 +13449,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="25.4" y1="48.26" x2="30.48" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R14" gate="G$1" pin="1"/>
-<wire x1="86.36" y1="121.92" x2="88.9" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="SUPPLY1" gate="VCC" pin="VCC"/>
-</segment>
-<segment>
 <pinref part="IC1" gate="G$1" pin="VCC1"/>
 <wire x1="111.76" y1="200.66" x2="106.68" y2="200.66" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="200.66" x2="106.68" y2="203.2" width="0.1524" layer="91"/>
@@ -13580,8 +13498,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="40.64" y1="96.52" x2="45.72" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="96.52" x2="71.12" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="96.52" x2="73.66" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="LED1" gate="G$1" pin="A"/>
-<wire x1="50.8" y1="91.44" x2="45.72" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="91.44" x2="45.72" y2="96.52" width="0.1524" layer="91"/>
 <junction x="45.72" y="96.52"/>
 <wire x1="71.12" y1="96.52" x2="71.12" y2="114.3" width="0.1524" layer="91"/>
@@ -13605,6 +13521,8 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <junction x="160.02" y="114.3"/>
 <pinref part="C5" gate="G$1" pin="1"/>
 <junction x="40.64" y="96.52"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="45.72" y1="91.44" x2="58.42" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="ISP+5V" class="0">
