@@ -1,6 +1,44 @@
 
+## Design of the battery part
+
+Based on: http://ww1.microchip.com/downloads/en/AppNotes/01149c.pdf
+
 ## Evolution of the battery voltage
 
 
 <img src="battery.svg" width=600>
 
+
+## Consumption of v1.4.1
+
+Only power supply and LM1117 (no LCD, temperature, TSL235)
+
+12.80 mA
+
+Microcontroller in sleep mode
+
+5.4mA
+
+Removing the yellow LED (we win arround 1mA):
+
+4.3mA
+
+Replace LM1117 by MCP1703
+
+200μA
+
+Check R15 : required to activate transistor.
+Replacing by 330k instead of 100k increase the power consumption ?!
+
+It seems difficult to reduce the sleep consumption to under 200μA.
+The battery being of around 750mA/h this means that we should achieve over 100 days
+in sleep mode.
+
+With MCP1703 and only the microcontroller (and power management) the consumption
+is 10mA.
+
+Changing all pin mode:
+* OUTPUT / HIGH : 227μA
+* OUTPUT / LOW : 228μA
+* INPUT / HIGH : 190μA !!!
+* INPUT / LOW : 226μA
