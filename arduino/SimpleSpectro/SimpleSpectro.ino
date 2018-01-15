@@ -11,7 +11,7 @@
 
 
 #define LANGUAGE  en  // currently only en or es
-#define VERSION   B   // version B as temperature sensor and battery indicator
+#define VERSION   A   // version B as temperature sensor and battery indicator
 
 #define RED    A0
 #define GREEN  A1

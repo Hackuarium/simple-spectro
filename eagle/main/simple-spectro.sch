@@ -12821,6 +12821,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="66.04" y1="246.38" x2="50.8" y2="246.38" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="246.38" x2="50.8" y2="254" width="0.1524" layer="91"/>
 <junction x="66.04" y="246.38"/>
+<junction x="81.28" y="246.38"/>
 </segment>
 <segment>
 <pinref part="GND11" gate="1" pin="GND"/>
@@ -12927,6 +12928,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="66.04" y1="261.62" x2="66.04" y2="266.7" width="0.1524" layer="91"/>
 <junction x="66.04" y="266.7"/>
 <label x="55.88" y="266.7" size="1.778" layer="95"/>
+<junction x="81.28" y="266.7"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="V+"/>
@@ -12959,19 +12961,23 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <label x="93.98" y="185.42" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D11*" class="0">
+<net name="D11" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PB7(OC0A/OC1C/RTS)"/>
 <wire x1="160.02" y1="182.88" x2="175.26" y2="182.88" width="0.1524" layer="91"/>
 <label x="170.18" y="182.88" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="137.16" y1="55.88" x2="137.16" y2="58.42" width="0.1524" layer="91"/>
-<label x="134.62" y="58.42" size="1.778" layer="95"/>
-<pinref part="POT" gate="R" pin="3"/>
+<pinref part="R1" gate="G$1" pin="2"/>
+<pinref part="IC2" gate="G$1" pin="STAT"/>
+<wire x1="68.58" y1="91.44" x2="71.12" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="91.44" x2="73.66" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="91.44" x2="71.12" y2="86.36" width="0.1524" layer="91"/>
+<junction x="71.12" y="91.44"/>
+<label x="68.58" y="83.82" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D9*" class="0">
+<net name="D9" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PB5(OC1A/ADC12/!OC4B)"/>
 <wire x1="160.02" y1="177.8" x2="175.26" y2="177.8" width="0.1524" layer="91"/>
@@ -13052,7 +13058,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <label x="116.84" y="48.26" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
-<net name="D5*" class="0">
+<net name="D5" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PC6(OC3A/!OC4A)"/>
 <wire x1="160.02" y1="190.5" x2="175.26" y2="190.5" width="0.1524" layer="91"/>
@@ -13089,7 +13095,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="5.08" y1="96.52" x2="17.78" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="D6*" class="0">
+<net name="D6" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PD7(OC4D/ADC10/T0)"/>
 <wire x1="160.02" y1="160.02" x2="175.26" y2="160.02" width="0.1524" layer="91"/>
@@ -13103,7 +13109,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="175.26" y1="43.18" x2="167.64" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="D10*" class="0">
+<net name="D10" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PB6(OC1B/OC4B/ADC13)"/>
 <wire x1="160.02" y1="180.34" x2="175.26" y2="180.34" width="0.1524" layer="91"/>
@@ -13187,7 +13193,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <label x="-2.54" y="259.08" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="D7*" class="0">
+<net name="D7" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PE6(INT.6/AIN0)"/>
 <wire x1="160.02" y1="195.58" x2="175.26" y2="195.58" width="0.1524" layer="91"/>
@@ -13197,18 +13203,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="U$1" gate="G$1" pin="INT"/>
 <wire x1="33.02" y1="251.46" x2="25.4" y2="251.46" width="0.1524" layer="91"/>
 <label x="27.94" y="248.92" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="D13*" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="PC7(ICP3/CLK0/OC4A)"/>
-<wire x1="160.02" y1="187.96" x2="175.26" y2="187.96" width="0.1524" layer="91"/>
-<label x="170.18" y="187.96" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R10" gate="G$1" pin="1"/>
-<wire x1="137.16" y1="20.32" x2="144.78" y2="20.32" width="0.1524" layer="91"/>
-<label x="137.16" y="20.32" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RXLED" class="0">
@@ -13244,7 +13238,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <label x="114.3" y="35.56" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D12*" class="0">
+<net name="D12" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PD6(T1/ADC9/!OC4D)"/>
 <wire x1="160.02" y1="157.48" x2="175.26" y2="157.48" width="0.1524" layer="91"/>
@@ -13254,20 +13248,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="U$7" gate="G$1" pin="OUT"/>
 <wire x1="88.9" y1="256.54" x2="96.52" y2="256.54" width="0.1524" layer="91"/>
 <label x="93.98" y="256.54" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="D8*" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="PB4(ADC11)"/>
-<wire x1="160.02" y1="175.26" x2="175.26" y2="175.26" width="0.1524" layer="91"/>
-<label x="170.18" y="175.26" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="175.26" y1="30.48" x2="154.94" y2="30.48" width="0.1524" layer="91"/>
-<label x="154.94" y="30.48" size="1.778" layer="95"/>
-<pinref part="LCD" gate="G$1" pin="DB4"/>
-<junction x="175.26" y="30.48"/>
-<wire x1="175.26" y1="30.48" x2="167.64" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RESET" class="0">
@@ -13364,13 +13344,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="175.26" y1="20.32" x2="167.64" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$5" class="0">
-<segment>
-<pinref part="R1" gate="G$1" pin="2"/>
-<pinref part="IC2" gate="G$1" pin="STAT"/>
-<wire x1="68.58" y1="91.44" x2="73.66" y2="91.44" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="VBAT1" class="0">
 <segment>
 <pinref part="IC2" gate="G$1" pin="VBAT"/>
@@ -13433,6 +13406,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="162.56" y1="101.6" x2="167.64" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="D3" gate="G$1" pin="C"/>
 <wire x1="167.64" y1="101.6" x2="167.64" y2="104.14" width="0.1524" layer="91"/>
+<junction x="167.64" y="101.6"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -13561,6 +13535,8 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="CON4" gate="A" pin="2"/>
 <pinref part="Q6" gate="G$1" pin="D@1"/>
 <wire x1="30.48" y1="154.94" x2="30.48" y2="152.4" width="0.1524" layer="91"/>
+<junction x="30.48" y="154.94"/>
+<junction x="30.48" y="152.4"/>
 </segment>
 </net>
 <net name="D13" class="0">
@@ -13571,6 +13547,35 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="175.26" y1="53.34" x2="167.64" y2="53.34" width="0.1524" layer="91"/>
 <label x="154.94" y="53.34" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PC7(ICP3/CLK0/OC4A)"/>
+<wire x1="160.02" y1="187.96" x2="175.26" y2="187.96" width="0.1524" layer="91"/>
+<label x="170.18" y="187.96" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R10" gate="G$1" pin="1"/>
+<wire x1="137.16" y1="20.32" x2="144.78" y2="20.32" width="0.1524" layer="91"/>
+<label x="137.16" y="20.32" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="137.16" y1="55.88" x2="137.16" y2="58.42" width="0.1524" layer="91"/>
+<label x="134.62" y="58.42" size="1.778" layer="95"/>
+<pinref part="POT" gate="R" pin="3"/>
+</segment>
+</net>
+<net name="D8" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="PB4(ADC11)"/>
+<wire x1="160.02" y1="175.26" x2="175.26" y2="175.26" width="0.1524" layer="91"/>
+<label x="170.18" y="175.26" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="175.26" y1="30.48" x2="154.94" y2="30.48" width="0.1524" layer="91"/>
+<label x="154.94" y="30.48" size="1.778" layer="95"/>
+<pinref part="LCD" gate="G$1" pin="DB4"/>
+<junction x="175.26" y="30.48"/>
+<wire x1="175.26" y1="30.48" x2="167.64" y2="30.48" width="0.1524" layer="91"/>
+</segment>
 </net>
 </nets>
 </sheet>
@@ -13579,20 +13584,8 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <approved hash="104,1,175.26,20.32,LCD,A,N$11,,,"/>
 <approved hash="104,1,175.26,17.78,LCD,K,GND,,,"/>
 <approved hash="104,1,175.26,55.88,LCD,VSS,GND,,,"/>
-<approved hash="104,1,66.04,264.16,U$7,VDD,VCC,,,"/>
 <approved hash="106,1,160.02,165.1,RXLED,,,,,"/>
 <approved hash="106,1,160.02,154.94,TXLED,,,,,"/>
-<approved hash="208,1,30.48,53.34,VCC,sup,,,,"/>
-<approved hash="208,1,27.94,48.26,VCC,out,,,,"/>
-<approved hash="208,1,66.04,269.24,VCC,sup,,,,"/>
-<approved hash="208,1,86.36,121.92,VCC,sup,,,,"/>
-<approved hash="208,1,106.68,205.74,VCC,sup,,,,"/>
-<approved hash="208,1,96.52,200.66,VCC,sup,,,,"/>
-<approved hash="208,1,73.66,215.9,VCC,sup,,,,"/>
-<approved hash="208,1,40.64,200.66,VCC,sup,,,,"/>
-<approved hash="208,1,10.16,213.36,VCC,sup,,,,"/>
-<approved hash="208,1,0,213.36,VCC,sup,,,,"/>
-<approved hash="208,1,30.48,160.02,VCC,sup,,,,"/>
 </errors>
 </schematic>
 </drawing>
