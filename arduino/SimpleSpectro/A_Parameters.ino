@@ -37,8 +37,8 @@
 #define PARAM_NUMBER_ACQ    16 // number of acquisition of 100ms that will be taken
 
 #define PARAM_INVERT_ROTARY 17 // invert rotary direction
-#define PARAM_BATTERY       18 // invert rotary direction
-#define PARAM_TEMPERATURE   19 // invert rotary direction
+#define PARAM_BATTERY       18 // battery voltage (hundredths of volt)
+#define PARAM_TEMPERATURE   19 // temperature (hundredths of degree)
 
 
 #define PARAM_ACTIVE_LEDS   21

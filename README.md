@@ -20,7 +20,7 @@ order 20 of them.
 
 * [Soldering the board](docs/solder)
 * [Installing the spectrophotometer in the case](docs/case)
-* [Power managment](docs/power)
+* [Power management](docs/power)
 
 ## Can we do science with this ?
 
@@ -126,6 +126,8 @@ The instruction  s  will show you the current settings
 |    P      |  15    | Current time waiting
 |    Q      |  16    | Number of acquisition of 100ms that will be taken (default 10). This value could be reduced for fast kinetic
 |    R      |  17    | Invert the rotary direction
+|    S      |  18    | Battery voltage (hundredth of volt)
+|    T      |  19    | Temperature (hundredth of degree)
 |    V      |  21    | Active leds. A number between 0 and 15. Each bit represents a LED (R, G, B and U). 5 would corresponds to Red and Blue.
 |    W      |  22    | Error
 |    X      |  23    | Value of the color that will be displayed in the result
