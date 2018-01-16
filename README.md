@@ -10,16 +10,17 @@ a solution, determination of the kinetic of a reaction.
 
 The device is rather cheap if you buy all the component on aliexpress 
 (but one) and have access to a 3D printer. By constructing 10 the price
-per spectrophotometer is around $25. However if you want to have a final
-product with metal case and assembly the cost would rather be $80 if you 
+per spectrophotometer is around $30. However if you want to have a final
+product with metal case and assembly the cost would rather be $90 if you 
 order 20 of them.
 
 <img src='images/patent-blue-v.jpg' width='600px' />
 
 ## Some more documentation
 
-* [Soldering the board](docs/solder/README.md)
-* [Installing the spectrophotometer in the case](docs/case/README.md)
+* [Soldering the board](docs/solder)
+* [Installing the spectrophotometer in the case](docs/case)
+* [Power managment](docs/power)
 
 ## Can we do science with this ?
 
@@ -138,6 +139,7 @@ To retrieve all the data acquired in a kinetic, the easiest is use the `d` comma
 The dump data will contains many columns. The first column corresponds to the time (in ms) since the device was started, the next columns correspond to all the acquired colors.
 The first line corresponds to the blank and the next lines to the kinetic. The values for each column is directly proprotional to the quantity of light that reach the detector. If you want to calculate the corresponding absorbance you need to substract to each value the corresponding value of the first row.
 
+There is a utility that will allow to directly [convert and plot the results on-line](http://www.cheminfo.org/?viewURL=https%3A%2F%2Fcouch.cheminfo.org%2Fcheminfo-public%2F7b6eb01da45510275179c4b587bb63f0%2Fview.json&loadversion=true&fillsearch=Analyse+spectro+log) (using Google Chrome).
 
 ## How to make it ?
 
