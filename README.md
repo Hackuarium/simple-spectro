@@ -169,8 +169,7 @@ quality work for $5 for 10 PCB (+ shipping). They are really very competitive an
 fast. In our case it cost $30 with shipping and we receive PCBs in one week.
 
 All the components we use but one are rather mainstream and can
-be found on ebay or aliexpress. The only special component  is the light to
-frequency converter [TSL235R](https://www.sparkfun.com/datasheets/Sensors/Imaging/TSL235R-LF.pdf)
+be found on ebay or aliexpress. The only special component  is the light to frequency converter [TSL235R](https://www.sparkfun.com/datasheets/Sensors/Imaging/TSL235R-LF.pdf)
 that we buy on [Mouser website](http://www.mouser.com).
 
 <img src='images/pcb-description/pcb-description.001.jpeg' width='600' />
@@ -187,11 +186,11 @@ If the value is too weak the detector may saturate and you will get a message 'O
 
 ### The case
 
-The case is done using FreeCAD. This software looks rather complex at first but has the huge
-advantage that all the parameters may be set in an internal spreadsheet. This allows to design
-parametric boxes that can be easily changed and updated.
+The case is done using FreeCAD. This software looks rather complex at first but has the huge advantage that all the parameters may be set in an internal spreadsheet. This allows to design parametric boxes that can be easily changed and updated.
 
-We are still improving it a little bit but the top part of the obx is in 'top.stl'
+Currently we have 2 vesions of the box:
+* the open-box can be easily open to understand the way it works
+* the closed-box is designed to be screwed and possibly done by milling aluminium.
 
 ### The software
 
