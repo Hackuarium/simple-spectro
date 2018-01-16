@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.3.2">
+<eagle version="8.5.0">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
@@ -11957,14 +11957,14 @@ Source: AVX .. aphvc.pdf</description>
 <label x="71.12" y="187.96" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D11*" class="0">
+<net name="D11" class="0">
 <segment>
 <pinref part="32U4" gate="G$1" pin="PB7(OC0A/OC1C/RTS)"/>
 <wire x1="137.16" y1="185.42" x2="152.4" y2="185.42" width="0.1524" layer="91"/>
 <label x="147.32" y="185.42" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D9*" class="0">
+<net name="D9" class="0">
 <segment>
 <pinref part="32U4" gate="G$1" pin="PB5(OC1A/ADC12/!OC4B)"/>
 <wire x1="137.16" y1="180.34" x2="152.4" y2="180.34" width="0.1524" layer="91"/>
@@ -12006,7 +12006,7 @@ Source: AVX .. aphvc.pdf</description>
 <label x="147.32" y="208.28" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D5*" class="0">
+<net name="D5" class="0">
 <segment>
 <pinref part="32U4" gate="G$1" pin="PC6(OC3A/!OC4A)"/>
 <wire x1="137.16" y1="193.04" x2="152.4" y2="193.04" width="0.1524" layer="91"/>
@@ -12026,14 +12026,14 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="76.2" y="213.36"/>
 </segment>
 </net>
-<net name="D6*" class="0">
+<net name="D6" class="0">
 <segment>
 <pinref part="32U4" gate="G$1" pin="PD7(OC4D/ADC10/T0)"/>
 <wire x1="137.16" y1="162.56" x2="152.4" y2="162.56" width="0.1524" layer="91"/>
 <label x="147.32" y="162.56" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D10*" class="0">
+<net name="D10" class="0">
 <segment>
 <pinref part="32U4" gate="G$1" pin="PB6(OC1B/OC4B/ADC13)"/>
 <wire x1="137.16" y1="182.88" x2="152.4" y2="182.88" width="0.1524" layer="91"/>
@@ -12082,14 +12082,14 @@ Source: AVX .. aphvc.pdf</description>
 <label x="147.32" y="149.86" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D7*" class="0">
+<net name="D7" class="0">
 <segment>
 <pinref part="32U4" gate="G$1" pin="PE6(INT.6/AIN0)"/>
 <wire x1="137.16" y1="198.12" x2="152.4" y2="198.12" width="0.1524" layer="91"/>
 <label x="147.32" y="198.12" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D13*" class="0">
+<net name="D13" class="0">
 <segment>
 <pinref part="32U4" gate="G$1" pin="PC7(ICP3/CLK0/OC4A)"/>
 <wire x1="137.16" y1="190.5" x2="152.4" y2="190.5" width="0.1524" layer="91"/>
@@ -12131,14 +12131,14 @@ Source: AVX .. aphvc.pdf</description>
 <label x="147.32" y="205.74" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D12*" class="0">
+<net name="D12" class="0">
 <segment>
 <pinref part="32U4" gate="G$1" pin="PD6(T1/ADC9/!OC4D)"/>
 <wire x1="137.16" y1="160.02" x2="152.4" y2="160.02" width="0.1524" layer="91"/>
 <label x="147.32" y="160.02" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D8*" class="0">
+<net name="D8" class="0">
 <segment>
 <pinref part="32U4" gate="G$1" pin="PB4(ADC11)"/>
 <wire x1="137.16" y1="177.8" x2="152.4" y2="177.8" width="0.1524" layer="91"/>
