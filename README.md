@@ -128,9 +128,9 @@ The instruction  s  will show you the current settings
 |    R      |  17    | Invert the rotary direction
 |    S      |  18    | Battery voltage (hundredth of volt)
 |    T      |  19    | Temperature (hundredth of degree)
-|    V      |  21    | Active leds and periferic. A number between 0 and 63. Each bit represents a channel (R, G, B, U, Voltage, Temp). 5 would corresponds to Red and Blue.
+|    V      |  21    | Active leds and other. A number between 0 and 63. Each bit represents a function (Red, Ggreeb, Bleu, UV, Voltage, Temperature). 5 would corresponds to Red and Blue.
 |    W      |  22    | Error
-|    X      |  23    | Value of the color that will be displayed in the result
+|    X      |  23    | Value of the channel that will be displayed in the result
 |    Y      |  24    | Status
 |    Z      |  25    | Current menu
 
