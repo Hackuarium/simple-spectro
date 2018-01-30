@@ -32,7 +32,7 @@ rotaryX=13.2+shift;
 rotaryY=12.8+shift;
 rotaryR=4;
 rotaryExtension=2; 
-rotaryExtensionR=aluminium ? 6 : 0; // 6 if you want an extension
+rotaryExtensionR=aluminium ? 5.5 : 0; // 5.5 if you want an extension
 
 logoX=100+shift;
 logoY=0+shift;
