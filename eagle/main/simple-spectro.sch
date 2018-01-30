@@ -12615,7 +12615,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="LCSC" x="144.78" y="83.82" size="1.778" layer="96" rot="R90" display="off"/>
 <attribute name="ELECROW" x="144.78" y="83.82" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="CON4" gate="A" x="33.02" y="157.48" rot="R270"/>
+<instance part="CON4" gate="A" x="33.02" y="160.02" rot="R270"/>
 <instance part="R20" gate="G$1" x="12.7" y="144.78">
 <attribute name="LCSC" x="12.7" y="144.78" size="1.778" layer="96" display="off"/>
 <attribute name="ELECROW" x="12.7" y="144.78" size="1.778" layer="96" display="off"/>
@@ -13452,7 +13452,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <segment>
 <pinref part="SUPPLY10" gate="VCC" pin="VCC"/>
 <pinref part="CON4" gate="A" pin="1"/>
-<wire x1="30.48" y1="157.48" x2="30.48" y2="160.02" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R17" gate="G$1" pin="2"/>
@@ -13534,8 +13533,8 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <segment>
 <pinref part="CON4" gate="A" pin="2"/>
 <pinref part="Q6" gate="G$1" pin="D@1"/>
-<wire x1="30.48" y1="154.94" x2="30.48" y2="152.4" width="0.1524" layer="91"/>
-<junction x="30.48" y="154.94"/>
+<wire x1="30.48" y1="157.48" x2="30.48" y2="152.4" width="0.1524" layer="91"/>
+<junction x="30.48" y="157.48"/>
 <junction x="30.48" y="152.4"/>
 </segment>
 </net>
