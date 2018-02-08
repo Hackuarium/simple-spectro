@@ -2,11 +2,12 @@ $fn=50;
 
 screenLength=71.6;
 screenWidth=25.1;
+screenProtectionSize=3;
 
 ! projection(cut=false) translate([0, 0, -10])
     roundedParallelepiped4(
-            x=screenLength,
-            y=screenWidth,
+            x=screenLength+2*screenProtectionSize,
+            y=screenWidth+2*screenProtectionSize,
             z=screenWidth,
             r=0.5
         );
