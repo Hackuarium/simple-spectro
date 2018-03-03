@@ -138,11 +138,11 @@ void lcdMenu() {
     }
     captureCounter = false;
   }
-   if (noEventCounter > 2500 && getParameter(PARAM_STATUS) == 0) {
+  if (noEventCounter > 2500 && getParameter(PARAM_STATUS) == 0) {
     sleepNow();
     noEventCounter = 0;
   }
-  
+
   boolean doAction = rotaryPressed;
   rotaryPressed = false;
   int counter = rotaryCounter;
@@ -218,7 +218,7 @@ void lcdStatus(int counter, boolean doAction) {
     lcd.setCursor(0, 0);
 #ifdef TEMPERATURE_ADDRESS
     lcd.print("T:");
-    lcd.print(((float)getParameter(PARAM_TEMPERATURE)) / 100,1);
+    lcd.print(((float)getParameter(PARAM_TEMPERATURE)) / 100, 1);
     lcd.print("\xDF\x43");
 #endif
 #ifdef BATTERY
@@ -563,6 +563,7 @@ byte accelerationMode = 0;
 int lastIncrement = 0;
 
 void eventRotaryA() {
+  cli();
   int increment = digitalRead(ROT_B) * 2 - 1;
   long current = millis();
   long diff = current - lastRotaryEvent;
@@ -598,13 +599,14 @@ void eventRotaryA() {
       rotaryCounter += increment;
     }
   }
-
+  sei();
 }
 
 
 boolean rotaryMayPress = true; // be sure to go through release. Seems to allow some deboucing
 
 void eventRotaryPressed() {
+  cli();
   byte state = digitalRead(ROT_PUSH);
   if (state == 0) {
     if (rotaryMayPress && ((millis() - lastRotaryEvent) > 200)) {
@@ -615,6 +617,7 @@ void eventRotaryPressed() {
   } else {
     rotaryMayPress = true;
   }
+  sei();
 }
 
 
