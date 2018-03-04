@@ -34,7 +34,7 @@ void setActiveLeds() {
   maxNbRows = DATA_SIZE / dataRowSize;
 }
 
-NIL_WORKING_AREA(waThreadAcquisition, 128);
+NIL_WORKING_AREA(waThreadAcquisition, 64);
 NIL_THREAD(ThreadAcquisition, arg) {
   setParameter(PARAM_NEXT_EXP, -1);
   while (true) {

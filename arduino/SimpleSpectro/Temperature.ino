@@ -3,7 +3,7 @@
 #include <Wire.h>        // Wire header file for I2C and 2 wire
 // NCT75 temperature sensorce
 
-NIL_WORKING_AREA(waThreadTemperature, 256);
+NIL_WORKING_AREA(waThreadTemperature, 128);
 
 NIL_THREAD(ThreadTemperature, arg) {
   Wire.begin();
