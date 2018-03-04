@@ -2,3 +2,4 @@
 **/*.s#*
 .idea
 **/.DS_Store
+**/*.fcstd1
