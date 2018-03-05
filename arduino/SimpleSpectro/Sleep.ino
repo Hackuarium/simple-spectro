@@ -8,6 +8,8 @@ void wakeUp () {
 }
 
 void sleepNow () {
+  // more information about sleep: https://www.nongnu.org/avr-libc/user-manual/group__avr__sleep.html
+  
   noInterrupts ();          // make sure we don't get interrupted before we sleep
   wdt_disable();
   sleep_enable ();          // enables the sleep bit in the mcucr register

@@ -1,6 +1,8 @@
 
 #include <avr/sleep.h>
 
+// https://www.nongnu.org/avr-libc/user-manual/group__avr__sleep.html
+
 byte wakeUpPin = 1;
 
 void setup() {
