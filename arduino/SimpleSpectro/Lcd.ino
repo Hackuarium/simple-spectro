@@ -100,14 +100,8 @@ long lastRotaryEvent = millis();
 NIL_WORKING_AREA(waThreadLcd, 192);
 NIL_THREAD(ThreadLcd, arg) {
   // initialize the library with the numbers of the interface pins
-
   setupRotary();
-  pinMode(LCD_BL, OUTPUT);
-  digitalWrite(LCD_BL, HIGH); // backlight
-  pinMode(LCD_ON, HIGH); // LCD on / off
-  digitalWrite(LCD_ON, HIGH); // LCD on
-  nilThdSleepMilliseconds(10);
-  lcd.begin(LCD_NB_COLUMNS, LCD_NB_ROWS);
+  wakeUpScreen();
 
   setParameter(PARAM_MENU, 0);
 

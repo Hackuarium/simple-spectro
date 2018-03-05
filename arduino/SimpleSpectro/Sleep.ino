@@ -32,7 +32,12 @@ void wakeUpScreen() {
   for (byte i = 0; i < sizeof(lcdPins); i++) {
     pinMode(lcdPins[i], OUTPUT);
   }
-  nilThdSleepMilliseconds(100);
+  pinMode(LCD_BL, OUTPUT);
+  digitalWrite(LCD_BL, HIGH); // backlight
+  pinMode(LCD_ON, HIGH); // LCD on / off
+  digitalWrite(LCD_ON, HIGH); // LCD on
+
+  nilThdSleepMilliseconds(10);
   lcd.begin(LCD_NB_COLUMNS, LCD_NB_ROWS);
 }
 
