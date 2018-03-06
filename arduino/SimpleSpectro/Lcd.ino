@@ -104,6 +104,7 @@ NIL_THREAD(ThreadLcd, arg) {
   wakeUpScreen();
 
   setParameter(PARAM_MENU, 0);
+  setParameter(PARAM_STATUS, 0);
 
   while (true) {
     lcdMenu();
@@ -132,7 +133,7 @@ void lcdMenu() {
     }
     captureCounter = false;
   }
-  if (noEventCounter > 2500 && getParameter(PARAM_STATUS) == 0) {
+  if (noEventCounter > 250 && getParameter(PARAM_STATUS) == 0) {
     sleepNow();
     noEventCounter = 0;
   }
