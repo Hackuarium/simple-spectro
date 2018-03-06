@@ -133,7 +133,7 @@ void lcdMenu() {
     }
     captureCounter = false;
   }
-  if (noEventCounter > 250 && getParameter(PARAM_STATUS) == 0) {
+  if (noEventCounter > 1500 && getParameter(PARAM_STATUS) == 0) {
     sleepNow();
     noEventCounter = 0;
   }
