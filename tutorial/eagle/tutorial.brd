@@ -19,8 +19,8 @@
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
@@ -153,13 +153,7 @@
 </layers>
 <board>
 <plain>
-<text x="24.290628125" y="32.60368125" size="0.8128" layer="25" rot="R180">5V</text>
-<text x="17.296434375" y="60.41456875" size="0.8128" layer="25" rot="R180">BLK</text>
 <text x="41.1334375" y="38.41113125" size="0.8128" layer="25">D11</text>
-<text x="10.60855625" y="64.054128125" size="1.778" layer="26" rot="MR270">Bio4_LCD_v1.1</text>
-<text x="63.91295625" y="37.73088125" size="1.778" layer="25">EC11E
-Encoder</text>
-<text x="9.3588125" y="69.222134375" size="1.778" layer="25" rot="R180">1</text>
 <wire x1="0" y1="73.66" x2="0" y2="0" width="0.4064" layer="20"/>
 <wire x1="0" y1="0" x2="99.06" y2="0" width="0.4064" layer="20"/>
 <wire x1="99.06" y1="0" x2="99.06" y2="73.66" width="0.4064" layer="20"/>
@@ -392,12 +386,12 @@ MELF 0.25 W</description>
 </package>
 </packages>
 </library>
-<library name="con-cypressindustries">
+<library name="con-cypressindustries" urn="urn:adsk.eagle:library:138">
 <description>&lt;b&gt;Connectors from Cypress Industries&lt;/b&gt;&lt;p&gt;
 www.cypressindustries.com&lt;br&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="32005-201">
+<package name="32005-201" urn="urn:adsk.eagle:footprint:6404/1" library_version="1">
 <description>&lt;b&gt;MINI USB-B R/A SMT W/ REAR&lt;/b&gt;&lt;p&gt;
 Source: http://www.cypressindustries.com/pdf/32005-201.pdf</description>
 <wire x1="-5.9182" y1="3.8416" x2="-3.6879" y2="3.8416" width="0.1016" layer="51"/>
@@ -515,6 +509,12 @@ Source: http://www.cypressindustries.com/pdf/32005-201.pdf</description>
 <hole x="0" y="-2.2" drill="0.9"/>
 </package>
 </packages>
+<packages3d>
+<package3d name="32005-201" urn="urn:adsk.eagle:package:6443/1" type="box" library_version="1">
+<description>MINI USB-B R/A SMT W/ REAR
+Source: http://www.cypressindustries.com/pdf/32005-201.pdf</description>
+</package3d>
+</packages3d>
 </library>
 <library name="SparkFun">
 <description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
@@ -2919,7 +2919,7 @@ design rules under a new name.</description>
 <element name="R13" library="rcl" package="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="1k" x="50.8" y="39.37" smashed="yes" rot="R270">
 <attribute name="VALUE" x="52.169740625" y="40.23828125" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="X4" library="con-cypressindustries" package="32005-201" value="MINI-USB" x="93.98" y="43.18" smashed="yes" rot="R180">
+<element name="X4" library="con-cypressindustries" library_urn="urn:adsk.eagle:library:138" package="32005-201" package3d_urn="urn:adsk.eagle:package:6443/1" value="MINI-USB" x="93.98" y="43.18" smashed="yes" rot="R180">
 <attribute name="MF" value="" x="63.5" y="109.22" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="" x="63.5" y="109.22" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="93.70241875" y="49.679984375" size="1.27" layer="25" rot="R270"/>
@@ -2927,11 +2927,11 @@ design rules under a new name.</description>
 <attribute name="OC_NEWARK" value="unknown" x="63.5" y="109.22" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="98.425" y="50.165" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="RUSB2" library="rcl" package="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="22" x="82.55" y="44.45" smashed="yes">
+<element name="R6" library="rcl" package="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="22" x="82.55" y="44.45" smashed="yes">
 <attribute name="NAME" x="79.868109375" y="43.2158375" size="1.27" layer="25" rot="R90"/>
 <attribute name="VALUE" x="81.392290625" y="45.9537125" size="1.27" layer="27"/>
 </element>
-<element name="RUSB1" library="rcl" package="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="22" x="82.55" y="40.64" smashed="yes">
+<element name="R7" library="rcl" package="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="22" x="82.55" y="40.64" smashed="yes">
 <attribute name="NAME" x="85.330653125" y="39.97640625" size="1.27" layer="25"/>
 <attribute name="VALUE" x="81.243409375" y="37.970140625" size="1.27" layer="27"/>
 </element>
@@ -2943,15 +2943,15 @@ design rules under a new name.</description>
 <attribute name="NAME" x="34.2183" y="45.7624625" size="1.778" layer="25"/>
 <attribute name="VALUE" x="33.05353125" y="53.433190625" size="1.778" layer="27" rot="R270"/>
 </element>
-<element name="CX2" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" package3d_urn="urn:adsk.eagle:package:26140/1" value="22pF" x="17.78" y="53.975" smashed="yes" rot="R90">
+<element name="C2" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" package3d_urn="urn:adsk.eagle:package:26140/1" value="22pF" x="17.78" y="53.975" smashed="yes" rot="R90">
 <attribute name="NAME" x="16.51" y="52.705" size="1.27" layer="25" rot="R90"/>
 <attribute name="VALUE" x="20.136284375" y="52.16200625" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="CX1" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" package3d_urn="urn:adsk.eagle:package:26140/1" value="22pF" x="17.78" y="47.625" smashed="yes" rot="R270">
+<element name="C1" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" package3d_urn="urn:adsk.eagle:package:26140/1" value="22pF" x="17.78" y="47.625" smashed="yes" rot="R270">
 <attribute name="NAME" x="15.13999375" y="48.895" size="1.27" layer="25" rot="R270"/>
 <attribute name="VALUE" x="19.0164125" y="50.06428125" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="RK7" library="rcl" package="M1206" value="10k" x="41.91" y="39.37" rot="R90"/>
+<element name="R8" library="rcl" package="M1206" value="10k" x="41.91" y="39.37" rot="R90"/>
 <element name="C13" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C1206" package3d_urn="urn:adsk.eagle:package:26140/1" value="100nF" x="36.5125" y="61.595" smashed="yes" rot="R270">
 <attribute name="NAME" x="35.323971875" y="59.0450125" size="1.27" layer="25" rot="R90"/>
 <attribute name="VALUE" x="37.7825" y="64.135" size="1.27" layer="27" rot="R270"/>
@@ -2967,11 +2967,14 @@ design rules under a new name.</description>
 <element name="LDPW5" library="SparkFun" package="LED-1206" value="RED" x="55.245" y="39.37" smashed="yes" rot="R90">
 <attribute name="VALUE" x="57.15" y="38.1" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="RXT" library="rcl" library_urn="urn:adsk.eagle:library:334" package="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="1M" x="21.59" y="50.8" smashed="yes" rot="R270">
+<element name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" package="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="1M" x="21.59" y="50.8" smashed="yes" rot="R270">
 <attribute name="NAME" x="18.95470625" y="52.535034375" size="1.27" layer="25" rot="R270"/>
+<attribute name="SPICEPREFIX" value="R" x="21.59" y="50.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="19.11484375" y="51.901834375" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="RK3" library="rcl" library_urn="urn:adsk.eagle:library:334" package="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="10k" x="25.22855" y="58.42" rot="R180"/>
+<element name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" package="M1206" package3d_urn="urn:adsk.eagle:package:23566/1" value="10k" x="25.22855" y="58.42" rot="R180">
+<attribute name="SPICEPREFIX" value="R" x="25.22855" y="58.42" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
 <element name="CON_ISP1" library="lpatiny" package="TINYISP" value="SPI" x="4.445" y="50.165" rot="R270">
 <attribute name="MF" value="" x="4.445" y="50.165" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="4.445" y="50.165" size="1.778" layer="27" rot="R270" display="off"/>
@@ -2982,13 +2985,13 @@ design rules under a new name.</description>
 <signals>
 <signal name="GND" class="1">
 <contactref element="X4" pad="5"/>
-<contactref element="CX1" pad="1"/>
-<contactref element="CX2" pad="1"/>
+<contactref element="C1" pad="1"/>
+<contactref element="C2" pad="1"/>
 <contactref element="C13" pad="1"/>
 <contactref element="32U4" pad="23"/>
 <contactref element="32U4" pad="15"/>
 <contactref element="32U4" pad="5"/>
-<contactref element="RK7" pad="1"/>
+<contactref element="R8" pad="1"/>
 <contactref element="LDPW5" pad="C"/>
 <contactref element="32U4" pad="35"/>
 <contactref element="32U4" pad="43"/>
@@ -3018,7 +3021,7 @@ design rules under a new name.</description>
 <wire x1="5.715" y1="50.165" x2="33.63" y2="55.965" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="USB_N">
-<contactref element="RUSB1" pad="1"/>
+<contactref element="R7" pad="1"/>
 <contactref element="32U4" pad="3"/>
 <wire x1="39.23" y1="55.965" x2="81.15" y2="40.64" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -3093,12 +3096,12 @@ design rules under a new name.</description>
 </signal>
 <signal name="USBC_N">
 <contactref element="X4" pad="2"/>
-<contactref element="RUSB1" pad="2"/>
+<contactref element="R7" pad="2"/>
 <wire x1="83.95" y1="40.64" x2="90.98" y2="42.38" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="USBC_P">
 <contactref element="X4" pad="3"/>
-<contactref element="RUSB2" pad="2"/>
+<contactref element="R6" pad="2"/>
 <wire x1="83.95" y1="44.45" x2="90.98" y2="43.18" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="A0">
@@ -3111,31 +3114,31 @@ design rules under a new name.</description>
 <contactref element="32U4" pad="28"/>
 </signal>
 <signal name="RESET">
-<contactref element="RK3" pad="1"/>
+<contactref element="R3" pad="1"/>
 <contactref element="32U4" pad="13"/>
 <contactref element="CON_ISP1" pad="RESET"/>
 <wire x1="31.03" y1="53.365" x2="26.62855" y2="58.42" width="0" layer="19" extent="1-1"/>
 <wire x1="3.175" y1="47.625" x2="31.03" y2="53.365" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="XTAL1">
-<contactref element="CX2" pad="2"/>
+<contactref element="C2" pad="2"/>
 <contactref element="32U4" pad="16"/>
 <contactref element="X2" pad="P$1"/>
-<contactref element="RXT" pad="1"/>
+<contactref element="R1" pad="1"/>
 <wire x1="25.4" y1="53.465" x2="31.03" y2="50.965" width="0" layer="19" extent="1-1"/>
 <wire x1="21.59" y1="52.2" x2="25.4" y2="53.465" width="0" layer="19" extent="1-1"/>
 <wire x1="17.78" y1="55.375" x2="21.59" y2="52.2" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="HWB">
 <contactref element="32U4" pad="33"/>
-<contactref element="RK7" pad="2"/>
+<contactref element="R8" pad="2"/>
 <wire x1="41.91" y1="40.77" x2="40.83" y2="44.365" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$42">
-<contactref element="CX1" pad="2"/>
+<contactref element="C1" pad="2"/>
 <contactref element="32U4" pad="17"/>
 <contactref element="X2" pad="P$2"/>
-<contactref element="RXT" pad="2"/>
+<contactref element="R1" pad="2"/>
 <wire x1="25.4" y1="48.235" x2="31.03" y2="50.165" width="0" layer="19" extent="1-1"/>
 <wire x1="21.59" y1="49.4" x2="25.4" y2="48.235" width="0" layer="19" extent="1-1"/>
 <wire x1="17.78" y1="46.225" x2="21.59" y2="49.4" width="0" layer="19" extent="1-1"/>
@@ -3155,7 +3158,7 @@ design rules under a new name.</description>
 <contactref element="32U4" pad="24"/>
 <contactref element="C12" pad="2"/>
 <contactref element="32U4" pad="44"/>
-<contactref element="RK3" pad="2"/>
+<contactref element="R3" pad="2"/>
 <contactref element="X4" pad="1"/>
 <wire x1="50.8" y1="40.77" x2="90.98" y2="41.58" width="0" layer="19" extent="1-1"/>
 <wire x1="42.63" y1="46.165" x2="50.8" y2="40.77" width="0" layer="19" extent="1-1"/>
@@ -3168,7 +3171,7 @@ design rules under a new name.</description>
 <signal name="N$16">
 </signal>
 <signal name="USB_P">
-<contactref element="RUSB2" pad="1"/>
+<contactref element="R6" pad="1"/>
 <contactref element="32U4" pad="4"/>
 <wire x1="38.43" y1="55.965" x2="81.15" y2="44.45" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -3202,10 +3205,6 @@ design rules under a new name.</description>
 </board>
 </drawing>
 <compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
