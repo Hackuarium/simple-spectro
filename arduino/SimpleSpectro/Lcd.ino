@@ -14,6 +14,7 @@
 #define TEXT_KINETIC "Kinetic"
 #define TEXT_STOP "Stop acquis."
 #define TEXT_ACQUIRE "Acquire"
+#define TEXT_ACQ_SEQUENCE "Acq. sequence"
 #define TEXT_ACQ_KINETIC "Acq. kinetic"
 #define TEXT_RESULTS "Results"
 #define TEXT_SETTINGS "Settings"
@@ -27,11 +28,13 @@
 #define TEXT_GREEN "Green"
 #define TEXT_BLUE "Blue"
 #define TEXT_UV1 "UV"
+#define TEXT_UV2 "UV 2"
 #define TEXT_BEFORE_DELAY "Before delay"
 #define TEXT_FIRST_DELAY "First delay"
 #define TEXT_INTER_DELAY "Inter exp. delay"
 #define TEXT_NUMBER_EXP "Number exp."
 #define TEXT_RESULT_COLOR "Result color"
+#define TEXT_PRESS_NEXT "Press for next"
 #endif
 
 #if LANGUAGE == 'es'
@@ -62,6 +65,7 @@
 #define TEXT_INTER_DELAY "Tiempo entre exp"
 #define TEXT_NUMBER_EXP "Numero de exp"
 #define TEXT_RESULT_COLOR "Color"
+#define TEXT_PRESS_NEXT "Press for next"
 #endif
 
 
@@ -257,18 +261,18 @@ void lcdAcquisition(int counter, boolean doAction) {
   if (doAction) setParameter(PARAM_MENU, 0);
   if (noEventCounter < 2) lcd.clear();
   switch (getParameter(PARAM_MENU) % 10) {
-    case 0:
+    case 0: // waiting for blank
       lcd.setCursor(0, 0);
       lcd.print(F(TEXT_WAITING_BLANK));
       lcdWait();
       break;
-    case 1:
+    case 1: // waiting for acquisition
       lcd.setCursor(0, 0);
       lcd.print(F(TEXT_WAITING_EXP));
       lcd.print(getParameter(PARAM_NEXT_EXP));
       lcdWait();
       break;
-    case 2:
+    case 2: // acquiring
       lcd.setCursor(0, 0);
       lcd.print(F(TEXT_ACQUIRING));
       lcd.setCursor(0, 1);
@@ -287,8 +291,12 @@ void lcdAcquisition(int counter, boolean doAction) {
 
 void lcdWait() {
   lcd.setCursor(0, 1);
-  lcd.print(getParameter(PARAM_WAIT));
-  lcd.print(" s ");
+  if ( getParameter(PARAM_STATUS) == STATUS_SEQUENCE) { // need to press enter for next acquisition
+    lcd.print(F(TEXT_PRESS_NEXT));
+  } else {
+    lcd.print(getParameter(PARAM_WAIT));
+    lcd.print(" s ");
+  }
 }
 
 
@@ -349,24 +357,31 @@ void lcdMenuHome(int counter, boolean doAction) {
         }
         break;
       case 2:
+        lcd.print(F(TEXT_ACQ_SEQUENCE));
+        if (doAction) {
+          setParameter(PARAM_STATUS, STATUS_SEQUENCE);
+          setParameter(PARAM_NEXT_EXP, 0);
+        }
+        break;
+      case 3:
         lcd.print(F(TEXT_RESULTS));
         if (doAction) {
           setParameter(PARAM_MENU, 100);
         }
         break;
-      case 3:
+      case 4:
         lcd.print(F(TEXT_SETTINGS));
         if (doAction) {
           setParameter(PARAM_MENU, 10);
         }
         break;
-      case 4:
+      case 5:
         lcd.print(F(TEXT_STATUS));
         if (doAction) {
           setParameter(PARAM_MENU, 20);
         }
         break;
-      case 5:
+      case 6:
         lcd.print(F(TEXT_UTILITIES));
         if (doAction) {
           setParameter(PARAM_MENU, 40);

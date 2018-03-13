@@ -40,13 +40,16 @@ NIL_THREAD(ThreadAcquisition, arg) {
   while (true) {
     if (getParameter(PARAM_NEXT_EXP) == 0) {
       setActiveLeds();
+      byte numberExperiments = min(maxNbRows, getParameter(PARAM_NUMPER_EXP));
       switch (getParameter(PARAM_STATUS)) {
         case STATUS_ONE_SPECTRUM:
           runExperiment();
           break;
         case STATUS_KINETIC:
-          byte numberExperiments = min(maxNbRows, getParameter(PARAM_NUMPER_EXP));
           runExperiment(numberExperiments);
+          break;
+        case STATUS_SEQUENCE:
+          runSequence(numberExperiments);
           break;
       }
     }
@@ -96,7 +99,27 @@ void runExperiment(byte nbExperiments) {
   setParameter(PARAM_MENU, 20);
   setParameter(PARAM_STATUS, 0);
   setParameter(PARAM_NEXT_EXP, -1);
+}
 
+void runSequence(byte nbExperiments) { // TODO update this code
+  for (byte i = 0; i <= nbExperiments; i++) {
+    setParameter(PARAM_NEXT_EXP, i);
+    setParameter(PARAM_WAIT, INT_MAX_VALUE);
+    // Need to wait for a validation
+    while (getParameter(PARAM_WAIT)!=0 && getParameter(PARAM_NEXT_EXP) >= 0) {
+      nilThdSleepMilliseconds(100);
+    }
+    if (i == 0) {
+      clearData();
+    }
+    if (getParameter(PARAM_NEXT_EXP) < 0) return;
+    acquire();
+    if (getParameter(PARAM_NEXT_EXP) < 0) return;
+    if (i > 0) calculateResult(i);
+  }
+  setParameter(PARAM_MENU, 20);
+  setParameter(PARAM_STATUS, 0);
+  setParameter(PARAM_NEXT_EXP, -1);
 }
 
 void calculateResult(byte experimentNumber) {
