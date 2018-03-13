@@ -15,7 +15,9 @@
 #define TEXT_STOP "Stop acquis."
 #define TEXT_ACQUIRE "Acquire"
 #define TEXT_ACQ_SEQUENCE "Acq. sequence"
+#define TEXT_CONT_SEQUENCE "Continue seq."
 #define TEXT_ACQ_KINETIC "Acq. kinetic"
+#define TEXT_CONT_KINETC "Continue kin."
 #define TEXT_RESULTS "Results"
 #define TEXT_SETTINGS "Settings"
 #define TEXT_STATUS "Status"
@@ -258,9 +260,11 @@ void lcdDefaultExact(int counter, boolean doAction) {
 }
 
 void lcdAcquisition(int counter, boolean doAction) {
-  if (doAction) setParameter(PARAM_MENU, 0);
+  byte menu = getParameter(PARAM_MENU) % 10;
+  // if it is a sequence we should go to menu only if in an acquisition
+  if (doAction && (menu == 2 || getParameter(PARAM_STATUS) != STATUS_SEQUENCE)) setParameter(PARAM_MENU, 0);
   if (noEventCounter < 2) lcd.clear();
-  switch (getParameter(PARAM_MENU) % 10) {
+  switch (menu) {
     case 0: // waiting for blank
       lcd.setCursor(0, 0);
       lcd.print(F(TEXT_WAITING_BLANK));
@@ -350,19 +354,33 @@ void lcdMenuHome(int counter, boolean doAction) {
         }
         break;
       case 1:
-        lcd.print(F(TEXT_ACQ_KINETIC));
-        if (doAction) {
-          setParameter(PARAM_STATUS, STATUS_KINETIC);
-          setParameter(PARAM_NEXT_EXP, 0);
+        if ((getParameter(PARAM_NEXT_EXP) >= 0) && ( getParameter(PARAM_STATUS) == STATUS_SEQUENCE)) { // continue acquisition
+          lcd.print(F(TEXT_ACQ_SEQUENCE));
+          if (doAction) {
+            setParameter(PARAM_STATUS, STATUS_SEQUENCE);
+            setParameter(PARAM_NEXT_EXP, 0);
+          }
+        } else {
+          lcd.print(F(TEXT_CONT_SEQUENCE));
+          if (doAction) {
+            setAcquisitionMenu();
+          }
         }
         break;
       case 2:
-        lcd.print(F(TEXT_ACQ_SEQUENCE));
-        if (doAction) {
-          setParameter(PARAM_STATUS, STATUS_SEQUENCE);
-          setParameter(PARAM_NEXT_EXP, 0);
+        if ((getParameter(PARAM_NEXT_EXP) >= 0) && ( getParameter(PARAM_STATUS) == STATUS_KINETIC)) { // continue acquisition
+          lcd.print(F(TEXT_ACQ_KINETIC));
+          if (doAction) {
+            setParameter(PARAM_STATUS, STATUS_KINETIC);
+            setParameter(PARAM_NEXT_EXP, 0);
+          }
+          break;
+        } else {
+          lcd.print(F(TEXT_CONT_KINETC));
+          if (doAction) {
+            setAcquisitionMenu();
+          }
         }
-        break;
       case 3:
         lcd.print(F(TEXT_RESULTS));
         if (doAction) {

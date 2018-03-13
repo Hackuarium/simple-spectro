@@ -60,17 +60,22 @@ NIL_THREAD(ThreadAcquisition, arg) {
   }
 }
 
+void setAcquisitionMenu() {
+   if (getParameter(PARAM_NEXT_EXP) == 0) {
+    setParameter(PARAM_MENU, 30);
+  } else {
+    setParameter(PARAM_MENU, 31);
+  }
+}
+
 void waitExperiment() {
   long wait = 0;
   if (getParameter(PARAM_NEXT_EXP) == 0) {
     wait = getParameter(PARAM_BEFORE_DELAY);
-    setParameter(PARAM_MENU, 30);
   } else if (getParameter(PARAM_NEXT_EXP) == 1) {
     wait = getParameter(PARAM_FIRST_DELAY);
-    setParameter(PARAM_MENU, 31);
   } else if (getParameter(PARAM_NEXT_EXP) > 1) {
     wait = getParameter(PARAM_INTER_DELAY);
-    setParameter(PARAM_MENU, 31);
   }
 
   long timeEnd = millis() + wait * 1000;
@@ -87,6 +92,7 @@ void runExperiment() {
 void runExperiment(byte nbExperiments) {
   for (byte i = 0; i <= nbExperiments; i++) {
     setParameter(PARAM_NEXT_EXP, i);
+    setAcquisitionMenu();
     waitExperiment();
     if (i == 0) {
       clearData();
@@ -96,7 +102,7 @@ void runExperiment(byte nbExperiments) {
     if (getParameter(PARAM_NEXT_EXP) < 0) return;
     if (i > 0) calculateResult(i);
   }
-  setParameter(PARAM_MENU, 20);
+  setParameter(PARAM_MENU, 20);// status menu
   setParameter(PARAM_STATUS, 0);
   setParameter(PARAM_NEXT_EXP, -1);
 }
@@ -104,6 +110,7 @@ void runExperiment(byte nbExperiments) {
 void runSequence(byte nbExperiments) { // TODO update this code
   for (byte i = 0; i <= nbExperiments; i++) {
     setParameter(PARAM_NEXT_EXP, i);
+    setAcquisitionMenu();
     setParameter(PARAM_WAIT, INT_MAX_VALUE);
     // Need to wait for a validation
     while (getParameter(PARAM_WAIT)!=0 && getParameter(PARAM_NEXT_EXP) >= 0) {
@@ -117,7 +124,7 @@ void runSequence(byte nbExperiments) { // TODO update this code
     if (getParameter(PARAM_NEXT_EXP) < 0) return;
     if (i > 0) calculateResult(i);
   }
-  setParameter(PARAM_MENU, 20);
+  setParameter(PARAM_MENU, 20); // status menu
   setParameter(PARAM_STATUS, 0);
   setParameter(PARAM_NEXT_EXP, -1);
 }
@@ -139,7 +146,6 @@ void calculateResult(byte experimentNumber) {
 }
 
 void acquire() {
-
   setParameter(PARAM_MENU, 32);
   byte target = getParameter(PARAM_NEXT_EXP) * dataRowSize;
   if (target < 0) return;
