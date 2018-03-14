@@ -11,6 +11,7 @@
 #define TEXT_ACQUIRING "Acquiring"
 #define TEXT_BLANK "Blank"
 #define TEXT_SAMPLE "Sample"
+#define TEXT_SEQUENCE "Sequence"
 #define TEXT_KINETIC "Kinetic"
 #define TEXT_STOP "Stop acquis."
 #define TEXT_ACQUIRE "Acquire"
@@ -262,7 +263,16 @@ void lcdDefaultExact(int counter, boolean doAction) {
 void lcdAcquisition(int counter, boolean doAction) {
   byte menu = getParameter(PARAM_MENU) % 10;
   // if it is a sequence we should go to menu only if in an acquisition
-  if (doAction && (menu == 2 || getParameter(PARAM_STATUS) != STATUS_SEQUENCE)) setParameter(PARAM_MENU, 0);
+  if (counter) {
+    setParameter(PARAM_MENU, 0);
+  }
+  if (doAction) {
+    if (menu == 2 || getParameter(PARAM_STATUS) != STATUS_SEQUENCE) {
+      setParameter(PARAM_MENU, 0);
+    } else { // next experiment, it is a manual sequence
+      setParameter(PARAM_WAIT, 0);
+    }
+  }
   if (noEventCounter < 2) lcd.clear();
   switch (menu) {
     case 0: // waiting for blank
@@ -285,7 +295,11 @@ void lcdAcquisition(int counter, boolean doAction) {
       } else if (getParameter(PARAM_NEXT_EXP) == 1) {
         lcd.print(F(TEXT_SAMPLE));
       } else if (getParameter(PARAM_NEXT_EXP) > 1) {
-        lcd.print(F(TEXT_KINETIC));
+        if ( getParameter(PARAM_STATUS) == STATUS_SEQUENCE) {
+          lcd.print(F(TEXT_KINETIC));
+        } else {
+          lcd.print(F(TEXT_SEQUENCE));
+        }
         lcdPrintBlank(1);
         lcd.print(getParameter(PARAM_NEXT_EXP));
       }
@@ -330,7 +344,7 @@ void updateCurrentMenu(int counter, byte maxValue, byte modulo) {
 void lcdMenuHome(int counter, boolean doAction) {
   if (noEventCounter > 2) return;
   lcd.clear();
-  byte lastMenu = 5;
+  byte lastMenu = 6;
   updateCurrentMenu(counter, lastMenu);
 
   for (byte line = 0; line < LCD_NB_ROWS; line++) {
@@ -355,32 +369,32 @@ void lcdMenuHome(int counter, boolean doAction) {
         break;
       case 1:
         if ((getParameter(PARAM_NEXT_EXP) >= 0) && ( getParameter(PARAM_STATUS) == STATUS_SEQUENCE)) { // continue acquisition
+          lcd.print(F(TEXT_CONT_SEQUENCE));
+          if (doAction) {
+            setAcquisitionMenu();
+          }
+        } else {
           lcd.print(F(TEXT_ACQ_SEQUENCE));
           if (doAction) {
             setParameter(PARAM_STATUS, STATUS_SEQUENCE);
             setParameter(PARAM_NEXT_EXP, 0);
           }
-        } else {
-          lcd.print(F(TEXT_CONT_SEQUENCE));
-          if (doAction) {
-            setAcquisitionMenu();
-          }
         }
         break;
       case 2:
         if ((getParameter(PARAM_NEXT_EXP) >= 0) && ( getParameter(PARAM_STATUS) == STATUS_KINETIC)) { // continue acquisition
+          lcd.print(F(TEXT_CONT_KINETC));
+          if (doAction) {
+            setAcquisitionMenu();
+          }
+        } else {
           lcd.print(F(TEXT_ACQ_KINETIC));
           if (doAction) {
             setParameter(PARAM_STATUS, STATUS_KINETIC);
             setParameter(PARAM_NEXT_EXP, 0);
           }
-          break;
-        } else {
-          lcd.print(F(TEXT_CONT_KINETC));
-          if (doAction) {
-            setAcquisitionMenu();
-          }
         }
+        break;
       case 3:
         lcd.print(F(TEXT_RESULTS));
         if (doAction) {

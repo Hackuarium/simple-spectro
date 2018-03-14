@@ -19,8 +19,8 @@
 #define UV1    A4 // 5mm
 
 #if VERSION == B
-  #define BATTERY               A3  // if battery we have also the temperature sensor
-  #define TEMPERATURE_ADDRESS   0b1001000
+#define BATTERY               A3  // if battery we have also the temperature sensor
+#define TEMPERATURE_ADDRESS   0b1001000
 #endif
 
 #define DATA_SIZE 240
@@ -29,12 +29,12 @@
 #define BATTERY_LEVEL 128   // not available in version A
 #define TEMPERATURE   129   // not available in version A
 
-#if VERSION == 'A'
-  byte ALL_PARAMETERS[] = {RED, GREEN, BLUE, UV1};  // all possible leds
-  byte CURRENT_PARAMETERS[] = {RED, GREEN, BLUE, UV1};      // will contain the active les
+#if VERSION == 'B'
+byte ALL_PARAMETERS[] = {RED, GREEN, BLUE, UV1};  // all possible leds
+byte CURRENT_PARAMETERS[] = {RED, GREEN, BLUE, UV1};      // will contain the active les
 #else
-  byte ALL_PARAMETERS[] = {RED, GREEN, BLUE, UV1, TEMPERATURE, BATTERY_LEVEL};  // all possible leds
-  byte CURRENT_PARAMETERS[] = {RED, GREEN, BLUE, UV1, TEMPERATURE, BATTERY_LEVEL};      // will contain the active les
+byte ALL_PARAMETERS[] = {RED, GREEN, BLUE, UV1, TEMPERATURE, BATTERY_LEVEL};  // all possible leds
+byte CURRENT_PARAMETERS[] = {RED, GREEN, BLUE, UV1, TEMPERATURE, BATTERY_LEVEL};      // will contain the active les
 #endif
 
 byte nbLeds;              // number of active leds
@@ -45,6 +45,7 @@ byte maxNbRows;           // calculate value depending the size of EEPROM dedica
 
 void setup() {
   setupParameters();
+  checkParameters(); // setup automatically the default parameter after install boot loader
   setActiveLeds();
   nilSysBegin();
 }

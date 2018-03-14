@@ -77,4 +77,9 @@ void resetParameters() {
   setQualifier(32767);
 }
 
+void checkParameters() {
+    if (getParameter(PARAM_BEFORE_DELAY) < 0) {
+    resetParameters();
+  }
+}
 
