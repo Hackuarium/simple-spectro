@@ -1,6 +1,18 @@
 #ifdef TEMPERATURE_ADDRESS
 
-#include <Wire.h>        // Wire header file for I2C and 2 wire
+
+#define SDA_PORT PORTD
+#define SDA_PIN 1
+#define SCL_PORT PORTD
+#define SCL_PIN 0
+
+#define I2C_TIMEOUT 10
+#define I2C_FASTMODE 1
+
+
+#include <SoftWire.h> 
+
+SoftWire Wire = SoftWire();
 // NCT75 temperature sensorce
 
 NIL_WORKING_AREA(waThreadTemperature, 128);
