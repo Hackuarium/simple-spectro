@@ -17,6 +17,11 @@ SoftWire Wire = SoftWire();
 
 void setup() {
   Serial.begin(9600);
+
+#define POWER_ON_DSL237  PORTE |= 1 << PE2; DDRE |= 1 << PE2; delay(100);
+#define POWER_OFF_DSL237 PORTE &= ~ (1 << PE2); delay(100);
+
+  
   Wire.begin();
 
   writeConfig(NCT75, 1 << 5); // use use oneshot mode to consume 3ua
@@ -24,7 +29,12 @@ void setup() {
 
 // Main Program Infinite loop
 void loop() {
+  POWER_ON_DSL237
   float temperature = readTemperature(NCT75);
+  Serial.println(temperature);
+  delay(500);
+    POWER_OFF_DSL237
+  temperature = readTemperature(NCT75);
   Serial.println(temperature);
   delay(500);
 }

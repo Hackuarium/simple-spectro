@@ -39,7 +39,7 @@ void wakeUpScreen() {
   pinMode(LCD_ON, HIGH); // LCD on / off
   digitalWrite(LCD_ON, HIGH); // LCD on
 
-  nilThdSleepMilliseconds(10);
+  nilThdSleepMilliseconds(200);
   lcd.begin(LCD_NB_COLUMNS, LCD_NB_ROWS);
 }
 

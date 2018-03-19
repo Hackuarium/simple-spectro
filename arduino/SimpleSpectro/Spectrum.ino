@@ -61,7 +61,7 @@ NIL_THREAD(ThreadAcquisition, arg) {
 }
 
 void setAcquisitionMenu() {
-   if (getParameter(PARAM_NEXT_EXP) == 0) {
+  if (getParameter(PARAM_NEXT_EXP) == 0) {
     setParameter(PARAM_MENU, 30);
   } else {
     setParameter(PARAM_MENU, 31);
@@ -113,7 +113,7 @@ void runSequence(byte nbExperiments) { // TODO update this code
     setAcquisitionMenu();
     setParameter(PARAM_WAIT, INT_MAX_VALUE);
     // Need to wait for a validation
-    while (getParameter(PARAM_WAIT)!=0 && getParameter(PARAM_NEXT_EXP) >= 0) {
+    while (getParameter(PARAM_WAIT) != 0 && getParameter(PARAM_NEXT_EXP) >= 0) {
       nilThdSleepMilliseconds(100);
     }
     if (i == 0) {
@@ -149,6 +149,11 @@ void acquire() {
   setParameter(PARAM_MENU, 32);
   byte target = getParameter(PARAM_NEXT_EXP) * dataRowSize;
   if (target < 0) return;
+
+#ifdef POWER_ON_DSL237
+  POWER_ON_DSL237
+#endif
+
   setDataLong(target, millis());
   for (byte i = 0; i < nbParameters; i++) {
     long newValue = 0;
@@ -192,6 +197,9 @@ void acquire() {
     }
     setDataLong(target + i + 1, newValue);
   }
+#ifdef POWER_OFF_DSL237
+  POWER_OFF_DSL237
+#endif
 }
 
 void printData(Print* output) {

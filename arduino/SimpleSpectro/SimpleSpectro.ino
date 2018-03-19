@@ -1,26 +1,30 @@
 #include <NilRTOS.h>
-// Library that allows to start the watch dog allowing automatic reboot in case of crash
-// The lowest priority thread should take care of the watch dog
-#include <avr/wdt.h>
-
-#include <TimeLib.h>
+#include <avr/wdt.h> // watch dog for automatic reboot in case of crash
+#include <TimeLib.h> // git clone https://github.com/PaulStoffregen/Time
 #include "lib/Utility.h"
+// VERSION
+// *******
+// version B : temperature sensor and battery indicator
+// version C : same as B
+// version D : need to enable LCD (pin 13) and temperature / light sensor: PE2
 
-
-// git clone https://github.com/PaulStoffregen/Time
-
+#define VERSION   B
 
 #define LANGUAGE  en  // currently only en or es
-#define VERSION   B   // version B as temperature sensor and battery indicator
 
 #define RED    A0
 #define GREEN  A1
 #define BLUE   A2
 #define UV1    A4 // 5mm
 
-#if VERSION == B
+#if VERSION != A
 #define BATTERY               A3  // if battery we have also the temperature sensor
 #define TEMPERATURE_ADDRESS   0b1001000
+#endif
+
+#if VERSION == D
+#define POWER_ON_DSL237  PORTE |= 1 << PE2; DDRE |= 1 << PE2; nilThdSleepMilliseconds(10);
+#define POWER_OFF_DSL237 PORTE &= ~ (1 << PE2);
 #endif
 
 #define DATA_SIZE 240
@@ -29,7 +33,7 @@
 #define BATTERY_LEVEL 128   // not available in version A
 #define TEMPERATURE   129   // not available in version A
 
-#if VERSION == 'B'
+#if VERSION != 'A'
 byte ALL_PARAMETERS[] = {RED, GREEN, BLUE, UV1};  // all possible leds
 byte CURRENT_PARAMETERS[] = {RED, GREEN, BLUE, UV1};      // will contain the active les
 #else
