@@ -12356,6 +12356,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/22049b.pdf</description>
 <attribute name="ELECROW" value="C17408"/>
 <attribute name="LCSC" value="C17408"/>
 </part>
+<part name="SUPPLY1" library="supply1" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12651,6 +12652,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="LCSC" x="137.16" y="38.1" size="1.778" layer="96" rot="MR270" display="off"/>
 <attribute name="ELECROW" x="137.16" y="38.1" size="1.778" layer="96" rot="MR270" display="off"/>
 </instance>
+<instance part="SUPPLY1" gate="VCC" x="40.64" y="215.9"/>
 </instances>
 <busses>
 </busses>
@@ -13273,12 +13275,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <label x="55.88" y="266.7" size="1.778" layer="95"/>
 <junction x="81.28" y="266.7"/>
 </segment>
-<segment>
-<pinref part="U1" gate="G$1" pin="V+"/>
-<wire x1="35.56" y1="195.58" x2="40.64" y2="195.58" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="213.36" x2="40.64" y2="195.58" width="0.1524" layer="91"/>
-<label x="43.18" y="210.82" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="N$42" class="0">
 <segment>
@@ -13451,6 +13447,13 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="SUPPLY5" gate="VCC" pin="VCC"/>
 <pinref part="R16" gate="G$1" pin="2"/>
 <wire x1="10.16" y1="213.36" x2="10.16" y2="210.82" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="V+"/>
+<wire x1="35.56" y1="195.58" x2="40.64" y2="195.58" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="213.36" x2="40.64" y2="195.58" width="0.1524" layer="91"/>
+<label x="43.18" y="210.82" size="1.778" layer="95"/>
+<pinref part="SUPPLY1" gate="VCC" pin="VCC"/>
 </segment>
 </net>
 <net name="N$15" class="0">
