@@ -39,6 +39,7 @@
 #define PARAM_INVERT_ROTARY 17 // invert rotary direction
 #define PARAM_BATTERY       18 // battery voltage (hundredths of volt)
 #define PARAM_TEMPERATURE   19 // temperature (hundredths of degree)
+#define PARAM_CHARGING      20 // battery charging
 
 
 #define PARAM_ACTIVE_LEDS   21

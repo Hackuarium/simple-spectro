@@ -226,7 +226,16 @@ void lcdStatus(int counter, boolean doAction) {
 #ifdef BATTERY
     lcd.print(F(" B:"));
     lcd.print(((float)getParameter(PARAM_BATTERY)) / 1000);
-    lcd.print("V");
+    #ifdef BATTERY_CHARGING
+      if (getParameter(PARAM_CHARGING)==0) {
+        lcd.print("+");
+      } else {
+        lcd.print("-");
+      }
+      
+    #else
+      lcd.print("V");
+    #endif
 #endif
     lcd.setCursor(0, 1);
     lcd.print(F("Uptime: "));

@@ -8,7 +8,7 @@
 // version C : same as B
 // version D : need to enable LCD (pin 13) and temperature / light sensor: PE2
 
-#define VERSION   B
+#define VERSION   D
 
 #define LANGUAGE  en  // currently only en or es
 
@@ -17,14 +17,15 @@
 #define BLUE   A2
 #define UV1    A4 // 5mm
 
-#if VERSION != A
+#if VERSION == B || VERSION == C || VERSION == D
 #define BATTERY               A3  // if battery we have also the temperature sensor
 #define TEMPERATURE_ADDRESS   0b1001000
 #endif
 
 #if VERSION == D
-#define POWER_ON_DSL237  PORTE |= 1 << PE2; DDRE |= 1 << PE2; nilThdSleepMilliseconds(10);
-#define POWER_OFF_DSL237 PORTE &= ~ (1 << PE2);
+#define POWER_ON_DSL237       PORTE |= 1 << PE2; DDRE |= 1 << PE2; nilThdSleepMilliseconds(10);
+#define POWER_OFF_DSL237      PORTE &= ~ (1 << PE2);
+#define BATTERY_CHARGING      11
 #endif
 
 #define DATA_SIZE 240
