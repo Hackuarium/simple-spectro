@@ -14509,6 +14509,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="71.12" y1="35.56" x2="63.5" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="Z1" gate="G$1" pin="1"/>
 <wire x1="71.12" y1="27.94" x2="71.12" y2="33.02" width="0.1524" layer="91"/>
+<junction x="71.12" y="33.02"/>
 </segment>
 </net>
 <net name="USBC_P" class="0">
@@ -14519,6 +14520,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="71.12" y1="38.1" x2="71.12" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="Z2" gate="G$1" pin="2"/>
 <wire x1="71.12" y1="45.72" x2="71.12" y2="40.64" width="0.1524" layer="91"/>
+<junction x="71.12" y="40.64"/>
 </segment>
 </net>
 <net name="A0" class="0">
