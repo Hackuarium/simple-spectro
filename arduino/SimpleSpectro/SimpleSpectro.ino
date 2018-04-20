@@ -25,7 +25,7 @@
 #if VERSION == D
 #define POWER_ON_DSL237       PORTE |= 1 << PE2; DDRE |= 1 << PE2; nilThdSleepMilliseconds(10);
 #define POWER_OFF_DSL237      PORTE &= ~ (1 << PE2);
-#define BATTERY_CHARGING      11
+#define BATTERY_CHARGING      A5
 #endif
 
 #define DATA_SIZE 240

@@ -140,6 +140,14 @@ void lcdMenu() {
     }
     captureCounter = false;
   }
+
+#ifdef BATTERY_CHARGING
+  if (noEventCounter > 500 && getParameter(PARAM_CHARGING) > 500) { // battery is charging so we are on USB : no sleep !
+    noEventCounter = 500;
+  }
+#endif
+
+
   if (noEventCounter > 1500 && getParameter(PARAM_STATUS) == 0) {
     sleepNow();
     noEventCounter = 0;
@@ -225,17 +233,19 @@ void lcdStatus(int counter, boolean doAction) {
 #endif
 #ifdef BATTERY
     lcd.print(F(" B:"));
-    lcd.print(((float)getParameter(PARAM_BATTERY)) / 1000);
-    #ifdef BATTERY_CHARGING
-      if (getParameter(PARAM_CHARGING)==0) {
-        lcd.print("+");
-      } else {
-        lcd.print("-");
-      }
-      
-    #else
-      lcd.print("V");
-    #endif
+   // lcd.print(((float)getParameter(PARAM_BATTERY)) / 1000);
+    lcd.print(getParameter(PARAM_CHARGING));
+
+#ifdef BATTERY_CHARGING
+    if (getParameter(PARAM_CHARGING) > 500) {
+      lcd.print("+");
+    } else {
+      lcd.print("-");
+    }
+
+#else
+    lcd.print("V");
+#endif
 #endif
     lcd.setCursor(0, 1);
     lcd.print(F("Uptime: "));
