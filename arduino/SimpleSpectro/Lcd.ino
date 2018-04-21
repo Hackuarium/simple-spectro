@@ -233,11 +233,12 @@ void lcdStatus(int counter, boolean doAction) {
 #endif
 #ifdef BATTERY
     lcd.print(F(" B:"));
-   // lcd.print(((float)getParameter(PARAM_BATTERY)) / 1000);
-    lcd.print(getParameter(PARAM_CHARGING));
+    lcd.print(((float)getParameter(PARAM_BATTERY)) / 1000);
 
 #ifdef BATTERY_CHARGING
-    if (getParameter(PARAM_CHARGING) > 500) {
+    if (getParameter(PARAM_CHARGING) > 1000) {
+      lcd.print("~");
+    } else if (getParameter(PARAM_CHARGING) > 500) {
       lcd.print("+");
     } else {
       lcd.print("-");

@@ -56,8 +56,17 @@ void oneShot(byte address) {
   Wire.write(0); // need to write whatever value
   Wire.endTransmission();
   Wire.beginTransmission(address);
-  Wire.write(0x00);   // go back o the address to read tempearture
+  Wire.write(0x00);   // go back o the address to read temperature
   Wire.endTransmission();
+}
+
+
+void sleepTemperature() {
+
+}
+
+void wakeUpTemperature() {
+
 }
 
 #endif
