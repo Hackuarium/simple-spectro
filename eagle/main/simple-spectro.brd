@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.4.0">
+<eagle version="9.0.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -3325,6 +3325,20 @@ V 1.6.0</text>
 <text x="75.97775" y="9.59485" size="1.27" layer="28" rot="MR0">GND</text>
 <text x="57.21985" y="69.7484" size="1.27" layer="28" rot="MR0">GND</text>
 <text x="19.1008" y="69.7992" size="1.27" layer="28" rot="MR0">GND</text>
+<text x="71.12" y="48.895" size="1.778" layer="52" rot="MR0">C</text>
+<text x="86.36" y="59.055" size="1.778" layer="52" rot="MR0">A</text>
+<text x="86.995" y="64.77" size="1.778" layer="52" rot="MR0">B</text>
+<text x="62.23" y="36.83" size="1.778" layer="52" rot="MR0">D</text>
+<text x="55.245" y="66.04" size="1.778" layer="52" rot="MR0">E</text>
+<text x="52.07" y="66.04" size="1.778" layer="52" rot="MR0">F</text>
+<text x="49.53" y="66.04" size="1.778" layer="52" rot="MR0">G</text>
+<text x="46.99" y="66.04" size="1.778" layer="52" rot="MR0">H</text>
+<text x="44.45" y="66.04" size="1.778" layer="52" rot="MR0">I</text>
+<text x="31.115" y="66.04" size="1.778" layer="52" rot="MR0">J</text>
+<text x="28.575" y="66.04" size="1.778" layer="52" rot="MR0">K</text>
+<text x="26.035" y="66.04" size="1.778" layer="52" rot="MR0">L</text>
+<text x="23.495" y="66.04" size="1.778" layer="52" rot="MR0">M</text>
+<text x="20.955" y="66.04" size="1.778" layer="52" rot="MR0">N</text>
 </plain>
 <libraries>
 <library name="lpatiny">
@@ -5364,9 +5378,11 @@ design rules under a new name.</description>
 <param name="slThermalsForVias" value="0"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
+<param name="checkAngle" value="0"/>
 <param name="checkFont" value="1"/>
 <param name="checkRestrict" value="0"/>
 <param name="checkStop" value="0"/>
+<param name="checkValues" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -5736,9 +5752,9 @@ design rules under a new name.</description>
 <attribute name="NAME" x="69.85" y="46.355" size="1.27" layer="26" rot="MR90"/>
 <attribute name="VALUE" x="64.77" y="43.815" size="1.27" layer="28" rot="MR90"/>
 </element>
-<element name="R2" library="rcl" package="R0805" value="100" x="4.445" y="15.875" rot="MR270">
-<attribute name="ELECROW" value="C17408" x="4.445" y="15.875" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="LCSC" value="C17408" x="4.445" y="15.875" size="1.778" layer="28" rot="MR270" display="off"/>
+<element name="R2" library="rcl" package="R0805" value="100" x="5.08" y="15.875" rot="MR270">
+<attribute name="ELECROW" value="C17408" x="5.08" y="15.875" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="LCSC" value="C17408" x="5.08" y="15.875" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
 <element name="R13" library="rcl" package="R0805" value="10k" x="69.215" y="61.595" rot="MR90">
 <attribute name="ELECROW" value="C17513" x="69.215" y="61.595" size="1.778" layer="28" rot="MR90" display="off"/>
@@ -5749,6 +5765,10 @@ design rules under a new name.</description>
 </element>
 <element name="Z2" library="varistor" library_urn="urn:adsk.eagle:library:410" package="CT/CN0805" package3d_urn="urn:adsk.eagle:package:30598/1" value="VARISTOR" x="83.82" y="37.465" rot="MR90">
 <attribute name="LCSC" value="C79709" x="83.82" y="37.465" size="1.778" layer="28" rot="MR90" display="off"/>
+</element>
+<element name="R14" library="rcl" package="R0805" value="100" x="2.54" y="15.875" rot="MR270">
+<attribute name="ELECROW" value="C17408" x="2.54" y="15.875" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="LCSC" value="C17408" x="2.54" y="15.875" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
 </elements>
 <signals>
@@ -5869,9 +5889,9 @@ design rules under a new name.</description>
 <wire x1="78.74" y1="69.85" x2="79.06" y2="69.53" width="0.8128" layer="16"/>
 <wire x1="79.06" y1="69.53" x2="80.645" y2="69.53" width="0.8128" layer="16"/>
 <contactref element="R2" pad="2"/>
-<wire x1="4.445" y1="14.925" x2="4.445" y2="13.335" width="0.4064" layer="16"/>
-<wire x1="4.445" y1="13.335" x2="3.81" y2="12.7" width="0.4064" layer="16"/>
-<via x="3.81" y="12.7" extent="1-16" drill="0.45"/>
+<wire x1="5.08" y1="14.925" x2="5.08" y2="13.335" width="0.4064" layer="16"/>
+<wire x1="5.08" y1="13.335" x2="4.445" y2="12.7" width="0.4064" layer="16"/>
+<via x="4.445" y="12.7" extent="1-16" drill="0.45"/>
 <via x="49.89195" y="59.37" extent="1-16" drill="0.35"/>
 <wire x1="48.31" y1="59.37" x2="49.89195" y2="59.37" width="0.4064" layer="16"/>
 <wire x1="32.725" y1="14.115" x2="33.02" y2="13.82" width="0.3048" layer="16"/>
@@ -6663,11 +6683,7 @@ design rules under a new name.</description>
 <wire x1="40.64" y1="61.595" x2="52.705" y2="61.595" width="0.4064" layer="16"/>
 <wire x1="52.705" y1="61.595" x2="53.34" y2="62.23" width="0.4064" layer="16"/>
 <wire x1="53.34" y1="63.82" x2="53.34" y2="62.23" width="0.4064" layer="16"/>
-<contactref element="POT" pad="3"/>
-<wire x1="6.04" y1="25.4" x2="3.175" y2="25.4" width="0.4064" layer="1"/>
-<wire x1="3.175" y1="25.4" x2="1.27" y2="27.305" width="0.4064" layer="1"/>
-<wire x1="1.27" y1="27.305" x2="1.27" y2="65.405" width="0.4064" layer="1"/>
-<wire x1="1.27" y1="65.405" x2="1.905" y2="66.04" width="0.4064" layer="1"/>
+<wire x1="1.905" y1="66.04" x2="1.27" y2="65.405" width="0.4064" layer="1"/>
 <wire x1="19.685" y1="66.04" x2="20.07" y2="66.425" width="0.4064" layer="1"/>
 <wire x1="20.07" y1="66.425" x2="20.07" y2="68.84" width="0.4064" layer="1"/>
 <wire x1="20.07" y1="68.84" x2="20.07" y2="69.6" width="0.4064" layer="1"/>
@@ -6679,6 +6695,11 @@ design rules under a new name.</description>
 <wire x1="53.2994" y1="63.7794" x2="53.34" y2="63.82" width="0.4064" layer="16"/>
 <wire x1="51.7779" y1="69.5071" x2="51.7779" y2="63.7794" width="0.4064" layer="1"/>
 <wire x1="1.905" y1="66.04" x2="19.685" y2="66.04" width="0.4064" layer="1"/>
+<contactref element="R14" pad="2"/>
+<via x="1.27" y="12.7" extent="1-16" drill="0.35"/>
+<wire x1="1.27" y1="12.7" x2="2.54" y2="13.97" width="0.4064" layer="16"/>
+<wire x1="2.54" y1="13.97" x2="2.54" y2="14.925" width="0.4064" layer="16"/>
+<wire x1="1.27" y1="65.405" x2="1.27" y2="12.7" width="0.4064" layer="1"/>
 </signal>
 <signal name="D8">
 <contactref element="IC1" pad="28"/>
@@ -6692,8 +6713,8 @@ design rules under a new name.</description>
 <signal name="N$4">
 <contactref element="POT" pad="1"/>
 <contactref element="R2" pad="1"/>
-<wire x1="4.445" y1="16.825" x2="4.445" y2="18.725" width="0.4064" layer="16"/>
-<wire x1="4.445" y1="18.725" x2="6.04" y2="20.32" width="0.4064" layer="16"/>
+<wire x1="5.08" y1="16.825" x2="5.08" y2="19.36" width="0.4064" layer="16"/>
+<wire x1="5.08" y1="19.36" x2="6.04" y2="20.32" width="0.4064" layer="16"/>
 </signal>
 <signal name="N$5">
 <contactref element="R13" pad="2"/>
@@ -6703,32 +6724,13 @@ design rules under a new name.</description>
 <wire x1="70.485" y1="64.135" x2="69.215" y2="62.865" width="0.4064" layer="16"/>
 <wire x1="69.215" y1="62.865" x2="69.215" y2="62.545" width="0.4064" layer="16"/>
 </signal>
+<signal name="N$12">
+<contactref element="R14" pad="1"/>
+<contactref element="POT" pad="3"/>
+<wire x1="2.54" y1="16.825" x2="2.54" y2="21.9" width="0.4064" layer="16"/>
+<wire x1="2.54" y1="21.9" x2="6.04" y2="25.4" width="0.4064" layer="16"/>
+</signal>
 </signals>
-<errors>
-<approved hash="5,1,fbdb3c8000779916"/>
-<approved hash="5,1,2c42c0d7e0193bd3"/>
-<approved hash="5,1,fbda284965193f2e"/>
-<approved hash="5,1,179773894f88a8d6"/>
-<approved hash="5,16,8289aa95757c18e4"/>
-<approved hash="19,1,f54ab02103238357"/>
-<approved hash="19,1,8c19a81ab32b4799"/>
-<approved hash="19,1,76cd4ae6e6e81fdc"/>
-<approved hash="19,1,3ff339d4addc89b3"/>
-<approved hash="7,40,40528d6fc2211264"/>
-<approved hash="7,40,65c522ab6a495538"/>
-<approved hash="7,40,ab14f85024ad5091"/>
-<approved hash="7,40,ab1d99d024ad5091"/>
-<approved hash="7,40,e91578588425f011"/>
-<approved hash="7,40,45298b9b3bccdf86"/>
-<approved hash="7,40,5045126feb1fd118"/>
-<approved hash="7,40,3246c4d0f9c4c5e8"/>
-<approved hash="7,40,d67d138a33630eb3"/>
-<approved hash="7,40,c11a8352e2b68586"/>
-<approved hash="7 40 8909afbc258b2dc6"/>
-<approved hash="7 40 7465310d20611d3c"/>
-<approved hash="7 40 8909afbc258b2dc6"/>
-<approved hash="7 40 7465310d20611d3c"/>
-</errors>
 </board>
 </drawing>
 <compatibility>
