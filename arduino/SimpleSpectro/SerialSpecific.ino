@@ -8,6 +8,9 @@ void processSpecificCommand(char* data, char* paramValue, Print* output) {
       setParameter(PARAM_STATUS, STATUS_KINETIC);
       setParameter(PARAM_NEXT_EXP, 0);
       break;
+    case 'l':
+      sleepNow();
+      break;
     case 'r':
       setParameter(PARAM_STATUS, STATUS_ONE_SPECTRUM);
       setParameter(PARAM_NEXT_EXP, 0);
@@ -23,5 +26,6 @@ void printSpecificHelp(Print * output) {
   output->println(F("(k)inetic"));
   output->println(F("(r)un experiment"));
   output->println(F("(t)est"));
+  output->println(F("s(l)eep"));
 }
 

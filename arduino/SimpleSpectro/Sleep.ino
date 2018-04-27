@@ -1,6 +1,4 @@
 #include <avr/sleep.h>
-
-
 void sleepNow () {
   // more information about sleep: https://www.nongnu.org/avr-libc/user-manual/group__avr__sleep.html
 

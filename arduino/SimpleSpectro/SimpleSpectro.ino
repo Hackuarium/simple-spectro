@@ -19,6 +19,7 @@
 
 #if VERSION == B || VERSION == C || VERSION == D
 #define BATTERY               A3  // if battery we have also the temperature sensor
+
 #define TEMPERATURE_ADDRESS   0b1001000
 #endif
 
