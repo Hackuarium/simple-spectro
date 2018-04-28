@@ -17,3 +17,19 @@ Testing points are marked on the eagle file and are between ground and the speci
 * M; 0.81v
 * N: 2.90v
 
+# Callibration of the RGB leds
+
+The sensor is able to generate a frequency of maximum 500 kHz and that is directly proportional to the energy of the light.
+
+In order to use the full range of frequency it is important to be at the limit of 500 kHz by changing the 3 resistors that limit the current to the leds.
+
+By default the resistors are 1k.
+
+Example
+
+| R red | Red (Hz) | R green | Green  | R blue | Blue   | R uv | UV   |
+| ------|----------|--------|--------|--------|
+| 1k    | 95240 | 1k |  185230 | 1k  | 201170 | 22 | 9940
+
+
+
