@@ -3339,6 +3339,9 @@ V 1.6.0</text>
 <text x="26.035" y="66.04" size="1.778" layer="52" rot="MR0">L</text>
 <text x="23.495" y="66.04" size="1.778" layer="52" rot="MR0">M</text>
 <text x="20.955" y="66.04" size="1.778" layer="52" rot="MR0">N</text>
+<text x="69.85" y="22.225" size="1.016" layer="52" rot="MR270">Red</text>
+<text x="66.675" y="22.86" size="1.016" layer="52" rot="MR270">Green</text>
+<text x="63.5" y="22.225" size="1.016" layer="52" rot="MR270">Blue</text>
 </plain>
 <libraries>
 <library name="lpatiny">
