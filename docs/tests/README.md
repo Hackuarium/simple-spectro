@@ -27,9 +27,9 @@ By default the resistors are 1k.
 
 Example
 
-| R red | Red (Hz) | R green | Green  | R blue | Blue   | R uv | UV   |
-| ------|----------|--------|--------|--------|
-| 1k    | 95240 | 1k |  185230 | 1k  | 201170 | 22 | 9940
+| R red | Red (Hz) | R green | Green (Hz) | R blue | Blue (Hz) | R uv | UV (Hz) |
+| ------|----------|---------|------------|--------|-----------|------|---------|
+| 1k    | 95240    | 1k      | 185230     | 1k     | 201170    | 22   | 9940 .  |
 
 
 
