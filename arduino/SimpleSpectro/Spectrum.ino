@@ -5,14 +5,12 @@ void testRGB() {
     pinMode(CURRENT_PARAMETERS[i], OUTPUT);
   }
   while (true) {
-    for (byte i = 0; i < nbLeds; i++) {
-      digitalWrite(CURRENT_PARAMETERS[i], HIGH);
-      nilThdSleepMilliseconds(500);
-      digitalWrite(CURRENT_PARAMETERS[i], LOW);
-      nilThdSleepMilliseconds(500);
-      if (getParameter(PARAM_STATUS) != STATUS_TEST_LEDS) {
-        return;
-      }
+
+    setParameter(PARAM_NEXT_EXP, 0);
+    acquire(true);
+
+    if (getParameter(PARAM_STATUS) != STATUS_TEST_LEDS) {
+      return;
     }
   }
 }
@@ -98,7 +96,7 @@ void runExperiment(byte nbExperiments) {
       clearData();
     }
     if (getParameter(PARAM_NEXT_EXP) < 0) return;
-    acquire();
+    acquire(false);
     if (getParameter(PARAM_NEXT_EXP) < 0) return;
     if (i > 0) calculateResult(i);
   }
@@ -120,7 +118,7 @@ void runSequence(byte nbExperiments) { // TODO update this code
       clearData();
     }
     if (getParameter(PARAM_NEXT_EXP) < 0) return;
-    acquire();
+    acquire(false);
     if (getParameter(PARAM_NEXT_EXP) < 0) return;
     if (i > 0) calculateResult(i);
   }
@@ -145,8 +143,8 @@ void calculateResult(byte experimentNumber) {
   }
 }
 
-void acquire() {
-  setParameter(PARAM_MENU, 32);
+void acquire(boolean testMode) {
+  if (!testMode) setParameter(PARAM_MENU, 32);
   byte target = getParameter(PARAM_NEXT_EXP) * dataRowSize;
   if (target < 0) return;
 

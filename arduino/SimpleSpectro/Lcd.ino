@@ -283,10 +283,10 @@ void lcdDefaultExact(int counter, boolean doAction) {
 void lcdAcquisition(int counter, boolean doAction) {
   byte menu = getParameter(PARAM_MENU) % 10;
   // if it is a sequence we should go to menu only if in an acquisition
-  if (counter) {
+  if (counter) { // the button was turned
     setParameter(PARAM_MENU, 0);
   }
-  if (doAction) {
+  if (doAction) { // the button was pressed
     if (menu == 2 || getParameter(PARAM_STATUS) != STATUS_SEQUENCE) {
       setParameter(PARAM_MENU, 0);
     } else { // next experiment, it is a manual sequence
@@ -324,6 +324,23 @@ void lcdAcquisition(int counter, boolean doAction) {
         lcd.print(getParameter(PARAM_NEXT_EXP));
       }
       break;
+    case 3: // TEST mode
+      lcd.setCursor(0, 0);
+      lcd.print("R:");
+      lcd.print(getDataLong(1));
+      lcdPrintBlank(6);
+      lcd.setCursor(8, 0);
+      lcd.print("G:");
+      lcd.print(getDataLong(2));
+      lcdPrintBlank(6);
+      lcd.setCursor(0, 1);
+      lcd.print("B:");
+      lcd.print(getDataLong(3));
+      lcdPrintBlank(6);
+      lcd.setCursor(8, 2);
+      lcd.print("U:");
+      lcd.print(getDataLong(4));
+      lcdPrintBlank(6);
   }
 }
 
@@ -464,6 +481,7 @@ void lcdUtilities(int counter, boolean doAction) {
       case 1:
         if (getParameter(PARAM_STATUS) == STATUS_TEST_LEDS) {
           lcd.print(F("Stop test"));
+          setParameter(PARAM_MENU, 33);
           if (doAction) {
             setParameter(PARAM_STATUS, 0);
           }

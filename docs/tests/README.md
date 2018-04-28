@@ -25,7 +25,7 @@ In order to use the full range of frequency it is important to be at the limit o
 
 By default the resistors are 1k.
 
-Example
+Example (on D1)
 
 | R red | Red (Hz) | R green | Green (Hz) | R blue | Blue (Hz) | R uv | UV (Hz) |
 | ------|----------|---------|------------|--------|-----------|------|---------|

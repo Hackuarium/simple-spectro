@@ -1,3 +1,4 @@
+// we use the real I2C port
 
 #define SDA_PORT PORTD
 #define SDA_PIN 1
