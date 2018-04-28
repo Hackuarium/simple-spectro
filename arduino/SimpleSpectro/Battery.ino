@@ -15,7 +15,7 @@ NIL_THREAD(ThreadBattery, arg) {
     setParameter(PARAM_BATTERY, analogRead(BATTERY) * 5 ); // in mv
     
 #ifdef BATTERY_CHARGING
-    setParameter(PARAM_CHARGING, digitalRead(BATTERY_CHARGING) );
+    setParameter(PARAM_CHARGING, analogRead(BATTERY_CHARGING) );
 #endif
     nilThdSleepMilliseconds(1000);
   }
