@@ -1,3 +1,5 @@
+Check the documentation on [https://hackuarium.github.io/simple-spectro/](https://hackuarium.github.io/simple-spectro/).
+
 # DIY spectrophotometer
 
 The goal is to create a simple spectrophotometer that measures the
