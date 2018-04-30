@@ -14,7 +14,7 @@ The device is rather cheap if you buy all the components on aliexpress
 per spectrophotometer is around $30. However if you want to have a final
 product with metal case and assembly, the cost would rather be $90 each if you order 20 of them.
 
-<img src='docs/0-intro/0-intro.jpg' width='600px' />
+<img src='0-intro/intro.jpg' width='600px' />
 
 ## Can we do science with this ?
 
@@ -44,10 +44,14 @@ The project is composed of 3 parts:
 
 ## How to use it ?
 
-[Userguide and connection to computer](5-use)
+[Userguide and connection to the computer](5-use)
 
 ## Tests
   * [Reproducibility of results](4-tests/stability)
+
+## Applications
+  * [In chemistry](6-applicatins/chemistry)
+  * [In biology](6-applicatins/biology)
 
 # Workshop
 We organize un one day workshop "Build your spectrophotometer"
