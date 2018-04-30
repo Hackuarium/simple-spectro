@@ -50,8 +50,8 @@ The project is composed of 3 parts:
   * [Reproducibility of results](4-tests/stability)
 
 ## Applications
-  * [In chemistry](6-applicatins/chemistry)
-  * [In biology](6-applicatins/biology)
+  * [In chemistry](6-applications/chemistry)
+  * [In biology](6-applications/biology)
 
 # Workshop
 We organize un one day workshop "Build your spectrophotometer"
