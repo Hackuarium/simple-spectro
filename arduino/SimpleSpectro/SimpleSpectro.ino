@@ -35,7 +35,7 @@
 #define BATTERY_LEVEL 128   // not available in version A
 #define TEMPERATURE   129   // not available in version A
 
-#if VERSION != 'A'
+#if VERSION == 'A'
 byte ALL_PARAMETERS[] = {RED, GREEN, BLUE, UV1};  // all possible leds
 byte CURRENT_PARAMETERS[] = {RED, GREEN, BLUE, UV1};      // will contain the active les
 #else
