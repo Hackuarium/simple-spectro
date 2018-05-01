@@ -26,6 +26,7 @@
 #define TEXT_SLEEP "Sleep"
 #define TEXT_TEST_LEDS "Test LED"
 #define TEXT_RESET "Reset"
+#define TEXT_REBOOT "Reboot"
 #define TEXT_MAIN_MENU "Main menu"
 #define TEXT_RED "Red"
 #define TEXT_GREEN "Green"
@@ -464,7 +465,7 @@ void lcdMenuHome(int counter, boolean doAction) {
 void lcdUtilities(int counter, boolean doAction) {
   if (noEventCounter > 2) return;
   lcd.clear();
-  byte lastMenu = 3;
+  byte lastMenu = 4;
   updateCurrentMenu(counter, lastMenu);
 
   for (byte line = 0; line < LCD_NB_ROWS; line++) {
@@ -501,6 +502,14 @@ void lcdUtilities(int counter, boolean doAction) {
         }
         break;
       case 3:
+        lcd.print(F(TEXT_REBOOT));
+        if (doAction) {
+          wdt_enable(WDTO_15MS);
+          delay(20);
+        }
+        break;
+
+      case 4:
         lcd.print(F(TEXT_MAIN_MENU));
         if (doAction) {
           setParameter(PARAM_MENU, 1);
