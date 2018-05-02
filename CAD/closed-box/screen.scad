@@ -9,7 +9,7 @@ screenProtectionSize=3;
             x=screenLength+2*screenProtectionSize,
             y=screenWidth+2*screenProtectionSize,
             z=screenWidth,
-            r=0.5
+            r=2
         );
  
 module roundedParallelepiped4(x, y, z, r) {
