@@ -5,6 +5,6 @@ The circuit dealing with battery managment is largely inspired by the [applicati
 
 The evolution of the battery can be measured directly in the spectrophotometer.
 
-<img src="battery.svg" width=600>
+<img src="battery.svg" width="600" />
 
 
