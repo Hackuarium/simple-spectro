@@ -47,6 +47,7 @@ The project is composed of 3 parts:
 [Userguide and connection to the computer](5-use)
 
 ## Tests
+  * [Battery](4-tests/battery)
   * [Reproducibility of results](4-tests/stability)
 
 ## Applications

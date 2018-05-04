@@ -2,7 +2,7 @@
 
 In order to evaluate the stability we have done 48 experiments without delay.
 
-This experiment was repated twice on `D1`.
+This experiment was repeated twice on `D1`.
 
 The variation for RGB is less than 0.1%.
 
