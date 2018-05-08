@@ -160,7 +160,8 @@
                     "layers": [
                         21,
                         27,
-                        200
+                        200,
+                        51
                     ],
                     "milling": false,
                     "name": "Silkscreen Top",
@@ -178,7 +179,8 @@
                     "layers": [
                         22,
                         28,
-                        201
+                        201,
+                        52
                     ],
                     "milling": false,
                     "name": "Silkscreen Bottom",
@@ -189,7 +191,7 @@
             "version": "RS274X"
         }
     ],
-    "timestamp": "2018-04-23T10:48:44",
+    "timestamp": "2018-05-08T21:34:25",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "8.6.1"
