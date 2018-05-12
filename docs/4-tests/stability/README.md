@@ -21,3 +21,22 @@ In order to confirm the temperature importance this experiment was redone by acq
 <img src="D1_4temp.svg">
 
 We can clearly see a inverted correlation between the red variation and the temperature.
+
+When repeating the same experiment blank (no sample) / sample (no sample) + blank / sample, etc.
+
+Sample 1:
+* 0.54
+* 0.55
+* 0.54
+* 0.56
+* 0.56
+* 0.55
+* 0.55
+
+Sample 2:
+* 1.2
+* 1.27
+* 1.24
+* 1.24
+* 1.25
+* 1.22
