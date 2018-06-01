@@ -1,3 +1,6 @@
+Download the full project !   [Clone our repository](https://hackuarium.github.io/simple-spectro/).
+
+
 # DIY spectrophotometer
 
 The goal is to create a simple spectrophotometer that measures the
