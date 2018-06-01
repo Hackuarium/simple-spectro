@@ -1,4 +1,4 @@
-Download the full project !   [Clone our repository](https://hackuarium.github.io/simple-spectro/).
+Download the full project !   [Clone our repository](https://github.com/hackuarium/simple-spectro/).
 
 
 # DIY spectrophotometer
