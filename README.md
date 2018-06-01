@@ -1,4 +1,4 @@
-Check the documentation on [https://hackuarium.github.io/simple-spectro/](https://hackuarium.github.io/simple-spectro/).
+Check the full documentation on [https://hackuarium.github.io/simple-spectro/](https://hackuarium.github.io/simple-spectro/).
 
 # DIY spectrophotometer
 
