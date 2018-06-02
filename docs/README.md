@@ -1,4 +1,9 @@
+Download the full project !   [Clone our repository](https://github.com/hackuarium/simple-spectro/).
+
+
 # DIY spectrophotometer
+
+This project was done in the [Hackuarium](http://www.hackuarium.ch/en/) association,  a DIY biology and open laboratory situated in Renens (Switzerland). Please fee free to [contact us](mailto:hello@hackuarium.ch) if you would like more information.
 
 The goal is to create a simple spectrophotometer that measures the
 absorbance of a sample at 3 different light colors (red, green, blue), is
