@@ -2,79 +2,50 @@
 #define ROT_B      1
 #define ROT_PUSH   7
 
+#include "RotaryEncoder.h"
+
+RotaryEncoder encoder(ROT_A, ROT_B);
+
 void setup() {
-  Serial.begin(115200);
+  delay(2000);
+  Serial.begin(9600);
+  Serial.println("Start");
   pinMode(ROT_A, INPUT_PULLUP);
   pinMode(ROT_B, INPUT_PULLUP);
   pinMode(ROT_PUSH, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(ROT_A), eventA, FALLING);
+  attachInterrupt(digitalPinToInterrupt(ROT_A), tick, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(ROT_B), tick, CHANGE);
   attachInterrupt(digitalPinToInterrupt(ROT_PUSH), eventRotaryPressed, CHANGE);
 }
+boolean rotaryPressed = false;
+boolean rotaryMayPressed = true;
 
-int rotaryCounter = 0;
-int lastCounter = 0;
-long lastRotaryEvent = millis();
-boolean accelerationMode=true;
-boolean rotaryPressed=false;
-boolean rotaryMayPressed=true;
+void tick() {
+  encoder.tick();
+}
+
+int lastCounter=0;
+int rotaryCounter=0;
 
 void loop() {
+  rotaryCounter = encoder.getPosition();
   if (lastCounter != rotaryCounter) {
-  //  Serial.println(rotaryCounter);
+    Serial.println(rotaryCounter);
   }
- // Serial.println(rotaryPressed);
   lastCounter = rotaryCounter;
-  delay(500);
+  delay(20);
 }
-
-void eventA() {
-  int increment = digitalRead(ROT_B) * 2 - 1;
-  long current = millis();
-  long diff = current - lastRotaryEvent;
-  lastRotaryEvent = current;
-  if (diff < 15) return;
-  if (diff < 50) {
-    if (accelerationMode) {
-      rotaryCounter -= (increment * 5);
-    } else {
-      accelerationMode = true;
-      rotaryCounter -= increment;
-    }
-  } else {
-    accelerationMode = false;
-    rotaryCounter -= increment;
-  }
-}
-
 
 
 void eventRotaryPressed() {
-    byte state= digitalRead(ROT_PUSH);
-if (state==0) {
-   if (rotaryMayPressed) {
-    rotaryPressed=true;
-    rotaryMayPressed=false;
-    Serial.println("P");
-   }
-} else {
-  rotaryMayPressed=true;
-}
-
-
-/*
-  byte state= digitalRead(ROT_PUSH);
-  long current = millis();
-  long diff = current - lastRotaryEvent;
-  lastRotaryEvent = current;
-  if (diff < 15 || state==HIGH) {
-      Serial.print(current);
-  Serial.print(" ");
-    Serial.println(state);
-    return;
+  byte state = digitalRead(ROT_PUSH);
+  if (state == 0) {
+    if (rotaryMayPressed) {
+      rotaryPressed = true;
+      rotaryMayPressed = false;
+      Serial.println("P");
+    }
+  } else {
+    rotaryMayPressed = true;
   }
-  Serial.print(current);
-  Serial.print(" ");
-  Serial.println("P");
-  rotaryPressed = true;
- */
 }

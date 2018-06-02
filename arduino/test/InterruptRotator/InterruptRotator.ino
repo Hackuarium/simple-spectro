@@ -22,6 +22,7 @@ RotaryEncoder encoder(0, 1);
 
 void setup()
 {
+  delay(3000);
   Serial.begin(9600);
   Serial.println("SimplePollRotator example for the RotaryEncoder library.");
 
@@ -35,14 +36,6 @@ void tick() {
   encoder.tick();
 }
 
-/*
- * 
- ISR(PCINT1_vect) {
-  encoder.tick(); // just call tick() to check the state.
-}
-*/
-
-
 // Read the current position of the encoder and print out when changed.
 void loop() {
   static int pos = 0;
@@ -51,7 +44,7 @@ void loop() {
   if (pos != newPos) {
     Serial.print(newPos);
     Serial.println();
-    delay(100);
+    delay(20);
     pos = newPos;
   }
 }
