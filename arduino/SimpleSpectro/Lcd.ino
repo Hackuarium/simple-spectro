@@ -75,7 +75,6 @@
 
 
 #include <LiquidCrystal.h>
-#include "lib/RotaryEncoder/RotaryEncoder.cpp"
 
 #define LCD_E      6
 #define LCD_RS     A6
@@ -98,9 +97,9 @@ byte lcdPins[] = {LCD_E, LCD_RS, LCD_D4, LCD_D5, LCD_D6, LCD_D7, LCD_VO, LCD_BL,
 
 LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
-RotaryEncoder encoder(ROT_A, ROT_B);
 
 boolean rotaryPressed = false;
+int rotaryCounter = 0;
 boolean captureCounter = false; // use when you need to setup a parameter from the menu
 long lastRotaryEvent = millis();
 
@@ -131,7 +130,7 @@ void lcdMenu() {
     noEventCounter = 0;
     previousMenu = currentMenu;
   }
-  if (encoder.getPosition() == 0 && ! rotaryPressed) {
+  if (rotaryCounter == 0 && ! rotaryPressed) {
     if (noEventCounter < 32760) noEventCounter++;
   } else {
     noEventCounter = 0;
@@ -157,8 +156,8 @@ void lcdMenu() {
 
   boolean doAction = rotaryPressed;
   rotaryPressed = false;
-  int counter = encoder.getPosition();
-  encoder.setPosition(0);
+  int counter = rotaryCounter;
+  rotaryCounter = 0;
   switch (currentMenu < 100 ? currentMenu - currentMenu % 10 : currentMenu - currentMenu % 50) {
     case 0:
       lcdMenuHome(counter, doAction);
@@ -645,16 +644,52 @@ void setupRotary() {
   pinMode(ROT_A, INPUT_PULLUP);
   pinMode(ROT_B, INPUT_PULLUP);
   pinMode(ROT_PUSH, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(ROT_A), tick, CHANGE);
-  attachInterrupt(digitalPinToInterrupt(ROT_B), tick, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(ROT_A), eventRotaryA, FALLING);
   attachInterrupt(digitalPinToInterrupt(ROT_PUSH), eventRotaryPressed, CHANGE);
 }
 
+byte accelerationMode = 0;
+int lastIncrement = 0;
 
-void tick() {
-  encoder.tick();
+void eventRotaryA() {
+  cli();
+  int increment = digitalRead(ROT_B) * 2 - 1;
+  long current = millis();
+  long diff = current - lastRotaryEvent;
+  lastRotaryEvent = current;
+  if (diff < 5) return;
+  /*
+    Serial.print(diff);
+    Serial.print(" ");
+    Serial.print(increment);
+    Serial.print(" ");
+    Serial.println(accelerationMode);
+  */
+  if (lastIncrement != increment && diff < 100) return;
+  lastIncrement = increment;
+
+
+  if (diff < 50) {
+    accelerationMode++;
+    if (accelerationMode < 5) return;
+    if (accelerationMode > 20) accelerationMode = 20;
+  } else {
+    accelerationMode = 0;
+  }
+
+  if (getParameter(PARAM_INVERT_ROTARY) == 1) {
+    increment *= -1;
+  }
+
+  if (accelerationMode > 4) {
+    rotaryCounter += (increment * accelerationMode);
+  } else {
+    if (accelerationMode == 0) {
+      rotaryCounter += increment;
+    }
+  }
+  sei();
 }
-
 
 
 boolean rotaryMayPress = true; // be sure to go through release. Seems to allow some deboucing
