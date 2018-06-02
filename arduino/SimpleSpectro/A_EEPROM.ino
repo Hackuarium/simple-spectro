@@ -21,14 +21,6 @@ long getDataLong(int index) {
   return eeprom_read_dword((uint32_t*) (EEPROM_MAX_ADDR - 4 * index - 3));
 }
 
-void setDataInt(int index, int value) {
-  eeprom_write_dword((uint16_t*) (EEPROM_MAX_ADDR - 2 * index - 1), value);
-}
-
-int getDataInt(int index) {
-  return eeprom_read_dword((uint16_t*) (EEPROM_MAX_ADDR - 2 * index - 1));
-}
-
 
 // code from http://www.arduino.cc/playground/Code/EepromUtil
 void getStatusEEPROM(Print* output) {
