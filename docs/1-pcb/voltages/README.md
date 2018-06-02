@@ -16,3 +16,5 @@ Testing points are marked on the eagle file and are between ground and the speci
 * L: 3.25v
 * M; 0.81v
 * N: 2.90v
+
+<img src="simple-spectro.svg">
