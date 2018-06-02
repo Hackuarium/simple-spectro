@@ -6,6 +6,7 @@
 #define EE_QUALIFIER             (MAX_PARAM*2)
 
 #define EEPROM_MIN_ADDR            0
+
 #define EEPROM_MAX_ADDR          1023
 
 
@@ -18,6 +19,14 @@ void setDataLong(int index, long value) {
 
 long getDataLong(int index) {
   return eeprom_read_dword((uint32_t*) (EEPROM_MAX_ADDR - 4 * index - 3));
+}
+
+void setDataInt(int index, int value) {
+  eeprom_write_dword((uint16_t*) (EEPROM_MAX_ADDR - 2 * index - 1), value);
+}
+
+int getDataInt(int index) {
+  return eeprom_read_dword((uint16_t*) (EEPROM_MAX_ADDR - 2 * index - 1));
 }
 
 
