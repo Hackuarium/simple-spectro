@@ -11,7 +11,7 @@ autonomous (on battery) and displays the result on a LCD screen.
 The initial idea was that you could teach spectrophotometry without
 having to buy an expensive instrument, since you can find experiments
 that does not require a specific light wavelength. This includes
-optical density for bacteria culture, determination of a pigments cncentration in
+optical density for bacteria culture, determination of a pigments concentration in
 a solution, determination of the kinetic of a reaction and many others.
 
 The device is rather cheap if you buy all the components on aliexpress 
@@ -40,7 +40,7 @@ The result is rather good knowing that the solutions were simply prepared by add
 Another feature of the simple-spectrophotometer is that it works on a rechargeable battery (autonomy of 48 hours). Consequently, you can measure a kinetic even by placing the device directly inside an incubator.
 
 Optical density (OD) at 600nm is often used in biology to determine biomass increase versus time. In this experiment we have placed Escherichia coli with cell growing media directly in the spectrophotometer cuvette and placed the spectrophotometer itself on a shaker in the incubator.
-We can then program it to measure the abosrbance every X seconds. In our case we did every 30 minutes (up to 40 measures). The following curve was obtained.
+We can then program it to measure the absorbance every X seconds. In our case we did every 30 minutes (up to 40 measures). The following curve was obtained.
 
 <img src='images/bacteria-growing-preliminary.png' />
 
@@ -52,7 +52,7 @@ The use of the spectrophotometer is rather simple. Just put a blank, press the b
 
 [Using the spectrophotometer](https://www.youtube.com/watch?v=ZfckWQn0Nws)
 
-This device allows to understand how spectrophotometer works. As a result we used it to teah to groups of children and teenager some basic scientific concepts.
+This device allows to understand how spectrophotometer works. As a result we used it to teach to groups of children and teenager some basic scientific concepts.
 
 [School in Mondomo (Colombia)](https://www.youtube.com/watch?v=Be6p4-nW06k)
 
