@@ -13790,7 +13790,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="ELECROW" x="149.86" y="20.32" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="U$1" gate="G$1" x="7.62" y="259.08"/>
-<instance part="GND7" gate="1" x="0" y="248.92"/>
+<instance part="GND7" gate="1" x="-5.08" y="256.54"/>
 <instance part="GND8" gate="1" x="25.4" y="264.16"/>
 <instance part="IC2" gate="G$1" x="86.36" y="93.98">
 <attribute name="MPN" x="86.36" y="93.98" size="1.778" layer="96" display="off"/>
@@ -14055,10 +14055,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="175.26" y1="17.78" x2="167.64" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="GND"/>
-<pinref part="GND7" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="U$1" gate="G$1" pin="CLSD"/>
 <pinref part="GND8" gate="1" pin="GND"/>
 </segment>
@@ -14182,6 +14178,12 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="GND13" gate="1" pin="GND"/>
 <pinref part="Z2" gate="G$1" pin="1"/>
 <wire x1="63.5" y1="55.88" x2="71.12" y2="55.88" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="B"/>
+<wire x1="0" y1="259.08" x2="-5.08" y2="259.08" width="0.1524" layer="91"/>
+<label x="-2.54" y="261.62" size="1.778" layer="95" rot="R180"/>
+<pinref part="GND7" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="SCK" class="0">
@@ -14475,7 +14477,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <segment>
 <pinref part="U$1" gate="G$1" pin="A"/>
 <wire x1="-5.08" y1="266.7" x2="0" y2="266.7" width="0.1524" layer="91"/>
-<label x="-2.54" y="266.7" size="1.778" layer="95" rot="R90"/>
+<label x="-2.54" y="269.24" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="RX" class="0">
@@ -14485,9 +14487,9 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <label x="170.18" y="147.32" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="B"/>
-<wire x1="0" y1="259.08" x2="-5.08" y2="259.08" width="0.1524" layer="91"/>
-<label x="-2.54" y="259.08" size="1.778" layer="95" rot="R90"/>
+<pinref part="U$1" gate="G$1" pin="GND"/>
+<wire x1="0" y1="251.46" x2="-5.08" y2="251.46" width="0.1524" layer="91"/>
+<label x="-5.08" y="251.46" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="D7" class="0">
