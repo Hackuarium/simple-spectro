@@ -2909,7 +2909,38 @@ This setting can be found in the board layout editor under the Edit menu.  Selec
 <text x="-2.667" y="-4.191" size="0.4318" layer="27">GND</text>
 <wire x1="-0.9198125" y1="0.263025" x2="0.8762375" y2="0.263025" width="0.127" layer="21" curve="180"/>
 </package>
+<package name="PG-SOT-223" urn="urn:adsk.eagle:footprint:15291/1">
+<description>&lt;b&gt;Small Outline Transistor; 4 leads&lt;/b&gt; Wave soldering&lt;p&gt;
+Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
+<wire x1="3.277" y1="1.778" x2="3.277" y2="-1.778" width="0.2032" layer="21"/>
+<wire x1="3.277" y1="-1.778" x2="-3.277" y2="-1.778" width="0.2032" layer="21"/>
+<wire x1="-3.277" y1="-1.778" x2="-3.277" y2="1.778" width="0.2032" layer="21"/>
+<wire x1="-3.277" y1="1.778" x2="3.277" y2="1.778" width="0.2032" layer="21"/>
+<smd name="1" x="-2.311" y="-3.099" dx="1.2" dy="1.4" layer="1"/>
+<smd name="2" x="0" y="-3.099" dx="1.2" dy="1.4" layer="1"/>
+<smd name="3" x="2.311" y="-3.099" dx="1.2" dy="1.4" layer="1"/>
+<smd name="4" x="0" y="3.099" dx="3.5" dy="1.4" layer="1"/>
+<text x="-2.54" y="0.0508" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.54" y="-1.3208" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
+<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
+<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
+<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
+<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
+<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
+</package>
 </packages>
+<packages3d>
+<package3d name="PG-SOT-223" urn="urn:adsk.eagle:package:15315/1" type="box">
+<description>Small Outline Transistor; 4 leads Wave soldering
+Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
+<packageinstances>
+<packageinstance name="PG-SOT-223"/>
+</packageinstances>
+</package3d>
+</packages3d>
 <symbols>
 <symbol name="TINYISP">
 <wire x1="3.81" y1="-5.08" x2="-3.81" y2="-5.08" width="0.4064" layer="94"/>
@@ -3024,6 +3055,42 @@ This setting can be found in the board layout editor under the Edit menu.  Selec
 <pin name="GND" x="-7.62" y="5.08" length="middle" direction="pwr" rot="R90"/>
 <pin name="OUT" x="0" y="12.7" length="middle" direction="out" rot="R180"/>
 <pin name="VDD" x="-7.62" y="20.32" length="middle" direction="pwr" rot="R270"/>
+</symbol>
+<symbol name="P-SIPMOS-2D">
+<wire x1="0.762" y1="0.762" x2="0.762" y2="0" width="0.254" layer="94"/>
+<wire x1="0.762" y1="0" x2="0.762" y2="-0.762" width="0.254" layer="94"/>
+<wire x1="0.762" y1="3.175" x2="0.762" y2="2.54" width="0.254" layer="94"/>
+<wire x1="0.762" y1="2.54" x2="0.762" y2="1.905" width="0.254" layer="94"/>
+<wire x1="0.762" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0.762" y1="-1.905" x2="0.762" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0.762" y1="-2.54" x2="0.762" y2="-3.175" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="0.762" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="3.81" y1="2.54" x2="3.81" y2="0.508" width="0.1524" layer="94"/>
+<wire x1="3.81" y1="0.508" x2="3.81" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="3.81" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0.762" y1="2.54" x2="3.81" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="4.318" y1="0.508" x2="3.81" y2="0.508" width="0.1524" layer="94"/>
+<wire x1="3.81" y1="0.508" x2="3.302" y2="0.508" width="0.1524" layer="94"/>
+<circle x="2.54" y="-2.54" radius="0.254" width="0" layer="94"/>
+<circle x="2.54" y="2.54" radius="0.254" width="0" layer="94"/>
+<text x="-11.43" y="3.81" size="1.778" layer="96" rot="MR180">&gt;VALUE</text>
+<text x="-11.43" y="1.27" size="1.778" layer="95" rot="MR180">&gt;NAME</text>
+<pin name="S" x="2.54" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="G" x="-2.54" y="-2.54" visible="off" length="short" direction="pas"/>
+<pin name="D@1" x="2.54" y="5.08" visible="off" length="short" direction="pas" rot="R270"/>
+<pin name="D@2" x="2.54" y="2.54" visible="off" length="short" direction="pas" rot="R90"/>
+<polygon width="0.1524" layer="94">
+<vertex x="3.81" y="0.508"/>
+<vertex x="3.302" y="-0.254"/>
+<vertex x="4.318" y="-0.254"/>
+</polygon>
+<polygon width="0.1524" layer="94">
+<vertex x="2.54" y="0"/>
+<vertex x="1.524" y="-0.762"/>
+<vertex x="1.524" y="0.762"/>
+</polygon>
 </symbol>
 </symbols>
 <devicesets>
@@ -3175,6 +3242,34 @@ This setting can be found in the board layout editor under the Edit menu.  Selec
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BSP75" prefix="Q">
+<description>&lt;b&gt;SIPMOS (R) Small-Signal-Transistor&lt;/b&gt; P-Channel (2 Drain)&lt;p&gt;
+Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
+<gates>
+<gate name="G$1" symbol="P-SIPMOS-2D" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="PG-SOT-223">
+<connects>
+<connect gate="G$1" pin="D@1" pad="2"/>
+<connect gate="G$1" pin="D@2" pad="4"/>
+<connect gate="G$1" pin="G" pad="1"/>
+<connect gate="G$1" pin="S" pad="3"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:15315/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -11896,102 +11991,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="infineon">
-<description>&lt;b&gt;Infineon Technologies&lt;/b&gt;&lt;p&gt;
-http://www.infineon.comp&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="PG-SOT-223">
-<description>&lt;b&gt;Small Outline Transistor; 4 leads&lt;/b&gt; Wave soldering&lt;p&gt;
-Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
-<wire x1="3.277" y1="1.778" x2="3.277" y2="-1.778" width="0.2032" layer="21"/>
-<wire x1="3.277" y1="-1.778" x2="-3.277" y2="-1.778" width="0.2032" layer="21"/>
-<wire x1="-3.277" y1="-1.778" x2="-3.277" y2="1.778" width="0.2032" layer="21"/>
-<wire x1="-3.277" y1="1.778" x2="3.277" y2="1.778" width="0.2032" layer="21"/>
-<smd name="1" x="-2.311" y="-3.099" dx="1.2" dy="1.4" layer="1"/>
-<smd name="2" x="0" y="-3.099" dx="1.2" dy="1.4" layer="1"/>
-<smd name="3" x="2.311" y="-3.099" dx="1.2" dy="1.4" layer="1"/>
-<smd name="4" x="0" y="3.099" dx="3.5" dy="1.4" layer="1"/>
-<text x="-2.54" y="0.0508" size="1.27" layer="25">&gt;NAME</text>
-<text x="-2.54" y="-1.3208" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
-<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
-<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
-<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
-<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
-<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
-<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
-<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
-</package>
-</packages>
-<symbols>
-<symbol name="P-SIPMOS-2D">
-<wire x1="0.762" y1="0.762" x2="0.762" y2="0" width="0.254" layer="94"/>
-<wire x1="0.762" y1="0" x2="0.762" y2="-0.762" width="0.254" layer="94"/>
-<wire x1="0.762" y1="3.175" x2="0.762" y2="2.54" width="0.254" layer="94"/>
-<wire x1="0.762" y1="2.54" x2="0.762" y2="1.905" width="0.254" layer="94"/>
-<wire x1="0.762" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="0" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="0.762" y1="-1.905" x2="0.762" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="0.762" y1="-2.54" x2="0.762" y2="-3.175" width="0.254" layer="94"/>
-<wire x1="0" y1="2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="2.54" y1="-2.54" x2="0.762" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="3.81" y1="2.54" x2="3.81" y2="-0.508" width="0.1524" layer="94"/>
-<wire x1="3.81" y1="-0.508" x2="3.81" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="-2.54" x2="3.81" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="0.762" y1="2.54" x2="3.81" y2="2.54" width="0.1524" layer="94"/>
-<wire x1="3.048" y1="-0.762" x2="3.302" y2="-0.508" width="0.1524" layer="94"/>
-<wire x1="3.302" y1="-0.508" x2="3.81" y2="-0.508" width="0.1524" layer="94"/>
-<wire x1="3.81" y1="-0.508" x2="4.318" y2="-0.508" width="0.1524" layer="94"/>
-<wire x1="4.318" y1="-0.508" x2="4.572" y2="-0.254" width="0.1524" layer="94"/>
-<circle x="2.54" y="-2.54" radius="0.254" width="0" layer="94"/>
-<circle x="2.54" y="2.54" radius="0.254" width="0" layer="94"/>
-<text x="-11.43" y="3.81" size="1.778" layer="96" rot="MR180">&gt;VALUE</text>
-<text x="-11.43" y="1.27" size="1.778" layer="95" rot="MR180">&gt;NAME</text>
-<pin name="S" x="2.54" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
-<pin name="G" x="-2.54" y="-2.54" visible="off" length="short" direction="pas"/>
-<pin name="D@1" x="2.54" y="5.08" visible="off" length="short" direction="pas" rot="R270"/>
-<pin name="D@2" x="2.54" y="2.54" visible="off" length="short" direction="pas" rot="R90"/>
-<polygon width="0.1524" layer="94">
-<vertex x="3.81" y="-0.508"/>
-<vertex x="4.318" y="0.254"/>
-<vertex x="3.302" y="0.254"/>
-</polygon>
-<polygon width="0.1524" layer="94">
-<vertex x="2.54" y="0"/>
-<vertex x="1.524" y="-0.762"/>
-<vertex x="1.524" y="0.762"/>
-</polygon>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="BSP613P" prefix="Q">
-<description>&lt;b&gt;SIPMOS (R) Small-Signal-Transistor&lt;/b&gt; P-Channel (2 Drain)&lt;p&gt;
-Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
-<gates>
-<gate name="G$1" symbol="P-SIPMOS-2D" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="PG-SOT-223">
-<connects>
-<connect gate="G$1" pin="D@1" pad="2"/>
-<connect gate="G$1" pin="D@2" pad="4"/>
-<connect gate="G$1" pin="G" pad="1"/>
-<connect gate="G$1" pin="S" pad="3"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="unknown" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="linear" urn="urn:adsk.eagle:library:262">
 <description>&lt;b&gt;Linear Devices&lt;/b&gt;&lt;p&gt;
 Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&gt;
@@ -13595,7 +13594,7 @@ Source: www.epcos.com .. 01430148.pdf</description>
 <attribute name="ELECROW" value="C17513"/>
 <attribute name="LCSC" value="C17513"/>
 </part>
-<part name="Q6" library="infineon" deviceset="BSP613P" device="" value="BSP75">
+<part name="Q6" library="lpatiny" deviceset="BSP75" device="" package3d_urn="urn:adsk.eagle:package:15315/1" value="BSP75">
 <attribute name="LCSC" value="C111029"/>
 </part>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
