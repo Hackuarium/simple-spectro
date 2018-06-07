@@ -29,12 +29,12 @@ NIL_THREAD(ThreadTemperature, arg) {
 
 // we have a good reproductivity if we average on 50 values ...
 
-int readTemperature(byte address) {
+int readTemperature(uint8_t address) {
   float temperature = 0;
   for (byte i = 0; i < 50; i++) {
     oneShot(address);
     nilThdSleepMilliseconds(50); // one shot should take max 48.5 ms
-    Wire.requestFrom(address, 2);
+    Wire.requestFrom(address, (uint8_t)2);
     temperature += (((Wire.read() << 8) | Wire.read()) >> 4) * 6.25;
   }
   return (int)(temperature / 50);
