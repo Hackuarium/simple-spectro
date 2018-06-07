@@ -12826,116 +12826,218 @@ Source: www.epcos.com .. 01430148.pdf</description>
 </package>
 </packages>
 <packages3d>
+<package3d name="CT/CN0805" urn="urn:adsk.eagle:package:30598/1" type="box" library_version="1">
+<description>EPCOS SMD Varistors, MLV; Standard Series
+Source: www.farnell.com/datasheets/49238.pdf</description>
+<packageinstances>
+<packageinstance name="CT/CN0805"/>
+</packageinstances>
+</package3d>
 <package3d name="R-5" urn="urn:adsk.eagle:package:30591/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="R-5"/>
+</packageinstances>
 </package3d>
 <package3d name="R-7,5" urn="urn:adsk.eagle:package:30593/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="R-7,5"/>
+</packageinstances>
 </package3d>
 <package3d name="CT/CN0402" urn="urn:adsk.eagle:package:30596/1" type="box" library_version="1">
 <description>EPCOS SMD Varistors, MLV; Standard Series
 Source: www.farnell.com/datasheets/49238.pdf</description>
+<packageinstances>
+<packageinstance name="CT/CN0402"/>
+</packageinstances>
 </package3d>
 <package3d name="CT/CN0603" urn="urn:adsk.eagle:package:30597/1" type="box" library_version="1">
 <description>EPCOS SMD Varistors, MLV; Standard Series
 Source: www.farnell.com/datasheets/49238.pdf</description>
-</package3d>
-<package3d name="CT/CN0805" urn="urn:adsk.eagle:package:30598/1" type="box" library_version="1">
-<description>EPCOS SMD Varistors, MLV; Standard Series
-Source: www.farnell.com/datasheets/49238.pdf</description>
+<packageinstances>
+<packageinstance name="CT/CN0603"/>
+</packageinstances>
 </package3d>
 <package3d name="CT/CN1206" urn="urn:adsk.eagle:package:30599/1" type="box" library_version="1">
 <description>EPCOS SMD Varistors, MLV; Standard Series
 Source: www.farnell.com/datasheets/49238.pdf</description>
+<packageinstances>
+<packageinstance name="CT/CN1206"/>
+</packageinstances>
 </package3d>
 <package3d name="CT/CN1210" urn="urn:adsk.eagle:package:30600/1" type="box" library_version="1">
 <description>EPCOS SMD Varistors, MLV; Standard Series
 Source: www.farnell.com/datasheets/49238.pdf</description>
+<packageinstances>
+<packageinstance name="CT/CN1210"/>
+</packageinstances>
 </package3d>
 <package3d name="CT/CN1812" urn="urn:adsk.eagle:package:30610/1" type="box" library_version="1">
 <description>EPCOS SMD Varistors, MLV; Standard Series
 Source: www.farnell.com/datasheets/49238.pdf</description>
+<packageinstances>
+<packageinstance name="CT/CN1812"/>
+</packageinstances>
 </package3d>
 <package3d name="CT/CN2220" urn="urn:adsk.eagle:package:30603/1" type="box" library_version="1">
 <description>EPCOS SMD Varistors, MLV; Standard Series
 Source: www.farnell.com/datasheets/49238.pdf</description>
+<packageinstances>
+<packageinstance name="CT/CN2220"/>
+</packageinstances>
 </package3d>
 <package3d name="S05K11" urn="urn:adsk.eagle:package:30524/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S05K11"/>
+</packageinstances>
 </package3d>
 <package3d name="S05K17" urn="urn:adsk.eagle:package:30525/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S05K17"/>
+</packageinstances>
 </package3d>
 <package3d name="S05K175" urn="urn:adsk.eagle:package:30529/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S05K175"/>
+</packageinstances>
 </package3d>
 <package3d name="S05K230" urn="urn:adsk.eagle:package:30530/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S05K230"/>
+</packageinstances>
 </package3d>
 <package3d name="S05K250" urn="urn:adsk.eagle:package:30531/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S05K250"/>
+</packageinstances>
 </package3d>
 <package3d name="S05K275" urn="urn:adsk.eagle:package:30518/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S05K275"/>
+</packageinstances>
 </package3d>
 <package3d name="S05K300" urn="urn:adsk.eagle:package:30536/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S05K300"/>
+</packageinstances>
 </package3d>
 <package3d name="S05K385" urn="urn:adsk.eagle:package:30532/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S05K385"/>
+</packageinstances>
 </package3d>
 <package3d name="S05K40" urn="urn:adsk.eagle:package:30527/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S05K40"/>
+</packageinstances>
 </package3d>
 <package3d name="S05K420" urn="urn:adsk.eagle:package:30533/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S05K420"/>
+</packageinstances>
 </package3d>
 <package3d name="S05K440" urn="urn:adsk.eagle:package:30534/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S05K440"/>
+</packageinstances>
 </package3d>
 <package3d name="S05K460" urn="urn:adsk.eagle:package:30535/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S05K460"/>
+</packageinstances>
 </package3d>
 <package3d name="S07K11" urn="urn:adsk.eagle:package:30537/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S07K11"/>
+</packageinstances>
 </package3d>
 <package3d name="S07K17" urn="urn:adsk.eagle:package:30546/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S07K17"/>
+</packageinstances>
 </package3d>
 <package3d name="S07K175" urn="urn:adsk.eagle:package:30539/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S07K175"/>
+</packageinstances>
 </package3d>
 <package3d name="S07K230" urn="urn:adsk.eagle:package:30547/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S07K230"/>
+</packageinstances>
 </package3d>
 <package3d name="S07K250" urn="urn:adsk.eagle:package:30540/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S07K250"/>
+</packageinstances>
 </package3d>
 <package3d name="S07K275" urn="urn:adsk.eagle:package:30519/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S07K275"/>
+</packageinstances>
 </package3d>
 <package3d name="S07K385" urn="urn:adsk.eagle:package:30541/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S07K385"/>
+</packageinstances>
 </package3d>
 <package3d name="S07K40" urn="urn:adsk.eagle:package:30538/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S07K40"/>
+</packageinstances>
 </package3d>
 <package3d name="S07K420" urn="urn:adsk.eagle:package:30543/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S07K420"/>
+</packageinstances>
 </package3d>
 <package3d name="S07K440" urn="urn:adsk.eagle:package:30542/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S07K440"/>
+</packageinstances>
 </package3d>
 <package3d name="S07K460" urn="urn:adsk.eagle:package:30544/1" type="box" library_version="1">
 <description>VARISTOR</description>
+<packageinstances>
+<packageinstance name="S07K460"/>
+</packageinstances>
 </package3d>
 <package3d name="CU3225K" urn="urn:adsk.eagle:package:30601/1" type="box" library_version="1">
 <description>SMD Varistors Monolithic; Standard Series
 Source: www.epcos.com .. 01430148.pdf</description>
+<packageinstances>
+<packageinstance name="CU3225K"/>
+</packageinstances>
 </package3d>
 <package3d name="CU4032K" urn="urn:adsk.eagle:package:30602/1" type="box" library_version="1">
 <description>SMD Varistors Monolithic; Standard Series
 Source: www.epcos.com .. 01430148.pdf</description>
+<packageinstances>
+<packageinstance name="CU4032K"/>
+</packageinstances>
 </package3d>
 </packages3d>
 <symbols>
@@ -13638,11 +13740,11 @@ Source: www.epcos.com .. 01430148.pdf</description>
 <attribute name="ELECROW" value="C17513"/>
 <attribute name="LCSC" value="C17513"/>
 </part>
-<part name="Z1" library="varistor" library_urn="urn:adsk.eagle:library:410" deviceset="VARISTOR" device="CN0805" package3d_urn="urn:adsk.eagle:package:30598/1" value="VARISTOR">
-<attribute name="LCSC" value="C79709"/>
+<part name="Z1" library="varistor" library_urn="urn:adsk.eagle:library:410" deviceset="VARISTOR" device="CN0603" package3d_urn="urn:adsk.eagle:package:30597/1" value="VARISTOR">
+<attribute name="LCSC" value="C126845"/>
 </part>
-<part name="Z2" library="varistor" library_urn="urn:adsk.eagle:library:410" deviceset="VARISTOR" device="CN0805" package3d_urn="urn:adsk.eagle:package:30598/1" value="VARISTOR">
-<attribute name="LCSC" value="C79709"/>
+<part name="Z2" library="varistor" library_urn="urn:adsk.eagle:library:410" deviceset="VARISTOR" device="CN0603" package3d_urn="urn:adsk.eagle:package:30597/1" value="VARISTOR">
+<attribute name="LCSC" value="C126845"/>
 </part>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
