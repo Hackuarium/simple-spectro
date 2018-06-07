@@ -2871,16 +2871,6 @@ This setting can be found in the board layout editor under the Edit menu.  Selec
 <text x="-2.7" y="2.8" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="-3.2" y="-3.9" size="1.27" layer="27" font="vector">&gt;VALUE</text>
 </package>
-<package name="EC11E">
-<description>ALPS Rotary encoder with keyswitch</description>
-<pad name="P$1" x="6.25" y="7.5" drill="2.8" shape="square"/>
-<pad name="P$2" x="-6.25" y="7.5" drill="2.8" shape="square"/>
-<pad name="A" x="-2.5" y="0" drill="1.2" shape="square"/>
-<pad name="B" x="0" y="0" drill="1.2" shape="square"/>
-<pad name="C" x="2.5" y="0" drill="1.2" shape="square"/>
-<pad name="E" x="2.5" y="14.5" drill="1.2" shape="square"/>
-<pad name="D" x="-2.5" y="14.5" drill="1.2" shape="square"/>
-</package>
 <package name="LED-TRICOLOR-THROUGHHOLE">
 <wire x1="-3.3" y1="2" x2="-3.3" y2="-2" width="0.127" layer="21"/>
 <wire x1="-3.3" y1="-2" x2="-3.3" y2="2" width="0.127" layer="21" curve="292.619865"/>
@@ -2973,17 +2963,6 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <text x="-3.81" y="-5.08" size="1.27" layer="96" font="vector">&gt;VALUE</text>
 <pin name="P$1" x="-5.08" y="0" visible="off" length="short"/>
 <pin name="P$2" x="5.08" y="0" visible="off" length="short" rot="R180"/>
-</symbol>
-<symbol name="EC11E">
-<pin name="A" x="-7.62" y="7.62" length="middle"/>
-<pin name="B" x="-7.62" y="0" length="middle"/>
-<pin name="GND" x="-7.62" y="-7.62" length="middle"/>
-<pin name="CLSD" x="17.78" y="7.62" length="middle" rot="R180"/>
-<pin name="INT" x="17.78" y="-7.62" length="middle" rot="R180"/>
-<wire x1="-2.54" y1="12.7" x2="12.7" y2="12.7" width="0.254" layer="94"/>
-<wire x1="12.7" y1="12.7" x2="12.7" y2="-12.7" width="0.254" layer="94"/>
-<wire x1="12.7" y1="-12.7" x2="-2.54" y2="-12.7" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-12.7" x2="-2.54" y2="12.7" width="0.254" layer="94"/>
 </symbol>
 <symbol name="LED-RGB-COMMON-CATHODE">
 <wire x1="6.35" y1="-3.048" x2="5.08" y2="-1.016" width="0.254" layer="94"/>
@@ -3184,26 +3163,6 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
 <connect gate="G$1" pin="P$2" pad="P$2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="EC11E">
-<description>ALPS Rotary encoder</description>
-<gates>
-<gate name="G$1" symbol="EC11E" x="-5.08" y="0"/>
-</gates>
-<devices>
-<device name="" package="EC11E">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="B" pad="B"/>
-<connect gate="G$1" pin="CLSD" pad="E"/>
-<connect gate="G$1" pin="GND" pad="C"/>
-<connect gate="G$1" pin="INT" pad="D"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -13486,6 +13445,103 @@ Source: www.epcos.com .. 01430148.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="switch-alps">
+<description>ALPS Switch from Markus Faust &amp;lt;mfaust@htwm.de&amp;gt;&lt;p&gt;
+Source: EC12E.scr from eagle.support.ger on news.cadsoft.de at 08.10.2007</description>
+<packages>
+<package name="ALPS_EC12E_SW">
+<description>ALPS rotary encoder&lt;br&gt;
+EC12E series with push-on switch</description>
+<wire x1="-6.2" y1="-6.6" x2="6.2" y2="-6.6" width="0.127" layer="21"/>
+<wire x1="6.2" y1="-6.6" x2="6.2" y2="6.6" width="0.127" layer="21"/>
+<wire x1="6.2" y1="6.6" x2="-6.2" y2="6.6" width="0.127" layer="21"/>
+<wire x1="-6.2" y1="6.6" x2="-6.2" y2="-6.6" width="0.127" layer="21"/>
+<wire x1="-2.6" y1="1.5" x2="2.6" y2="1.5" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="3" width="0.127" layer="21"/>
+<pad name="A" x="-2.5" y="-7.5" drill="1.143" shape="square"/>
+<pad name="C" x="0" y="-7.5" drill="1.143" shape="square"/>
+<pad name="B" x="2.5" y="-7.5" drill="1.143" shape="square"/>
+<pad name="D" x="-2.5" y="7" drill="1.143" shape="square"/>
+<pad name="E" x="2.5" y="7" drill="1.143" shape="square"/>
+<pad name="GND1" x="-6.1" y="0" drill="2.794" shape="square"/>
+<pad name="GND2" x="6.1" y="0" drill="2.794" shape="square"/>
+<text x="-2.5" y="8.5" size="1.27" layer="25">&gt;NAME</text>
+<text x="3.5" y="-9" size="1.27" layer="27" rot="R180">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="ENCODER">
+<wire x1="-2.54" y1="5.08" x2="-2.54" y2="4.1275" width="0.3048" layer="94"/>
+<wire x1="-2.54" y1="4.1275" x2="-0.9525" y2="1.905" width="0.3048" layer="94"/>
+<wire x1="-1.905" y1="1.905" x2="-2.54" y2="1.905" width="0.3048" layer="94"/>
+<wire x1="-2.54" y1="1.905" x2="-2.54" y2="0" width="0.3048" layer="94"/>
+<wire x1="2.54" y1="5.08" x2="2.54" y2="4.1275" width="0.3048" layer="94"/>
+<wire x1="2.54" y1="4.1275" x2="4.1275" y2="1.905" width="0.3048" layer="94"/>
+<wire x1="3.175" y1="1.905" x2="2.54" y2="1.905" width="0.3048" layer="94"/>
+<wire x1="2.54" y1="1.905" x2="2.54" y2="0" width="0.3048" layer="94"/>
+<wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<circle x="0" y="0" radius="0.5679" width="0" layer="94"/>
+<text x="-3.81" y="0" size="1.27" layer="95" rot="R90">&gt;PART</text>
+<text x="6.35" y="0" size="1.27" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="C" x="0" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="A" x="-2.54" y="7.62" visible="off" length="short" direction="pas" rot="R270"/>
+<pin name="B" x="2.54" y="7.62" visible="off" length="short" direction="pas" rot="R270"/>
+</symbol>
+<symbol name="TASTER">
+<wire x1="-2.54" y1="0" x2="-1.5875" y2="0" width="0.3048" layer="94"/>
+<wire x1="-1.5875" y1="0" x2="0.635" y2="1.5875" width="0.3048" layer="94"/>
+<wire x1="0.635" y1="0.635" x2="0.635" y2="0" width="0.3048" layer="94"/>
+<wire x1="0.635" y1="0" x2="2.54" y2="0" width="0.3048" layer="94"/>
+<wire x1="0" y1="1.27" x2="0" y2="3.81" width="0.127" layer="94" style="shortdash"/>
+<wire x1="-0.635" y1="3.81" x2="0.635" y2="3.81" width="0.127" layer="94"/>
+<wire x1="-0.635" y1="3.81" x2="-0.635" y2="3.4925" width="0.127" layer="94"/>
+<wire x1="0.635" y1="3.81" x2="0.635" y2="3.4925" width="0.127" layer="94"/>
+<text x="-5.08" y="5.08" size="1.27" layer="95">&gt;PART</text>
+<text x="-5.08" y="-2.54" size="1.27" layer="96">&gt;VALUE</text>
+<pin name="1" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="2" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+</symbol>
+<symbol name="GEHAEUSEANSCHLUSS">
+<wire x1="0" y1="0" x2="0.9525" y2="0" width="0.254" layer="94"/>
+<wire x1="1.5875" y1="0" x2="2.2225" y2="0" width="0.254" layer="94"/>
+<wire x1="2.8575" y1="0" x2="3.4925" y2="0" width="0.254" layer="94"/>
+<wire x1="4.1275" y1="0" x2="5.08" y2="0" width="0.254" layer="94"/>
+<pin name="G" x="0" y="0" visible="pad" length="point" direction="pas"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="EC12E_SW" prefix="SW">
+<description>ALPS rotary Encoder EC12E series with switch</description>
+<gates>
+<gate name="G$1" symbol="ENCODER" x="-10.16" y="-2.54" addlevel="always"/>
+<gate name="G$2" symbol="TASTER" x="10.16" y="3.81" addlevel="always"/>
+<gate name="G$3" symbol="GEHAEUSEANSCHLUSS" x="10.16" y="-6.35" addlevel="request"/>
+<gate name="G$4" symbol="GEHAEUSEANSCHLUSS" x="10.16" y="-8.89" addlevel="request"/>
+</gates>
+<devices>
+<device name="" package="ALPS_EC12E_SW">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="B" pad="B"/>
+<connect gate="G$1" pin="C" pad="C"/>
+<connect gate="G$2" pin="1" pad="D"/>
+<connect gate="G$2" pin="2" pad="E"/>
+<connect gate="G$3" pin="G" pad="GND1"/>
+<connect gate="G$4" pin="G" pad="GND2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="EC12E2424407" constant="no"/>
+<attribute name="OC_FARNELL" value="1520813" constant="no"/>
+<attribute name="OC_NEWARK" value="74M1068" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 <attribute name="DELETE" value="MF"/>
@@ -13580,7 +13636,6 @@ Source: www.epcos.com .. 01430148.pdf</description>
 <attribute name="ELECROW" value="C17477"/>
 <attribute name="LCSC" value="C17477"/>
 </part>
-<part name="U$1" library="lpatiny" deviceset="EC11E" device=""/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="IC2" library="microbuilder" deviceset="MCP73831/2" device="" value="MCP73831T">
@@ -13752,6 +13807,7 @@ Source: www.epcos.com .. 01430148.pdf</description>
 <attribute name="ELECROW" value="C17408"/>
 <attribute name="LCSC" value="C17408"/>
 </part>
+<part name="SW1" library="switch-alps" deviceset="EC12E_SW" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13890,9 +13946,8 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="LCSC" x="149.86" y="20.32" size="1.778" layer="96" rot="MR180" display="off"/>
 <attribute name="ELECROW" x="149.86" y="20.32" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
-<instance part="U$1" gate="G$1" x="7.62" y="259.08"/>
-<instance part="GND7" gate="1" x="-5.08" y="256.54"/>
-<instance part="GND8" gate="1" x="25.4" y="264.16"/>
+<instance part="GND7" gate="1" x="0" y="248.92"/>
+<instance part="GND8" gate="1" x="15.24" y="251.46"/>
 <instance part="IC2" gate="G$1" x="86.36" y="93.98">
 <attribute name="MPN" x="86.36" y="93.98" size="1.778" layer="96" display="off"/>
 <attribute name="LCSC" x="86.36" y="93.98" size="1.778" layer="96" display="off"/>
@@ -14070,6 +14125,8 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="LCSC" x="132.08" y="50.8" size="1.778" layer="96" rot="MR270" display="off"/>
 <attribute name="ELECROW" x="132.08" y="50.8" size="1.778" layer="96" rot="MR270" display="off"/>
 </instance>
+<instance part="SW1" gate="G$1" x="0" y="256.54"/>
+<instance part="SW1" gate="G$2" x="22.86" y="256.54"/>
 </instances>
 <busses>
 </busses>
@@ -14154,10 +14211,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="LCD" gate="G$1" pin="K"/>
 <junction x="175.26" y="17.78"/>
 <wire x1="175.26" y1="17.78" x2="167.64" y2="17.78" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="CLSD"/>
-<pinref part="GND8" gate="1" pin="GND"/>
 </segment>
 <segment>
 <wire x1="127" y1="93.98" x2="127" y2="78.74" width="0.1524" layer="91"/>
@@ -14281,10 +14334,15 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="63.5" y1="55.88" x2="71.12" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="B"/>
-<wire x1="0" y1="259.08" x2="-5.08" y2="259.08" width="0.1524" layer="91"/>
-<label x="-2.54" y="261.62" size="1.778" layer="95" rot="R180"/>
+<wire x1="0" y1="254" x2="0" y2="251.46" width="0.1524" layer="91"/>
 <pinref part="GND7" gate="1" pin="GND"/>
+<pinref part="SW1" gate="G$1" pin="C"/>
+</segment>
+<segment>
+<pinref part="SW1" gate="G$2" pin="2"/>
+<pinref part="GND8" gate="1" pin="GND"/>
+<wire x1="17.78" y1="256.54" x2="15.24" y2="256.54" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="256.54" x2="15.24" y2="254" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SCK" class="0">
@@ -14576,9 +14634,10 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <label x="170.18" y="149.86" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="A"/>
-<wire x1="-5.08" y1="266.7" x2="0" y2="266.7" width="0.1524" layer="91"/>
-<label x="-2.54" y="269.24" size="1.778" layer="95" rot="R180"/>
+<wire x1="-2.54" y1="264.16" x2="-2.54" y2="269.24" width="0.1524" layer="91"/>
+<label x="-2.54" y="271.78" size="1.778" layer="95" rot="R180"/>
+<pinref part="SW1" gate="G$1" pin="A"/>
+<junction x="-2.54" y="264.16"/>
 </segment>
 </net>
 <net name="RX" class="0">
@@ -14588,9 +14647,10 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <label x="170.18" y="147.32" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="GND"/>
-<wire x1="0" y1="251.46" x2="-5.08" y2="251.46" width="0.1524" layer="91"/>
-<label x="-5.08" y="251.46" size="1.778" layer="95"/>
+<wire x1="2.54" y1="269.24" x2="2.54" y2="264.16" width="0.1524" layer="91"/>
+<label x="2.54" y="269.24" size="1.778" layer="95"/>
+<pinref part="SW1" gate="G$1" pin="B"/>
+<junction x="2.54" y="264.16"/>
 </segment>
 </net>
 <net name="D7" class="0">
@@ -14600,9 +14660,10 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <label x="170.18" y="195.58" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="INT"/>
-<wire x1="33.02" y1="251.46" x2="25.4" y2="251.46" width="0.1524" layer="91"/>
-<label x="27.94" y="248.92" size="1.778" layer="95"/>
+<wire x1="35.56" y1="256.54" x2="27.94" y2="256.54" width="0.1524" layer="91"/>
+<label x="25.4" y="259.08" size="1.778" layer="95"/>
+<pinref part="SW1" gate="G$2" pin="1"/>
+<junction x="27.94" y="256.54"/>
 </segment>
 </net>
 <net name="RXLED" class="0">
