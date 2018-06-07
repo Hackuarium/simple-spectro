@@ -74,11 +74,11 @@
 
 #ifdef HALF_STEP
 // Use the half-step state table (emits a code at 00 and 11)
-#define R_CCW_BEGIN 0x1
-#define R_CW_BEGIN 0x2
-#define R_START_M 0x3
-#define R_CW_BEGIN_M 0x4
-#define R_CCW_BEGIN_M 0x5
+#define R_CCW_BEGIN     0x1
+#define R_CW_BEGIN      0x2
+#define R_START_M       0x3
+#define R_CW_BEGIN_M    0x4
+#define R_CCW_BEGIN_M   0x5
 const unsigned char ttable[6][4] = {
   // R_START (00)
   {R_START_M,            R_CW_BEGIN,     R_CCW_BEGIN,  R_START},

@@ -8,7 +8,7 @@
 // VERSION
 // *******
 // version B : temperature sensor and battery indicator
-// version C : same as B
+// version C : same as B (version 1.4)
 // version D : need to enable LCD (pin 13) and temperature / light sensor: PE2
 
 #define VERSION   D

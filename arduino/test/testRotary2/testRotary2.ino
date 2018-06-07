@@ -7,6 +7,7 @@
 */
 
 #define ENABLE_PULLUPS 1
+#define HALF_STEP 1
 
 #include "Rotary.h"
 
@@ -21,7 +22,6 @@ int lastCounter = 0;
 void setup() {
   delay(4000);
   Serial.begin(9600);
-
   attachInterrupt(2, rotate, CHANGE);
   attachInterrupt(3, rotate, CHANGE);
   Serial.println("Hello");

@@ -60,6 +60,9 @@
  * than 10 lines of logic.
  */
 
+// Library was slightly modified to better fit our project
+
+
 #include "Arduino.h"
 #include "Rotary.h"
 

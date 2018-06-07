@@ -1,5 +1,4 @@
 
-
 #define LANGUAGE 'en'
 
 // https://docs.google.com/spreadsheets/d/1oek6pKHUvD7NI2u9-_iEOfVL-NeUmnj1pZCFRRo7n_4/edit?usp=sharing
@@ -89,23 +88,31 @@
 #define LCD_NB_ROWS     2
 #define LCD_NB_COLUMNS  16
 
-#define ROT_A      0
-#define ROT_B      1
-#define ROT_PUSH   7
 
 byte lcdPins[] = {LCD_E, LCD_RS, LCD_D4, LCD_D5, LCD_D6, LCD_D7, LCD_VO, LCD_BL, LCD_ON};
 
 LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 
+#include "lib/RotaryEncoder/Rotary.cpp"
+
+#define ROT_A      0
+#define ROT_B      1
+#define ROT_PUSH   7
+
+// Rotary encoder is wired with the common to ground and the two
+// outputs to pins 2 and 3.
+Rotary rotary = Rotary(ROT_A, ROT_B);
+
+
+
 boolean rotaryPressed = false;
 int rotaryCounter = 0;
 boolean captureCounter = false; // use when you need to setup a parameter from the menu
-long lastRotaryEvent = millis();
 
 
 
-NIL_WORKING_AREA(waThreadLcd, 192);
+NIL_WORKING_AREA(waThreadLcd, 250);
 NIL_THREAD(ThreadLcd, arg) {
   // initialize the library with the numbers of the interface pins
   setupRotary();
@@ -641,33 +648,32 @@ void lcdPrintBlank(byte number) {
 
 
 void setupRotary() {
-  pinMode(ROT_A, INPUT_PULLUP);
-  pinMode(ROT_B, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(ROT_A), rotate, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(ROT_B), rotate, CHANGE);
   pinMode(ROT_PUSH, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(ROT_A), eventRotaryA, FALLING);
   attachInterrupt(digitalPinToInterrupt(ROT_PUSH), eventRotaryPressed, CHANGE);
 }
 
 byte accelerationMode = 0;
 int lastIncrement = 0;
+long lastRotaryEvent = millis();
 
-void eventRotaryA() {
-  cli();
-  int increment = digitalRead(ROT_B) * 2 - 1;
+void rotate() {
+
+  int increment=0;
+
+  byte direction = rotary.process();
+  if (direction==DIR_CW) {
+    increment=-1;
+  } else if (direction==DIR_CCW) {
+    increment=1;
+  }
+
+  if (increment==0) return;
+
   long current = millis();
   long diff = current - lastRotaryEvent;
   lastRotaryEvent = current;
-  if (diff < 5) return;
-  /*
-    Serial.print(diff);
-    Serial.print(" ");
-    Serial.print(increment);
-    Serial.print(" ");
-    Serial.println(accelerationMode);
-  */
-  if (lastIncrement != increment && diff < 100) return;
-  lastIncrement = increment;
-
 
   if (diff < 50) {
     accelerationMode++;
@@ -688,7 +694,6 @@ void eventRotaryA() {
       rotaryCounter += increment;
     }
   }
-  sei();
 }
 
 

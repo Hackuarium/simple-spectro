@@ -7,8 +7,6 @@
 
 #include "Arduino.h"
 
-// Enable weak pullups
-#define ENABLE_PULLUPS
 
 // Values returned by 'process'
 // No complete step yet.
