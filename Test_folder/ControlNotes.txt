@@ -1,0 +1,10 @@
+***Notes on how to use the spectrophotometer***
+
+Red 	Green	Blue	UV	Voltage	Temperature
+
+1	2	4	8	16	32
+
+Red + voltage + temp:		49
+Green + voltage + temp: 	50
+Blue + voltage + temp:		52
+Blue + UV + voltage + temp:	60
