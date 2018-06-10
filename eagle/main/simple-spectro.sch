@@ -15025,7 +15025,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="Q6" gate="G$1" pin="D@1"/>
 <wire x1="30.48" y1="157.48" x2="30.48" y2="152.4" width="0.1524" layer="91"/>
 <junction x="30.48" y="157.48"/>
-<junction x="30.48" y="152.4"/>
 </segment>
 </net>
 <net name="D13" class="0">
