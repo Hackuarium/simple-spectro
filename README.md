@@ -86,6 +86,6 @@ that we buy on [Mouser website](http://www.mouser.com).
 
 # Workshop
 
-We organize un one day workshop "Build your spectrophotometer"
+We organize a one day workshop "Build your spectrophotometer"
 
 - [Slides](docs/7-misc/workshop/slides.pdf)
