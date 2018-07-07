@@ -511,8 +511,7 @@ void lcdUtilities(int counter, boolean doAction) {
       case 3:
         lcd.print(F(TEXT_REBOOT));
         if (doAction) {
-          wdt_enable(WDTO_15MS);
-          delay(20);
+          reboot();
         }
         break;
 
@@ -656,23 +655,23 @@ void setupRotary() {
 
 byte accelerationMode = 0;
 int lastIncrement = 0;
-long lastRotaryEvent = millis();
+long unsigned lastRotaryEvent = millis();
 
 void rotate() {
 
-  int increment=0;
+  int increment = 0;
 
   byte direction = rotary.process();
-  if (direction==DIR_CW) {
-    increment=-1;
-  } else if (direction==DIR_CCW) {
-    increment=1;
+  if (direction == DIR_CW) {
+    increment = -1;
+  } else if (direction == DIR_CCW) {
+    increment = 1;
   }
 
-  if (increment==0) return;
+  if (increment == 0) return;
 
-  long current = millis();
-  long diff = current - lastRotaryEvent;
+  long unsigned current = millis();
+  long unsigned diff = current - lastRotaryEvent;
   lastRotaryEvent = current;
 
   if (diff < 50) {
@@ -702,16 +701,25 @@ boolean rotaryMayPress = true; // be sure to go through release. Seems to allow 
 void eventRotaryPressed() {
   cli();
   byte state = digitalRead(ROT_PUSH);
+  long unsigned eventMillis = millis();
   if (state == 0) {
-    if (rotaryMayPress && ((millis() - lastRotaryEvent) > 200)) {
+    if (rotaryMayPress && ((eventMillis - lastRotaryEvent) > 200)) {
       rotaryPressed = true;
       rotaryMayPress = false;
-      lastRotaryEvent = millis();
+      lastRotaryEvent = eventMillis;
     }
   } else {
     rotaryMayPress = true;
+    if ((eventMillis - lastRotaryEvent) > 5000) {
+      reboot();
+    }
   }
   sei();
 }
 
+
+void reboot() {
+  wdt_enable(WDTO_15MS);
+  delay(20);
+}
 
