@@ -13643,8 +13643,8 @@ EC12E series with push-on switch</description>
 <attribute name="MPN" value="579-MCP73831T-3ACIOT"/>
 </part>
 <part name="R1" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
-<attribute name="ELECROW" value="C17513"/>
-<attribute name="LCSC" value="C17513"/>
+<attribute name="ELECROW" value="C17414"/>
+<attribute name="LCSC" value="C17414"/>
 </part>
 <part name="U$3" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$5" library="microbuilder" deviceset="GND" device=""/>
@@ -13680,7 +13680,7 @@ EC12E series with push-on switch</description>
 <part name="SUPPLY3" library="supply1" deviceset="VDD" device=""/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
 <part name="IC4" library="dp_devices" deviceset="TRANSISTOR_FET_TSM2301CX" device="" value="DMP1045U">
-<attribute name="LCSC" value="C96613"/>
+<attribute name="LCSC" value="C110499"/>
 <attribute name="MPN" value="621-DMP1045U-7"/>
 </part>
 <part name="R15" library="rcl" deviceset="R-EU_" device="R0805" value="100k">
@@ -13751,9 +13751,7 @@ EC12E series with push-on switch</description>
 <attribute name="ELECROW" value="C17513"/>
 <attribute name="LCSC" value="C17513"/>
 </part>
-<part name="Q6" library="lpatiny" deviceset="BSP75" device="" package3d_urn="urn:adsk.eagle:package:15315/1" value="BSP75">
-<attribute name="LCSC" value="C111029"/>
-</part>
+<part name="Q6" library="lpatiny" deviceset="BSP75" device="" package3d_urn="urn:adsk.eagle:package:15315/1" value="BSP75"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY10" library="supply1" deviceset="VCC" device=""/>
 <part name="C5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="10u">
@@ -13783,7 +13781,7 @@ EC12E series with push-on switch</description>
 </part>
 <part name="SUPPLY2" library="supply1" deviceset="VCC" device=""/>
 <part name="SUPPLY5" library="supply1" deviceset="VCC" device=""/>
-<part name="IC3" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="MCP1703" device="CB" package3d_urn="urn:adsk.eagle:package:16489/2">
+<part name="IC3" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="MCP1703" device="CB" package3d_urn="urn:adsk.eagle:package:16489/2" value="MCP1703-33-CB">
 <attribute name="LCSC" value="C53352"/>
 </part>
 <part name="R2" library="rcl" deviceset="R-EU_" device="R0805" value="100">
@@ -13792,8 +13790,8 @@ EC12E series with push-on switch</description>
 </part>
 <part name="SUPPLY1" library="supply1" deviceset="VCC" device=""/>
 <part name="R13" library="rcl" deviceset="R-EU_" device="R0805" value="10k">
-<attribute name="ELECROW" value="C17513"/>
-<attribute name="LCSC" value="C17513"/>
+<attribute name="ELECROW" value="C17414"/>
+<attribute name="LCSC" value="C17414"/>
 </part>
 <part name="Z1" library="varistor" library_urn="urn:adsk.eagle:library:410" deviceset="VARISTOR" device="CN0603" package3d_urn="urn:adsk.eagle:package:30597/1" value="VARISTOR">
 <attribute name="LCSC" value="C126845"/>
@@ -14065,9 +14063,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="LCSC" x="12.7" y="144.78" size="1.778" layer="96" display="off"/>
 <attribute name="ELECROW" x="12.7" y="144.78" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="Q6" gate="G$1" x="27.94" y="147.32">
-<attribute name="LCSC" x="27.94" y="147.32" size="1.778" layer="96" display="off"/>
-</instance>
+<instance part="Q6" gate="G$1" x="27.94" y="147.32"/>
 <instance part="GND12" gate="1" x="30.48" y="137.16" rot="MR0"/>
 <instance part="SUPPLY10" gate="VCC" x="30.48" y="165.1"/>
 <instance part="C5" gate="G$1" x="40.64" y="93.98">
