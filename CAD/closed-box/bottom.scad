@@ -1,11 +1,17 @@
 use <screwHole.scad>;
 use <roundedParallelepiped4.scad>;
 
-module bottom(batteryHeight, batteryLength, batteryWidth, batteryX, batteryY, bottomClosureSpace, bottomDigged, bottomHeight, bottomSmallHoleR, bottomHoleR, bottomHoleExternalHeight, bottomHoleInternalHeight, bottomMinimal, connectorHeight, connectorLength, connectorWidth, connectorX, connectorY, cuvetteBottomSpace, cuvetteX, cuvetteY, cuvetteInternal, overlap, pcbLength, pcbSpaceAround, pcbWidth, radius, shift, sideThickness, supportHoleX, supportHoleY, usbSpace, usbSpaceThickness, usbWidth, usbY) {
+module bottom(
+    batteryHeight, batteryLength, batteryWidth, batteryX, batteryY,
+    bottomClosureSpace, bottomDigged, bottomHeight, bottomSmallHoleR, bottomHoleR,
+    bottomHoleExternalHeight, bottomHoleInternalHeight, bottomMinimal,
+    connectorHeight, connectorLength, connectorWidth, connectorX, connectorY,
+    cuvetteBottomSpace, cuvetteX, cuvetteY, cuvetteInternal, frontHeight,
+    overlap, pcbLength, pcbSpaceAround, pcbWidth, radius, shift, sideThickness, supportHoleX, supportHoleY, usbSpace, usbSpaceThickness, usbWidth, usbY) {
         
     
     // create the bottom part 
-    translate([0, 0, 50])
+    translate([0, 0, frontHeight])
         union() {
             difference() {
                 

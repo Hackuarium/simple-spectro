@@ -257,9 +257,10 @@ void lcdStatus(int counter, boolean doAction) {
 #endif
 #endif
     lcd.setCursor(0, 1);
-    lcd.print(F("Uptime: "));
     lcd.print(millis() / 1000);
     lcd.print("s");
+    lcd.setCursor(9, 1);
+    lcd.print(F(SOFTWARE_VERSION));
   }
 }
 
