@@ -1,5 +1,12 @@
 $fn=50;
 
+use <pcb.scad>;
+use <bottom.scad>;
+use <roundedParallelepiped4.scad>;
+
+showPCB=true;
+showBottom=true;
+
 aluminium=true;
 
 pcbLength=98.7;
@@ -77,171 +84,19 @@ usbY=38.2+shift;
 
 frontHeight=frontThickness+usbHeight+supportHeight+pcbThickness;
 
+if (showPCB)
+    pcb(shift, pcbLength, pcbWidth, pcbThickness);
 
-// PCB
-* color("red",0.2)
-    translate([shift,shift,-50])
-        cube([pcbLength, pcbWidth, pcbThickness]);
+
+if (showBottom)
+    bottom(batteryHeight, batteryLength, batteryWidth, batteryX, batteryY, bottomClosureSpace, bottomDigged, bottomHeight, bottomMinimal, bottomSmallHoleR, bottomHoleR, bottomHoleExternalHeight, bottomHoleInternalHeight, connectorHeight, connectorLength, connectorWidth, connectorX, connectorY, cuvetteBottomSpace, cuvetteX, cuvetteY, cuvetteInternal, overlap, pcbLength, pcbSpaceAround, pcbWidth, radius, shift, sideThickness, supportHoleX, supportHoleY, usbSpace, usbSpaceThickness, usbWidth, usbY);
+
 
 // Adding the logo
 * translate([logoX, logoY, -0.5]) linear_extrude(height=0.5)  rotate(a=[0,180,0]) scale(0.6) color("purple") import("logo.dxf");
 
-// create the bottom part 
-* translate([0, 0, 50])
-    union() {
-        difference() {
-            
-                // the bottom
-            cube([
-                pcbLength+2*pcbSpaceAround+2*sideThickness,
-                pcbWidth+2*pcbSpaceAround+2*sideThickness,
-                bottomHeight
-            ]);
-            
-            // remove the external border so it fits in the other part
-            difference() {
-                cube([
-                    pcbLength+2*pcbSpaceAround+2*sideThickness,
-                    pcbWidth+2*pcbSpaceAround+2*sideThickness,
-                    overlap
-                ]);
-                translate([sideThickness/2+bottomClosureSpace, sideThickness/2+bottomClosureSpace, 0])
-                    roundedParallelepiped4(
-                        x=pcbLength+2*pcbSpaceAround+sideThickness-2*bottomClosureSpace,
-                        y=pcbWidth+2*pcbSpaceAround+sideThickness-2*bottomClosureSpace,
-                        z=overlap,
-                        r=radius
-                    );
-            }
-            
-            // remove some volume to have room for pcb
-            translate([sideThickness, sideThickness, 0])
-                roundedParallelepiped4(
-                    x=pcbLength+2*pcbSpaceAround,
-                    y=pcbWidth+2*pcbSpaceAround,
-                    z=bottomDigged,
-                    r=radius
-                );
-            
-            // remove the hole for cuvette
-            translate([
-                cuvetteX-cuvetteBottomSpace,
-                cuvetteY-cuvetteBottomSpace,
-                0
-            ])
-            roundedParallelepiped4(x=cuvetteInternal+2*cuvetteBottomSpace, y=cuvetteInternal+2*cuvetteBottomSpace, z=bottomHeight-bottomMinimal, r=radius);
-            
-              // remove the hole for battery
-            translate([
-                batteryX,
-                batteryY,
-                bottomDigged
-            ])
-                roundedParallelepiped4(x=batteryLength, y=batteryWidth, z=batteryHeight, r=radius);
-             
-             // the hole for the barrery connector
-             translate([
-                connectorX,
-                connectorY,
-                bottomDigged
-            ])
-                roundedParallelepiped4(x=connectorLength, y=connectorWidth, z=connectorHeight, r=radius);
-                
-            // small line for battery cable
-            translate([
-                connectorX + connectorLength - radius,
-                connectorY,
-                bottomDigged
-            ])
-                cube([batteryX-connectorX-connectorWidth + 2 * radius, batteryY + batteryWidth - connectorY, batteryHeight]);
-            
-            // we remove cutting edges
-            translate([
-                batteryX-radius,
-                connectorY-radius,
-                bottomDigged
-            ])
-                difference() {
-                    cube([radius, radius, batteryHeight]);
-                    cylinder(h=batteryHeight, r=radius);
-                };
-            
-            translate([
-                connectorX + connectorLength + radius,
-                batteryY + batteryWidth+radius-0.001,
-                bottomDigged
-            ])
-                difference() {
-                    translate([-radius, -radius, 0]) 
-                        cube([radius, radius, batteryHeight]);
-                    cylinder(h=batteryHeight, r=radius);
-                };
-         
-            
-            
-              // we remove the USB port
-            translate([0,usbY,0])
-                cube([sideThickness,usbWidth,overlap]);
-            // remove some more space so the USB plug fits in
-            translate([-usbSpaceThickness,usbY-usbSpace,0])
-                roundedParallelepiped4(
-                    x=usbSpaceThickness*2,
-                    y=usbWidth+2*usbSpace,
-                    z=overlap+usbSpace,
-                    r=1
-                );
-            
-            // make holes for screws        
-            translate([shift+supportHoleX, shift+supportHoleY, 0])
-                screwHole(rSmall=bottomSmallHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);
-            
-            translate([shift+pcbLength-supportHoleX, shift+supportHoleY, 0])
-                screwHole(rSmall=bottomSmallHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);
-            
-            translate([shift+supportHoleX, shift+pcbWidth-supportHoleY, 0])
-                screwHole(rSmall=bottomSmallHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);
-            
-            translate([shift+pcbLength-supportHoleX, shift+pcbWidth-supportHoleY, 0])
-                screwHole(rSmall=bottomSmallHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);     
-        };
-        
-        /* little border around the cell
-        translate([
-            cuvetteX-cuvetteBottomSpace-cuvetteThickness,
-            cuvetteY-cuvetteBottomSpace-cuvetteThickness,
-            overlap
-        ])
-            difference() {
-                cube([
-                    cuvetteInternal+2*cuvetteBottomSpace+2*cuvetteThickness,
-                    cuvetteInternal+2*cuvetteBottomSpace+2*cuvetteThickness,
-                    bottomHeight-bottomMinimal-overlap
-                ]);
-             // remove the hole for cuvette
-                translate([
-                    cuvetteThickness,
-                    cuvetteThickness,
-                    0
-                ])
-                roundedParallelepiped4(x=cuvetteInternal+2*cuvetteBottomSpace, y=cuvetteInternal+2*cuvetteBottomSpace, z=bottomHeight-bottomMinimal, r=radius);
-            }
-        */ 
-            
-    };
 
 
-
-
-// create a hole that is smaller in the middle
-module screwHole(rSmall=2, rLarge=4, height=10, heightExternal=2.5, heightInternal=2.5) {
-    echo(rLarge,heightExternal);
-    translate([0,0,height-heightExternal])
-    cylinder(r=rLarge, h=heightExternal);
-    translate([0,0,height-heightExternal-heightInternal])
-        cylinder(r=rSmall, h=heightInternal);
-    translate([0,0,0])
-        cylinder(r=rLarge, h=height-heightExternal-heightInternal);
-}
 
 
 // create the cuvette
@@ -420,14 +275,5 @@ module cuvette() {
     }
 }
 
-module roundedParallelepiped4(x, y, z, r) {
-    union() {
-        translate([r,r,0]) cylinder(h=z, r=r);
-        translate([x-r,r,0]) cylinder(h=z, r=r);
-        translate([r,y-r,0]) cylinder(h=z, r=r);
-        translate([x-r,y-r,0]) cylinder(h=z, r=r);
-        translate([r,0,0]) cube([x-2*r, y, z]);
-        translate([0,r,0]) cube([x, y-2*r, z]);
-    }
-}
+
 
