@@ -6,8 +6,8 @@ use <top.scad>;
 
 
 
-showPCB=true;
-showBottom=true;
+showPCB=false;
+showBottom=false;
 showLogo=false;
 showTop=true;
 
@@ -78,6 +78,7 @@ screenProtectionHeight=2;
 screenProtectionSize=3;
 
 radius=3; // using bit of 6
+radiusCorner=1.5;
 
 usbHeight=4.6;
 usbWidth=10;
@@ -111,7 +112,7 @@ if (showTop)
     top(
         cuvetteInternal, cuvetteThickness, cuvetteUVWindow, cuvetteWindow, cuvetteX,
         cuvetteY, frontHeight, frontThickness, overlap, pcbLength, pcbSpaceAround, pcbThickness, pcbWidth,
-        radius, rotaryExtension, rotaryExtensionR, rotaryR, rotaryX, rotaryY,
+        radius, radiusCorner, rotaryExtension, rotaryExtensionR, rotaryR, rotaryX, rotaryY,
         screenProtectionHeight, screenProtectionSize, screenX, screenY, screenWidth, screenLength,
         sideThickness, supportHeight, supportHoleR, supportHoleX, supportHoleY, supportLength, supportWidth, usbHeight, usbSpace, usbSpaceThickness, usbWidth, usbY);
 

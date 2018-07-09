@@ -11,7 +11,7 @@ module bottom(
         
     
     // create the bottom part 
-    translate([0, 0, frontHeight])
+    translate([0, 0, frontHeight-overlap+1])
         union() {
             difference() {
                 
