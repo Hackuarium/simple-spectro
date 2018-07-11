@@ -1,13 +1,16 @@
 use <screwHole.scad>;
 use <roundedParallelepiped4.scad>;
+use <cubeWithCylinders.scad>;
 
 module bottom(
     batteryHeight, batteryLength, batteryWidth, batteryX, batteryY,
     bottomClosureSpace, bottomDigged, bottomHeight, bottomSmallHoleR, bottomHoleR,
     bottomHoleExternalHeight, bottomHoleInternalHeight, bottomMinimal,
     connectorHeight, connectorLength, connectorWidth, connectorX, connectorY,
-    cuvetteBottomSpace, cuvetteX, cuvetteY, cuvetteInternal, frontHeight,
-    overlap, pcbLength, pcbSpaceAround, pcbWidth, radius, shift, sideThickness, supportHoleX, supportHoleY, usbSpace, usbSpaceThickness, usbWidth, usbY) {
+    cuvetteBottomSpace, cuvetteX, cuvetteY, cuvetteInternal, cuvetteThickness, cuvetteUVWindow, cuvetteWindow, cuvetteTopBottomOverlap,
+     frontHeight,
+    overlap, pcbLength, pcbSpaceAround, pcbWidth, radius, radiusCorner, shift, sideThickness, supportHoleX, supportHoleY,
+    usbSpace, usbSpaceThickness, usbWidth, usbY) {
         
     
     // create the bottom part 
@@ -53,7 +56,7 @@ module bottom(
                     cuvetteY-cuvetteBottomSpace,
                     0
                 ])
-                roundedParallelepiped4(x=cuvetteInternal+2*cuvetteBottomSpace, y=cuvetteInternal+2*cuvetteBottomSpace, z=bottomHeight-bottomMinimal, r=radius);
+                cubeWithCylinders(x=cuvetteInternal+2*cuvetteBottomSpace, y=cuvetteInternal+2*cuvetteBottomSpace, z=bottomHeight-bottomMinimal,  r=radiusCorner);
                 
                   // remove the hole for battery
                 translate([
@@ -63,7 +66,7 @@ module bottom(
                 ])
                     roundedParallelepiped4(x=batteryLength, y=batteryWidth, z=batteryHeight, r=radius);
                  
-                 // the hole for the barrery connector
+                 // the hole for the battery connector
                  translate([
                     connectorX,
                     connectorY,
@@ -129,27 +132,66 @@ module bottom(
                     screwHole(rSmall=bottomSmallHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);     
             };
             
-            /* little border around the cell
+
+            /* little border around the cell */ 
             translate([
                 cuvetteX-cuvetteBottomSpace-cuvetteThickness,
                 cuvetteY-cuvetteBottomSpace-cuvetteThickness,
-                overlap
+                overlap-cuvetteTopBottomOverlap
             ])
+                color("red")
                 difference() {
                     cube([
                         cuvetteInternal+2*cuvetteBottomSpace+2*cuvetteThickness,
                         cuvetteInternal+2*cuvetteBottomSpace+2*cuvetteThickness,
                         bottomHeight-bottomMinimal-overlap
                     ]);
-                 // remove the hole for cuvette
+
+                    // cutting the windows in cuvette ...
+                    heightWindow=bottomDigged-overlap;
+                    translate([0, cuvetteThickness+(cuvetteInternal-cuvetteWindow)/2, 0])
+                        cube([cuvetteThickness, cuvetteWindow, heightWindow]);
+                    translate([cuvetteThickness+cuvetteInternal, cuvetteThickness+(cuvetteInternal-cuvetteWindow)/2, 0])
+                        cube([cuvetteThickness, cuvetteWindow, heightWindow]);
+                    translate([cuvetteThickness+(cuvetteInternal-cuvetteUVWindow)/2, cuvetteThickness+cuvetteInternal, 0])
+                        cube([cuvetteUVWindow, cuvetteThickness, heightWindow]);
+
+                    // remove the hole for cuvette
                     translate([
                         cuvetteThickness,
                         cuvetteThickness,
                         0
                     ])
-                    roundedParallelepiped4(x=cuvetteInternal+2*cuvetteBottomSpace, y=cuvetteInternal+2*cuvetteBottomSpace, z=bottomHeight-bottomMinimal, r=radius);
+                    cubeWithCylinders(x=cuvetteInternal+2*cuvetteBottomSpace, y=cuvetteInternal+2*cuvetteBottomSpace, z=bottomHeight-bottomMinimal-overlap, r=radiusCorner);
+                
+                    // cutting the overlap of the well
+                    cuvetteInternalOverlapCut = cuvetteThickness/2+0.15;
+                    
+                    union() {
+                        translate([
+                            cuvetteThickness,
+                            cuvetteThickness-cuvetteInternalOverlapCut,
+                            0
+                        ])
+                            cube([
+                                cuvetteInternal+2*cuvetteBottomSpace,
+                                cuvetteInternal+2*cuvetteBottomSpace+2*cuvetteInternalOverlapCut,
+                                cuvetteTopBottomOverlap
+                            ]);
+                        translate([
+                            cuvetteThickness-cuvetteInternalOverlapCut,
+                            cuvetteThickness,
+                            0
+                        ])
+                            cube([
+                                cuvetteInternal+2*cuvetteBottomSpace+2*cuvetteInternalOverlapCut,
+                                cuvetteInternal+2*cuvetteBottomSpace,
+                                cuvetteTopBottomOverlap
+                            ]);
+                    }
+                
                 }
-            */ 
+            
             
     };
 }

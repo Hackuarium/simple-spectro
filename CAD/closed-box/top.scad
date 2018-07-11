@@ -3,12 +3,7 @@ use <roundedParallelepiped4.scad>;
 use <cubeWithCylinders.scad>;
 
 module top(
-    cuvetteInternal,
-    cuvetteThickness,
-    cuvetteUVWindow,
-    cuvetteWindow,
-    cuvetteX,
-    cuvetteY,
+    cuvetteInternal, cuvetteThickness, cuvetteUVWindow, cuvetteWindow, cuvetteX, cuvetteY, cuvetteTopBottomOverlap,
     frontHeight, frontThickness, overlap, pcbLength, pcbSpaceAround, pcbThickness, pcbWidth,
     radius, radiusCorner, rotaryExtension, rotaryExtensionR, rotaryR, rotaryX, rotaryY, screenProtectionHeight, screenProtectionSize,
     screenX, screenY, screenWidth, screenLength, sideThickness, supportHeight, supportHoleR, supportHoleX,
@@ -178,6 +173,24 @@ module top(
             translate([(cuvetteInternal-cuvetteUVWindow)/2, cuvetteInternal,  heightWindow])
                 cube([cuvetteUVWindow, cuvetteThickness, frontHeight-overlap]);
             
+            // remove the overlap
+            cuvetteInternalOverlapCut = cuvetteThickness/2;
+            color("blue") 
+            translate([-cuvetteThickness,-cuvetteThickness, frontHeight-cuvetteTopBottomOverlap]) 
+                difference() {
+                    cube([
+                        cuvetteInternal+cuvetteThickness*2,
+                        cuvetteInternal+cuvetteThickness*2,
+                        cuvetteTopBottomOverlap
+                    ]);
+                    translate([cuvetteInternalOverlapCut+0.15, cuvetteInternalOverlapCut+0.15, 0])
+                        cube([
+                            cuvetteInternal+cuvetteInternalOverlapCut*2-0.30,
+                            cuvetteInternal+cuvetteInternalOverlapCut*2-0.30,
+                            cuvetteTopBottomOverlap
+                        ]);
+                };
+
             // TEMPORARY to print as today design 
             translate([-r-cuvetteThickness,-cuvetteY, frontThickness+supportHeight])
                     cube([cuvetteInternal+cuvetteThickness*2+2*r,cuvetteY-cuvetteThickness,frontHeight-overlap-screenProtectionHeight]);

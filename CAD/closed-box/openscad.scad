@@ -7,9 +7,9 @@ use <top.scad>;
 
 
 showPCB=false;
-showBottom=false;
+showBottom=true;
 showLogo=false;
-showTop=true;
+showTop=false;
 
 aluminium=true;
 
@@ -60,7 +60,8 @@ cuvetteThickness=aluminium ? 2.5 : 1.6;
 cuvetteWindow=3;
 cuvetteUVWindow=5;
 cuvetteWindowHeight=5;
-cuvetteBottomSpace=2;
+cuvetteBottomSpace=0; // was 2 in first design
+cuvetteTopBottomOverlap = 1;
 
 batteryX=46+shift;
 batteryY=26+shift;
@@ -90,8 +91,8 @@ usbY=38.2+shift;
 frontHeight=frontThickness+usbHeight+supportHeight+pcbThickness;
 
 
-//projection(cut = true)
-//rotate([90,0,0])
+// projection(cut = true)
+// rotate([90,0,0])
 translate([0,-20,0]) {
 if (showPCB)
     pcb(shift, pcbLength, pcbWidth, pcbThickness);
@@ -103,18 +104,20 @@ if (showBottom)
         bottomDigged, bottomHeight, bottomMinimal, bottomSmallHoleR, bottomHoleR, bottomHoleExternalHeight,
         bottomHoleInternalHeight, connectorHeight, connectorLength, connectorWidth,
         connectorX, connectorY, cuvetteBottomSpace,
-        cuvetteX, cuvetteY, cuvetteInternal, frontHeight,
-        overlap, pcbLength, pcbSpaceAround, pcbWidth, radius, shift,
+        cuvetteX, cuvetteY, cuvetteInternal, cuvetteThickness,  cuvetteUVWindow, cuvetteWindow, cuvetteTopBottomOverlap,
+        frontHeight,
+        overlap, pcbLength, pcbSpaceAround, pcbWidth, radius, radiusCorner, shift,
         sideThickness, supportHoleX, supportHoleY, usbSpace, usbSpaceThickness, usbWidth, usbY
     );
 
 if (showTop) 
     top(
-        cuvetteInternal, cuvetteThickness, cuvetteUVWindow, cuvetteWindow, cuvetteX,
-        cuvetteY, frontHeight, frontThickness, overlap, pcbLength, pcbSpaceAround, pcbThickness, pcbWidth,
+        cuvetteInternal, cuvetteThickness, cuvetteUVWindow, cuvetteWindow, cuvetteX, cuvetteY, cuvetteTopBottomOverlap,
+        frontHeight, frontThickness, overlap, pcbLength, pcbSpaceAround, pcbThickness, pcbWidth,
         radius, radiusCorner, rotaryExtension, rotaryExtensionR, rotaryR, rotaryX, rotaryY,
         screenProtectionHeight, screenProtectionSize, screenX, screenY, screenWidth, screenLength,
-        sideThickness, supportHeight, supportHoleR, supportHoleX, supportHoleY, supportLength, supportWidth, usbHeight, usbSpace, usbSpaceThickness, usbWidth, usbY);
+        sideThickness, supportHeight, supportHoleR, supportHoleX, supportHoleY, supportLength, supportWidth,
+        usbHeight, usbSpace, usbSpaceThickness, usbWidth, usbY);
 
 
 // Adding the logo
