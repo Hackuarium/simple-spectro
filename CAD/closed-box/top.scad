@@ -173,22 +173,34 @@ module top(
             translate([(cuvetteInternal-cuvetteUVWindow)/2, cuvetteInternal,  heightWindow])
                 cube([cuvetteUVWindow, cuvetteThickness, frontHeight-overlap]);
             
-            // remove the overlap
+            // remove the overlap between top and bottom of the cell
             cuvetteInternalOverlapCut = cuvetteThickness/2;
             color("blue") 
             translate([-cuvetteThickness,-cuvetteThickness, frontHeight-cuvetteTopBottomOverlap]) 
-                difference() {
-                    cube([
-                        cuvetteInternal+cuvetteThickness*2,
-                        cuvetteInternal+cuvetteThickness*2,
-                        cuvetteTopBottomOverlap
-                    ]);
-                    translate([cuvetteInternalOverlapCut+0.15, cuvetteInternalOverlapCut+0.15, 0])
+                union() {
+                    difference() {
                         cube([
-                            cuvetteInternal+cuvetteInternalOverlapCut*2-0.30,
-                            cuvetteInternal+cuvetteInternalOverlapCut*2-0.30,
+                            cuvetteInternal+cuvetteThickness*2,
+                            cuvetteInternal+cuvetteThickness*2,
                             cuvetteTopBottomOverlap
                         ]);
+                        
+                        translate([cuvetteInternalOverlapCut+0.15, cuvetteInternalOverlapCut+0.15, 0])
+                            cube([
+                                cuvetteInternal+cuvetteInternalOverlapCut*2-0.30,
+                                cuvetteInternal+cuvetteInternalOverlapCut*2-0.30,
+                                cuvetteTopBottomOverlap
+                            ]);
+                    };
+                    // remove 4 little columns
+                    translate([0,0,0])
+                        cube([cuvetteThickness, cuvetteThickness, cuvetteTopBottomOverlap]);
+                    translate([cuvetteInternal+cuvetteThickness,0,0])
+                        cube([cuvetteThickness, cuvetteThickness, cuvetteTopBottomOverlap]);
+                    translate([0,cuvetteInternal+cuvetteThickness,0])
+                        cube([cuvetteThickness, cuvetteThickness, cuvetteTopBottomOverlap]);
+                    translate([cuvetteInternal+cuvetteThickness,cuvetteInternal+cuvetteThickness,0])
+                        cube([cuvetteThickness, cuvetteThickness, cuvetteTopBottomOverlap]);
                 };
 
             // TEMPORARY to print as today design 
