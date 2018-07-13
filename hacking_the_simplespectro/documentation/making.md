@@ -15,7 +15,7 @@ The three parts 7.1, 7.2 and 7.3 are cut using a CNC X-Carve 1000mm x 1000mm fro
 
 <figure>
 <img src="https://github.com/Hackuarium/simple-spectro/blob/Test/hacking_the_simplespectro/images/cutting.jpg" 
-alt="Cutting the parts" width="360" height="270" border="10" rotate="90"/>
+alt="Cutting the parts" width="360" height="270" border="10" style="transform:rotate(90deg);"/>
 <figcaption>Cutting acrylic with X-Carve CNC.</figcaption>
 </figure>
 
