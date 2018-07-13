@@ -1,1 +1,1 @@
-This folder contains the CAD files of the third version of the spectro-plongeur.
+This folder contains the files of the final version of the spectro-plongeur. The svg files can be opened in easel.inventables.com (a free account can be created) to change the cut settings and start the CNC. 
