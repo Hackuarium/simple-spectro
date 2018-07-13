@@ -13,9 +13,8 @@
 The three parts 7.1, 7.2 and 7.3 are cut using a CNC X-Carve 1000mm x 1000mm from Inventables. 
 
 <img src="https://github.com/Hackuarium/simple-spectro/blob/Test/hacking_the_simplespectro/images/cutting.jpg" 
-alt="Cutting the parts" width="240" height="180" border="10" />
-
-![Cutting the parts](https://github.com/Hackuarium/simple-spectro/blob/Test/hacking_the_simplespectro/images/cutting.jpg "Cutting acrylic with X-Carve CNC.")
+alt="Cutting the parts" width="360" height="270" border="10" />
+Cutting acrylic with X-Carve CNC.
 
 ## Building the spectro-plongeur
 
