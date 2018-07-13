@@ -23,12 +23,10 @@ alt="Cutting the parts" width="360" height="270" border="10" style="transform:ro
 
 Connect the LEDs and the receptor with sheath to the right cables of the PCB. The parts are pasted together with acrylic resin. It comes in two products, a powder and a liquid. Mix both in roughly one to one proportion in order to get a paste that can be applied in a thin layer on the parts. Apply on the whole surface and let dry for an hour. Repeat the procedure with all parts, making sure the cables are well inserted in the channels. The assembly is clenched with tools for drying. Finally, apply a layer of silicone glue on the junctions on the edge of the spectro-plongeur and let dry for a day.
 
+The spectro-plongeur is then ready to be used - see https://github.com/Hackuarium/simple-spectro/blob/master/hacking_the_simplespectro/documentation/using.md.
+
 <figure>
 <img src="https://github.com/Hackuarium/simple-spectro/blob/Test/hacking_the_simplespectro/images/pasting.jpg" 
 alt="Pasing the parts" width="360" height="270" border="10" />
 <figcaption>Pasting the parts with acrylic resin.</figcaption>
 </figure>
-
-
-
-The spectro-plongeur is then ready to be used - see https://github.com/Hackuarium/simple-spectro/blob/master/hacking_the_simplespectro/documentation/using.md.
