@@ -1,3 +1,3 @@
-#How to use the spectro-plongeur ?
+# How to use the spectro-plongeur ?
 
-##Settings
+## Settings
