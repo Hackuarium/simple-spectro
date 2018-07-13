@@ -11,7 +11,7 @@
 
 ## The parts
 
-The three parts 7.1, 7.2 and 7.3 are cut using a CNC X-Carve 1000mm x 1000mm from Inventables. The 2D drawings can be found in https://github.com/Hackuarium/simple-spectro/tree/master/hacking_the_simplespectro/CAD. Open the .svg files in easel.inventables.com (a free account can be created). This application allows the user to choose the cut settings. 
+The three parts 7.1, 7.2 and 7.3 are cut using a CNC X-Carve 1000mm x 1000mm from Inventables. The 2D drawings can be found in https://github.com/Hackuarium/simple-spectro/tree/master/hacking_the_simplespectro/CAD. Open the .svg files in easel.inventables.com (a free account can be created). This application allows the user to choose the cut settings. In our case, a 2mm spindle was used and the cut settings were: feed rate - 635mm/min, plunge rate - 228.6 m/min, depth per pass - 0.6 mm
 
 <figure>
 <img src="https://github.com/Hackuarium/simple-spectro/blob/Test/hacking_the_simplespectro/images/cutting.jpg" 
