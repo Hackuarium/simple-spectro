@@ -9,7 +9,7 @@ use <top.scad>;
 showPCB=false;
 showBottom=true;
 showLogo=false;
-showTop=false;
+showTop=true;
 
 aluminium=true;
 
@@ -30,7 +30,7 @@ shift=pcbSpaceAround+sideThickness;
 
 supportWidth=7;
 supportLength=7;
-supportHeight=8;
+supportHeight=9; // was 8 in first design
 supportHoleX=3.5;
 supportHoleY=3.5;
 supportHoleR=1.2;
@@ -100,31 +100,31 @@ if (showPCB)
 
 if (showBottom)
     bottom(
-        batteryHeight, batteryLength, batteryWidth, batteryX, batteryY, bottomClosureSpace, 
-        bottomDigged, bottomHeight, bottomMinimal, bottomSmallHoleR, bottomHoleR, bottomHoleExternalHeight,
-        bottomHoleInternalHeight, connectorHeight, connectorLength, connectorWidth,
-        connectorX, connectorY, cuvetteBottomSpace,
-        cuvetteX, cuvetteY, cuvetteInternal, cuvetteThickness,  cuvetteUVWindow, cuvetteWindow, cuvetteTopBottomOverlap,
-        frontHeight,
-        overlap, pcbLength, pcbSpaceAround, pcbWidth, radius, radiusCorner, shift,
-        sideThickness, supportHoleX, supportHoleY, usbSpace, usbSpaceThickness, usbWidth, usbY
+        batteryHeight=batteryHeight, batteryLength=batteryLength, batteryWidth=batteryWidth,
+        batteryX=batteryX, batteryY=batteryY, 
+        bottomClosureSpace=bottomClosureSpace, 
+        bottomDigged=bottomDigged, bottomHeight=bottomHeight, bottomMinimal=bottomMinimal,
+        bottomSmallHoleR=bottomSmallHoleR, bottomHoleR=bottomHoleR,
+        bottomHoleExternalHeight=bottomHoleExternalHeight,
+        bottomHoleInternalHeight=bottomHoleInternalHeight, connectorHeight=connectorHeight, connectorLength=connectorLength, connectorWidth=connectorWidth,
+        connectorX=connectorX, connectorY=connectorY, cuvetteBottomSpace=cuvetteBottomSpace,
+        cuvetteX=cuvetteX, cuvetteY=cuvetteY, cuvetteInternal=cuvetteInternal, cuvetteThickness=cuvetteThickness,  cuvetteUVWindow=cuvetteUVWindow, cuvetteWindow=cuvetteWindow, cuvetteTopBottomOverlap=cuvetteTopBottomOverlap,
+        frontHeight=frontHeight,
+        overlap=overlap, pcbLength=pcbLength, pcbSpaceAround=pcbSpaceAround, pcbWidth=pcbWidth, radius=radius, radiusCorner=radiusCorner, shift=shift,
+        sideThickness=sideThickness, supportHoleX=supportHoleX, supportHoleY=supportHoleY, usbSpace=usbSpace, usbSpaceThickness=usbSpaceThickness, usbWidth=usbWidth, usbY=usbY
     );
 
 if (showTop) 
     top(
-        cuvetteInternal, cuvetteThickness, cuvetteUVWindow, cuvetteWindow, cuvetteX, cuvetteY, cuvetteTopBottomOverlap,
-        frontHeight, frontThickness, overlap, pcbLength, pcbSpaceAround, pcbThickness, pcbWidth,
-        radius, radiusCorner, rotaryExtension, rotaryExtensionR, rotaryR, rotaryX, rotaryY,
-        screenProtectionHeight, screenProtectionSize, screenX, screenY, screenWidth, screenLength,
-        sideThickness, supportHeight, supportHoleR, supportHoleX, supportHoleY, supportLength, supportWidth,
-        usbHeight, usbSpace, usbSpaceThickness, usbWidth, usbY);
+        cuvetteInternal=cuvetteInternal, cuvetteThickness=cuvetteThickness, cuvetteUVWindow=cuvetteUVWindow,
+        cuvetteWindow=cuvetteWindow, cuvetteX=cuvetteX, cuvetteY=cuvetteY, cuvetteTopBottomOverlap=cuvetteTopBottomOverlap,
+        frontHeight=frontHeight, frontThickness=frontThickness, overlap=overlap,
+        pcbLength=pcbLength, pcbSpaceAround=pcbSpaceAround, pcbThickness=pcbThickness, pcbWidth=pcbWidth, radius=radius, radiusCorner=radiusCorner, rotaryExtension=rotaryExtension, rotaryExtensionR=rotaryExtensionR, rotaryR=rotaryR, rotaryX=rotaryX, rotaryY=rotaryY, screenProtectionHeight=screenProtectionHeight, screenProtectionSize=screenProtectionSize, screenX=screenX, screenY=screenY, screenWidth=screenWidth, screenLength=screenLength, sideThickness=sideThickness, supportHeight=supportHeight, supportHoleR=supportHoleR, supportHoleX=supportHoleX, supportHoleY=supportHoleY, supportLength=supportLength, supportWidth=supportWidth, usbHeight=usbHeight, usbSpace=usbSpace, usbSpaceThickness=usbSpaceThickness, usbWidth=usbWidth, usbY=usbY
+    );
 
 
 // Adding the logo
 if (showLogo) 
     translate([logoX, logoY, -0.5]) linear_extrude(height=0.5)  rotate(a=[0,180,0]) scale(0.6) color("purple") import("logo.dxf");
-
-
-
 }
 

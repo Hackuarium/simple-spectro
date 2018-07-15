@@ -3,12 +3,7 @@ use <roundedParallelepiped4.scad>;
 use <cubeWithCylinders.scad>;
 
 module top(
-    cuvetteInternal, cuvetteThickness, cuvetteUVWindow, cuvetteWindow, cuvetteX, cuvetteY, cuvetteTopBottomOverlap,
-    frontHeight, frontThickness, overlap, pcbLength, pcbSpaceAround, pcbThickness, pcbWidth,
-    radius, radiusCorner, rotaryExtension, rotaryExtensionR, rotaryR, rotaryX, rotaryY, screenProtectionHeight, screenProtectionSize,
-    screenX, screenY, screenWidth, screenLength, sideThickness, supportHeight, supportHoleR, supportHoleX,
-    supportHoleY, supportLength, supportWidth, usbHeight, usbSpace, usbSpaceThickness, usbWidth, usbY) {
-
+    ) {
 
 
     // create the cuvette
@@ -133,6 +128,7 @@ module top(
     // reference is based on 0,0 on the hole
     module cuvette() {
 
+echo("----",cuvetteInternal);
 
         difference() {
             union() {

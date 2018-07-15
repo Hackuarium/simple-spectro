@@ -2,15 +2,7 @@ use <screwHole.scad>;
 use <roundedParallelepiped4.scad>;
 use <cubeWithCylinders.scad>;
 
-module bottom(
-    batteryHeight, batteryLength, batteryWidth, batteryX, batteryY,
-    bottomClosureSpace, bottomDigged, bottomHeight, bottomSmallHoleR, bottomHoleR,
-    bottomHoleExternalHeight, bottomHoleInternalHeight, bottomMinimal,
-    connectorHeight, connectorLength, connectorWidth, connectorX, connectorY,
-    cuvetteBottomSpace, cuvetteX, cuvetteY, cuvetteInternal, cuvetteThickness, cuvetteUVWindow, cuvetteWindow, cuvetteTopBottomOverlap,
-     frontHeight,
-    overlap, pcbLength, pcbSpaceAround, pcbWidth, radius, radiusCorner, shift, sideThickness, supportHoleX, supportHoleY,
-    usbSpace, usbSpaceThickness, usbWidth, usbY) {
+module bottom() {
         
     
     // create the bottom part 
@@ -18,7 +10,7 @@ module bottom(
         union() {
             difference() {
                 
-                    // the bottom
+                // the bottom
                 cube([
                     pcbLength+2*pcbSpaceAround+2*sideThickness,
                     pcbWidth+2*pcbSpaceAround+2*sideThickness,
@@ -67,7 +59,7 @@ module bottom(
                     roundedParallelepiped4(x=batteryLength, y=batteryWidth, z=batteryHeight, r=radius);
                  
                  // the hole for the battery connector
-                 translate([
+                translate([
                     connectorX,
                     connectorY,
                     bottomDigged
@@ -106,7 +98,7 @@ module bottom(
              
                 
                 
-                  // we remove the USB port
+                // we remove the USB port
                 translate([0,usbY,0])
                     cube([sideThickness,usbWidth,overlap]);
                 // remove some more space so the USB plug fits in
@@ -119,6 +111,7 @@ module bottom(
                     );
                 
                 // make holes for screws        
+                echo(bottomSmallHoleR, bottomSmallHoleR);
                 translate([shift+supportHoleX, shift+supportHoleY, 0])
                     screwHole(rSmall=bottomSmallHoleR, rLarge=bottomHoleR, height=bottomHeight, heightExternal=bottomHoleExternalHeight, heightInternal=bottomHoleInternalHeight);
                 
