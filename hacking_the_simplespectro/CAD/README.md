@@ -1,0 +1,1 @@
+This folder contains the files of the final version of the spectro-plongeur. The svg files can be opened in easel.inventables.com (a free account can be created) to change the cut settings and start the CNC (an X-Carve 1000mm x 1000mm). 
