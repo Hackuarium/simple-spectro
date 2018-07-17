@@ -38,3 +38,5 @@ The interesting part of this application is that the CQDs react differently with
 5. Let cool down the solution of CQDs.
 
 To use the CQDs, you will have to dilute them (for more precise quantities, please wait, work in progress...!)
+
+- [CQDs-tests](cqds-test)
