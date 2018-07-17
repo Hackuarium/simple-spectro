@@ -40,3 +40,13 @@ Finally the bottom is fixed to the top using 4 x M3 screws of 12mm.
 <img src='screw2-1.jpg'>
 
 <img src='screw2-2.jpg'>
+
+## Debug
+
+It appears that when measuring the difference of absorbance between an empty tank and a tank full of water, the values were aberrants. Indeed the energy was higher with the water than without. One of the problem could be that there is a space inside the tank hole that could lead to refraction. We designed a piece to hide this space using 3D printing. 
+
+<img src='piece_spectro.jpg'>
+
+We obtained theses results that differ from the one with the ones without the piece:
+
+<img src='test_values.jpg'>
