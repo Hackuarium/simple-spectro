@@ -1,4 +1,4 @@
-# CQDs tests
+# CQDs synthesis attempts
 
 Here you can find the different experiments we performed to obtain CQDs. 
 
