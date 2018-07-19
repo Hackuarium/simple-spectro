@@ -72,3 +72,34 @@ Turning of 90° the cell as also big impact depending I guess the quality of the
 - 217012
 - 249061
 - 213230
+
+# Debug
+
+It appears that when measuring the difference of absorbance between an empty tank and a tank full of water, the values were aberrants. Indeed the energy was higher with the water than without. One of the problem could be that there is a space inside the tank hole that could lead to refraction. We designed a piece to hide this space using 3D printing. 
+
+<img src='piece_spectro.jpg'>
+
+We obtained theses results that differ from the one with the ones without the piece:
+
+| Empty tank without piece | R      | G      | B
+|--------------------------|--------|--------|--------
+|Mean of energy            |353033,4|317978,2|59185,9
+|SD                        |149,01  |23,69   |5,30
+
+
+| Tank H2O without piece   | R      | G      | B
+|--------------------------|--------|--------|--------
+|Mean of energy            |472297,8|421643,8|59170,7
+|SD                        |115,89  |106,08  |3,02
+
+
+| Empty tank with piece    | R      | G      | B
+|--------------------------|--------|--------|--------
+|Mean of energy            |327422,2|322457,5|397948,8
+|SD                        |43,81   |28,99   |131,21
+
+
+| Tank H2O with piece      | R      | G      | B
+|--------------------------|--------|--------|--------
+|Mean of energy            |414108,5|422623,7|50511,6
+|SD                        |53,73   |43,92   |33,59
