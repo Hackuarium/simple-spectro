@@ -73,7 +73,7 @@ Turning of 90° the cell as also big impact depending I guess the quality of the
 - 249061
 - 213230
 
-# Debug
+# Hacking of the case
 
 It appears that when measuring the difference of absorbance between an empty tank and a tank full of water, the values were aberrants. Indeed the energy was higher with the water than without. One of the problem could be that there is a space inside the tank hole that could lead to refraction. We designed a piece to hide this space using 3D printing. 
 
