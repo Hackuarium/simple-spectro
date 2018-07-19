@@ -19,6 +19,8 @@ You may check the following protocols
 In order to detect mercury, carbon quatum dots (CQDs) can be used. They are small particles of carbon (which can be homemade) that become fluorescent in presence of UV light.
 The interesting part of this application is that the CQDs react differently with mercury, and that this difference can be measured using the simple-spectrophotometer.
 
+<img src='cqds.jpg' />
+
 ## How to make CQDs ?
 
 ### Materials
