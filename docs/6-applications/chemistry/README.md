@@ -29,10 +29,20 @@ The interesting part of this application is that the CQDs react differently with
 
 – 0.5 g of sodium bicarbonate
 
+– a hot plate
+
+– a magnetic stirrer
+
+– an aluminum foil
+
+– a beaker
+
+– a spatula
+
 ### Procedure 
 
-1. Mix the sucrose/ fructose with your chosen acidic solution (we used an erlenmeyer).
-2. Heat your solution up to 250°C for 40 minutes until it becomes black. Be careful to cover and agitate your solution.
+1. Mix the sucrose/ fructose with your chosen acidic solution (we used an erlenmeyer), using the magnetic agitator.
+2. Heat your solution up to 250°C thanks to the hot plate, for 40 minutes until it becomes black. Be careful to cover (with the aluminum foil) and agitate your solution.
 3. Pour the content in a beaker and add in two times the sodium bicarbonate (your mix will inflate).
 4. If the mixture is too thick, don't esitate to add up to 10ml of water.
 5. Let cool down the solution of CQDs.
@@ -40,3 +50,33 @@ The interesting part of this application is that the CQDs react differently with
 To use the CQDs, you will have to dilute them (for more precise quantities, please wait, work in progress...!)
 
 - [CQDs-attempts](cqds-attempts)
+
+## Test of fluorescence
+
+Using the simple-spectrophotometer, we tested for the reaction of CQDs when exposed to UV light, while the particles were diluted in water. We used water as blank, and test for different concentration of CQDs (1, 3 or 5 drops per tank). We obtained those results:
+
+### One drop of CQDs
+|  MEAN |Blank    |Energy  |Absorbance |    |SD   |Blank    |Energy  |Absorbance
+|-------|---------|--------|----------|-----|-----|---------|--------|------
+|R      |395119,3 |368277,9|0,031      |    |     |5418,35  |7564,05 |0,011
+|G      |419962,1 |293356,4|0,157      |    |     |1908,28  |16532,62|0,027
+|B      |473191,5 |217507,5|0,34       |    |     |4166,15  |25876,94|0,055
+|UV     |6548,1   |4920,6  |0,124      |    |     |179,36   |224,38  |0,020
+
+### Three drops of CQDs
+
+|  MEAN |Blank    |Energy  |Absorbance |   |SD  |Blank   |Energy  |Absorbance
+|-------|---------|--------|-----------|---|----|--------|--------|------
+|R      |389990,3 |296282,5|0,115      |   |    |6210,02 |12258,36|0,027
+|G      |415605,1 |147389,4|0,457      |   |    |11265,94|17618,44|0,052
+|B      |476379   |49219,3 |0,997      |   |    |5033,65 |12225,96|0,11
+|UV     |6683,5   |4221    |0,2        |   |    |170,83  |147,41  |0,019
+
+### Five drops of CQDs
+
+|  MEAN |Blank    |Energy  |Absorbance |   |SD  |Blank   |Energy  |Absorbance
+|-------|---------|--------|-----------|---|----|--------|--------|------
+|R      |391031,3 |241988,8|0,209      |   |    |5801,56 |10126,13|0,024
+|G      |418085,4 |78945,4 |0,73       |   |    |7647,39 |10989,91|0,062
+|B      |468810,2 |13237,1 |1,57       |   |    |18055,30|3902,91 |0,12
+|UV     |6912,3   |4021,5  |0,234      |   |    |202,21  |123,86  |0,016
