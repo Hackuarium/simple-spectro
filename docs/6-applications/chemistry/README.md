@@ -82,3 +82,21 @@ Using the simple-spectrophotometer, we tested for the reaction of CQDs when expo
 |G      |418085,4 |78945,4 |0,73       |   |    |7647,39 |10989,91|0,062
 |B      |468810,2 |13237,1 |1,57       |   |    |18055,30|3902,91 |0,12
 |UV     |6912,3   |4021,5  |0,234      |   |    |202,21  |123,86  |0,016
+
+
+# Determination of the pH using red cabbage
+The color of the red cabbage highly depends on the acidity. We are trying to determine if it is possible to create a model with the simple-spectrophotometer to allow the users to estimate easily the pH of their solution.
+
+## How to create your red cabbage solution ?
+
+####  materials
+– 500g of red cabbage
+
+#### procedure
+1. Cut your red cabbage in small pieces.
+2. Boil it in 1L of tap water.
+3. Collect the juice and store it in the fridge.
+
+We are trying to create a precise procedure to use it, for the moment you can see the results of our attempts:
+
+- [pH-determination-attempts](pH-attempts)
