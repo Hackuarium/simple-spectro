@@ -343,7 +343,7 @@ module box(width, height, depth, thickness,
   module invcuts(w, li = 0, ri = 0, full = true) {
     difference() {
       translate([-2*e,-e]) square([w+4*e,t+e]);
-      cuts(w, li, ri, full);
+        cuts(w, li, ri, full);
     }
   }
 
@@ -351,39 +351,39 @@ module box(width, height, depth, thickness,
   module movecutstop(w, h) {
     translate([w,h,0])
       rotate(180,[0,0,1])
-      children();
+        children();
   }
 
   module movecutsleft(w, h) {
     translate([0, h/2])
       rotate(-90, [0,0,1])
-      translate([-h/2,0])
-      children();
+        translate([-h/2,0])
+          children();
   }
 
   module movecutsright(w, h) {
     translate([w-t,0])
       rotate(90,[0,0,1])
-      translate([0,-t])
-      children();
+        translate([0,-t])
+          children();
   }
 
   module movecuts(w, h) {
     translate([w, h])
       rotate(90,[0,0,1])
-      translate([0,-t])
-      children();
+        translate([0,-t])
+          children();
   }
 
   // Turn 2D Panel into 3D
   module panelize(x, y, name, cl) {
     color(cl)
       linear_extrude(height = t)
-      children();
+        children();
     if (labels) {
       color("Yellow")
         translate([x/2,y/2,t+1])
-        text(text = name, halign = "center", valign="center");
+          text(text = name, halign = "center", valign="center");
     }
   }
 
