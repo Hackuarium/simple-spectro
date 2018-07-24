@@ -27,6 +27,6 @@ The spectro-plongeur is then ready to be used - see https://github.com/Hackuariu
 
 <figure>
 <img src="https://github.com/Hackuarium/simple-spectro/blob/Test/hacking_the_simplespectro/images/pasting.jpg" 
-alt="Pasing the parts" width="360" height="270" border="10" />
-<figcaption>Pasting the parts with acrylic resin.</figcaption>
+alt="Pasting the parts 1 and 2" width="360" height="270" border="10" />
+<figcaption>Pasting parts 1 and 2 with silicone.</figcaption>
 </figure>
