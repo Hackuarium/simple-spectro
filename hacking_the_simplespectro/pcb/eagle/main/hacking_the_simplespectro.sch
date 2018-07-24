@@ -2871,15 +2871,6 @@ This setting can be found in the board layout editor under the Edit menu.  Selec
 <text x="-2.7" y="2.8" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="-3.2" y="-3.9" size="1.27" layer="27" font="vector">&gt;VALUE</text>
 </package>
-<package name="LED-TRICOLOR-THROUGHHOLE">
-<wire x1="-3.3" y1="2" x2="-3.3" y2="-2" width="0.127" layer="21"/>
-<wire x1="-3.3" y1="-2" x2="-3.3" y2="2" width="0.127" layer="21" curve="292.619865"/>
-<pad name="GND" x="-0.6825" y="0" drill="0.7" shape="long" rot="R90" thermals="no"/>
-<pad name="GRN" x="0.746" y="0" drill="0.7" shape="long" rot="R90" thermals="no"/>
-<pad name="BLU" x="2.1745" y="0" drill="0.7" shape="long" rot="R90" thermals="no"/>
-<pad name="RED" x="-2.111" y="0" drill="0.7" shape="long" rot="R270"/>
-<text x="-2.54" y="3.81" size="1.27" layer="25">&gt;Name</text>
-</package>
 <package name="TSL237">
 <text x="-4.953" y="-1.016" size="0.4318" layer="25">&gt;Name</text>
 <text x="-4.953" y="-1.778" size="0.4318" layer="27">TSL237</text>
@@ -2963,70 +2954,6 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <text x="-3.81" y="-5.08" size="1.27" layer="96" font="vector">&gt;VALUE</text>
 <pin name="P$1" x="-5.08" y="0" visible="off" length="short"/>
 <pin name="P$2" x="5.08" y="0" visible="off" length="short" rot="R180"/>
-</symbol>
-<symbol name="LED-RGB-COMMON-CATHODE">
-<wire x1="6.35" y1="-3.048" x2="5.08" y2="-1.016" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-1.016" x2="3.81" y2="-3.048" width="0.254" layer="94"/>
-<wire x1="6.35" y1="-1.016" x2="5.08" y2="-1.016" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-1.016" x2="3.81" y2="-1.016" width="0.254" layer="94"/>
-<wire x1="6.35" y1="-3.048" x2="3.81" y2="-3.048" width="0.254" layer="94"/>
-<wire x1="3.048" y1="-1.016" x2="2.159" y2="-1.905" width="0.1524" layer="94"/>
-<wire x1="3.81" y1="-1.778" x2="2.921" y2="-2.667" width="0.1524" layer="94"/>
-<wire x1="1.27" y1="-3.048" x2="0" y2="-1.016" width="0.254" layer="94"/>
-<wire x1="0" y1="-1.016" x2="-1.27" y2="-3.048" width="0.254" layer="94"/>
-<wire x1="1.27" y1="-1.016" x2="0" y2="-1.016" width="0.254" layer="94"/>
-<wire x1="0" y1="-1.016" x2="-1.27" y2="-1.016" width="0.254" layer="94"/>
-<wire x1="1.27" y1="-3.048" x2="-1.27" y2="-3.048" width="0.254" layer="94"/>
-<wire x1="-2.032" y1="-1.016" x2="-2.921" y2="-1.905" width="0.1524" layer="94"/>
-<wire x1="-1.27" y1="-1.778" x2="-2.159" y2="-2.667" width="0.1524" layer="94"/>
-<wire x1="-3.81" y1="-3.048" x2="-5.08" y2="-1.016" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="-1.016" x2="-6.35" y2="-3.048" width="0.254" layer="94"/>
-<wire x1="-3.81" y1="-1.016" x2="-5.08" y2="-1.016" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="-1.016" x2="-6.35" y2="-1.016" width="0.254" layer="94"/>
-<wire x1="-3.81" y1="-3.048" x2="-6.35" y2="-3.048" width="0.254" layer="94"/>
-<wire x1="-7.112" y1="-1.016" x2="-8.001" y2="-1.905" width="0.1524" layer="94"/>
-<wire x1="-6.35" y1="-1.778" x2="-7.239" y2="-2.667" width="0.1524" layer="94"/>
-<wire x1="-5.08" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
-<wire x1="0" y1="0" x2="0" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="0" y1="0" x2="5.08" y2="0" width="0.1524" layer="94"/>
-<wire x1="5.08" y1="0" x2="5.08" y2="-2.54" width="0.1524" layer="94"/>
-<circle x="-5.08" y="0" radius="0.1796" width="0.254" layer="94"/>
-<circle x="0" y="0" radius="0.1796" width="0.254" layer="94"/>
-<text x="-2.54" y="0.762" size="1.778" layer="95">&gt;NAME</text>
-<pin name="CGREEN" x="5.08" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
-<pin name="CBLUE" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
-<pin name="CRED" x="-5.08" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
-<pin name="A2" x="-5.08" y="2.54" visible="pad" length="middle" direction="pas" rot="R270"/>
-<polygon width="0.1524" layer="94">
-<vertex x="2.032" y="-1.524"/>
-<vertex x="1.778" y="-2.286"/>
-<vertex x="2.54" y="-2.032"/>
-</polygon>
-<polygon width="0.1524" layer="94">
-<vertex x="2.794" y="-2.286"/>
-<vertex x="2.54" y="-3.048"/>
-<vertex x="3.302" y="-2.794"/>
-</polygon>
-<polygon width="0.1524" layer="94">
-<vertex x="-3.048" y="-1.524"/>
-<vertex x="-3.302" y="-2.286"/>
-<vertex x="-2.54" y="-2.032"/>
-</polygon>
-<polygon width="0.1524" layer="94">
-<vertex x="-2.286" y="-2.286"/>
-<vertex x="-2.54" y="-3.048"/>
-<vertex x="-1.778" y="-2.794"/>
-</polygon>
-<polygon width="0.1524" layer="94">
-<vertex x="-8.128" y="-1.524"/>
-<vertex x="-8.382" y="-2.286"/>
-<vertex x="-7.62" y="-2.032"/>
-</polygon>
-<polygon width="0.1524" layer="94">
-<vertex x="-7.366" y="-2.286"/>
-<vertex x="-7.62" y="-3.048"/>
-<vertex x="-6.858" y="-2.794"/>
-</polygon>
 </symbol>
 <symbol name="TSL237">
 <circle x="-7.62" y="12.7" radius="5.6796125" width="0.254" layer="94"/>
@@ -3163,24 +3090,6 @@ Source: http://www.infineon.com/dgdl/BSP613P_Rev2.4.pdf</description>
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
 <connect gate="G$1" pin="P$2" pad="P$2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="RGB-COMMON-CATHODE">
-<gates>
-<gate name="G$1" symbol="LED-RGB-COMMON-CATHODE" x="0" y="-2.54"/>
-</gates>
-<devices>
-<device name="" package="LED-TRICOLOR-THROUGHHOLE">
-<connects>
-<connect gate="G$1" pin="A2" pad="GND"/>
-<connect gate="G$1" pin="CBLUE" pad="BLU"/>
-<connect gate="G$1" pin="CGREEN" pad="GRN"/>
-<connect gate="G$1" pin="CRED" pad="RED"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -13652,19 +13561,10 @@ EC12E series with push-on switch</description>
 <attribute name="ELECROW" value="C17414"/>
 <attribute name="LCSC" value="C17414"/>
 </part>
-<part name="R7" library="rcl" deviceset="R-EU_" device="R0805" value="1k">
+<part name="R7" library="rcl" deviceset="R-EU_" device="R0805" value="22">
 <attribute name="ELECROW" value="C17513"/>
 <attribute name="LCSC" value="C17513"/>
 </part>
-<part name="R8" library="rcl" deviceset="R-EU_" device="R0805" value="1k">
-<attribute name="ELECROW" value="C17513"/>
-<attribute name="LCSC" value="C17513"/>
-</part>
-<part name="R9" library="rcl" deviceset="R-EU_" device="R0805" value="1k">
-<attribute name="ELECROW" value="C17513"/>
-<attribute name="LCSC" value="C17513"/>
-</part>
-<part name="LED5" library="lpatiny" deviceset="RGB-COMMON-CATHODE" device=""/>
 <part name="LCD" library="HD44780LCD" deviceset="LCD-HD44780" device="16X2-4-HOLES" technology="4-HOLES"/>
 <part name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="10u">
 <attribute name="ELECROW" value="C15850"/>
@@ -13704,7 +13604,7 @@ EC12E series with push-on switch</description>
 <attribute name="MPN" value="667-ERJ-8GEYJ101V"/>
 </part>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
-<part name="LED4" library="SparkFun" deviceset="LED" device="5MM" value="UV"/>
+<part name="LED4" library="SparkFun" deviceset="LED" device="5MM" value="Blue"/>
 <part name="U$7" library="lpatiny" deviceset="TSL237" device=""/>
 <part name="U$8" library="microbuilder" deviceset="GND" device=""/>
 <part name="D2" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="MBR0520LT" device="" package3d_urn="urn:adsk.eagle:package:43420/1" value="Schottky">
@@ -13808,6 +13708,7 @@ EC12E series with push-on switch</description>
 <attribute name="LCSC" value="C17408"/>
 </part>
 <part name="SW1" library="switch-alps" deviceset="EC12E_SW" device=""/>
+<part name="LED1" library="SparkFun" deviceset="LED" device="5MM" value="Blue"/>
 </parts>
 <sheets>
 <sheet>
@@ -13966,15 +13867,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="LCSC" x="111.76" y="35.56" size="1.778" layer="96" rot="MR180" display="off"/>
 <attribute name="ELECROW" x="111.76" y="35.56" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
-<instance part="R8" gate="G$1" x="111.76" y="40.64" rot="MR180">
-<attribute name="LCSC" x="111.76" y="40.64" size="1.778" layer="96" rot="MR180" display="off"/>
-<attribute name="ELECROW" x="111.76" y="40.64" size="1.778" layer="96" rot="MR180" display="off"/>
-</instance>
-<instance part="R9" gate="G$1" x="111.76" y="45.72" rot="MR0">
-<attribute name="LCSC" x="111.76" y="45.72" size="1.778" layer="96" rot="MR0" display="off"/>
-<attribute name="ELECROW" x="111.76" y="45.72" size="1.778" layer="96" rot="MR0" display="off"/>
-</instance>
-<instance part="LED5" gate="G$1" x="99.06" y="40.64" rot="R90"/>
 <instance part="LCD" gate="G$1" x="185.42" y="35.56"/>
 <instance part="C8" gate="G$1" x="-7.62" y="38.1">
 <attribute name="MPN" x="-7.62" y="38.1" size="1.778" layer="96" display="off"/>
@@ -14127,6 +14019,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 </instance>
 <instance part="SW1" gate="G$1" x="0" y="256.54"/>
 <instance part="SW1" gate="G$2" x="22.86" y="256.54"/>
+<instance part="LED1" gate="G$1" x="99.06" y="35.56" rot="MR270"/>
 </instances>
 <busses>
 </busses>
@@ -14288,10 +14181,9 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="114.3" y1="22.86" x2="119.38" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="LED5" gate="G$1" pin="A2"/>
 <wire x1="96.52" y1="35.56" x2="93.98" y2="35.56" width="0.1524" layer="91"/>
-<junction x="96.52" y="35.56"/>
 <label x="88.9" y="35.56" size="1.778" layer="95"/>
+<pinref part="LED1" gate="G$1" pin="A"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="A0"/>
@@ -14453,9 +14345,9 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <label x="170.18" y="208.28" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R8" gate="G$1" pin="2"/>
-<wire x1="121.92" y1="40.64" x2="116.84" y2="40.64" width="0.1524" layer="91"/>
-<label x="119.38" y="40.64" size="1.778" layer="95"/>
+<pinref part="R7" gate="G$1" pin="2"/>
+<wire x1="116.84" y1="35.56" x2="121.92" y2="35.56" width="0.1524" layer="91"/>
+<label x="119.38" y="35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="A3" class="0">
@@ -14509,11 +14401,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <pinref part="IC1" gate="G$1" pin="PF6(ADC6/TDO)"/>
 <wire x1="160.02" y1="205.74" x2="175.26" y2="205.74" width="0.1524" layer="91"/>
 <label x="170.18" y="205.74" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R9" gate="G$1" pin="1"/>
-<wire x1="116.84" y1="45.72" x2="121.92" y2="45.72" width="0.1524" layer="91"/>
-<label x="121.92" y="48.26" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="D5" class="0">
@@ -14701,11 +14588,6 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="160.02" y1="203.2" x2="175.26" y2="203.2" width="0.1524" layer="91"/>
 <label x="170.18" y="203.2" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="116.84" y1="35.56" x2="121.92" y2="35.56" width="0.1524" layer="91"/>
-<label x="119.38" y="35.56" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="D12" class="0">
 <segment>
@@ -14850,25 +14732,11 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <wire x1="99.06" y1="93.98" x2="104.14" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$9" class="0">
-<segment>
-<pinref part="LED5" gate="G$1" pin="CGREEN"/>
-<pinref part="R9" gate="G$1" pin="2"/>
-<wire x1="104.14" y1="45.72" x2="106.68" y2="45.72" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="R8" gate="G$1" pin="1"/>
-<pinref part="LED5" gate="G$1" pin="CBLUE"/>
-<wire x1="106.68" y1="40.64" x2="104.14" y2="40.64" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$13" class="0">
 <segment>
-<pinref part="LED5" gate="G$1" pin="CRED"/>
 <pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="104.14" y1="35.56" x2="106.68" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="LED1" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="VDD" class="1">
