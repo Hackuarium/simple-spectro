@@ -44,9 +44,9 @@ Here are the results:
 |UV absorbance|  0,118 |0,018|
 
 #### KI 0.0001M: 
-|             | MEAN   | SD|
-|-------------|--------|---|
-|UV absorbance|        |   |
+|             | MEAN   | SD     |
+|-------------|--------|--------|
+|UV absorbance| 0,084  |  0,011 |
 
 If you want to check all our measure, please click on the following link:
 
