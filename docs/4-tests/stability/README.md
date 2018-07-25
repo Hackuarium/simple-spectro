@@ -85,24 +85,36 @@ We obtained theses results that differ from the one with the ones without the pi
 |--------------------------|--------|--------|--------
 |Mean of energy            |353033,4|317978,2|59185,9
 |SD                        |149,01  |23,69   |5,30
+#
+
+
 
 
 | Tank H2O without piece   | R      | G      | B
 |--------------------------|--------|--------|--------
 |Mean of energy            |472297,8|421643,8|59170,7
 |SD                        |115,89  |106,08  |3,02
+#
+
+
 
 
 | Empty tank with piece    | R      | G      | B
 |--------------------------|--------|--------|--------
 |Mean of energy            |327422,2|322457,5|397948,8
 |SD                        |43,81   |28,99   |131,21
+#
+
+
 
 
 | Tank H2O with piece      | R      | G      | B
 |--------------------------|--------|--------|--------
 |Mean of energy            |414108,5|422623,7|50511,6
 |SD                        |53,73   |43,92   |33,59
+#
+
+
 
 #### Orientation of the piece
 
@@ -111,10 +123,17 @@ We obtained theses results that differ from the one with the ones without the pi
 |Mean of energy               |61153| 141100,7| 177537,6
 |SD                           |484,21  |1089,87 |1050,4
 
+#
+
+
+
 | Test orientation without piece | R      | G      | B
 |--------------------------------|--------|--------|--------
 |Mean of energy                  |91207,2| 256636,7| 181855,8
 |SD                              |7635,79 |22432,84 |711,92
+#
+
+
 
 
 Here are stored all of our measures for the hacking of the case:

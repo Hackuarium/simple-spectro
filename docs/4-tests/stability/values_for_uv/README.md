@@ -6,6 +6,9 @@ We made different measures to see how much energy was received by the captor in 
 |-------|-------------|---------------
 |Mean   |16255,9      |12492,2
 |SD     |18,82        |19,53
+#
+
+
 
 If you want to see all our measures, please check the following folder:
 

@@ -22,6 +22,10 @@ If you want to see all these measures, please look at:
 |R      |0,0266   |0,0121
 |G      |1,521    |0,0248
 |B      |1,531    |0,0813
+#
+
+
+
 
 #### Absorbance at pH 2
 |       |Mean     |SD  
@@ -29,6 +33,9 @@ If you want to see all these measures, please look at:
 |R      |0,0388   |0,0125
 |G      |1,555    |0,0545
 |B      |1,609    |0,1317
+#
+
+
 
 #### Absorbance at pH 3
 
@@ -37,6 +44,9 @@ If you want to see all these measures, please look at:
 |R      |0,045    |0,0058
 |G      |1,488    |0,0275
 |B      |1,382    |0,0499
+#
+
+
 
 #### Absorbance at pH 4
 
@@ -45,6 +55,9 @@ If you want to see all these measures, please look at:
 |R      |0,09     |0,0141
 |G      |0,468    |0,0526
 |B      |0,304    |0,0351
+#
+
+
 
 
 #### Absorbance at pH 5
@@ -54,6 +67,9 @@ If you want to see all these measures, please look at:
 |R      |0,1217   |0,021
 |G      |0,3      |0,036
 |B      |0,1917   |0,026
+#
+
+
 
 #### Absorbance at pH 6
 
@@ -62,6 +78,9 @@ If you want to see all these measures, please look at:
 |R      |0,16     |0,016
 |G      |0,29     |0,034
 |B      |0,184    |0,027
+#
+
+
 
 
 #### Absorbance at pH 7
@@ -71,6 +90,9 @@ If you want to see all these measures, please look at:
 |R      |0,1586   |0,012
 |G      |0,3086   |0,015
 |B      |0,2071   |0,015
+#
+
+
 
 
 #### Absorbance at pH 8
@@ -80,6 +102,9 @@ If you want to see all these measures, please look at:
 |R      |0,192    |0,018
 |G      |0,314    |0,024
 |B      |0,222    |0,022
+#
+
+
 
 #### Absorbance at pH 9
 
@@ -88,6 +113,9 @@ If you want to see all these measures, please look at:
 |R      |0,3767   |0,0052
 |G      |0,2983   |0,031
 |B      |0,2317   |0,0098
+#
+
+
 
 #### Absorbance at pH 10
 
@@ -96,6 +124,9 @@ If you want to see all these measures, please look at:
 |R      |0,4133   |0,021
 |G      |0,25     |0,01
 |B      |0,2833   |0,0058
+#
+
+
 
 #### Absorbance at pH 12
 
@@ -104,6 +135,9 @@ If you want to see all these measures, please look at:
 |R      |0,5733   |0,055
 |G      |0,3267   |0,015
 |B      |0,6867   |0,025
+#
+
+
 
 #### Absorbance at pH 14
 
@@ -112,3 +146,6 @@ If you want to see all these measures, please look at:
 |R      |0,07     |0,014
 |G      |0,2675   |0,019
 |B      |1,0925   |0,075
+#
+
+
