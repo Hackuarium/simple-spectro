@@ -45,5 +45,11 @@ alt="8 pins connection" width="360" height="270" border="15" />
 <figcaption>8 pins connection of the spectro-plongeur.</figcaption>
 </figure>
 
+<figure>
+<img src="https://github.com/Hackuarium/simple-spectro/blob/Test/hacking_the_simplespectro/images/spectro_plongeur.jpg" 
+alt="assembled probe" width="360" height="270" border="15" />
+<figcaption>Assembled probe.</figcaption>
+</figure>
+
 
 
