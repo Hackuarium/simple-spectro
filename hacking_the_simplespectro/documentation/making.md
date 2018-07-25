@@ -41,7 +41,7 @@ alt="Pasting the parts 1 and 2" width="360" height="270" border="10" />
 
 <figure>
 <img src="https://github.com/Hackuarium/simple-spectro/blob/Test/hacking_the_simplespectro/images/pins_connection.jpg" 
-alt="8 pins connection" width="360" height="270" border="10" />
+alt="8 pins connection" width="360" height="270" border="15" />
 <figcaption>8 pins connection of the spectro-plongeur.</figcaption>
 </figure>
 
