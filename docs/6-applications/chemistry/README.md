@@ -53,6 +53,7 @@ To use the CQDs, you will have to dilute them (for more precise quantities, plea
 
 - [CQDs-attempts](cqds-attempts)
 
+
 ## Test of fluorescence
 
 Using the simple-spectrophotometer, we tested for the reaction of CQDs when exposed to UV light, while the particles were diluted in water. We used water as blank, and test for different concentration of CQDs (1, 3 or 5 drops per tank). We obtained those results:
@@ -83,18 +84,20 @@ Using the simple-spectrophotometer, we tested for the reaction of CQDs when expo
 |B      |468810,2 |13237,1 |1,57       |   |    |18055,30|3902,91 |0,12
 |UV     |6912,3   |4021,5  |0,234      |   |    |202,21  |123,86  |0,016
 
+You can find all the values here:
+- [CQDs-values](cads-values)
 
 # Determination of the pH using red cabbage
-The color of the red cabbage highly depends on the acidity. We are trying to determine if it is possible to create a model with the simple-spectrophotometer to allow the users to estimate easily the pH of their solution.
+The color of the red cabbage highly depends on the pH of solution. We are trying to determine if it is possible to create a model with the simple-spectrophotometer to allow the users to estimate easily the pH of their solution.
 
 ## How to create your red cabbage solution ?
 
-####  materials
+####  Materials
 – 500g of red cabbage
 
-#### procedure
+#### Procedure
 1. Cut your red cabbage in small pieces.
-2. Boil it in 1L of tap water.
+2. Boil it in 1L of tap water for ~ 25 min.
 3. Collect the juice and store it in the fridge.
 
 We are trying to create a precise procedure to use it, for the moment you can see the results of our attempts:

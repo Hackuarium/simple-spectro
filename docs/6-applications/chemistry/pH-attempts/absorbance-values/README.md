@@ -8,10 +8,7 @@ To start, we needed values for different pH solution, we had:
 
 From these we made 12 solutions from pH 1 to 10, 12 and 14, add 4ml of each solution in tanks and add 10 drops of red cabbage in each tank.
 
-NB: from each initial solution we filled as many as possible tanks to obtain means of absorption. We obtained from 3 to 8 tanks for each pH. 
-
-If you want to see all these measures, please look at:
-- [absorbance-values-for-red-cabbage](absorbance-values)
+NB: from each initial solution we filled as many as possible tanks to obtain means of absorption. We obtained from 3 to 10 tanks for each pH. 
 
 ## Values of the absorption
 
@@ -109,6 +106,6 @@ If you want to see all these measures, please look at:
 
 |       |Mean     |SD  
 |-------|---------|-------
-|R      |0,07     |0,014
-|G      |0,2675   |0,019
-|B      |1,0925   |0,075
+|R      |0,066    |0,015
+|G      |0,258    |0,027
+|B      |1,052    |0,11
