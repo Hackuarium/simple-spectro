@@ -1,5 +1,6 @@
 # pH determination attempts
 
+## First try
 To start, we needed values for different pH solution, we had:
 
 - 1 solution of HCl 18% 
@@ -148,4 +149,11 @@ If you want to see all these measures, please look at:
 |B      |1,0925   |0,075
 #
 
+## Second try
 
+Using the same stock solutions as before, and a pH-meter, we were able to make different solutions, with a precise pH. In each tank, we put 4 mL of acidic or basic solution and 5 drops of red cabbage solution. Plotting the absorbance in function of the pH, we obtained the following graph:
+
+
+
+Here you can find the values we used:
+- [values of the graph](graph-values)

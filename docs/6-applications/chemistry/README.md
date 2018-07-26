@@ -158,4 +158,3 @@ The color of the red cabbage highly depends on the pH of solution. We are trying
 We are trying to create a precise procedure to use it, for the moment you can see the results of our attempts:
 
 - [pH-determination-attempts](pH-attempts)
-
