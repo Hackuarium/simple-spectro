@@ -109,6 +109,7 @@ Using the simple-spectrophotometer, we tested for the reaction of CQDs when expo
 |G      |419962,1 |293356,4|0,157      |    |     |1908,28  |16532,62|0,027
 |B      |473191,5 |217507,5|0,34       |    |     |4166,15  |25876,94|0,055
 |UV     |6548,1   |4920,6  |0,124      |    |     |179,36   |224,38  |0,020
+#
 
 ### Three drops of CQDs
 
@@ -118,6 +119,7 @@ Using the simple-spectrophotometer, we tested for the reaction of CQDs when expo
 |G      |415605,1 |147389,4|0,457      |   |    |11265,94|17618,44|0,052
 |B      |476379   |49219,3 |0,997      |   |    |5033,65 |12225,96|0,11
 |UV     |6683,5   |4221    |0,2        |   |    |170,83  |147,41  |0,019
+#
 
 ### Five drops of CQDs
 
@@ -127,6 +129,15 @@ Using the simple-spectrophotometer, we tested for the reaction of CQDs when expo
 |G      |418085,4 |78945,4 |0,73       |   |    |7647,39 |10989,91|0,062
 |B      |468810,2 |13237,1 |1,57       |   |    |18055,30|3902,91 |0,12
 |UV     |6912,3   |4021,5  |0,234      |   |    |202,21  |123,86  |0,016
+#
+Plotting the absorbance of the samples, we obtain the following graph:
+
+<img src='graph_fluorescence_quenching.jpg' />
+
+The R squarred is equal to 0.958.
+#
+
+
 
 You can find all the values here:
 - [CQDs-values](cads-values)
