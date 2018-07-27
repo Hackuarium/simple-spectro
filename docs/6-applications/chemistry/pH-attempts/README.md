@@ -153,7 +153,7 @@ If you want to see all these measures, please look at:
 
 Using the same stock solutions as before, and a pH-meter, we were able to make different solutions, with a precise pH. In each tank, we put 4 mL of acidic or basic solution and 5 drops of red cabbage solution. Plotting the absorbance in function of the pH, we obtained the following graph:
 
-
+<img src='graph_red_cabbage.jpg' />
 
 Here you can find the values we used:
 - [values of the graph](graph-values)
