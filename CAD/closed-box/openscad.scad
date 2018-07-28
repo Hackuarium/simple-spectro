@@ -1,4 +1,4 @@
-$fn=20;
+$fn=50;
 
 use <pcb.scad>;
 use <bottom.scad>;
@@ -9,7 +9,7 @@ use <top.scad>;
 showPCB=false;
 showBottom=true;
 showLogo=false;
-showTop=true;
+showTop=false;
 
 aluminium=true;
 
@@ -43,7 +43,7 @@ rotaryX=13.2+shift;
 rotaryY=12.8+shift;
 rotaryR=4;
 rotaryExtension=2; 
-rotaryExtensionR=aluminium ? 5.5 : 0; // 5.5 if you want an extension
+rotaryExtensionR=aluminium ? 5.5 : 0; // 5.5 if you want an extension, was 6 in version 1
 
 logoX=100+shift;
 logoY=0+shift;
