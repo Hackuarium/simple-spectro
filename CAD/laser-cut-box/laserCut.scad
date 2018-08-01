@@ -109,37 +109,37 @@ module side(
                     text(text = name, halign = "center", valign="center");
 
     translate([-width/2, -height/2, -thickness/2])
-    difference() {
-    // we create the side
-       cube([width, height, thickness]);
+        difference() {
+        // we create the side
+            cube([width, height, thickness]);
 
-        if (male[0]==0) {
-           fingers(width, fingerWidth, thickness);
-        } else {
-            invertedFingers(width, fingerWidth, thickness);
+                if (male[0]==0) {
+                    fingers(width, fingerWidth, thickness);
+                } else {
+                    invertedFingers(width, fingerWidth, thickness);
+                }
+                
+                translate([thickness, 0, 0]) rotate([0,0,90])
+                if (male[1]==0) {
+                    fingers(height, fingerWidth, thickness);
+                } else {
+                    invertedFingers(height, fingerWidth, thickness);
+                }
+                
+                translate([0, height-thickness, 0])
+                if (male[2]==0) {
+                    fingers(width, fingerWidth, thickness);
+                } else {
+                    invertedFingers(width, fingerWidth, thickness);
+                }
+            
+            translate([width, 0, 0]) rotate([0,0,90])
+                if (male[3]==0) {
+                    fingers(height, fingerWidth, thickness);
+                } else {
+                    invertedFingers(height, fingerWidth, thickness);
+                }
         }
-        
-        translate([thickness, 0, 0]) rotate([0,0,90])
-        if (male[1]==0) {
-           fingers(height, fingerWidth, thickness);
-        } else {
-            invertedFingers(height, fingerWidth, thickness);
-        }
-        
-        translate([0, height-thickness, 0])
-        if (male[2]==0) {
-           fingers(width, fingerWidth, thickness);
-        } else {
-            invertedFingers(width, fingerWidth, thickness);
-        }
-       
-       translate([width, 0, 0]) rotate([0,0,90])
-       if (male[3]==0) {
-           fingers(height, fingerWidth, thickness);
-        } else {
-            invertedFingers(height, fingerWidth, thickness);
-        }
-    }
 }
 
 

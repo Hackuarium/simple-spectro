@@ -62,3 +62,5 @@ The dumped data will contain many columns. The first column corresponds to the t
 The first line corresponds to the blank and the next lines to the kinetic. The values for each column is directly proprotional to the quantity of light that reaches the detector. If you want to calculate the corresponding absorbance you need to substract to each value the corresponding value of the first row.
 
 There is a utility that will allows to directly [convert and plot the results on-line](http://www.cheminfo.org/?viewURL=https%3A%2F%2Fcouch.cheminfo.org%2Fcheminfo-public%2F7b6eb01da45510275179c4b587bb63f0%2Fview.json&loadversion=true&fillsearch=Analyse+spectro+log) (using Google Chrome).
+
+This device is also compatible with the project 'Arduimon'. The default qualifier is expected to be 21569. You may check the current qualifier of your device using the instruction `uq`. You may set the qualifier using `uq21569`.
