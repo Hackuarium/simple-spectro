@@ -3,9 +3,12 @@ box(
     height=20,
     depth=30,
     thickness=1,
-    fingerWidth=undef
+    fingerWidth=undef,
+    labelsSize=undef,
+    showLabel=false,
+    labels=["Bottom","Top","Front","Back","Left","Right"],
+    3d=false
 );
-
 
 
 module box() {
@@ -59,38 +62,43 @@ module box() {
         ]
     ];
     
-    assemble=assemble2d;
+    assemble=assemble3d;
     
     // bottom
     translate(assemble[0][0])
         rotate(assemble[0][1])
-            side(width, depth, thickness, fingerWidth, male=[1,1,1,1], name="bottom");
+            side(width, depth, thickness, fingerWidth, male=[1,1,1,1],
+            name="bottom", color="green");
     
     // top
     translate(assemble[1][0])
         rotate(assemble[1][1])
             side(width, depth, thickness, fingerWidth, male=[1,1,1,1],
-            name="top");
+            name="top", color="blue");
     
     // front
     translate(assemble[2][0])
         rotate(assemble[2][1])
-            side(width, height, thickness, fingerWidth, male=[0,1,0,1], name="front");
+            side(width, height, thickness, fingerWidth, male=[0,1,0,1],
+            name="front", color="orange");
     
     // back
     translate(assemble[3][0])
         rotate(assemble[3][1])
-            side(width, height, thickness, fingerWidth, male=[0,1,0,1], name="back");
+            side(width, height, thickness, fingerWidth, male=[0,1,0,1],
+            name="back", color="indigo");
             
     // left
     translate(assemble[4][0])
         rotate(assemble[4][1])
-            side(height, depth, thickness, fingerWidth, male=[0,0,0,0], name="left");
+            side(height, depth, thickness, fingerWidth, male=[0,0,0,0],
+            name="left", color="magenta");
     
     // right
     translate(assemble[5][0])
         rotate(assemble[5][1])
-            side(height, depth, thickness, fingerWidth, male=[0,0,0,0], name="right");
+            side(height, depth, thickness, fingerWidth, male=[0,0,0,0],
+            name="right", color="cyan");
 };
 
 
@@ -99,19 +107,19 @@ module side(
     height,
     thickness,
     fingerWidth,
-    male=[0,0,0,0]
+    male=[0,0,0,0],
+    color="yellow"
 ) {
     textRotation=(width<height) ? 90 : 0;
     color("red")
         translate([0,0,thickness])
             rotate([0,0,textRotation])
-                linear_extrude(height=0.1)
-                    text(text = name, halign = "center", valign="center");
+                text(text = name, halign = "center", valign="center");
 
     translate([-width/2, -height/2, -thickness/2])
         difference() {
         // we create the side
-            cube([width, height, thickness]);
+            color(color) square([width, height]);
 
                 if (male[0]==0) {
                     fingers(width, fingerWidth, thickness);
@@ -145,7 +153,7 @@ module side(
 
 module invertedFingers(width, fingerWidth, thickness) {
     color("red") difference() {
-        cube([width, thickness, thickness]);
+        square([width, thickness]);
         fingers(width, fingerWidth, thickness);
     }
 }
@@ -154,9 +162,8 @@ module fingers(width, fingerWidth, thickness) {
     fingerNumber=floor((width-2*thickness-fingerWidth)/(fingerWidth*2));
     fingerStart=(width-(fingerNumber*2-1)*fingerWidth)/2;
     for (i= [0:1:fingerNumber-1]) {
-        echo(i);
         color("green")
             translate([fingerStart+i*2*fingerWidth,0,0])
-                cube( [fingerWidth, thickness, thickness] );
+                square( [fingerWidth, thickness] );
     }
 }
