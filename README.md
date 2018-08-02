@@ -1,5 +1,3 @@
-Check the full documentation on [https://hackuarium.github.io/simple-spectro/](https://hackuarium.github.io/simple-spectro/).
-
 # DIY spectrophotometer
 
 This project was done in the [Hackuarium](http://www.hackuarium.ch/en/) association, a DIY biology and open laboratory situated in Renens (Switzerland). Please fee free to [contact us](mailto:hello@hackuarium.ch) if you would like more information.
