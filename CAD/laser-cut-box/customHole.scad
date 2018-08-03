@@ -1,12 +1,10 @@
 use <side.scad>;
 
 module customHole(kind, parameters) {
-            echo(kind);
-        echo(parameters);
     if (kind=="Custom") {
 
     } else if (kind=="Insert") {
-        translate([0,0,50])
+        echo("INSERT",parameters);
         side(
             width=parameters[0],
             height=parameters[1],
@@ -14,6 +12,7 @@ module customHole(kind, parameters) {
             fingerWidth=parameters[3],
             color="Cyan"
         );
+        echo("DONE");
     }
    
 }
