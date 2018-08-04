@@ -7,7 +7,9 @@ module pcb(
     thickness=3, // thickness of the material
     pcbThickness=1.6,
     topToTop=20, // distance from the top of the PCB to the top of the box
-    bottomToBottom=20, // distance from the bottom of the PCB to the bottom of the box
+    bottomToBottom=20, // distance from the bottom of the PCB to the bottom of the box,
+    screws=[],
+    screwDiameter=3,
     frontTopHoles=[],
     frontBottomHoles=[],
     backTopHoles=[],
@@ -37,11 +39,28 @@ box(
     3d=3d,
     space=2,
     holes=[
-        [ for(hole = topHoles) concat([hole.x+padding, hole.y+padding],[ for (i=[2:1:len(hole)-1]) hole[i]]) ],
-        [ for(hole = bottomHoles) concat([hole.x+padding, hole.y+padding],[ for (i=[2:1:len(hole)-1]) hole[i]]) ],,
+        concat ([ // top
+            for(hole = topHoles)
+                concat([hole.x+padding, hole.y+padding],[for (i=[2:1:len(hole)-1]) hole[i]])
+            ],
+            [for(screw = screws)
+                [screw.x+padding, screw.y+padding, screwDiameter]
+            ]
+            
+        ),
+        concat ([ // bottom
+            for(hole = topHoles)
+                concat([length-hole.x+padding, hole.y+padding],[for (i=[2:1:len(hole)-1]) hole[i]])
+            ],
+            [for(screw = screws)
+                [length-screw.x+padding, screw.y+padding, screwDiameter]
+            ]
+            
+        ),
         [],
         [],
         [],
         []
     ]
 );
+
