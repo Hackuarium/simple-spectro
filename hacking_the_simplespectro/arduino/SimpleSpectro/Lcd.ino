@@ -1,4 +1,3 @@
-
 #define LANGUAGE 'en'
 
 // https://docs.google.com/spreadsheets/d/1oek6pKHUvD7NI2u9-_iEOfVL-NeUmnj1pZCFRRo7n_4/edit?usp=sharing
@@ -29,8 +28,10 @@
 #define TEXT_MAIN_MENU "Main menu"
 #define TEXT_RED "Red"
 #define TEXT_GREEN "Green"
-#define TEXT_BLUE "Blue"
+#define TEXT_BLUE "Blue"         
 #define TEXT_UV1 "UV"
+#define TEXT_LED1 "LED 1"         
+#define TEXT_LED2 "LED 2"   
 #define TEXT_UV2 "UV 2"
 #define TEXT_BEFORE_DELAY "Before delay"
 #define TEXT_FIRST_DELAY "First delay"
@@ -165,26 +166,27 @@ void lcdMenu() {
   rotaryPressed = false;
   int counter = rotaryCounter;
   rotaryCounter = 0;
-  switch (currentMenu < 100 ? currentMenu - currentMenu % 10 : currentMenu - currentMenu % 50) {
-    case 0:
-      lcdMenuHome(counter, doAction);
-      break;
-    case 10:
-      lcdMenuSettings(counter, doAction);
-      break;
-    case 20:
-      lcdStatus(counter, doAction);
-      break;
-    case 30:
-      lcdAcquisition(counter, doAction);
-      break;
-    case 40:
-      lcdUtilities(counter, doAction);
-      break;
-    case 100:
-      lcdResults(counter, doAction);
-      break;
-  }
+  
+    switch (currentMenu < 100 ? currentMenu - currentMenu % 10 : currentMenu - currentMenu % 50) {
+      case 0:
+        lcdMenuHome(counter, doAction);
+        break;
+      case 10:
+        lcdMenuSettings(counter, doAction);
+        break;
+      case 20:
+        lcdStatus(counter, doAction);
+        break;
+      case 30:
+        lcdAcquisition(counter, doAction);
+        break;
+      case 40:
+        lcdUtilities(counter, doAction);
+        break;
+      case 100:
+        lcdResults(counter, doAction);
+        break;
+    }
 }
 
 void lcdResults(int counter, boolean doAction) {
@@ -396,75 +398,147 @@ void lcdMenuHome(int counter, boolean doAction) {
     lcd.setCursor(0, line);
     if ( getParameter(PARAM_MENU) % 10 + line <= lastMenu) lcdNumberLine(line);
 
-    switch (getParameter(PARAM_MENU) % 10 + line) {
-      case 0:
-        if (getParameter(PARAM_NEXT_EXP) >= 0) {
-          lcd.print(F(TEXT_STOP));
-          if (doAction) {
-            setParameter(PARAM_NEXT_EXP, -1);
-            setParameter(PARAM_STATUS, 0);
+      #if MODE == 'P'                                 ///PLONGEUR
+        switch (getParameter(PARAM_MENU) % 10 + line) {
+        case 0:
+            if ((getParameter(PARAM_NEXT_EXP) >= 0) && ( getParameter(PARAM_STATUS) == STATUS_KINETIC)) { // continue acquisition
+            lcd.print(F(TEXT_CONT_KINETC));
+            if (doAction) {
+              setAcquisitionMenu();
+            }
+          } else {
+            lcd.print(F(TEXT_ACQ_KINETIC));
+            if (doAction) {
+              setParameter(PARAM_STATUS, STATUS_KINETIC);
+              setParameter(PARAM_NEXT_EXP, 0);
+            }
           }
-        } else {
-          lcd.print(F(TEXT_ACQUIRE));
-          if (doAction) {
-            setParameter(PARAM_STATUS, STATUS_ONE_SPECTRUM);
-            setParameter(PARAM_NEXT_EXP, 0);
+          break;
+        case 1:
+            if (getParameter(PARAM_NEXT_EXP) >= 0) {
+            lcd.print(F(TEXT_STOP));
+            if (doAction) {
+              setParameter(PARAM_NEXT_EXP, -1);
+              setParameter(PARAM_STATUS, 0);
+            }
+          } else {
+            lcd.print(F(TEXT_ACQUIRE));
+            if (doAction) {
+              setParameter(PARAM_STATUS, STATUS_ONE_SPECTRUM);
+              setParameter(PARAM_NEXT_EXP, 0);
+            }
           }
-        }
-        break;
-      case 1:
-        if ((getParameter(PARAM_NEXT_EXP) >= 0) && ( getParameter(PARAM_STATUS) == STATUS_SEQUENCE)) { // continue acquisition
-          lcd.print(F(TEXT_CONT_SEQUENCE));
+          break;
+        case 2:
+            lcd.print(F(TEXT_SETTINGS));
           if (doAction) {
-            setAcquisitionMenu();
+            setParameter(PARAM_MENU, 10);
           }
-        } else {
-          lcd.print(F(TEXT_ACQ_SEQUENCE));
+          break;
+        case 3:
+            lcd.print(F(TEXT_RESULTS));
           if (doAction) {
-            setParameter(PARAM_STATUS, STATUS_SEQUENCE);
-            setParameter(PARAM_NEXT_EXP, 0);
+            setParameter(PARAM_MENU, 100);
           }
-        }
-        break;
-      case 2:
-        if ((getParameter(PARAM_NEXT_EXP) >= 0) && ( getParameter(PARAM_STATUS) == STATUS_KINETIC)) { // continue acquisition
-          lcd.print(F(TEXT_CONT_KINETC));
+          break;
+        case 4:
+            if ((getParameter(PARAM_NEXT_EXP) >= 0) && ( getParameter(PARAM_STATUS) == STATUS_SEQUENCE)) { // continue acquisition
+            lcd.print(F(TEXT_CONT_SEQUENCE));
+            if (doAction) {
+              setAcquisitionMenu();
+            }
+          } else {
+            lcd.print(F(TEXT_ACQ_SEQUENCE));
+            if (doAction) {
+              setParameter(PARAM_STATUS, STATUS_SEQUENCE);
+              setParameter(PARAM_NEXT_EXP, 0);
+            }
+          }
+          break;
+        case 5:
+          lcd.print(F(TEXT_STATUS));
           if (doAction) {
-            setAcquisitionMenu();
+            setParameter(PARAM_MENU, 20);
           }
-        } else {
-          lcd.print(F(TEXT_ACQ_KINETIC));
+          break;
+        case 6:
+          lcd.print(F(TEXT_UTILITIES));
           if (doAction) {
-            setParameter(PARAM_STATUS, STATUS_KINETIC);
-            setParameter(PARAM_NEXT_EXP, 0);
+            setParameter(PARAM_MENU, 40);
           }
-        }
-        break;
-      case 3:
-        lcd.print(F(TEXT_RESULTS));
-        if (doAction) {
-          setParameter(PARAM_MENU, 100);
-        }
-        break;
-      case 4:
-        lcd.print(F(TEXT_SETTINGS));
-        if (doAction) {
-          setParameter(PARAM_MENU, 10);
-        }
-        break;
-      case 5:
-        lcd.print(F(TEXT_STATUS));
-        if (doAction) {
-          setParameter(PARAM_MENU, 20);
-        }
-        break;
-      case 6:
-        lcd.print(F(TEXT_UTILITIES));
-        if (doAction) {
-          setParameter(PARAM_MENU, 40);
-        }
-        break;
-    }
+          break;
+      }
+      #elif MODE == 'C'
+        switch (getParameter(PARAM_MENU) % 10 + line) {
+        case 0:
+          if (getParameter(PARAM_NEXT_EXP) >= 0) {
+            lcd.print(F(TEXT_STOP));
+            if (doAction) {
+              setParameter(PARAM_NEXT_EXP, -1);
+              setParameter(PARAM_STATUS, 0);
+            }
+          } else {
+            lcd.print(F(TEXT_ACQUIRE));
+            if (doAction) {
+              setParameter(PARAM_STATUS, STATUS_ONE_SPECTRUM);
+              setParameter(PARAM_NEXT_EXP, 0);
+            }
+          }
+          break;
+        case 1:
+          if ((getParameter(PARAM_NEXT_EXP) >= 0) && ( getParameter(PARAM_STATUS) == STATUS_SEQUENCE)) { // continue acquisition
+            lcd.print(F(TEXT_CONT_SEQUENCE));
+            if (doAction) {
+              setAcquisitionMenu();
+            }
+          } else {
+            lcd.print(F(TEXT_ACQ_SEQUENCE));
+            if (doAction) {
+              setParameter(PARAM_STATUS, STATUS_SEQUENCE);
+              setParameter(PARAM_NEXT_EXP, 0);
+            }
+          }
+          break;
+        case 2:
+          if ((getParameter(PARAM_NEXT_EXP) >= 0) && ( getParameter(PARAM_STATUS) == STATUS_KINETIC)) { // continue acquisition
+            lcd.print(F(TEXT_CONT_KINETC));
+            if (doAction) {
+              setAcquisitionMenu();
+            }
+          } else {
+            lcd.print(F(TEXT_ACQ_KINETIC));
+            if (doAction) {
+              setParameter(PARAM_STATUS, STATUS_KINETIC);
+              setParameter(PARAM_NEXT_EXP, 0);
+            }
+          }
+          break;
+        case 3:
+          lcd.print(F(TEXT_RESULTS));
+          if (doAction) {
+            setParameter(PARAM_MENU, 100);
+          }
+          break;
+        case 4:
+          lcd.print(F(TEXT_SETTINGS));
+          if (doAction) {
+            setParameter(PARAM_MENU, 10);
+          }
+          break;
+        case 5:
+          lcd.print(F(TEXT_STATUS));
+          if (doAction) {
+            setParameter(PARAM_MENU, 20);
+          }
+          break;
+        case 6:
+          lcd.print(F(TEXT_UTILITIES));
+          if (doAction) {
+            setParameter(PARAM_MENU, 40);
+          }
+          break;
+      }
+      #endif
     doAction = false;
   }
 }

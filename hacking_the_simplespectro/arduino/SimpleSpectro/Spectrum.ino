@@ -1,4 +1,5 @@
 #include <FreqCount.h>
+#include "Mode.h"
 
 void testRGB() {
   for (byte i = 0; i < nbLeds; i++) {
@@ -88,18 +89,20 @@ void runExperiment() {
 }
 
 void runExperiment(byte nbExperiments) {
-  for (byte i = 0; i <= nbExperiments; i++) {
-    setParameter(PARAM_NEXT_EXP, i);
-    setAcquisitionMenu();
-    waitExperiment();
-    if (i == 0) {
-      clearData();
+                                  
+     for (byte i = 0; i <= nbExperiments; i++) {
+      setParameter(PARAM_NEXT_EXP, i);
+      setAcquisitionMenu();
+      waitExperiment();
+      if (i == 0) {
+        clearData();
+      }
+      if (getParameter(PARAM_NEXT_EXP) < 0) return;
+      acquire(false);
+      if (getParameter(PARAM_NEXT_EXP) < 0) return;
+      if (i > 0) calculateResult(i);
     }
-    if (getParameter(PARAM_NEXT_EXP) < 0) return;
-    acquire(false);
-    if (getParameter(PARAM_NEXT_EXP) < 0) return;
-    if (i > 0) calculateResult(i);
-  }
+  
   setParameter(PARAM_MENU, 20);// status menu
   setParameter(PARAM_STATUS, 0);
   setParameter(PARAM_NEXT_EXP, -1);

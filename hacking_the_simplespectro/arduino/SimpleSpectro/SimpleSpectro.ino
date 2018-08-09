@@ -3,6 +3,7 @@
 #include <TimeLib.h> // git clone https://github.com/PaulStoffregen/Time
 #include "lib/Utility.h"
 
+#include "Mode.h"
 
 
 // VERSION
@@ -17,8 +18,14 @@
 
 #define RED    A0
 #define GREEN  A1
-#define BLUE   A2
-#define UV1    A4 // 5mm
+
+#if MODE == 'P'                       ///PLONGEUR
+  #define LED1   A2   
+  #define LED2   A4      
+#elif MODE == 'C'
+  #define BLUE   A2   
+  #define UV1    A4  
+#endif
 
 #if VERSION == B || VERSION == C || VERSION == D
 #define BATTERY               A3  // if battery we have also the temperature sensor
@@ -42,15 +49,19 @@
 byte ALL_PARAMETERS[] = {RED, GREEN, BLUE, UV1};  // all possible leds
 byte CURRENT_PARAMETERS[] = {RED, GREEN, BLUE, UV1};      // will contain the active les
 #else
-byte ALL_PARAMETERS[] = {RED, GREEN, BLUE, UV1, TEMPERATURE, BATTERY_LEVEL};  // all possible leds
-byte CURRENT_PARAMETERS[] = {RED, GREEN, BLUE, UV1, TEMPERATURE, BATTERY_LEVEL};      // will contain the active les
+  #if MODE == 'P'                                                                                     ///PLONGEUR
+    byte ALL_PARAMETERS[] = {LED1, LED2, TEMPERATURE, BATTERY_LEVEL};  // all possible leds
+    byte CURRENT_PARAMETERS[] = {LED1, LED2, TEMPERATURE, BATTERY_LEVEL};      // will contain the active leds
+  #elif MODE == 'C'
+    byte ALL_PARAMETERS[] = {RED, GREEN, BLUE, UV1, TEMPERATURE, BATTERY_LEVEL};  // all possible leds
+    byte CURRENT_PARAMETERS[] = {RED, GREEN, BLUE, UV1, TEMPERATURE, BATTERY_LEVEL};      // will contain the active leds
+  #endif
 #endif
 
 byte nbLeds;              // number of active leds
 byte nbParameters;        // number of parameters to record
 byte dataRowSize;         // size of a data row (number of entries in data)
 byte maxNbRows;           // calculate value depending the size of EEPROM dedicated to logs
-
 
 void setup() {
   setupParameters();

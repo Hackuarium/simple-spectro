@@ -1,3 +1,4 @@
+#include "Mode.h"
 /*********************************************
    This file is used to declare the parameters
    table used by the program.
@@ -61,10 +62,18 @@ void resetParameters() {
   for (byte i = 0; i < 10; i++) {
     setAndSaveParameter(i, 0);
   }
-
-  setAndSaveParameter(PARAM_BEFORE_DELAY, 2);
-  setAndSaveParameter(PARAM_FIRST_DELAY, 10);
-  setAndSaveParameter(PARAM_INTER_DELAY, 20);
+  #if MODE == 'P'                                         ///PLONGEUR
+    setAndSaveParameter(PARAM_BEFORE_DELAY, 1);
+    setAndSaveParameter(PARAM_FIRST_DELAY, 1);
+    setAndSaveParameter(PARAM_INTER_DELAY, 1);   // faster to test the spectro (less delay) but need to be changed when using it
+    setAndSaveParameter(PARAM_NUMPER_EXP, 6);
+  #elif MODE == 'C'
+    setAndSaveParameter(PARAM_BEFORE_DELAY, 5);
+    setAndSaveParameter(PARAM_FIRST_DELAY, 5);
+    setAndSaveParameter(PARAM_INTER_DELAY, 20);
+    setAndSaveParameter(PARAM_NUMPER_EXP, maxNbRows);
+  #endif
+  
   setAndSaveParameter(PARAM_NUMPER_EXP, maxNbRows);
   setAndSaveParameter(PARAM_NEXT_EXP, -1);
   setAndSaveParameter(PARAM_WAIT, 0);
