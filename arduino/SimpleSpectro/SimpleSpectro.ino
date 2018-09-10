@@ -3,7 +3,7 @@
 #include <TimeLib.h> // git clone https://github.com/PaulStoffregen/Time
 #include "lib/Utility.h"
 
-#define SOFTWARE_VERSION "v1.0.0"
+#define SOFTWARE_VERSION "v1.0.1"
 
 // VERSION
 // *******
