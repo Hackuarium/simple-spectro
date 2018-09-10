@@ -71,7 +71,7 @@ void resetParameters()
   setAndSaveParameter(PARAM_STATUS, 0);
   setAndSaveParameter(PARAM_INVERT_ROTARY, 0);
   // setAndSaveParameter(PARAM_ACTIVE_LEDS, pow(2, sizeof(ALL_PARAMETERS)) - 1);
-  setAndSaveParameter(PARAM_ACTIVE_LEDS, 7);
+  setAndSaveParameter(PARAM_ACTIVE_LEDS, 15);
   setQualifier(21569); // TA
 }
 
