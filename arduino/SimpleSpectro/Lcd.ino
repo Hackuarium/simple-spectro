@@ -207,7 +207,7 @@ void lcdResults(int counter, boolean doAction) {
     if (getDataLong(getParameter(PARAM_COLOR)) == LONG_MAX_VALUE || getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)) == LONG_MAX_VALUE) {
       lcd.print(F("OVER"));
     } else {
-      lcd.print(log10(getDataLong(getParameter(PARAM_COLOR)) / getDataLong(i * dataRowSize + getParameter(PARAM_COLOR))));
+      lcd.print(log10((double)getDataLong(getParameter(PARAM_COLOR)) / (double)getDataLong(i * dataRowSize + getParameter(PARAM_COLOR))));
     }
     lcd.print(" ");
     lcd.print(getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)));
