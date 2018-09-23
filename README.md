@@ -1,6 +1,6 @@
 # DIY spectrophotometer
 
-This project was done in the [Hackuarium](http://www.hackuarium.ch/en/) association, a DIY biology and open laboratory situated in Renens (Switzerland). Please fee free to [contact us](mailto:hello@hackuarium.ch) if you would like more information.
+This project was done in the [Hackuarium](http://www.hackuarium.ch/en/) association, a DIY biology and open laboratory situated in Renens (Switzerland). Please fee free to [contact us](https://form.jotformeu.com/71600609780354) if you would like more information or would like to buy a fully build and tested spectro.
 
 The goal is to create a simple spectrophotometer that measures the
 absorbance of a sample at 3 different light colors (red, green, blue), is
