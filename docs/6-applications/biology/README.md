@@ -30,3 +30,24 @@ We tried to measure the growth of other bacteria, such as Rhizobium and Vibrio f
 - For Vibrio fischeri, we took a measure every 15 minutes, during 14 hours and 30 minutes. The bacteria grow at room temperature. For the blank we used only media. Then we inoculated the media and started to take measures. At the end, we obtained the following graph:
 
 <img src='vibrio_fischeri_culture.jpg' />
+
+# Effect of the temperature on the growth of Vibrio Fischeri
+
+Using the simple spectrophotometer, we tried to highlight the effect of the temperature on the growth of Vibrio Fischeri.  In order to study that, we put the same dispositive than above in an incubator, where the temperature has been monitored. We did 2 cultures, one at 30°C, and one at 38°C. At a higher temperature, we expect a faster growth of the bacteria. For both cultures, we used only the media as blank, and then we took one measure every 15 minutes, for 14 hours and 30 minutes. We obtained those results:
+
+- Vibrio Fischeri culture at 30°C
+
+<img src='bact_v.fischeri_30_culture.jpg' />
+
+- Vibrio Fischeri culture at 38°C
+
+<img src='bact_v.fischeri_38_culture.jpg' />
+
+
+However, the results are very strange, and far from what we obtained for a culture at room temperature. Trying to explain this, we found different explanations that would be possible :
+
+- Vibrio Fischeri is a bioluminescent bacterium. Usually, it is fluorescent only if it grows at room temperature. However, this fluorescence can explains the results we find for the blue. Indeed it emits in the blue.
+
+- The shaker was not working very well, so maybe the cultures had not been mixed well, not allowing the bacteria to grow correctly.
+
+- There was a problem with the simple spectrophotometer, but we can't explain what.
