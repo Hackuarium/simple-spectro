@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.1.3">
+<eagle version="9.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -14809,7 +14809,7 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0.4064" drill="0">
+<class number="0" name="default" width="0.2032" drill="0">
 <clearance class="0" value="0.25"/>
 </class>
 <class number="1" name="power" width="0.4064" drill="0.3048">
@@ -15078,7 +15078,7 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 <attribute name="MPN" value="621-1N5819HW-F"/>
 </part>
 <part name="LED1" library="SparkFun" deviceset="LED" device="5MM" value="UV"/>
-<part name="R7" library="rcl" deviceset="R-EU_" device="R0805" value="1000">
+<part name="R7" library="rcl" deviceset="R-EU_" device="R0805" value="100">
 <attribute name="ELECROW" value="C17408"/>
 <attribute name="LCSC" value="C17408"/>
 </part>
@@ -15424,9 +15424,9 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <attribute name="LCSC" x="203.2" y="261.62" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="LED1" gate="G$1" x="109.22" y="17.78" rot="MR270"/>
-<instance part="R7" gate="G$1" x="101.6" y="17.78" rot="MR180">
-<attribute name="LCSC" x="101.6" y="17.78" size="1.778" layer="96" rot="MR180" display="off"/>
-<attribute name="ELECROW" x="101.6" y="17.78" size="1.778" layer="96" rot="MR180" display="off"/>
+<instance part="R7" gate="G$1" x="99.06" y="17.78" rot="MR180">
+<attribute name="LCSC" x="99.06" y="17.78" size="1.778" layer="96" rot="MR180" display="off"/>
+<attribute name="ELECROW" x="99.06" y="17.78" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="J1" gate="G$1" x="233.68" y="264.16"/>
 </instances>
@@ -16551,7 +16551,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 </segment>
 <segment>
 <pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="96.52" y1="17.78" x2="91.44" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="17.78" x2="88.9" y2="17.78" width="0.1524" layer="91"/>
 <label x="91.44" y="17.78" size="1.778" layer="95"/>
 </segment>
 <segment>
@@ -16592,6 +16592,7 @@ http://blog.zakkemble.co.uk/a-lithium-battery-charger-with-load-sharing/</text>
 <segment>
 <pinref part="R7" gate="G$1" pin="2"/>
 <pinref part="LED1" gate="G$1" pin="A"/>
+<wire x1="104.14" y1="17.78" x2="106.68" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
