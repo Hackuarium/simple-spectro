@@ -1,6 +1,6 @@
 # Battery
 
-In order to evaluate the bettery we have done experiments to exhaust the battery.
+In order to evaluate the battery we have done experiments to exhaust the battery.
 
 This experiment was done on `D1`.
 

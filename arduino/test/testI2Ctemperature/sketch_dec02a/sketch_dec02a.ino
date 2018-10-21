@@ -7,6 +7,8 @@ void setup() {
   Serial.begin(9600);
   Wire.begin();
 
+
+
   writeConfig(NCT75, 1 << 5); // use use oneshot mode to consume 3ua
 }
 
