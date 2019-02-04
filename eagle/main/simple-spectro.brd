@@ -9,7 +9,7 @@
 </settings>
 <grid distance="25" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="6.75" altunitdist="mil" altunit="mil"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="yes"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="yes"/>
@@ -24,42 +24,42 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="yes"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="yes"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="no" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
-<layer number="32" name="bCream" color="7" fill="5" visible="yes" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
 <layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
-<layer number="36" name="bGlue" color="7" fill="5" visible="yes" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
-<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
-<layer number="44" name="Drills" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="12" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="7" fill="1" visible="no" active="no"/>
@@ -126,8 +126,8 @@
 <layer number="155" name="FabDoc3" color="7" fill="1" visible="no" active="yes"/>
 <layer number="190" name="Comments" color="12" fill="1" visible="no" active="yes"/>
 <layer number="199" name="Contour" color="7" fill="1" visible="no" active="yes"/>
-<layer number="200" name="200bmp" color="63" fill="10" visible="yes" active="yes"/>
-<layer number="201" name="201bmp" color="63" fill="10" visible="yes" active="yes"/>
+<layer number="200" name="200bmp" color="63" fill="10" visible="no" active="yes"/>
+<layer number="201" name="201bmp" color="63" fill="10" visible="no" active="yes"/>
 <layer number="202" name="202bmp" color="15" fill="1" visible="no" active="yes"/>
 <layer number="203" name="203bmp" color="2" fill="10" visible="no" active="yes"/>
 <layer number="204" name="204bmp" color="7" fill="1" visible="no" active="yes"/>
@@ -5869,7 +5869,7 @@ design rules under a new name.</description>
 <attribute name="ELECROW" value="C17414" x="73.025" y="61.595" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="LCSC" value="C17414" x="73.025" y="61.595" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="72.898" y="63.627" size="0.8128" layer="26" ratio="18" rot="MR90"/>
-<attribute name="VALUE" x="74.168" y="60.452" size="1.016" layer="28" ratio="10" rot="MR90"/>
+<attribute name="VALUE" x="70.993" y="61.087" size="1.016" layer="28" ratio="10" rot="MR90"/>
 </element>
 <element name="R3" library="rcl" package="R0805" value="10k" x="76.835" y="61.595" smashed="yes" rot="MR0">
 <attribute name="ELECROW" value="C17414" x="76.835" y="61.595" size="1.778" layer="28" rot="MR0" display="off"/>
@@ -6054,7 +6054,7 @@ design rules under a new name.</description>
 <attribute name="ELECROW" value="C17408" x="4.1148" y="31.71825" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="LCSC" value="C17408" x="4.1148" y="31.71825" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="NAME" x="2.8448" y="32.35325" size="1.27" layer="26" rot="MR270"/>
-<attribute name="VALUE" x="6.6548" y="32.35325" size="1.27" layer="28" rot="MR270"/>
+<attribute name="VALUE" x="3.84175" y="35.2298" size="1.27" layer="28" rot="MR180"/>
 </element>
 <element name="R13" library="rcl" package="R0805" value="10k" x="69.215" y="61.595" smashed="yes" rot="MR90">
 <attribute name="ELECROW" value="C17414" x="69.215" y="61.595" size="1.778" layer="28" rot="MR90" display="off"/>
@@ -6076,7 +6076,7 @@ design rules under a new name.</description>
 <attribute name="ELECROW" value="C17408" x="1.6129" y="31.75" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="LCSC" value="C17408" x="1.6129" y="31.75" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="NAME" x="0.3429" y="32.385" size="1.27" layer="26" rot="MR270"/>
-<attribute name="VALUE" x="4.1529" y="32.385" size="1.27" layer="28" rot="MR270"/>
+<attribute name="VALUE" x="0.635" y="35.2679" size="1.27" layer="28" rot="MR180"/>
 </element>
 <element name="SW1" library="switch-alps" package="ALPS_EC12E_SW" value="EC12E_SW" x="85.0506" y="12.6151" smashed="yes" rot="R270">
 <attribute name="MF" value="" x="85.0506" y="12.6151" size="1.778" layer="27" rot="R270" display="off"/>
@@ -6092,14 +6092,14 @@ design rules under a new name.</description>
 <attribute name="MOQ" value="3000" x="31.75" y="30.48" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="NAME" x="29.21" y="33.02" size="1.27" layer="26" rot="MR270"/>
 <attribute name="SMD_MARKING" value="PFKI" x="31.75" y="30.48" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="VALUE" x="35.56" y="33.02" size="1.27" layer="28" rot="MR270"/>
+<attribute name="VALUE" x="30.48" y="36.83" size="1.27" layer="28" rot="MR270"/>
 </element>
 <element name="C14" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="1u" x="36.195" y="31.75" smashed="yes" rot="MR180">
 <attribute name="ELECROW" value="C15850" x="36.195" y="31.75" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="LCSC" value="C15850" x="36.195" y="31.75" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC" x="36.195" y="31.75" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="NAME" x="35.195" y="30.875" size="1.016" layer="26" rot="MR180"/>
-<attribute name="VALUE" x="35.195" y="33.65" size="1.016" layer="28" rot="MR180"/>
+<attribute name="VALUE" x="35.83" y="34.285" size="1.016" layer="28" rot="MR180"/>
 </element>
 <element name="C15" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="1u" x="27.305" y="27.305" smashed="yes" rot="MR180">
 <attribute name="ELECROW" value="C15850" x="27.305" y="27.305" size="1.778" layer="28" rot="MR180" display="off"/>
@@ -6113,7 +6113,7 @@ design rules under a new name.</description>
 <attribute name="LCSC" value="C15850" x="36.195" y="29.21" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="MPN" value="77-VJ1206V106ZXQTBC" x="36.195" y="29.21" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="NAME" x="35.195" y="28.335" size="1.016" layer="26" rot="MR180"/>
-<attribute name="VALUE" x="35.195" y="31.11" size="1.016" layer="28" rot="MR180"/>
+<attribute name="VALUE" x="35.83" y="27.935" size="1.016" layer="28" rot="MR180"/>
 </element>
 <element name="J3" library="lpatiny" package="RJ12-RIGHTANGLE-I2C" value="RJ12RIGHTANGLE-I2C" x="93.98" y="57.785" smashed="yes" rot="MR270">
 <attribute name="NAME" x="97.79" y="62.865" size="1.27" layer="26" rot="MR270"/>
