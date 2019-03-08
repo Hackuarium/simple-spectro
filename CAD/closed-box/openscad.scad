@@ -7,9 +7,9 @@ use <top.scad>;
 
 
 showPCB=false;
-showBottom=true;
+showBottom=false;
 showLogo=false;
-showTop=false;
+showTop=true;
 
 aluminium=true;
 
@@ -39,8 +39,8 @@ bottomSmallHoleR=1.6; // slightly bigger than M3
 bottomHoleExternalHeight=3;
 bottomHoleInternalHeight=3;
 
-rotaryX=13.2+shift;
-rotaryY=12.8+shift;
+rotaryX=13.2+shift+0.3;
+rotaryY=12.8+shift-0.3;
 rotaryR=4;
 rotaryExtension=2; 
 rotaryExtensionR=aluminium ? 5.5 : 0; // 5.5 if you want an extension, was 6 in version 1
