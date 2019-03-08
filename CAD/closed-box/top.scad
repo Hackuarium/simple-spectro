@@ -10,6 +10,8 @@ module top(
     translate([cuvetteX, cuvetteY, 0])
         cuvette(r=radius);
 
+            
+
     // create the box with the holes
     translate([0, 0, 0])
         difference() {
@@ -54,6 +56,9 @@ module top(
                 r=radius
             );
             
+
+
+            
             // remove the holes to fix the PCB
             translate([sideThickness+pcbSpaceAround+supportHoleX, sideThickness+pcbSpaceAround+supportHoleY, frontThickness])
                 cylinder(r=supportHoleR, h=frontHeight);
@@ -67,6 +72,20 @@ module top(
             translate([sideThickness+pcbSpaceAround+pcbLength-supportHoleX, sideThickness+pcbSpaceAround+pcbWidth-supportHoleY, frontThickness])
                 cylinder(r=supportHoleR, h=frontHeight);
             
+            // remove the holes edge
+            translate([sideThickness+pcbSpaceAround+supportLength, sideThickness+pcbSpaceAround+supportWidth, frontThickness+frontHeight/2])
+                rotate([0,0,45]) cube([4 ,4, frontHeight], true);
+
+            translate([sideThickness+pcbSpaceAround+pcbLength-supportLength, sideThickness+pcbSpaceAround+supportWidth, frontThickness+frontHeight/2])
+                rotate([0,0,45]) cube([4 ,4, frontHeight], true);
+            
+            translate([sideThickness+pcbSpaceAround+supportLength, sideThickness+pcbSpaceAround++pcbWidth-supportWidth, frontThickness+frontHeight/2])
+                rotate([0,0,45]) cube([4 ,4, frontHeight], true);
+            
+            translate([sideThickness+pcbSpaceAround+pcbLength-supportLength, sideThickness+pcbSpaceAround+pcbWidth-supportWidth, frontThickness+frontHeight/2])
+                rotate([0,0,45]) cube([4 ,4, frontHeight], true);
+
+
             // remove for the rotary push button
             translate([rotaryX, rotaryY, 0])
                 cylinder(r=rotaryR, h=frontThickness);
