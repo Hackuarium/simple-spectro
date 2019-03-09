@@ -10,7 +10,7 @@
 #define I2C_FASTMODE 1
 
 
-#include <SoftWire.h> 
+#include "libino/onewire/OneWire.cpp"
 
 SoftWire Wire = SoftWire();
 // NCT75 temperature sensorce

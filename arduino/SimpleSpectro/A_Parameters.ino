@@ -12,8 +12,6 @@
    to the EEPROM
  *********************************************/
 
-#define MAX_PARAM 26 // If the MAX_PARAM change you need to change the pointer in the EEPROM
-
 #define PARAM_COLOR_1 0
 #define PARAM_COLOR_2 1
 #define PARAM_COLOR_3 2

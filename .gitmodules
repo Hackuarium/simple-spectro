@@ -1,0 +1,3 @@
+[submodule "arduino/SimpleSpectro/libino"]
+	path = arduino/SimpleSpectro/libino
+	url = https://github.com/Hackuarium/libino.git
