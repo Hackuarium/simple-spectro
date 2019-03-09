@@ -1,5 +1,6 @@
 use <screwHole.scad>;
 use <roundedParallelepiped4.scad>;
+use <roundedParallelepiped5.scad>;
 use <cubeWithCylinders.scad>;
 
 module bottom() {
@@ -11,12 +12,13 @@ module bottom() {
             difference() {
                 
                 // the bottom
-                cube([
+                translate([0,0,bottomHeight]) mirror([0,0,1]) roundedParallelepiped5(
                     pcbLength+2*pcbSpaceAround+2*sideThickness,
                     pcbWidth+2*pcbSpaceAround+2*sideThickness,
-                    bottomHeight
-                ]);
-                
+                    bottomHeight,
+                    chamfer
+                )
+         
                 // remove the external border so it fits in the other part
                 difference() {
                     cube([

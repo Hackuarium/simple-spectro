@@ -1,5 +1,6 @@
 
 use <roundedParallelepiped4.scad>;
+use <roundedParallelepiped5.scad>;
 use <cubeWithCylinders.scad>;
 
 module top(
@@ -16,11 +17,12 @@ module top(
     translate([0, 0, 0])
         difference() {
             // the front box
-            cube([
+            roundedParallelepiped5(
                 pcbLength+2*pcbSpaceAround+2*sideThickness,
                 pcbWidth+2*pcbSpaceAround+2*sideThickness,
-                frontHeight
-            ]);
+                frontHeight,
+                chamfer
+            );
 
             // remove the top layer where the PCB is fixed
             translate([sideThickness, sideThickness, supportHeight + frontThickness])

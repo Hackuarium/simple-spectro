@@ -26,6 +26,8 @@ bottomHeight=20;
 bottomClosureSpace=0.1; // number of mm to be sure it can close
 overlap=4; // overlap between top and bottom
 
+chamfer=1;
+
 shift=pcbSpaceAround+sideThickness;
 
 supportWidth=7;
@@ -111,7 +113,7 @@ if (showBottom)
         cuvetteX=cuvetteX, cuvetteY=cuvetteY, cuvetteInternal=cuvetteInternal, cuvetteThickness=cuvetteThickness,  cuvetteUVWindow=cuvetteUVWindow, cuvetteWindow=cuvetteWindow, cuvetteTopBottomOverlap=cuvetteTopBottomOverlap,
         frontHeight=frontHeight,
         overlap=overlap, pcbLength=pcbLength, pcbSpaceAround=pcbSpaceAround, pcbWidth=pcbWidth, radius=radius, radiusCorner=radiusCorner, shift=shift,
-        sideThickness=sideThickness, supportHoleX=supportHoleX, supportHoleY=supportHoleY, usbSpace=usbSpace, usbSpaceThickness=usbSpaceThickness, usbWidth=usbWidth, usbY=usbY
+        sideThickness=sideThickness, supportHoleX=supportHoleX, supportHoleY=supportHoleY, usbSpace=usbSpace, usbSpaceThickness=usbSpaceThickness, usbWidth=usbWidth, usbY=usbY, chamfer=chamfer
     );
 
 if (showTop) 
@@ -119,7 +121,7 @@ if (showTop)
         cuvetteInternal=cuvetteInternal, cuvetteThickness=cuvetteThickness, cuvetteUVWindow=cuvetteUVWindow,
         cuvetteWindow=cuvetteWindow, cuvetteX=cuvetteX, cuvetteY=cuvetteY, cuvetteTopBottomOverlap=cuvetteTopBottomOverlap,
         frontHeight=frontHeight, frontThickness=frontThickness, overlap=overlap,
-        pcbLength=pcbLength, pcbSpaceAround=pcbSpaceAround, pcbThickness=pcbThickness, pcbWidth=pcbWidth, radius=radius, radiusCorner=radiusCorner, rotaryExtension=rotaryExtension, rotaryExtensionR=rotaryExtensionR, rotaryR=rotaryR, rotaryX=rotaryX, rotaryY=rotaryY, screenProtectionHeight=screenProtectionHeight, screenProtectionSize=screenProtectionSize, screenX=screenX, screenY=screenY, screenWidth=screenWidth, screenLength=screenLength, sideThickness=sideThickness, supportHeight=supportHeight, supportHoleR=supportHoleR, supportHoleX=supportHoleX, supportHoleY=supportHoleY, supportLength=supportLength, supportWidth=supportWidth, usbHeight=usbHeight, usbSpace=usbSpace, usbSpaceThickness=usbSpaceThickness, usbWidth=usbWidth, usbY=usbY
+        pcbLength=pcbLength, pcbSpaceAround=pcbSpaceAround, pcbThickness=pcbThickness, pcbWidth=pcbWidth, radius=radius, radiusCorner=radiusCorner, rotaryExtension=rotaryExtension, rotaryExtensionR=rotaryExtensionR, rotaryR=rotaryR, rotaryX=rotaryX, rotaryY=rotaryY, screenProtectionHeight=screenProtectionHeight, screenProtectionSize=screenProtectionSize, screenX=screenX, screenY=screenY, screenWidth=screenWidth, screenLength=screenLength, sideThickness=sideThickness, supportHeight=supportHeight, supportHoleR=supportHoleR, supportHoleX=supportHoleX, supportHoleY=supportHoleY, supportLength=supportLength, supportWidth=supportWidth, usbHeight=usbHeight, usbSpace=usbSpace, usbSpaceThickness=usbSpaceThickness, usbWidth=usbWidth, usbY=usbY, chamfer=chamfer
     );
 
 
