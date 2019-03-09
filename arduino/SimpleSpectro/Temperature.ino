@@ -10,9 +10,6 @@
 #define I2C_FASTMODE 1
 
 
-#include "libino/onewire/OneWire.cpp"
-
-SoftWire Wire = SoftWire();
 // NCT75 temperature sensorce
 
 NIL_WORKING_AREA(waThreadTemperature, 128);

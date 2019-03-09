@@ -11,7 +11,6 @@
 
 
 #define DATA_SIZE 240
-#define DATA_TYPE 0  // LONG
 
 
 

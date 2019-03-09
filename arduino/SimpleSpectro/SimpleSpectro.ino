@@ -29,7 +29,6 @@
 #endif
 
 #define DATA_SIZE 240
-#define DATA_TYPE 1  // LONG
 
 #define BATTERY_LEVEL 128   // not available in version A
 #define TEMPERATURE   129   // not available in version A
@@ -47,9 +46,10 @@ byte nbParameters;        // number of parameters to record
 byte dataRowSize;         // size of a data row (number of entries in data)
 byte maxNbRows;           // calculate value depending the size of EEPROM dedicated to logs
 
-#define THR_SERIAL    1
-//#define THR_WIRE_MASTER 1
-#define MAX_PARAM 26
+#define THR_SERIAL      1
+#define I2C_HARDWARE    0
+#define THR_WIRE_MASTER 1
+#define MAX_PARAM       26
 
 #include "libino/hack.h"
 
