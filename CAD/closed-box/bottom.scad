@@ -17,7 +17,7 @@ module bottom() {
                     pcbWidth+2*pcbSpaceAround+2*sideThickness,
                     bottomHeight,
                     chamfer
-                )
+                );
          
                 // remove the external border so it fits in the other part
                 difference() {
