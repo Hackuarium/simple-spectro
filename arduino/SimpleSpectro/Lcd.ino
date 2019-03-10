@@ -538,6 +538,7 @@ void lcdMenuSettings(int counter, boolean doAction) {
   if (! captureCounter) updateCurrentMenu(counter, lastMenu);
 
   byte currentParameter = 0;
+  int8_t currentParameterBit = -1;
   float currentFactor = 1;
   char currentUnit[5] = "\0";
   int maxValue = 32767;
@@ -578,7 +579,8 @@ void lcdMenuSettings(int counter, boolean doAction) {
       break;
     case 5:
       lcd.print(F("Rotary mode"));
-      currentParameter = PARAM_INVERT_ROTARY;
+      currentParameter = PARAM_FLAGS;
+      currentParameterBit = PARAM_FLAG_INVERT_ROTARY;
       minValue = 0;
       maxValue = 1;
       break;
@@ -603,8 +605,16 @@ void lcdMenuSettings(int counter, boolean doAction) {
     }
   }
   if (captureCounter) {
-    int newValue = getParameter(currentParameter) + counter;
-    setParameter(currentParameter, max(min(maxValue, newValue), minValue));
+    if (currentParameterBit == -1) {
+      int newValue = getParameter(currentParameter) + counter;
+      setParameter(currentParameter, max(min(maxValue, newValue), minValue));
+    } else { // flag kind so either true or false
+      if (counter > 0) {
+        setParameterBit(currentParameter, currentParameterBit);
+      } else if (counter<0) {
+        clearParameterBit(currentParameter, currentParameterBit);
+      }
+    }
   }
 
   lcd.setCursor(0, 1);
@@ -617,13 +627,6 @@ void lcdMenuSettings(int counter, boolean doAction) {
     case 4:
       printColor(&lcd, CURRENT_PARAMETERS[getParameter(currentParameter) - 1]);
       break;
-    case 5:
-      if (getParameter(PARAM_INVERT_ROTARY) == 0) {
-        lcd.print(F("Normal"));
-      } else {
-        lcd.print(F("Inverted"));
-      }
-      break;
     case 6: // active leds
       lcd.print((getParameter(currentParameter)));
       lcd.print(" ");
@@ -634,10 +637,19 @@ void lcdMenuSettings(int counter, boolean doAction) {
       }
       break;
     default:
-      if (currentFactor == 1) {
-        lcd.print((getParameter(currentParameter)));
-      } else {
-        lcd.print(((float)getParameter(currentParameter))*currentFactor);
+      if (currentParameterBit == -1) {
+        if (currentFactor == 1) {
+          lcd.print((getParameter(currentParameter)));
+        } else {
+          lcd.print(((float)getParameter(currentParameter))*currentFactor);
+        }
+      } else {// it is a flag so we need to display true or false
+        if (getParameterBit(currentParameter, currentParameterBit)) {
+          lcd.print("true");
+        } else {
+          lcd.print("false");
+        }
+
       }
       lcd.print(" ");
       lcd.print(currentUnit);
@@ -687,7 +699,7 @@ void rotate() {
     accelerationMode = 0;
   }
 
-  if (getParameter(PARAM_INVERT_ROTARY) == 1) {
+  if (getParameterBit(PARAM_FLAGS,PARAM_FLAG_INVERT_ROTARY) == 1) {
     increment *= -1;
   }
 

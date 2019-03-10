@@ -31,7 +31,9 @@
 #define PARAM_WAIT 15       // current time to wait
 #define PARAM_NUMBER_ACQ 16 // number of acquisition of 100ms that will be taken
 
-#define PARAM_INVERT_ROTARY 17 // invert rotary direction
+#define PARAM_FLAGS           17 
+#define PARAM_FLAG_INVERT_ROTARY 0  // invert rotary direction
+
 #define PARAM_BATTERY 18       // battery voltage (hundredths of volt)
 #define PARAM_TEMPERATURE 19   // temperature (hundredths of degree)
 #define PARAM_CHARGING 20      // battery charging
@@ -67,7 +69,7 @@ void resetParameters()
   setAndSaveParameter(PARAM_ERROR, 0);
   setAndSaveParameter(PARAM_NUMBER_ACQ, 10);
   setAndSaveParameter(PARAM_STATUS, 0);
-  setAndSaveParameter(PARAM_INVERT_ROTARY, 0);
+  setAndSaveParameter(PARAM_FLAGS, 0);
   // setAndSaveParameter(PARAM_ACTIVE_LEDS, pow(2, sizeof(ALL_PARAMETERS)) - 1);
   setAndSaveParameter(PARAM_ACTIVE_LEDS, 15);
   setQualifier(21569); // TA
