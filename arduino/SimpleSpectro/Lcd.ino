@@ -199,18 +199,21 @@ void lcdResults(int counter, boolean doAction) {
   }
 
   updateCurrentMenu(counter, lastExperiment - 1, 50);
-  byte start = getParameter(PARAM_MENU) % 50;
+  byte start = getParameter(PARAM_MENU) % 50 + 1; // we add one
   for (byte i = start; i < min(lastExperiment, start + LCD_NB_ROWS); i++) {
     lcd.setCursor(0, i - start);
-    lcd.print((getDataLong(i * dataRowSize) - getDataLong(0)) / 1000);
+    // lcd.print((getDataLong(i * dataRowSize) - getDataLong(0)) / 1000);
+    lcd.print(i);
     lcd.print(" ");
     if (getDataLong(getParameter(PARAM_COLOR)) == LONG_MAX_VALUE || getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)) == LONG_MAX_VALUE) {
       lcd.print(F("OVER"));
     } else {
       lcd.print(log10((double)getDataLong(getParameter(PARAM_COLOR)) / (double)getDataLong(i * dataRowSize + getParameter(PARAM_COLOR))));
     }
-    lcd.print(" ");
-    lcd.print(getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)));
+    /*
+      lcd.print(" ");
+      lcd.print(getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)));
+    */
     lcdPrintBlank(6);
   }
 }
@@ -404,6 +407,7 @@ void lcdMenuHome(int counter, boolean doAction) {
           if (doAction) {
             setParameter(PARAM_NEXT_EXP, -1);
             setParameter(PARAM_STATUS, 0);
+            setParameter(PARAM_MENU, 100);
           }
         } else {
           lcd.print(F(TEXT_ACQUIRE));
