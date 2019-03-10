@@ -33,6 +33,7 @@
 
 #define PARAM_FLAGS           17 
 #define PARAM_FLAG_INVERT_ROTARY 0  // invert rotary direction
+#define PARAM_FLAG_RAW_VALUES 1  // invert rotary direction
 
 #define PARAM_BATTERY 18       // battery voltage (hundredths of volt)
 #define PARAM_TEMPERATURE 19   // temperature (hundredths of degree)

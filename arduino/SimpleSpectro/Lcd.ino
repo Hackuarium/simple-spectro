@@ -94,7 +94,7 @@ byte lcdPins[] = {LCD_E, LCD_RS, LCD_D4, LCD_D5, LCD_D6, LCD_D7, LCD_VO, LCD_BL,
 LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 
-#include "lib/RotaryEncoder/Rotary.cpp"
+#include "libino/RotaryEncoder/Rotary.cpp"
 
 #define ROT_A      0
 #define ROT_B      1
@@ -199,21 +199,26 @@ void lcdResults(int counter, boolean doAction) {
   }
 
   updateCurrentMenu(counter, lastExperiment - 1, 50);
-  byte start = getParameter(PARAM_MENU) % 50 + 1; // we add one
+  byte start = getParameter(PARAM_MENU) % 50;
+  if (! getParameterBit(PARAM_FLAGS, PARAM_FLAG_RAW_VALUES)) start++; // we add one it we don't show blank
   for (byte i = start; i < min(lastExperiment, start + LCD_NB_ROWS); i++) {
     lcd.setCursor(0, i - start);
-    // lcd.print((getDataLong(i * dataRowSize) - getDataLong(0)) / 1000);
     lcd.print(i);
     lcd.print(" ");
-    if (getDataLong(getParameter(PARAM_COLOR)) == LONG_MAX_VALUE || getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)) == LONG_MAX_VALUE) {
-      lcd.print(F("OVER"));
-    } else {
-      lcd.print(log10((double)getDataLong(getParameter(PARAM_COLOR)) / (double)getDataLong(i * dataRowSize + getParameter(PARAM_COLOR))));
-    }
-    /*
+    if ( getParameterBit(PARAM_FLAGS, PARAM_FLAG_RAW_VALUES)) {
+      lcd.print((getDataLong(i * dataRowSize) - getDataLong(0)) / 1000);
       lcd.print(" ");
+    }
+
+    if (getParameterBit(PARAM_FLAGS, PARAM_FLAG_RAW_VALUES) == 1) {
       lcd.print(getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)));
-    */
+    } else {
+      if (getDataLong(getParameter(PARAM_COLOR)) == LONG_MAX_VALUE || getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)) == LONG_MAX_VALUE) {
+        lcd.print(F("OVER"));
+      } else {
+        lcd.print(log10((double)getDataLong(getParameter(PARAM_COLOR)) / (double)getDataLong(i * dataRowSize + getParameter(PARAM_COLOR))));
+      }
+    }
     lcdPrintBlank(6);
   }
 }
@@ -534,7 +539,7 @@ void lcdUtilities(int counter, boolean doAction) {
 
 void lcdMenuSettings(int counter, boolean doAction) {
 
-  byte lastMenu = 7;
+  byte lastMenu = 8;
   if (! captureCounter) updateCurrentMenu(counter, lastMenu);
 
   byte currentParameter = 0;
@@ -578,9 +583,9 @@ void lcdMenuSettings(int counter, boolean doAction) {
       maxValue = nbParameters;
       break;
     case 5:
-      lcd.print(F("Rotary mode"));
+      lcd.print(F("Raw values"));
       currentParameter = PARAM_FLAGS;
-      currentParameterBit = PARAM_FLAG_INVERT_ROTARY;
+      currentParameterBit = PARAM_FLAG_RAW_VALUES;
       minValue = 0;
       maxValue = 1;
       break;
@@ -591,6 +596,13 @@ void lcdMenuSettings(int counter, boolean doAction) {
       maxValue = pow(2, sizeof(ALL_PARAMETERS)) - 1;
       break;
     case 7:
+      lcd.print(F("Rotary inverse"));
+      currentParameter = PARAM_FLAGS;
+      currentParameterBit = PARAM_FLAG_INVERT_ROTARY;
+      minValue = 0;
+      maxValue = 1;
+      break;
+    case 8:
       lcd.print(F(TEXT_MAIN_MENU));
       if (doAction) {
         setParameter(PARAM_MENU, 1);
@@ -611,7 +623,7 @@ void lcdMenuSettings(int counter, boolean doAction) {
     } else { // flag kind so either true or false
       if (counter > 0) {
         setParameterBit(currentParameter, currentParameterBit);
-      } else if (counter<0) {
+      } else if (counter < 0) {
         clearParameterBit(currentParameter, currentParameterBit);
       }
     }
@@ -699,7 +711,7 @@ void rotate() {
     accelerationMode = 0;
   }
 
-  if (getParameterBit(PARAM_FLAGS,PARAM_FLAG_INVERT_ROTARY) == 1) {
+  if (getParameterBit(PARAM_FLAGS, PARAM_FLAG_INVERT_ROTARY) == 1) {
     increment *= -1;
   }
 
