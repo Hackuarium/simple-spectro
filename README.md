@@ -87,3 +87,15 @@ that we buy on [Mouser website](http://www.mouser.com).
 We organize a one day workshop "Build your spectrophotometer"
 
 - [Slides](docs/7-misc/workshop/slides.pdf)
+
+# Cloning the project
+
+This project uses SUBMODULES
+
+In order to clone use:
+
+`git clone --recurse-submodules https://github.com/hackuarium/simple-spectro`
+
+To update the submodules
+
+`git submodule update --recursive --remote`
