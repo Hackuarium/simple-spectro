@@ -38,13 +38,18 @@ law you would first but a blank, then all the known concentration sample and fin
 sample.
 
 Between each sample you press the button to go to the next experiment. The spectro will expect the number
-of experiments defined in `Settings` `Number exp`. In order to stop the acquisition before the end you need
-to press exactly 3 times the button (we need to improve this because pressing 4 times would erase the acquired
-data !).
+of experiments defined in `Settings` `Number exp`. In order to stop the acquisition before the end you need to
+turn the rotary push button and press `Stop acquis.`. You will then directly see the results.
 
 To check the results you need to go in the menu `Results` (see bellow).
 
 ### 3. Acquisition kinetic
+
+The spectro is able to acquire automatically a sequence of experiment. There are many `settings` that will
+define this behaviour:
+
+- `Before delay`: Time in seconds to wait before acquiring the blank
+- `First delay` : Time in seconds to wait before the first experiment
 
 ### 4. Results
 
