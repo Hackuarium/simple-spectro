@@ -230,7 +230,7 @@ void lcdStatus(int counter, boolean doAction) {
   byte menu = getParameter(PARAM_MENU) % 10;
   if (menu < nbLeds) {
     lcd.setCursor(0, 0);
-    printColor(&lcd, CURRENT_PARAMETERS[menu]);
+    printColor(&lcd, ACTIVE_PARAMETERS[menu]);
     lcd.setCursor(0, 1);
     lcd.print(F(TEXT_ABSORBANCE));
     lcd.setCursor(8, 1);
@@ -281,7 +281,7 @@ void lcdDefaultExact(int counter, boolean doAction) {
     case 0:
       for (byte i = 0; i < min(nbLeds, 4); i++) {
         lcd.setCursor((i % 2) * 8, floor(i / 2));
-        printColorOne(&lcd, CURRENT_PARAMETERS[i]);
+        printColorOne(&lcd, ACTIVE_PARAMETERS[i]);
         lcd.print(": ");
         lcd.print(getParameter(i + 5) - getParameter(i));
         lcdPrintBlank(2);
@@ -637,14 +637,14 @@ void lcdMenuSettings(int counter, boolean doAction) {
   }
   switch (getParameter(PARAM_MENU) % 10) {
     case 4:
-      printColor(&lcd, CURRENT_PARAMETERS[getParameter(currentParameter) - 1]);
+      printColor(&lcd, ACTIVE_PARAMETERS[getParameter(currentParameter) - 1]);
       break;
     case 6: // active leds
       lcd.print((getParameter(currentParameter)));
       lcd.print(" ");
       setActiveLeds();
       for (byte i = 0; i < nbParameters; i++) {
-        printColorOne(&lcd, CURRENT_PARAMETERS[i]);
+        printColorOne(&lcd, ACTIVE_PARAMETERS[i]);
         lcd.print(" ");
       }
       break;

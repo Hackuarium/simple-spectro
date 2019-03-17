@@ -1,14 +1,9 @@
 #include <FreqCount.h>
 
 void testRGB() {
-  for (byte i = 0; i < nbLeds; i++) {
-    pinMode(CURRENT_PARAMETERS[i], OUTPUT);
-  }
   while (true) {
-
     setParameter(PARAM_NEXT_EXP, 0);
     acquire(true);
-
     if (getParameter(PARAM_STATUS) != STATUS_TEST_LEDS) {
       return;
     }
@@ -21,7 +16,7 @@ void setActiveLeds() {
   nbParameters = 0;
   for (byte i = 0; i < sizeof(ALL_PARAMETERS); i++) {
     if (active & (1 << i)) {
-      CURRENT_PARAMETERS[nbParameters] = ALL_PARAMETERS[i];
+      ACTIVE_PARAMETERS[nbParameters] = i;
       if (ALL_PARAMETERS[i] < 128) {
         nbLeds++;
       }
@@ -155,15 +150,15 @@ void acquire(boolean testMode) {
   setDataLong(target, millis());
   for (byte i = 0; i < nbParameters; i++) {
     long newValue = 0;
-    if (CURRENT_PARAMETERS[i] < 128) {
-      pinMode(CURRENT_PARAMETERS[i], OUTPUT);
+    if (ACTIVE_PARAMETERS[i] < 128) {
+
       for (byte j = 0; j <  getParameter(PARAM_NUMBER_ACQ); j++) {
-        digitalWrite(CURRENT_PARAMETERS[i], HIGH);
+        ledOn(ACTIVE_PARAMETERS[i]);
         FreqCount.begin(100);
         nilThdSleepMilliseconds(105);
         long currentCount = FreqCount.read();
         newValue += currentCount;
-        digitalWrite(CURRENT_PARAMETERS[i], LOW);
+        ledOff(ACTIVE_PARAMETERS[i]);
         if (currentCount > 50000) {
           // there is an error, the frequency was too high for the detector
           // this means we should either work in a darker environnement (at least close the box)
@@ -184,7 +179,7 @@ void acquire(boolean testMode) {
         if (getParameter(PARAM_NEXT_EXP) < 0) return;
       }
     } else {
-      switch (CURRENT_PARAMETERS[i]) {
+      switch (ACTIVE_PARAMETERS[i]) {
         case BATTERY_LEVEL:
           newValue = getParameter(PARAM_BATTERY);
           break;
@@ -200,10 +195,27 @@ void acquire(boolean testMode) {
 #endif
 }
 
+void ledOn(byte led) {
+#if VERSION<=4
+  pinMode(ALL_PARAMETERS[led], OUTPUT);
+  digitalWrite(ALL_PARAMETERS[led], HIGH);
+#else
+  mcp7428(led, 3500);
+#endif
+}
+
+void ledOff(byte led) {
+#if VERSION<=4
+  digitalWrite(ALL_PARAMETERS[led], LOW);
+#else
+  mcp7428(led, 0);
+#endif
+}
+
 void printData(Print* output) {
   output->print("E ");
   for (byte i = 0; i < nbParameters; i++) {
-    printColorOne(output, CURRENT_PARAMETERS[i]);
+    printColorOne(output, ACTIVE_PARAMETERS[i]);
     output->print(" ");
   }
   output->println("");
