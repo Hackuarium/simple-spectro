@@ -20,13 +20,16 @@ int readTemperature(uint8_t address) {
   for (byte i = 0; i < 50; i++) {
     oneShot(address);
     nilThdSleepMilliseconds(50); // one shot should take max 48.5 ms
+    nilSemWait(&lockTimeCriticalZone);
     WireM.requestFrom(address, (uint8_t)2);
     temperature += (((WireM.read() << 8) | WireM.read()) >> 4) * 6.25;
+    nilSemSignal(&lockTimeCriticalZone);
   }
   return (int)(temperature / 50);
 }
 
 void writeConfig(byte address, byte value) {
+  nilSemWait(&lockTimeCriticalZone);
   WireM.beginTransmission(address);
   WireM.write(0x01);               // Address the Configuration register
   WireM.write(value);         // configuration
@@ -34,9 +37,11 @@ void writeConfig(byte address, byte value) {
   WireM.beginTransmission(address);
   WireM.write(0x00);   // go back o the address to read tempearture
   WireM.endTransmission();
+  nilSemSignal(&lockTimeCriticalZone);
 }
 
 void oneShot(byte address) {
+  nilSemWait(&lockTimeCriticalZone);
   WireM.beginTransmission(address);
   WireM.write(0x04);
   WireM.write(0); // need to write whatever value
@@ -44,6 +49,7 @@ void oneShot(byte address) {
   WireM.beginTransmission(address);
   WireM.write(0x00);   // go back o the address to read temperature
   WireM.endTransmission();
+  nilSemSignal(&lockTimeCriticalZone);
 }
 
 

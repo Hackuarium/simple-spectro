@@ -1,6 +1,35 @@
 #include <FreqCount.h>
 
+
+#if VERSION>=5
+#define TARGET_INTENSITY 45000
+int LED_INTENSITIES[TOTAL_NUMBER_LEDS];
+void calibrate() {
+  for (byte i = 0; i < 3; i++) {
+    int lowIntensity = 0;
+    int highIntensity = 4091;
+    while ((highIntensity - lowIntensity) >= 2) {
+      LED_INTENSITIES[i] = (lowIntensity + highIntensity) / 2;
+      long one = acquireOne(i);
+      if (one > TARGET_INTENSITY) {
+        highIntensity = LED_INTENSITIES[i];
+      } else {
+        lowIntensity = LED_INTENSITIES[i];
+      }
+    }
+  }
+  for (byte i = 0; i < 3; i++) {
+    Serial.println(LED_INTENSITIES[i]);
+  }
+}
+#endif
+
+
+
 void testRGB() {
+#if VERSION>=5
+  calibrate();
+#endif
   while (true) {
     setParameter(PARAM_NEXT_EXP, 0);
     acquire(true);
@@ -138,27 +167,38 @@ void calculateResult(byte experimentNumber) {
   }
 }
 
+long acquireOne(byte led) {
+#ifdef POWER_ON_DSL237
+  POWER_ON_DSL237
+#endif
+  ledOn(led);
+  nilThdSleepMilliseconds(5);
+  FreqCount.begin(100);
+  nilThdSleepMilliseconds(105);
+  long count = FreqCount.read();
+  ledOff(led);
+  Serial.print(led);
+  Serial.print(" ");
+  Serial.println(count);
+
+#ifdef POWER_OFF_DSL237
+  POWER_OFF_DSL237
+#endif
+  return count;
+}
+
 void acquire(boolean testMode) {
   if (!testMode) setParameter(PARAM_MENU, 32);
   byte target = getParameter(PARAM_NEXT_EXP) * dataRowSize;
   if (target < 0) return;
 
-#ifdef POWER_ON_DSL237
-  POWER_ON_DSL237
-#endif
-
   setDataLong(target, millis());
   for (byte i = 0; i < nbParameters; i++) {
     long newValue = 0;
     if (ACTIVE_PARAMETERS[i] < 128) {
-
       for (byte j = 0; j <  getParameter(PARAM_NUMBER_ACQ); j++) {
-        ledOn(ACTIVE_PARAMETERS[i]);
-        FreqCount.begin(100);
-        nilThdSleepMilliseconds(105);
-        long currentCount = FreqCount.read();
+        long currentCount = acquireOne(ACTIVE_PARAMETERS[i]);
         newValue += currentCount;
-        ledOff(ACTIVE_PARAMETERS[i]);
         if (currentCount > 50000) {
           // there is an error, the frequency was too high for the detector
           // this means we should either work in a darker environnement (at least close the box)
@@ -190,9 +230,6 @@ void acquire(boolean testMode) {
     }
     setDataLong(target + i + 1, newValue);
   }
-#ifdef POWER_OFF_DSL237
-  POWER_OFF_DSL237
-#endif
 }
 
 void ledOn(byte led) {
@@ -200,7 +237,7 @@ void ledOn(byte led) {
   pinMode(ALL_PARAMETERS[led], OUTPUT);
   digitalWrite(ALL_PARAMETERS[led], HIGH);
 #else
-  mcp7428(led, 3500);
+  mcp7428(led, LED_INTENSITIES[led]);
 #endif
 }
 

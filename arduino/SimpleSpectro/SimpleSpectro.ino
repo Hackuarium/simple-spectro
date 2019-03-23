@@ -8,7 +8,7 @@
 // version 4 D : 1.6 need to enable LCD (pin 13) and temperature / light sensor: PE2
 // version 5 E : 2.0 introduce I2C component for led control
 
-#define VERSION   5
+#define VERSION   4
 
 #define LANGUAGE  en  // currently only en or es
 
@@ -19,7 +19,6 @@
 
 #if VERSION >= 2
 #define BATTERY               A3  // if battery we have also the temperature sensor
-
 #define TEMPERATURE_ADDRESS   0b1001000
 #endif
 
@@ -39,6 +38,7 @@ byte ALL_PARAMETERS[] = {RED, GREEN, BLUE, UV1};  // all possible leds
 #else
 byte ALL_PARAMETERS[] = {RED, GREEN, BLUE, UV1, TEMPERATURE, BATTERY_LEVEL};  // all possible leds
 #endif
+#define TOTAL_NUMBER_LEDS 4
 
 byte ACTIVE_PARAMETERS[sizeof(ALL_PARAMETERS)];
 
@@ -48,7 +48,7 @@ byte dataRowSize;         // size of a data row (number of entries in data)
 byte maxNbRows;           // calculate value depending the size of EEPROM dedicated to logs
 
 #define THR_SERIAL      1
-#define I2C_HARDWARE    0
+#define I2C_HARDWARE    1
 
 #define I2C_TIMEOUT 10
 #if VERSION == 5 

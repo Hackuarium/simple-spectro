@@ -304,7 +304,11 @@ void lcdAcquisition(int counter, boolean doAction) {
     setParameter(PARAM_MENU, 0);
   }
   if (doAction) { // the button was pressed
-    if (menu == 2 || getParameter(PARAM_STATUS) != STATUS_SEQUENCE) {
+    if (menu == 3) { // test sequence
+      setParameter(PARAM_MENU, 0);
+      setParameter(PARAM_NEXT_EXP, -1);
+      setParameter(PARAM_STATUS, 0);
+    } else if (menu == 2 || getParameter(PARAM_STATUS) != STATUS_SEQUENCE) {
       setParameter(PARAM_MENU, 0);
     } else { // next experiment, it is a manual sequence
       setParameter(PARAM_WAIT, 0);
