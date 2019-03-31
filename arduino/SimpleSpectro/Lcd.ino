@@ -5,6 +5,7 @@
 
 #if LANGUAGE == 'en'
 #define TEXT_ABSORBANCE "Absorb."
+#define TEXT_FLUORESCENCE "Fluor."
 #define TEXT_WAITING_BLANK "Waiting blank"
 #define TEXT_WAITING_EXP "Waiting exp."
 #define TEXT_ACQUIRING "Acquiring"
@@ -42,6 +43,7 @@
 
 #if LANGUAGE == 'es'
 #define TEXT_ABSORBANCE "Absorb."
+#define TEXT_FLUORESCENCE "Fluor."
 #define TEXT_WAITING_BLANK "Esperando blanco"
 #define TEXT_WAITING_EXP "Esperando exp."
 #define TEXT_ACQUIRING "Adquiriendo"
@@ -199,24 +201,33 @@ void lcdResults(int counter, boolean doAction) {
   }
 
   updateCurrentMenu(counter, lastExperiment - 1, 50);
-  byte start = getParameter(PARAM_MENU) % 50;
+  int start = getParameter(PARAM_MENU) % 50 - 1;
+  boolean header = start == -1;
   if (! getParameterBit(PARAM_FLAGS, PARAM_FLAG_RAW_VALUES)) start++; // we add one it we don't show blank
-  for (byte i = start; i < min(lastExperiment, start + LCD_NB_ROWS); i++) {
+  for (int i = start; i < min(lastExperiment, start + LCD_NB_ROWS); i++) {
     lcd.setCursor(0, i - start);
-    lcd.print(i);
-    lcd.print(" ");
-    if ( getParameterBit(PARAM_FLAGS, PARAM_FLAG_RAW_VALUES)) {
-      lcd.print((getDataLong(i * dataRowSize) - getDataLong(0)) / 1000);
-      lcd.print(" ");
-    }
-
-    if (getParameterBit(PARAM_FLAGS, PARAM_FLAG_RAW_VALUES) == 1) {
-      lcd.print(getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)));
+    if (header) {
+      printColor(&lcd, getParameter(PARAM_COLOR) - 1);
+      header=false;
     } else {
-      if (getDataLong(getParameter(PARAM_COLOR)) == LONG_MAX_VALUE || getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)) == LONG_MAX_VALUE) {
-        lcd.print(F("OVER"));
+      lcd.print(i);
+      lcd.print(" ");
+      if ( getParameterBit(PARAM_FLAGS, PARAM_FLAG_RAW_VALUES)) {
+        lcd.print((getDataLong(i * dataRowSize) - getDataLong(0)) / 1000);
+        lcd.print(" ");
+      }
+      if (getParameterBit(PARAM_FLAGS, PARAM_FLAG_RAW_VALUES) == 1) {
+        lcd.print(getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)));
       } else {
-        lcd.print(log10((double)getDataLong(getParameter(PARAM_COLOR)) / (double)getDataLong(i * dataRowSize + getParameter(PARAM_COLOR))));
+        if (getDataLong(getParameter(PARAM_COLOR)) == LONG_MAX_VALUE || getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)) == LONG_MAX_VALUE) {
+          lcd.print(F("OVER"));
+        } else {
+          if (getParameter(PARAM_COLOR) < 4) {
+            lcd.print(log10((double)getDataLong(getParameter(PARAM_COLOR)) / (double)getDataLong(i * dataRowSize + getParameter(PARAM_COLOR))));
+          } else {
+            lcd.print(getDataLong(i * dataRowSize + getParameter(PARAM_COLOR)) - getDataLong(getParameter(PARAM_COLOR)));
+          }
+        }
       }
     }
     lcdPrintBlank(6);
@@ -232,12 +243,20 @@ void lcdStatus(int counter, boolean doAction) {
     lcd.setCursor(0, 0);
     printColor(&lcd, ACTIVE_PARAMETERS[menu]);
     lcd.setCursor(0, 1);
-    lcd.print(F(TEXT_ABSORBANCE));
-    lcd.setCursor(8, 1);
+
+
     if (getParameter(menu + 5) == INT_MAX_VALUE || getParameter(menu) == INT_MAX_VALUE) {
       lcd.print(F("OVER"));
     } else {
-      lcd.print(log10((double)getParameter(menu + 5) / (double)getParameter(menu)));
+      if (menu < 3) {
+        lcd.print(F(TEXT_ABSORBANCE));
+        lcd.setCursor(8, 1);
+        lcd.print(log10((double)getParameter(menu + 5) / (double)getParameter(menu)));
+      } else {
+        lcd.print(F(TEXT_FLUORESCENCE));
+        lcd.setCursor(8, 1);
+        lcd.print(getParameter(menu + 5) - getParameter(menu));
+      }
     }
     lcdPrintBlank(2);
   } else {
@@ -665,7 +684,6 @@ void lcdMenuSettings(int counter, boolean doAction) {
         } else {
           lcd.print("false");
         }
-
       }
       lcd.print(" ");
       lcd.print(currentUnit);
@@ -748,11 +766,5 @@ void eventRotaryPressed() {
     }
   }
   sei();
-}
-
-
-void reboot() {
-  wdt_enable(WDTO_15MS);
-  delay(20);
 }
 

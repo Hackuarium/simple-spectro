@@ -18,9 +18,6 @@ void calibrate() {
       }
     }
   }
-  for (byte i = 0; i < 3; i++) {
-    Serial.println(LED_INTENSITIES[i]);
-  }
 }
 #endif
 
@@ -177,9 +174,6 @@ long acquireOne(byte led) {
   nilThdSleepMilliseconds(105);
   long count = FreqCount.read();
   ledOff(led);
-  Serial.print(led);
-  Serial.print(" ");
-  Serial.println(count);
 
 #ifdef POWER_OFF_DSL237
   POWER_OFF_DSL237
