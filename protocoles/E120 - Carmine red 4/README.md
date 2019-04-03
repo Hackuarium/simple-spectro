@@ -13,6 +13,8 @@
 ## 38.4 mg / 100 mL
 
 | Color | Absorbance | Emission |
+
+307.1 mg in 100mL of water
 | -     |-|-|
 | Red   | 0.02|
 | Green | 0.43|
