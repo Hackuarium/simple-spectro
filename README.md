@@ -82,6 +82,13 @@ that we buy on [Mouser website](http://www.mouser.com).
 - [Battery](docs/4-tests/battery)
 - [Reproducibility of results](docs/4-tests/stability)
 
+# Experiments
+
+[bacteria](experiments/bacteria)
+[E120](experiments/E120_Carmine_red_4)
+[E133](experiments/E133_Briliant_blue)
+[fluorescein](experiments/fluorescein)
+
 # Workshop
 
 We organize a one day workshop "Build your spectrophotometer"
