@@ -84,10 +84,10 @@ that we buy on [Mouser website](http://www.mouser.com).
 
 # Experiments
 
-[bacteria](experiments/bacteria)
-[E120](experiments/E120_Carmine_red_4)
-[E133](experiments/E133_Briliant_blue)
-[fluorescein](experiments/fluorescein)
+- [bacteria](experiments/bacteria)
+- [E120](experiments/E120_Carmine_red_4)
+- [E133](experiments/E133_Briliant_blue)
+- [fluorescein](experiments/fluorescein)
 
 # Workshop
 
