@@ -208,7 +208,7 @@ void lcdResults(int counter, boolean doAction) {
     lcd.setCursor(0, i - start);
     if (header) {
       printColor(&lcd, getParameter(PARAM_COLOR) - 1);
-      header=false;
+      header = false;
     } else {
       lcd.print(i);
       lcd.print(" ");
@@ -255,7 +255,7 @@ void lcdStatus(int counter, boolean doAction) {
       } else {
         lcd.print(F(TEXT_FLUORESCENCE));
         lcd.setCursor(8, 1);
-        lcd.print(getParameter(menu + 5) - getParameter(menu));
+        lcd.print(getParameter(menu) - getParameter(menu + 5));
       }
     }
     lcdPrintBlank(2);
