@@ -4,20 +4,33 @@
 
 <img src="reaction.png">
 
-The goal of this experiment is determine the kinetic parameters of the conversion of the fuchsia to colorless form obtained in strongly basic media.
+While the reaction from the neutral form to the doubly negatively charged is fast, going from [ɸɸ]<sup>-2</sup> to [ɸɸH<sub>-1</sub>]<sup>-3</sup> is relatively slow.
+
+The goal of this experiment is determine the kinetic parameters of this second reaction, the conversion of the fuchsia to colorless form obtained that can be observed in strongly basic media.
+
+## Theory
+
+The rate of this reaction has the general form:
+
+rate = k [ɸɸ]<sup>x</sup> [OH<sup>-</sup>]<sup>y</sup>
+
+The goal of this experiment is to determine x and y. Because of the difficulty to find those 2 coefficients at once it is usual to put of the of the 2 reagents in large excess to that during the experiment the concentration virtually does not change.
+
+In this experiment we will put [OH]<sup>-1</sup> in large excess and it may be considered as constant.
+
+rate = k' [ɸɸ]<sup>x</sup>
+
+where
+
+k' = k [OH<sup>-</sup>]<sup>y</sup> = apparent constant
+
+## Material
 
 For this reaction you will need:
 
 - NaOH 0.3M in water
 - NaCl 0.3M in water
 - Phenolphthalein 3g/L in ethanol
-
-Theory
-
-Sources:
-
-- [Degradation of phenolphthalein](http://www.ccri.edu/chemistry/courses/chem_1100/wirkkala/labs/Phenolphthalein_NaOH_Kinetics.pdf)
-- [Order of reaction](<https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Kinetics/Experimental_Methods/Methods_of_Determining_Reaction_Order>).
 
 ## Experiment
 
@@ -112,3 +125,8 @@ The order of this reaction is 2.
 ## Possible improvements
 
 We could acquire more points if we decide to only take the green channel especially at high concentration of NaOH in which the kinetic is fast.
+
+## References
+
+- [Degradation of phenolphthalein](http://www.ccri.edu/chemistry/courses/chem_1100/wirkkala/labs/Phenolphthalein_NaOH_Kinetics.pdf)
+- [Order of reaction](<https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Kinetics/Experimental_Methods/Methods_of_Determining_Reaction_Order>).
