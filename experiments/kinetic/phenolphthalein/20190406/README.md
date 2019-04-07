@@ -42,7 +42,7 @@ We then immediately start a kinetic experiments with the following parameters:
 - observed channels: R G B UV (15)
 - number of experiments: 48 (the maximum)
 
-We used as blank water.
+We used as blank water and did the 4 experiments in parallel using 4 different spectrometers. All the data were acquired in less than 20 minutes.
 
 ## Results
 
