@@ -138,4 +138,4 @@ Return to the main menu
 
 It is possible to access directly to the data from the serial port.
 
-Please check [this page](serial.mod) for more information.
+Please check [this page](serial/README.md) for more information.
