@@ -1,5 +1,11 @@
 # DIY spectrophotometer
 
+## How to use it ?
+
+[Userguide and connection to the computer](docs/5-use)
+
+## Goal of the project
+
 This project was done in the [Hackuarium](http://www.hackuarium.ch/en/) association, a DIY biology and open laboratory situated in Renens (Switzerland). Feel free to [contact us](https://form.jotformeu.com/71600609780354) if you would like more information or would like to buy a fully build and tested spectro.
 
 The goal is to create a simple spectrophotometer that measures the
@@ -74,21 +80,17 @@ that we buy on [Mouser website](http://www.mouser.com).
 - [the case](docs/2-case) (using FreeCAD and OpenSCAD)
 - [the software](docs/3-software) (using Arduino)
 
-## How to use it ?
-
-[Userguide and connection to the computer](docs/5-use)
-
-## Tests
-
-- [Battery](docs/4-tests/battery)
-- [Reproducibility of results](docs/4-tests/stability)
-
-# Experiments
+## Experiments
 
 - [bacteria](experiments/bacteria)
 - [E120](experiments/E120_Carmine_red_4)
 - [E133](experiments/E133_Briliant_blue)
 - [fluorescein](experiments/fluorescein)
+
+## Tests
+
+- [Battery](docs/4-tests/battery)
+- [Reproducibility of results](docs/4-tests/stability)
 
 # Workshop
 
@@ -96,7 +98,7 @@ We organize a one day workshop "Build your spectrophotometer"
 
 - [Slides](docs/7-misc/workshop/slides.pdf)
 
-# Cloning the project
+## Cloning the project
 
 This project uses SUBMODULES
 
