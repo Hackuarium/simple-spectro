@@ -63,21 +63,21 @@ For first order reaction we are expected to observe an equation like:
 
 A exponential regression has been applied for the 4 experiments and the following results are observed:
 
-| Experiment | [NaOH]  | [A]<sub>0</sub> | k      | r<sup>2</sup> |
-| ---------- | ------- | --------------- | ------ | ------------- |
-| 1          | 0.300 M | 0.3482          | 0.2587 | 0.99977       |
-| 2          | 0.225 M | 0.4614          | 0.1812 | 0.99959       |
-| 3          | 0.150 M | 0.5934          | 0.1134 | 0.99837       |
-| 4          | 0.075 M | 0.6932          | 0.0497 | 0.99938       |
+| Experiment | [NaOH]  | [NaOH]<sub>0</sub> | k      | r<sup>2</sup> |
+| ---------- | ------- | ------------------ | ------ | ------------- |
+| 1          | 0.300 M | 0.3482             | 0.2587 | 0.99977       |
+| 2          | 0.225 M | 0.4614             | 0.1812 | 0.99959       |
+| 3          | 0.150 M | 0.5934             | 0.1134 | 0.99837       |
+| 4          | 0.075 M | 0.6932             | 0.0497 | 0.99938       |
 
 The corresponding regressions look like follow:
 
-| Experiment | [NaOH]                 | [A]<sub>0</sub> | k      |
-| ---------- | ---------------------- | --------------- | ------ |
-| 1          | <img src="chart1.svg"> | 0.3482          | 0.2587 |
-| 2          | <img src="chart2.svg"> | 0.4614          | 0.1812 |
-| 3          | <img src="chart3.svg"> | 0.5934          | 0.1134 |
-| 4          | <img src="chart4.svg"> | 0.6932          | 0.0497 |
+| Experiment | [NaOH]                 | [NaOH]<sub>0</sub> | k      |
+| ---------- | ---------------------- | ------------------ | ------ |
+| 1          | <img src="chart1.svg"> | 0.3482             | 0.2587 |
+| 2          | <img src="chart2.svg"> | 0.4614             | 0.1812 |
+| 3          | <img src="chart3.svg"> | 0.5934             | 0.1134 |
+| 4          | <img src="chart4.svg"> | 0.6932             | 0.0497 |
 
 Other regressions and be probed and you can see the results for `experiment 2` in the followin [pdf](regressions.pdf). The best regression is the exponential one.
 
@@ -93,12 +93,6 @@ Because of the large excess of NaOH in this experiment we observe a pseudo-order
 | 0.225 M | 0.1812 |
 | 0.150 M | 0.1134 |
 | 0.075 M | 0.0497 |
-
-[NaOH] k  
-0.300 0.2587
-0.225 0.1812
-0.150 0.1134
-0.075 0.0497
 
 A plot of the concentration of NaOH versus k show a good linear correlation.
 
