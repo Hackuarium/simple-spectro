@@ -25,8 +25,9 @@ order 20 of them.
 Before trying to explain how it is done more in detail maybe the first
 question that we should answer is : can we do science with this ? When thinking about the design of the spectro, we found an electronic component that converts the light energy to frequency and that is linear on a range of nearly 10^6. Only the precision of the component is therefore really promising and shows that we could do something that gives good results.
 
-- [in chemistry](docs/6-applications/chemistry)
-- [in biology](docs/6-applications/biology)
+- [in chemistry](docs/6-applications/chemistry/README.md)
+- [in biology](docs/6-applications/biology/README.md)
+- [our lab notebook](experiments/README.md)
 
 ### Patent blue V
 
