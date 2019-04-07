@@ -94,11 +94,10 @@ Because of the large excess of NaOH in this experiment we observe a pseudo-order
 | 0.150 M | 0.1134 |
 | 0.075 M | 0.0497 |
 
-A plot of the concentration of NaOH versus k show a good linear correlation.
+A plot of the concentration of NaOH versus k shows a linear correlation:
 
-y = −0.02295 + 0.9264 x
-
-r<sup>2</sup> = 0.9980
+- y = −0.02295 + 0.9264 x
+- r<sup>2</sup> = 0.9980
 
 <img src="NaOHregression.svg">
 
