@@ -1,6 +1,10 @@
 # Phenolphathalein
 
-The goal of this experiment is to find the order of the reaction of degration of phenolphthalein in basic media.
+[Phenolphthalein](https://en.wikipedia.org/wiki/Phenolphthalein) is a common acid-base indicators used for titration. It is colorless in acidic (pH < 8.2) and fuchsia at a pH overs 8.2. In strongly basic media (pH over 10) it will slowly become colorless.
+
+<img src="reaction.png">
+
+The goal of this experiment is determine the kinetic parameters of the conversion of the fuchsia to colorless form obtained in strongly basic media.
 
 For this reaction you will need:
 
@@ -25,7 +29,7 @@ Solution were prepared using standard procedure. Phenolphthalein is really not w
 
 Four experiments were conducted in test tubes. We use a solution of NaCl instead of water in order to keep similar ionic strength in all the experiments.
 
-In each test tube we first add the corresponding amount of solution A and B using air displacement micropipettes (we are doing this in a biological lab 😉). Just before starting the experiment we add C, mix well with a plastic transfer pipettes of 3mL (that also allows to clean the wall of the test tube) and transfer the solution in a cuvette.
+In each test tube we first add the corresponding amount of solution A and B using air displacement micropipettes (we are doing this in a biology lab 😉). Just before starting the experiment we add C, mix well with a plastic transfer pipettes of 3mL (that also allows to clean the wall of the test tube) and transfer the solution in a cuvette.
 
 | Experiment | A    | B    | C     |
 | ---------- | ---- | ---- | ----- |
