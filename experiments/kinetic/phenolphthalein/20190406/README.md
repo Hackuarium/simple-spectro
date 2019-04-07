@@ -24,6 +24,24 @@ where
 
 k' = k [OH<sup>-</sup>]<sup>y</sup> = apparent constant
 
+### Zeroth-order reaction
+
+rate = − Δ[A] / Δt = k [A]<sup>0</sup> = k
+
+### First-order reaction
+
+rate = − Δ[A] / Δt = k [A]<sup>1</sup>
+
+[A] = [A]<sub>0<sub> e<sup>−kt</sup>
+
+### Second-order reaction
+
+2 A → Produts
+
+rate = − Δ[A] / 2 Δt = k [A]<sup>2</sup>
+
+1 / [A] = 1 / [A]<sub>0</sub> + kt
+
 ## Material
 
 For this reaction you will need:
