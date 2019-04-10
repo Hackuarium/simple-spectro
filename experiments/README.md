@@ -13,4 +13,4 @@ We highlight some representative experiments that you may easily reproduce.
 - [Fluorescence](fluorescence/README.md)
   - [Fluorescein](fluorescence/fluorescein/README.md)
 - [Kinetc](kinetic/README.md)
-  - [Fluorescein](kinetic/phenolphthalein/README.md)
+  - [Phenolphthalein](kinetic/phenolphthalein/README.md)
