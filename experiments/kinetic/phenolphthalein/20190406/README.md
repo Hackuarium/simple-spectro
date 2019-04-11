@@ -96,7 +96,7 @@ For first order reaction we are expected to observe an equation like:
 
 [A]<sub>t</sub> = [A]<sub>0</sub>e<sup>-kt</sup>
 
-A exponential regression has been applied for the 4 experiments and the following results are observed:
+An exponential regression has been applied for the 4 experiments and the following results are observed:
 
 | Experiment | [NaOH]  | [NaOH]<sub>0</sub> | k      | r<sup>2</sup> |
 | ---------- | ------- | ------------------ | ------ | ------------- |
