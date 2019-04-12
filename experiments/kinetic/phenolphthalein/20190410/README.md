@@ -32,15 +32,22 @@ Raw data for the 4 kinetics are in the attached corresponding documents:
 
 The data were processed online on the [following page](https://www.cheminfo.org/?viewURL=https%3A%2F%2Fcouch.cheminfo.org%2Fcheminfo-public%2F7b6eb01da45510275179c4b587bb63f0%2Fview.json&loadversion=true&fillsearch=Analyse+spectro+log).
 
-An exponential regression has been applied for the 4 experiments and the following results are observed:
+An exponential regression has been applied for the 4 experiments for all the points having an absorbance over 0.3 and the following results are observed:
 
-We still need to redo the analysis and discuss about which point should be taken into account.
-
-| Experiment | [NaOH]  | [NaOH]<sub>0</sub> | k      | r<sup>2</sup> |
-| ---------- | ------- | ------------------ | ------ | ------------- |
-| 1          | 0.300 M | 0.3482             | 0.2869 | 0.99998       |
-| 2          | 0.225 M | 0.4614             | 0.1959 | 0.99980       |
-| 3          | 0.150 M | 0.5934             | 0.1166 | 0.99949       |
-| 4          | 0.075 M | 0.6932             | 0.0460 | 0.99938       |
+| Experiment | [NaOH]  | k      | r<sup>2</sup> |
+| ---------- | ------- | ------ | ------------- |
+| 1          | 0.300 M | 0.2878 | 0.99997       |
+| 2          | 0.225 M | 0.1984 | 0.99998       |
+| 3          | 0.150 M | 0.1217 | 0.99997       |
+| 4          | 0.075 M | 0.0460 | 0.99959       |
 
 ## What is r<sup>2</sup> ???
+
+## NaOH regression
+
+<img src="NaOHregression.svg">
+
+- y = −0.03705 + 1.069 x
+- r<sup>2</sup> = 0.9983
+
+Even without constant ionic strength the result are still quite good. The slope is close to 1 despite the fact that it is far from passing through 0,0.
