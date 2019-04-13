@@ -1,10 +1,8 @@
 ## Buy the spectrophotometer
 
-The spectrophotometer can be buy in kit. We have 3 versions.
+## DIY versions
 
-### What do I receive ?
-
-## The differents versions
+The DIY versions are spectrophotometer to assembled yourself. You received a preprogrammed PCB (all the SMD are soldered already) as well as all the through holes components and parts to create a case.
 
 ### Eco-spectro
 
@@ -27,6 +25,6 @@ You will receive a case in black plexiglass with a transparent background so tha
 
 You will also get 50mg of E133 that allows to determine the concentration of pigments present in candies.
 
-### Pro-spectro
+## Pro version
 
 The pro spectro comes fully assembled, tested and in an aluminium milled anodised case.
