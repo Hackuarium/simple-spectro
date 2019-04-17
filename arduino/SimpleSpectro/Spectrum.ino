@@ -1,4 +1,4 @@
-#include "libino/FreqCount/FreqCount.h"
+#include "libino/FreqCount/FreqCount.cpp"
 
 
 #if VERSION>=5

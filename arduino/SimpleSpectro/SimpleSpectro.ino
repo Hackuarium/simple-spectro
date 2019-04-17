@@ -1,5 +1,5 @@
 
-#define SOFTWARE_VERSION "v1.1.2c"
+#define SOFTWARE_VERSION "v1.1.2d"
 
 // VERSION
 // *******
@@ -78,4 +78,3 @@ void setup() {
 }
 
 void loop() {}
-
