@@ -90,3 +90,28 @@ E R G B UV
 13543759 351437 246161 58623 412 
 13556101 382648 408938 382256 473 
 
+
+## Kinetic trial with AcOH
+
+A : KI 0.1M
+B : AcOH 1M
+C : H2O2 0.1M
+D : H2O
+
+ exp | A | B | C | D | R | G | B
+  - | - | - | - | - | - | - 
+1 | 4mL | 1mL | 60uL | 0 uL |  |  |  
+
+Kinetic at 23°C shows a fast reaction (5 minutes) followed by a much slower reaction.
+
+## Kinetic trial with H2SO4
+
+A : KI 0.1M
+B : H2SO4 1M
+C : H2O2 0.1M
+D : H2O
+
+ exp | A | B | C | D | R | G | B
+  - | - | - | - | - | - | - 
+1 | 4mL | 1mL | 60uL | 0 uL |  |  |  
+
