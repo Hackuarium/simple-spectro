@@ -57,10 +57,24 @@ The data were processed online on the [following page](https://www.cheminfo.org/
 
 An exponential regression has been applied for the 4 experiments for the 20 first points (10 minutes)
 
-| Experiment | [NaOH]  | k | rmsd |
-|------------|---------|---|------|
-| 1          | 0.300 M | 0 | 0.0  |
-| 2          | 0.225 M | 0 | 0.0  |
-| 3          | 0.150 M | 0 | 0.0  |
-| 4          | 0.075 M | 0 | 0.0  |
+| Experiment | [NaOH]  | k      | rmsd    |
+|------------|---------|--------|---------|
+| 1          | 0.300 M | 0.5597 | 0.01147 |
+| 2          | 0.225 M | 0.4466 | 0.00160 |
+| 3          | 0.150 M | 0.2945 | 0.00235 |
+| 4          | 0.075 M | 0.1721 | 0.00265 |
 
+
+## Results at 40
+
+| Spectro | Experiment | A    | B    | C      |
+|---------|------------|------|------|--------|
+|         | 1          | 4 mL | 0 mL | 100 µL |
+|         | 2          | 3 mL | 1 mL | 20 µL  |
+|         | 3          | 2 mL | 2 mL | 20 µL  |
+|         | 4          | 1 mL | 3 mL | 20 µL  |
+
+- [Experiment 1](exp1-10.txt)
+- [Experiment 2](exp2-10.txt)
+- [Experiment 3](exp3-10.txt)
+- [Experiment 4](exp4-10.txt)
