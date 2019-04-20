@@ -82,7 +82,7 @@ An exponential regression has been applied for the 4 experiments for the 20 firs
 | Spectro | Experiment | [NaOH]  | k      | rmsd    |
 |---------|------------|---------|--------|---------|
 | 2       | 1          | 0.300 M | 0.2707 | 0.00196 |
-| 1       | 2          | 0.223 M | 0.1276 | 0.00104 |
+| 1       | 2          | 0.225 M | 0.1276 | 0.00104 |
 | 4       | 3          | 0.150 M | 0.0961 | 0.00398 |
 | 6       | 4          | 0.075 M | 0.0605 | 0.00128 |
 
