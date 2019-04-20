@@ -189,7 +189,7 @@ void acquire(boolean testMode) {
   setDataLong(target, millis());
   for (byte i = 0; i < nbParameters; i++) {
     long newValue = 0;
-    if (ACTIVE_PARAMETERS[i] < 128) {
+    if (ALL_PARAMETERS[ACTIVE_PARAMETERS[i]] < 128) {
       for (byte j = 0; j <  getParameter(PARAM_NUMBER_ACQ); j++) {
         long currentCount = acquireOne(ACTIVE_PARAMETERS[i]);
         newValue += currentCount;
@@ -213,7 +213,7 @@ void acquire(boolean testMode) {
         if (getParameter(PARAM_NEXT_EXP) < 0) return;
       }
     } else {
-      switch (ACTIVE_PARAMETERS[i]) {
+      switch (ALL_PARAMETERS[ACTIVE_PARAMETERS[i]]) {
         case BATTERY_LEVEL:
           newValue = getParameter(PARAM_BATTERY);
           break;
