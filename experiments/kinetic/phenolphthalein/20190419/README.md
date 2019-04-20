@@ -65,16 +65,24 @@ An exponential regression has been applied for the 4 experiments for the 20 firs
 | 4          | 0.075 M | 0.1721 | 0.00265 |
 
 
-## Results at 40
+## Results at 10
 
 | Spectro | Experiment | A    | B    | C      |
 |---------|------------|------|------|--------|
-|         | 1          | 4 mL | 0 mL | 100 µL |
-|         | 2          | 3 mL | 1 mL | 20 µL  |
-|         | 3          | 2 mL | 2 mL | 20 µL  |
-|         | 4          | 1 mL | 3 mL | 20 µL  |
+| 2       | 1          | 4 mL | 0 mL | 100 µL |
+| 1       | 2          | 3 mL | 1 mL | 20 µL  |
+| 4       | 3          | 2 mL | 2 mL | 20 µL  |
+| 6       | 4          | 1 mL | 3 mL | 20 µL  |
 
 - [Experiment 1](exp1-10.txt)
 - [Experiment 2](exp2-10.txt)
 - [Experiment 3](exp3-10.txt)
 - [Experiment 4](exp4-10.txt)
+
+| Spectro | Experiment | [NaOH]  | k      | rmsd    |
+|---------|------------|---------|--------|---------|
+| 2       | 1          | 0.300 M | 0.2707 | 0.00196 |
+| 1       | 2          | 0.223 M | 0.1276 | 0.00104 |
+| 4       | 3          | 0.150 M | 0.0961 | 0.00398 |
+| 6       | 4          | 0.075 M | 0.0605 | 0.00128 |
+
