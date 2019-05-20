@@ -1,6 +1,6 @@
 # Phenolphathalein
 
-[Phenolphthalein](https://en.wikipedia.org/wiki/Phenolphthalein) is a common acid-base indicators used for titration. It is colorless in acidic (pH < 8.2) and fuchsia at a pH overs 8.2. In strongly basic media (pH over 10) it will slowly become colorless.
+[Phenolphthalein](https://en.wikipedia.org/wiki/Phenolphthalein) is a common acid-base indicator used for titration. It is colorless in acidic (pH < 8.2) and fuchsia at a pH overs 8.2. In strongly basic media (pH over 10) it will slowly become colorless.
 
 <img src="reaction.png">
 
@@ -14,7 +14,7 @@ The rate of this reaction has the general form:
 
 rate = k [ɸɸ]<sup>x</sup> [OH<sup>-</sup>]<sup>y</sup>
 
-The goal of this experiment is to determine x and y. Because of the difficulty to find those 2 coefficients at once it is usual to put of the of the 2 reagents in large excess to that during the experiment the concentration virtually does not change.
+The goal of this experiment is to determine x and y. Because of the difficulty to find these 2 coefficients at once it is usual to put one the 2 reagents in large excess so that during the experiment the concentration does not virtually change.
 
 In this experiment we will put [OH]<sup>-1</sup> in large excess and it may be considered as constant.
 
@@ -52,7 +52,7 @@ For this reaction you will need:
 
 ## Experiment
 
-Solution were prepared using standard procedure. Phenolphthalein is really not well soluble in water. Even a saturated solution and 1 mL of this water solution would not allow to conduct the experiments. We therefore decided to dissolve phenolphthalein in alcohol fuel (mixture of ethanol and methanol).
+Solutions were prepared using standard procedure. Phenolphthalein is really not well soluble in water. Even a saturated solution and 1 mL of this water solution would not allow to conduct the experiments. We therefore decided to dissolve phenolphthalein in alcohol fuel (mixture of ethanol and methanol).
 
 - solution A: NaOH 0.3M in water
 - solution B: NaCl 0.3M in water
@@ -60,7 +60,7 @@ Solution were prepared using standard procedure. Phenolphthalein is really not w
 
 Four experiments were conducted in test tubes. We use a solution of NaCl instead of water in order to keep similar ionic strength in all the experiments.
 
-In each test tube we first add the corresponding amount of solution A and B using air displacement micropipettes (we are doing this in a biology lab 😉). Just before starting the experiment we add C, mix well with a plastic transfer pipettes of 3mL (that also allows to clean the wall of the test tube) and transfer the solution in a cuvette.
+In each test tube we first add the corresponding amount of solution A and B using air displacement micropipettes (we are doing this in a biology lab 😉). Just before starting the experiment we add C, mix well with a plastic transfer pipette of 3mL (that also allows to clean the wall of the test tube) and transfer the solution in a cell.
 
 | Experiment | A    | B    | C     |
 | ---------- | ---- | ---- | ----- |
@@ -69,7 +69,7 @@ In each test tube we first add the corresponding amount of solution A and B usin
 | 3          | 2 mL | 2 mL | 20 µL |
 | 4          | 1 mL | 3 mL | 20 µL |
 
-We then immediately start a kinetic experiments with the following parameters:
+We then immediately start a kinetic experiment with the following parameters:
 
 - time before blank: 2s
 - time before first experiment: 10s
@@ -77,22 +77,22 @@ We then immediately start a kinetic experiments with the following parameters:
 - observed channels: R G B UV (15)
 - number of experiments: 48 (the maximum)
 
-We used as blank water and did the 4 experiments in parallel using 4 different spectrometers. All the data were acquired in less than 20 minutes.
+We used water as blank and did the 4 experiments in parallel using 4 different spectrophotometers. All the data was acquired in less than 20 minutes.
 
 ## Results
 
-The spectrometer was connected to a computer and the data transfered using the Arduino program. The data were then processed online on the [following page](https://www.cheminfo.org/?viewURL=https%3A%2F%2Fcouch.cheminfo.org%2Fcheminfo-public%2F7b6eb01da45510275179c4b587bb63f0%2Fview.json&loadversion=true&fillsearch=Analyse+spectro+log).
+The spectrophotometer was connected to a computer and the data transferred using the Arduino program. The data was then processed online on the [following page](https://www.cheminfo.org/?viewURL=https%3A%2F%2Fcouch.cheminfo.org%2Fcheminfo-public%2F7b6eb01da45510275179c4b587bb63f0%2Fview.json&loadversion=true&fillsearch=Analyse+spectro+log).
 
-In this page the more intense channel is considered and only the values having an absorbance over `0.1`.
+On this page the most intense channel is considered and only the values having an absorbance over `0.1`.
 
-Raw data for the 4 kinetics are in the attached corresponding documents:
+Raw data for the 4 kinetics is attached in the corresponding documents:
 
 - [Experiment 1](exp1.txt)
 - [Experiment 2](exp2.txt)
 - [Experiment 3](exp3.txt)
 - [Experiment 4](exp4.txt)
 
-For first order reaction we are expected to observe an equation like:
+For first order reaction we expect to observe an equation like:
 
 [A]<sub>t</sub> = [A]<sub>0</sub>e<sup>-kt</sup>
 
@@ -114,11 +114,11 @@ The corresponding regressions look like follow:
 | 3          | <img src="chart3.svg"> | 0.5934             | 0.1134 |
 | 4          | <img src="chart4.svg"> | 0.6932             | 0.0497 |
 
-Other regressions and be probed and you can see the results for `experiment 2` in the followin [pdf](regressions.pdf). The best regression is the exponential one.
+Other regressions have been probed, you can see the results for `experiment 2` in the following [pdf](regressions.pdf). The best regression is the exponential one.
 
 ## Intermediate conclusion
 
-Because of the large excess of NaOH in this experiment we observe a pseudo-order 1 reaction. Based on the 4 experiments that were done with 4 different concentration of NaOH we can check if it is also dependent on the concentration of NaOH.
+Because of the large excess of NaOH in this experiment we observe a pseudo-order 1 reaction. Based on the 4 experiments that were done with 4 different concentrations of NaOH, we can check if it is also dependent on the concentration of NaOH.
 
 ## k versus [NaOH]
 
@@ -142,7 +142,7 @@ The order of this reaction is 2.
 
 ## Possible improvements
 
-We could acquire more points if we decide to only take the green channel especially at high concentration of NaOH in which the kinetic is fast.
+We could acquire more points if we decided to only take the green channel especially at high concentrations of NaOH in which the kinetic is fast.
 
 ## References
 

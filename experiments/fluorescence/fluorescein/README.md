@@ -46,7 +46,7 @@ At this concentration the spectrophotometer has a fluorescence of 2953 internal 
 
 ## Fluorescence in presence of Ca++
 
-Solution A: fluoresceine 1.4 mg/L
+Solution A: fluorescein 1.4 mg/L
 Solution B: CaCl2.H2O 4.64 g/L
 
 | A   | B   | H2O | R     | G    | B    | UV   |
@@ -66,7 +66,7 @@ Solution B: CaCl2.H2O 4.64 g/L
 
 ### Conclusion
 
-In presence of CaCl2 there at high concentration there is no clear evidence of a fluorescence quenching.
+In presence of CaCl2 at high concentration there is no clear evidence of a fluorescence quenching.
 
 ## Test with KI
 
@@ -85,7 +85,7 @@ https://docs.google.com/spreadsheets/d/1UuKFU8COCiJQ89IAYm6FFq3e50cZny3WdU-MUHwk
 
 ### Conclusions
 
-It seems that we observe a fluoresence quenching but other factors like influence of pH should be checked.
+It seems that we observe a fluorescence quenching but other factors like influence of pH should be checked.
 Literature shows that this kind of experiment is done in presence of 0.1M of KOH.
 
 Check page 12 of : https://www.chem.uzh.ch/dam/jcr:571775eb-8b0e-4930-8aa4-ad0da5c11aec/FluorescenceQuenching_HS16.pdf

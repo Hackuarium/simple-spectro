@@ -1,6 +1,6 @@
 # Determination of patent blue V in Trolli sharks
 
-We create an initial solution that contains:
+We make an initial solution that contains:
 
 13 mg of pigment in 23 mL of water.
 
@@ -20,6 +20,6 @@ From this solution we prepare the following dilutions:
 
 ## Trolli sharks
 
-The blue part of the Trolli shark weight 5.100g and from it we have dissolve 1.53g to have a final volume of 40.6mL.
+The blue part of the Trolli shark weights 5.100g. We have dissolves 1.53g of that part in hot water. We obtain a final volume of 40.6mL.
 
-Based on a linear regression of our calibration curve we have determine that each candy containing 0.186 µg of blue patent V. This means that 5g of pigment is enough for over 27 millions of sharks.
+Based on a linear regression of our calibration curve we have determined that each candy contains 0.186 µg of blue patent V. This means that 5g of pigment is enough to pigment over 27 millions of sharks.

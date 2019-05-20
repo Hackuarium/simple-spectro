@@ -2,11 +2,11 @@
 
 ## Exploratory experiments
 
-The goal is to evaluate the concentration required to have an absorbance of around 0.5
+The goal is to evaluate the concentration required to have an absorbance of around 0.5.
 
-We took 427.0 mg in 100mL of water
+We took 427.0 mg in 100mL of water.
 
-From ths 0.5mL in 100mL
+From this we placed 0.5mL in 100mL.
 
 ### 21 mg/L
 

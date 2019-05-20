@@ -3,8 +3,10 @@
 ## Connect to the spectro
 
 It is possible to control the device from the Serial over USB. You may use for example
-the command `screen` on the bash, but the easiest is probably to use the Arduino program.
-Indeed the spectrophotometer appears as a 'Lilipad Arduino USB'. It contains an Atmega 32U4 at 8MHz.
+the command `screen` in a bash, but the easiest is probably to use the Arduino program.
+Indeed the spectrophotometer appears as a 'Lilipad Arduino USB'. It is critical to chose the right board to program. Indeed the spectro contains an Atmega 32U4 at 8MHz.
+
+### To acess the data from the Arduino platform
 
 1. Install the Arduino IDE software
 2. Select 'Tools -> Board -> Lilypad Arduino USB'
@@ -28,7 +30,7 @@ Indeed the spectrophotometer appears as a 'Lilipad Arduino USB'. It contains an 
 
 You may now control the spectrophotometer from the keyboard. To see the available commands just enter `h` + Enter.
 
-The instruction `s` will show you the current settings
+The instruction `s` will show you the current settings.
 
 | Parameter | Number | Desciption                                                                                                                                                                              |
 | --------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -60,11 +62,11 @@ The instruction `s` will show you the current settings
 
 You may change the parameters `K`, `L`, `M`, `N`, `Q`, `R`, `V` from the command line. To check a value just enter the corresponding uppercase letter (ie `N`) followed by `Enter`. To set a value, enter the new value just after the uppercase letter (ie `N20` to set 20 experiments for kinetic).
 
-To retrieve all the data acquired in a kinetic, the easiest is use the `d` command. This will dump all the acquired data. Please take care that the data is stored in the RAM and it therefore lost when the deviced is not powered.
+To retrieve all the data acquired in a kinetic, the easiest is use the `d` command. This will dump all the acquired data. Please beware that the data is stored in the RAM and it therefore lost when the device is not powered.
 
-The dumped data will contain many columns. The first column corresponds to the time (in ms) since the device was started, the next columns correspond to all the acquired colors.
-The first line corresponds to the blank and the next lines to the kinetic. The values for each column is directly proprotional to the quantity of light that reaches the detector. If you want to calculate the corresponding absorbance you need to substract to each value the corresponding value of the first row.
+The dumped data will contain many columns. The first column corresponds to the time (in ms) since the device was turned on, the next columns correspond to all the acquired colors.
+The first line corresponds to the blank and the next lines to the kinetic. The values for each column are directly proportional to the quantity of light that reaches the detector. If you want to calculate the corresponding absorbance you need to subtract to each value the corresponding value of the first row.
 
 There is a utility that will allows to directly [convert and plot the results on-line](http://www.cheminfo.org/?viewURL=https%3A%2F%2Fcouch.cheminfo.org%2Fcheminfo-public%2F7b6eb01da45510275179c4b587bb63f0%2Fview.json&loadversion=true&fillsearch=Analyse+spectro+log) (using Google Chrome).
 
-This device is also compatible with the project `Arduimon` that can be used by programmers. The default qualifier is expected to be 21569. You may check the current qualifier of your device using the instruction `uq`. You may set the qualifier using `uq21569`.
+This device is also compatible with the project `Arduimon`, which can be used by programmers. The default qualifier is expected to be 21569. You may check the current qualifier of your device using the instruction `uq`. You may set the qualifier using `uq21569`.

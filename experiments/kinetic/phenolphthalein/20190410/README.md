@@ -1,10 +1,10 @@
 # Phenolphathalein
 
-Kinetic of degration of phenolphthalein in basic media work well as shown in the [previous experiment](../20190406/README.md).
+Kinetic of degradation of phenolphthalein in basic media works well as shown in the [previous experiment](../20190406/README.md).
 
 ## Goal
 
-We want to measure the order of the reaction and in the literature you are expected to use constant ionic force. But is this necessary ?
+We want to measure the order of the reaction. In the literature, it is told that you are expected to use constant ionic force. But is this necessary ?
 
 Let's check if we replace NaCl 0.3M by water to see if it yields to the same result.
 
@@ -23,7 +23,7 @@ Let's check if we replace NaCl 0.3M by water to see if it yields to the same res
 
 ## Results
 
-Raw data for the 4 kinetics are in the attached corresponding documents:
+Raw data for the 4 kinetics are attached in the corresponding documents:
 
 - [Experiment 1](exp1.txt)
 - [Experiment 2](exp2.txt)
@@ -50,4 +50,4 @@ An exponential regression has been applied for the 4 experiments for all the poi
 - y = −0.03705 + 1.069 x
 - r<sup>2</sup> = 0.9983
 
-Even without constant ionic strength the result are still quite good. The slope is close to 1 despite the fact that it is far from passing through 0,0.
+Even without constant ionic strength the results are still quite good. The slope is close to 1 despite the fact that it is far from passing through 0,0.
