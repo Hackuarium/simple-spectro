@@ -2,33 +2,33 @@
 
 ## DIY versions
 
-The DIY versions are spectrophotometer to assembled yourself. You received a preprogrammed PCB (all the SMD are soldered already) as well as all the through holes components and parts to create a case.
+The DIY versions are spectrophotometers to assemble yourself. You receive a preprogrammed PCB (all the SMD components are already soldered) as well as all the through holes components and parts to build a case.
 
 ### Eco-spectro
 
-You will receive all the required parts to construct a spectrophotometer and a case in MDF.
+You receive all the required parts to construct a spectrophotometer and a case in MDF.
 
-Price: 60 CHF + shipping (10 CHF)
+**Price:** 60 CHF + shipping (10 CHF)
 
 ### Bio-spectro
 
-You will receive a case in black plexiglass.
+You receive all the required parts to construct a spectrophotometer and a case in black plexiglass.
 
-Price: 70 CHF + shipping (10 CHF)
+**Price:** 70 CHF + shipping (10 CHF)
 
 ### Chimio-spectro
 
-You will receive a case in black plexiglass with a transparent background so that you can easily explain and understand how it works.
+You will receive a case in black plexiglass with a transparent background so that you can easily understand how it works and explain it to others.
 
-You will also get 50mg of E133 that allows to determine the concentration of pigments present in candies.
+You will also get 50mg of E131 that allows to determine the concentration of pigments present in candies.
 
-Price: 70 CHF + shipping (10 CHF)
+**Price:** 70 CHF + shipping (10 CHF)
 
 ### How to buy it
 
-You can directly buy it on line and receive by letter to your home.
+You can directly buy it online and receive it via mail at your place.
 
-Please note that if you want to use it on battery you need to buy one.
+Please note that if you want to power it with a battery you have to buy one yourself.
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
