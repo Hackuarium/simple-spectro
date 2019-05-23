@@ -6,6 +6,12 @@ We therefore decided to repeat the original experiment using commercially availa
 
 - BSA (5g on ebay)
 - Coomassie Brilliant Blue G250 CI42665 Acid Blue 90 (5g on ebay)
+  <<<<<<< HEAD
+  =======
+
+And based on the original publication from [Marion M. Bardford](<https://doi.org/10.1016/0003-2697(76)90527-3>)
+
+> > > > > > > update experiment bradford
 
 And based on the original publication from [Marion M. Bardford](<https://doi.org/10.1016/0003-2697(76)90527-3>)
 
@@ -16,6 +22,11 @@ For the standard protocol we need:
 - 10 to 100µg of protein in 0.1 mL (NaCl 0.15M) (0.1g to 1g per liter)
 - 5mL protein reagent
 
+### Solution of NaCl 0.15M
+
+500 mL of NaCl 0.15M:
+4.38 g to 250 mL
+
 ### Protein solutions
 
 We prepare 10mL of BSA solution: 10mg in 0.15NaCl (1g/L)
@@ -23,8 +34,18 @@ We prepare 10mL of BSA solution: 10mg in 0.15NaCl (1g/L)
 ### Bradfort reagent
 
 - 100 mg of Coomassie Brilliant Blue G-250 in 50mL ethanol 95%
+  <<<<<<< HEAD
 - 100 mL 85% (w/v) phosphoric acid
+- # complete to 1L
+- 100 mL 85% (w/v) phosphoric acid (14.6 M)
 - complete to 1L
+
+We will prepare 50mL of the reagent but we have only H2SO4 2N
+
+- 4 mg of oomassie Brilliant Blue G-250 in 5mL ethanol 95%
+- 10 mL of H2SO4 1M (2N)
+- bring to 100mL with water
+  > > > > > > > update experiment bradford
 
 ### Experiments
 
