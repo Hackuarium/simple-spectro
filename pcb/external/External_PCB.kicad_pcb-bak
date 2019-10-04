@@ -251,7 +251,7 @@
   (module External_PCB:E5566-Q0LK22-L (layer F.Cu) (tedit 0) (tstamp 5D8B7E4F)
     (at 15.5 113 90)
     (path /5D8B464B)
-    (fp_text reference J1 (at 2.999999 -4.84 90) (layer F.SilkS)
+    (fp_text reference J1 (at 2.999999 -8 90) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value E5566-Q0LK22-L (at 2.999999 -4.84 90) (layer F.SilkS)
