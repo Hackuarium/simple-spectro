@@ -109,6 +109,9 @@ void runExperiment() {
 }
 
 void runExperiment(byte nbExperiments) {
+#if VERSION>=5
+  calibrate();
+#endif
   for (byte i = 0; i <= nbExperiments; i++) {
     setParameter(PARAM_NEXT_EXP, i);
     setAcquisitionMenu();
@@ -127,6 +130,9 @@ void runExperiment(byte nbExperiments) {
 }
 
 void runSequence(byte nbExperiments) { // TODO update this code
+#if VERSION>=5
+  calibrate();
+#endif
   for (byte i = 0; i <= nbExperiments; i++) {
     setParameter(PARAM_NEXT_EXP, i);
     setAcquisitionMenu();
