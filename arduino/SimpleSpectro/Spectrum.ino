@@ -231,7 +231,7 @@ void ledOn(byte led) {
   pinMode(ALL_PARAMETERS[led], OUTPUT);
   digitalWrite(ALL_PARAMETERS[led], HIGH);
 #else
-  mcp7428(led, LED_INTENSITIES[led]);
+  mcp4728(led, LED_INTENSITIES[led]);
 #endif
 }
 
@@ -239,7 +239,7 @@ void ledOff(byte led) {
 #if VERSION<=4
   digitalWrite(ALL_PARAMETERS[led], LOW);
 #else
-  mcp7428(led, 0);
+  mcp4728(led, 0);
 #endif
 }
 

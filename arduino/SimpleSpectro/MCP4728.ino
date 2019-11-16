@@ -1,5 +1,5 @@
 
-void mcp7428(byte led, int intensity) {
+void mcp4728(byte led, int intensity) {
   nilSemWait(&lockTimeCriticalZone);
   WireM.beginTransmission(0x60);
   WireM.write(0b01000000 | led << 1);
