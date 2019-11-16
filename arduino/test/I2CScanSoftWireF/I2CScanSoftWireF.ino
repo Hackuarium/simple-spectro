@@ -1,12 +1,13 @@
-// we use the real I2C port
+// we use the I2C port from version 2 (A0 and A1)
 
-#define SDA_PORT PORTD
-#define SDA_PIN 1
-#define SCL_PORT PORTD
-#define SCL_PIN 0
+  #define SDA_PIN 7
+  #define SDA_PORT PORTF
+  #define SCL_PIN 6
+  #define SCL_PORT PORTF
+  #define I2C_FASTMODE 0
 
 #define I2C_TIMEOUT 100
-#define I2C_FASTMODE 1
+
 
 #include <SoftWire.h>
 
