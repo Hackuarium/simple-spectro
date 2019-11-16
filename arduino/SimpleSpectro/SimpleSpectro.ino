@@ -8,7 +8,7 @@
 // version 4 D : 1.6 need to enable LCD (pin 13) and temperature / light sensor: PE2
 // version 5 E : 2.0 introduce I2C component for led control
 
-#define VERSION   4
+#define VERSION   5
 
 #define LANGUAGE  en  // currently only en or es
 
@@ -48,16 +48,18 @@ byte dataRowSize;         // size of a data row (number of entries in data)
 byte maxNbRows;           // calculate value depending the size of EEPROM dedicated to logs
 
 #define THR_SERIAL      1
-#define I2C_HARDWARE    1
+
 
 #define I2C_TIMEOUT 10
 #if VERSION == 5 
+  #define I2C_HARDWARE   0
   #define SDA_PIN 7
   #define SDA_PORT PORTF
   #define SCL_PIN 6
   #define SCL_PORT PORTF
   #define I2C_FASTMODE 0
 #else
+#define I2C_HARDWARE    1
   #define SDA_PIN 1
   #define SDA_PORT PORTD
   #define SCL_PIN 0
