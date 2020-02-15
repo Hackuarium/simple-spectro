@@ -8,7 +8,7 @@
 // version 4 D : 1.6 need to enable LCD (pin 13) and temperature / light sensor: PE2
 // version 5 E : 2.0 introduce I2C component for led control
 
-#define VERSION   5
+#define VERSION   4
 
 #define LANGUAGE  en  // currently only en or es
 
