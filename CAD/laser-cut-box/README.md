@@ -1,3 +1,10 @@
+## Using lightburn
+
+Preferences may change depending the cutting machine. In our case:
+
+- add an offset of 0.07 on all inside parts (assemble)
+- power 100% speed 18%
+
 ## It's in the box
 
 #### An OpenSCAD project to wrap your PCB in a box
