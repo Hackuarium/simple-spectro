@@ -56,7 +56,7 @@ Another feature of the simple-spectrophotometer is that it works on a rechargeab
 Optical density (OD) at 600nm is often used in biology to determine the biomass increase versus time. In this experiment we have placed Escherichia coli with cell growing media directly in the spectrophotometer cuvette and placed the spectrophotometer itself on a shaker in the incubator.
 We can then program it to measure the absorbance every X seconds. In our case we measured the absorbance every 30 minutes (up to 40 measures). The following curve was obtained.
 
-<img src='images/bacteria-growing-preliminary.png' />
+<img src='images/bacteria-growing-preliminary.png' style='max-width: 100%;' />
 
 This experiment clearly shows the log phase and the stationary phase. But the growth was faster than expected. An acquisition every 15 minutes would have been a better choice.
 
@@ -80,7 +80,7 @@ We prefer to design the full PCB rather than to make a shield for an existing Ar
 All the components we use but one are mainstream and can be found on eBay or AliExpress. The only special component is the light to frequency converter [TSL235R](https://www.sparkfun.com/datasheets/Sensors/Imaging/TSL235R-LF.pdf)
 that we buy on [Mouser website](http://www.mouser.com).
 
-<img src='images/pcb-description/pcb-description.001.jpeg' width='600' />
+<img src='images/pcb-description/pcb-description.001.jpeg' width='600' style="max-width: 100%;" />
 
 For more details about the construction process, follow one of the links underneath.
 
