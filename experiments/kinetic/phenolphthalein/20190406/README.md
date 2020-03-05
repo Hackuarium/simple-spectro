@@ -4,7 +4,7 @@
 
 <img src="reaction.png">
 
-While the reaction from the neutral form to the doubly negatively charged is fast, going from [ɸɸ]<sup>-2</sup> to [ɸɸH<sub>-1</sub>]<sup>-3</sup> is relatively slow.
+While the reaction from the neutral form to the doubly negatively charged is fast, going from [ɸɸ]<sup>-2</sup> to [ɸɸOH]<sup>-3</sup> is relatively slow.
 
 The goal of this experiment is determine the kinetic parameters of this second reaction, the conversion of the fuchsia to colorless form obtained that can be observed in strongly basic media.
 
@@ -36,7 +36,7 @@ rate = − Δ[A] / Δt = k [A]<sup>1</sup>
 
 ### Second-order reaction
 
-2 A → Produts
+2 A → Products
 
 rate = − Δ[A] / 2 Δt = k [A]<sup>2</sup>
 
