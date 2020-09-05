@@ -1,5 +1,5 @@
 
-#define SOFTWARE_VERSION "v1.1.4"
+#define SOFTWARE_VERSION "v1.1.6"
 
 // VERSION
 // *******
