@@ -30,6 +30,13 @@ void testRGB() {
   while (true) {
     setParameter(PARAM_NEXT_EXP, 0);
     acquire(true);
+
+    for (byte i = 1; i < 5; i++) {
+      Serial.print(getDataLong(i));
+      Serial.print(" ");
+    }
+    Serial.println("");
+
     if (getParameter(PARAM_STATUS) != STATUS_TEST_LEDS) {
       return;
     }
