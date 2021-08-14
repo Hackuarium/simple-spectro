@@ -4,7 +4,7 @@
 
 | Description                | Quantity      | Stock |
 | -------------------------- | ------------- | ----- | --- | ------------------------ |
-| PCB assembled              | 1             | 17    | 10  |
+| PCB assembled              | 1             | 17    | 10  | ordered                  |
 | TSL 237                    | 1             | 107   | 3   | ok                       |
 | JST XH 2p                  | 1             | > 100 | 0.1 | ok                       |
 | RGB LED Common cathode 5mm | 1             | 93    | 0.1 | ok                       |
