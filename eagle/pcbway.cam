@@ -9,29 +9,6 @@
     "output_type": "zip",
     "outputs": [
         {
-            "format_specifier": {
-                "decimal": 3,
-                "integer": 3
-            },
-            "output_type": "drill",
-            "outputs": [
-                {
-                    "drills": {
-                        "NPTH": true,
-                        "PTH": true,
-                        "VIA": true
-                    },
-                    "filename_format": "gerber/%N.TXT",
-                    "layers": {
-                        "from": 1,
-                        "to": 16
-                    },
-                    "name": "Excellon",
-                    "type": "excellon"
-                }
-            ]
-        },
-        {
             "filename_prefix": "gerber",
             "format_specifier": {
                 "decimal": 4,
@@ -189,9 +166,58 @@
                 }
             ],
             "version": "RS274X"
+        },
+        {
+            "format_specifier": {
+                "decimal": 3,
+                "integer": 3
+            },
+            "output_type": "drill",
+            "outputs": [
+                {
+                    "drills": {
+                        "NPTH": true,
+                        "PTH": true,
+                        "VIA": true
+                    },
+                    "filename_format": "gerber/%N.TXT",
+                    "layers": {
+                        "from": 1,
+                        "to": 16
+                    },
+                    "name": "Excellon",
+                    "type": "excellon"
+                }
+            ]
+        },
+        {
+            "filename_prefix": "CAMOutputs/Assembly",
+            "output_type": "assembly",
+            "outputs": [
+                {
+                    "filename_format": "%ASSEMBLYPREFIX/PnP_%N_%BOARDSIDE",
+                    "name": "Pick and Place",
+                    "output_format": "txt",
+                    "type": "pick_and_place"
+                },
+                {
+                    "filename_format": "%ASSEMBLYPREFIX/BOM_%N",
+                    "list_attribute": true,
+                    "list_type": "values",
+                    "name": "Bill of Material",
+                    "output_format": "txt",
+                    "type": "bom"
+                }
+            ]
+        },
+        {
+            "filename_prefix": "CAMOutputs/DrawingFiles",
+            "output_type": "drawing",
+            "outputs": [
+            ]
         }
     ],
-    "timestamp": "2018-05-08T21:34:25",
+    "timestamp": "2021-08-14T09:43:08",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "8.6.1"
